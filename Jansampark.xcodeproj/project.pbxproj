@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18456D8C177987CA0045B75B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8B177987CA0045B75B /* UIKit.framework */; };
+		18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8D177987CA0045B75B /* Foundation.framework */; };
+		18456D90177987CA0045B75B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8F177987CA0045B75B /* CoreGraphics.framework */; };
+		18456D96177987CA0045B75B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18456D94177987CA0045B75B /* InfoPlist.strings */; };
+		18456D98177987CA0045B75B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18456D97177987CA0045B75B /* main.m */; };
+		18456D9C177987CA0045B75B /* JSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18456D9B177987CA0045B75B /* JSAppDelegate.m */; };
+		18456D9E177987CA0045B75B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18456D9D177987CA0045B75B /* Default.png */; };
+		18456DA0177987CA0045B75B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18456D9F177987CA0045B75B /* Default@2x.png */; };
+		18456DA2177987CA0045B75B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18456DA1177987CA0045B75B /* Default-568h@2x.png */; };
+		18456DA5177987CA0045B75B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18456DA3177987CA0045B75B /* MainStoryboard.storyboard */; };
+		18456DA8177987CA0045B75B /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18456DA7177987CA0045B75B /* JSViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18456D88177987CA0045B75B /* Jansampark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jansampark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18456D8B177987CA0045B75B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		18456D8D177987CA0045B75B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		18456D8F177987CA0045B75B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18456D93177987CA0045B75B /* Jansampark-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jansampark-Info.plist"; sourceTree = "<group>"; };
+		18456D95177987CA0045B75B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18456D97177987CA0045B75B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18456D99177987CA0045B75B /* Jansampark-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jansampark-Prefix.pch"; sourceTree = "<group>"; };
+		18456D9A177987CA0045B75B /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
+		18456D9B177987CA0045B75B /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
+		18456D9D177987CA0045B75B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		18456D9F177987CA0045B75B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18456DA1177987CA0045B75B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18456DA4177987CA0045B75B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		18456DA6177987CA0045B75B /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
+		18456DA7177987CA0045B75B /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18456D85177987CA0045B75B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18456D8C177987CA0045B75B /* UIKit.framework in Frameworks */,
+				18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */,
+				18456D90177987CA0045B75B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18456D7F177987CA0045B75B = {
+			isa = PBXGroup;
+			children = (
+				18456D91177987CA0045B75B /* Jansampark */,
+				18456D8A177987CA0045B75B /* Frameworks */,
+				18456D89177987CA0045B75B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18456D89177987CA0045B75B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18456D88177987CA0045B75B /* Jansampark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18456D8A177987CA0045B75B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18456D8B177987CA0045B75B /* UIKit.framework */,
+				18456D8D177987CA0045B75B /* Foundation.framework */,
+				18456D8F177987CA0045B75B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18456D91177987CA0045B75B /* Jansampark */ = {
+			isa = PBXGroup;
+			children = (
+				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
+				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
+				18456DA3177987CA0045B75B /* MainStoryboard.storyboard */,
+				18456DA6177987CA0045B75B /* JSViewController.h */,
+				18456DA7177987CA0045B75B /* JSViewController.m */,
+				18456D92177987CA0045B75B /* Supporting Files */,
+			);
+			path = Jansampark;
+			sourceTree = "<group>";
+		};
+		18456D92177987CA0045B75B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18456D93177987CA0045B75B /* Jansampark-Info.plist */,
+				18456D94177987CA0045B75B /* InfoPlist.strings */,
+				18456D97177987CA0045B75B /* main.m */,
+				18456D99177987CA0045B75B /* Jansampark-Prefix.pch */,
+				18456D9D177987CA0045B75B /* Default.png */,
+				18456D9F177987CA0045B75B /* Default@2x.png */,
+				18456DA1177987CA0045B75B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18456D87177987CA0045B75B /* Jansampark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Jansampark" */;
+			buildPhases = (
+				18456D84177987CA0045B75B /* Sources */,
+				18456D85177987CA0045B75B /* Frameworks */,
+				18456D86177987CA0045B75B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jansampark;
+			productName = Jansampark;
+			productReference = 18456D88177987CA0045B75B /* Jansampark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18456D80177987CA0045B75B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Grappus;
+			};
+			buildConfigurationList = 18456D83177987CA0045B75B /* Build configuration list for PBXProject "Jansampark" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18456D7F177987CA0045B75B;
+			productRefGroup = 18456D89177987CA0045B75B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18456D87177987CA0045B75B /* Jansampark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18456D86177987CA0045B75B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18456D96177987CA0045B75B /* InfoPlist.strings in Resources */,
+				18456D9E177987CA0045B75B /* Default.png in Resources */,
+				18456DA0177987CA0045B75B /* Default@2x.png in Resources */,
+				18456DA2177987CA0045B75B /* Default-568h@2x.png in Resources */,
+				18456DA5177987CA0045B75B /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18456D84177987CA0045B75B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18456D98177987CA0045B75B /* main.m in Sources */,
+				18456D9C177987CA0045B75B /* JSAppDelegate.m in Sources */,
+				18456DA8177987CA0045B75B /* JSViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18456D94177987CA0045B75B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18456D95177987CA0045B75B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18456DA3177987CA0045B75B /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18456DA4177987CA0045B75B /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18456DA9177987CA0045B75B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18456DAA177987CA0045B75B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18456DAC177987CA0045B75B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jansampark/Jansampark-Prefix.pch";
+				INFOPLIST_FILE = "Jansampark/Jansampark-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		18456DAD177987CA0045B75B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Jansampark/Jansampark-Prefix.pch";
+				INFOPLIST_FILE = "Jansampark/Jansampark-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18456D83177987CA0045B75B /* Build configuration list for PBXProject "Jansampark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18456DA9177987CA0045B75B /* Debug */,
+				18456DAA177987CA0045B75B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Jansampark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18456DAC177987CA0045B75B /* Debug */,
+				18456DAD177987CA0045B75B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18456D80177987CA0045B75B /* Project object */;
+}
