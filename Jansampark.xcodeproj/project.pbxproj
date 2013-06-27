@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182A5404177C68D70026D078 /* walkthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 182A5402177C68D70026D078 /* walkthrough.png */; };
+		182A5405177C68D70026D078 /* walkthrough@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182A5403177C68D70026D078 /* walkthrough@2x.png */; };
+		18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830590F177C52690065E6D1 /* WalkthroughVC.m */; };
 		18456D8C177987CA0045B75B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8B177987CA0045B75B /* UIKit.framework */; };
 		18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8D177987CA0045B75B /* Foundation.framework */; };
 		18456D90177987CA0045B75B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8F177987CA0045B75B /* CoreGraphics.framework */; };
@@ -21,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		182A5402177C68D70026D078 /* walkthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkthrough.png; sourceTree = "<group>"; };
+		182A5403177C68D70026D078 /* walkthrough@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walkthrough@2x.png"; sourceTree = "<group>"; };
+		1830590E177C52690065E6D1 /* WalkthroughVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughVC.h; sourceTree = "<group>"; };
+		1830590F177C52690065E6D1 /* WalkthroughVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughVC.m; sourceTree = "<group>"; };
 		18456D88177987CA0045B75B /* Jansampark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jansampark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18456D8B177987CA0045B75B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18456D8D177987CA0045B75B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -53,10 +60,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18305905177C51560065E6D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18305907177C516E0065E6D1 /* non-retina */,
+				18305906177C51670065E6D1 /* retina */,
+			);
+			name = Resources;
+			path = Jansampark;
+			sourceTree = "<group>";
+		};
+		18305906177C51670065E6D1 /* retina */ = {
+			isa = PBXGroup;
+			children = (
+				18305909177C517B0065E6D1 /* walkthrough */,
+			);
+			name = retina;
+			sourceTree = "<group>";
+		};
+		18305907177C516E0065E6D1 /* non-retina */ = {
+			isa = PBXGroup;
+			children = (
+				18305908177C51740065E6D1 /* walkthrough */,
+			);
+			name = "non-retina";
+			sourceTree = "<group>";
+		};
+		18305908177C51740065E6D1 /* walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				182A5402177C68D70026D078 /* walkthrough.png */,
+			);
+			name = walkthrough;
+			sourceTree = "<group>";
+		};
+		18305909177C517B0065E6D1 /* walkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				182A5403177C68D70026D078 /* walkthrough@2x.png */,
+			);
+			name = walkthrough;
+			sourceTree = "<group>";
+		};
 		18456D7F177987CA0045B75B = {
 			isa = PBXGroup;
 			children = (
 				18456D91177987CA0045B75B /* Jansampark */,
+				18456D92177987CA0045B75B /* Supporting Files */,
+				18305905177C51560065E6D1 /* Resources */,
 				18456D8A177987CA0045B75B /* Frameworks */,
 				18456D89177987CA0045B75B /* Products */,
 			);
@@ -88,7 +139,8 @@
 				18456DA3177987CA0045B75B /* MainStoryboard.storyboard */,
 				18456DA6177987CA0045B75B /* JSViewController.h */,
 				18456DA7177987CA0045B75B /* JSViewController.m */,
-				18456D92177987CA0045B75B /* Supporting Files */,
+				1830590E177C52690065E6D1 /* WalkthroughVC.h */,
+				1830590F177C52690065E6D1 /* WalkthroughVC.m */,
 			);
 			path = Jansampark;
 			sourceTree = "<group>";
@@ -105,6 +157,7 @@
 				18456DA1177987CA0045B75B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = Jansampark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +217,8 @@
 				18456DA0177987CA0045B75B /* Default@2x.png in Resources */,
 				18456DA2177987CA0045B75B /* Default-568h@2x.png in Resources */,
 				18456DA5177987CA0045B75B /* MainStoryboard.storyboard in Resources */,
+				182A5404177C68D70026D078 /* walkthrough.png in Resources */,
+				182A5405177C68D70026D078 /* walkthrough@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +232,7 @@
 				18456D98177987CA0045B75B /* main.m in Sources */,
 				18456D9C177987CA0045B75B /* JSAppDelegate.m in Sources */,
 				18456DA8177987CA0045B75B /* JSViewController.m in Sources */,
+				18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +355,7 @@
 				18456DAD177987CA0045B75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
