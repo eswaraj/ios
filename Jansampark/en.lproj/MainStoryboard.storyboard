@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MrI-Lw-3zf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xtP-zy-jmA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="2" customClass="JSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="bmF-nJ-Y4R" userLabel="navbar">
@@ -44,19 +44,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="IHH-fq-Iqr">
-                                <rect key="frame" x="0.0" y="63" width="320" height="163"/>
+                                <rect key="frame" x="0.0" y="63" width="320" height="169"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="wr0-tf-nEQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="163"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="169"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </mapView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="annotation.png" id="hMv-Sf-RjG">
-                                        <rect key="frame" x="143" y="36" width="33" height="48"/>
+                                        <rect key="frame" x="143" y="38" width="33" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Koramangla, Bangalore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vtI-Pz-e1x">
-                                        <rect key="frame" x="36" y="138" width="248" height="21"/>
+                                        <rect key="frame" x="36" y="144" width="248" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="144"/>
+            <point key="canvasLocation" x="824" y="-220"/>
         </scene>
         <!--WalkthroughVC-->
         <scene sceneID="GQg-ol-Uwg">
@@ -259,6 +259,88 @@
             </objects>
             <point key="canvasLocation" x="-83" y="-539"/>
         </scene>
+        <!--ContainerVC-->
+        <scene sceneID="lFJ-qn-P3E">
+            <objects>
+                <viewController id="xtP-zy-jmA" customClass="ContainerVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jug-02-OfS">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" id="328-5k-hUs" userLabel="Analytics Container">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="jVl-Fz-cSW" kind="embed" id="r6Y-wj-b6P"/>
+                                </connections>
+                            </containerView>
+                            <containerView contentMode="scaleToFill" id="aOg-wO-ePX" userLabel="Issues Container">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="MrI-Lw-3zf" kind="embed" id="qUz-1x-Mzf"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" id="JFc-kA-XGK">
+                                <rect key="frame" x="-180" y="502" width="500" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="tabbar_bg.png" id="t7m-tH-3nq">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="myH-0G-nBz">
+                                        <rect key="frame" x="340" y="0.0" width="160" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="analytics_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="analytics_button_select.png"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="analyticsTapped:" destination="xtP-zy-jmA" eventType="touchUpInside" id="FPm-C5-cl5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Id3-Sn-yIc">
+                                        <rect key="frame" x="180" y="0.0" width="160" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="issues_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="issues_button_select.png"/>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="issuesTapped:" destination="xtP-zy-jmA" eventType="touchUpInside" id="Th2-1N-e5Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="analyticsContainer" destination="328-5k-hUs" id="5U1-W8-obg"/>
+                        <outlet property="analyticsOutlet" destination="myH-0G-nBz" id="azP-OH-cTr"/>
+                        <outlet property="issueContainer" destination="aOg-wO-ePX" id="GWo-nz-f0c"/>
+                        <outlet property="issuesOutlet" destination="Id3-Sn-yIc" id="clS-ah-9vU"/>
+                        <outlet property="tabView" destination="JFc-kA-XGK" id="KeQ-Tv-uCq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y8i-9Q-71y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-157" y="114"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ot9-nR-lca">
             <objects>
@@ -275,19 +357,51 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4Z-R6-2J5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="144"/>
+            <point key="canvasLocation" x="370" y="-220"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7lf-pu-Z8r">
+            <objects>
+                <viewController id="jVl-Fz-cSW" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nEf-mI-52F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wjt-Bs-tQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="370" y="476"/>
         </scene>
     </scenes>
     <resources>
+        <image name="analytics_button.png" width="160" height="45"/>
+        <image name="analytics_button_select.png" width="160" height="45"/>
         <image name="annotation.png" width="33" height="48"/>
         <image name="category_bg.png" width="320" height="351"/>
         <image name="info_button.png" width="25" height="25"/>
+        <image name="issues_button.png" width="160" height="45"/>
+        <image name="issues_button_select.png" width="160" height="45"/>
         <image name="navbar_bg.png" width="320" height="55"/>
         <image name="navbar_logo.png" width="52" height="29"/>
         <image name="road_button.png" width="83" height="85"/>
+        <image name="tabbar_bg.png" width="500" height="46"/>
         <image name="walkthrough.png" width="320" height="568"/>
     </resources>
     <classes>
+        <class className="ContainerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
+            <relationships>
+                <relationship kind="action" name="analyticsTapped:"/>
+                <relationship kind="action" name="issuesTapped:"/>
+                <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="issuesOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tabView" candidateClass="UIView"/>
+            </relationships>
+        </class>
         <class className="JSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
         </class>

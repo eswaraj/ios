@@ -20,7 +20,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
   WalkthroughVC *wVC = (WalkthroughVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"WalkthroughVC"];
- // [self presentViewController:wVC animated:NO completion:nil];
+  //[self presentViewController:wVC animated:NO completion:nil];
   
 }
 
