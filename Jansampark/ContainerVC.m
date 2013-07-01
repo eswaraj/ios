@@ -8,6 +8,9 @@
 
 #import "ContainerVC.h"
 
+#define kAnimationArrowRatio .45
+#define kAnimationDuration 0.3
+
 typedef enum {
   kIssuesVC,
   kAnalyticsVC
@@ -19,7 +22,9 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UIButton *issuesOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *analyticsOutlet;
+
 @property (weak, nonatomic) IBOutlet UIView *tabView;
+@property (weak, nonatomic) IBOutlet UIImageView *tabBarBG;
 
 @property (assign, nonatomic) CurrentVC currentVC;
 @end
@@ -39,7 +44,9 @@ typedef enum {
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-  self.currentVC = kIssuesVC;
+    self.currentVC = kIssuesVC;
+
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,6 +65,11 @@ typedef enum {
     [self.view bringSubviewToFront:self.tabView];
     [self deselectAllButtons];
     [self.issuesOutlet setSelected:YES];
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+      CGRect frame = self.tabBarBG.frame;
+      frame.origin.x = 0;
+      [self.tabBarBG setFrame:frame];
+    }];
   }
 }
 
@@ -69,6 +81,11 @@ typedef enum {
     [self.view bringSubviewToFront:self.tabView];
     [self deselectAllButtons];
     [self.analyticsOutlet setSelected:YES];
+    [UIView animateWithDuration:kAnimationDuration animations:^{
+      CGRect frame = self.tabBarBG.frame;
+      frame.origin.x = kAnimationArrowRatio*self.view.frame.size.width;
+      [self.tabBarBG setFrame:frame];
+    }];
   }
 }
 

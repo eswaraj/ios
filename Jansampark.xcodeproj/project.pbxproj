@@ -12,9 +12,7 @@
 		1826BFEB17816F7800D59525 /* analytics_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE317816F7800D59525 /* analytics_button.png */; };
 		1826BFEC17816F7800D59525 /* analytics_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE417816F7800D59525 /* analytics_button@2x.png */; };
 		1826BFED17816F7800D59525 /* issues_button_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE517816F7800D59525 /* issues_button_select.png */; };
-		1826BFEE17816F7800D59525 /* issues_button_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE617816F7800D59525 /* issues_button_selected@2x.png */; };
 		1826BFEF17816F7800D59525 /* issues_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE717816F7800D59525 /* issues_button.png */; };
-		1826BFF017816F7800D59525 /* issues_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE817816F7800D59525 /* issues_button@2x.png */; };
 		182A5404177C68D70026D078 /* walkthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 182A5402177C68D70026D078 /* walkthrough.png */; };
 		182A5405177C68D70026D078 /* walkthrough@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182A5403177C68D70026D078 /* walkthrough@2x.png */; };
 		18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830590F177C52690065E6D1 /* WalkthroughVC.m */; };
@@ -45,6 +43,13 @@
 		1894AD5A177DBF6F003538CE /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD58177DBF6F003538CE /* tabbar_bg.png */; };
 		1894AD5B177DBF6F003538CE /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD59177DBF6F003538CE /* tabbar_bg@2x.png */; };
 		1894AD60177DC0BA003538CE /* ContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894AD5F177DC0BA003538CE /* ContainerVC.m */; };
+		18BCE1801781993600BA7D89 /* issues_button_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */; };
+		18BCE1811781993600BA7D89 /* issues_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17F1781993600BA7D89 /* issues_button@2x.png */; };
+		18BCE18417819BDE00BA7D89 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */; };
+		18BCE1871781A05300BA7D89 /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE1861781A05300BA7D89 /* MyriadPro-Semibold.otf */; };
+		18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */; };
+		18BCE18F1781A2D400BA7D89 /* mapoverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18D1781A2D400BA7D89 /* mapoverlay.png */; };
+		18BCE1901781A2D400BA7D89 /* mapoverlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +58,7 @@
 		1826BFE317816F7800D59525 /* analytics_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analytics_button.png; sourceTree = "<group>"; };
 		1826BFE417816F7800D59525 /* analytics_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "analytics_button@2x.png"; sourceTree = "<group>"; };
 		1826BFE517816F7800D59525 /* issues_button_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = issues_button_select.png; sourceTree = "<group>"; };
-		1826BFE617816F7800D59525 /* issues_button_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button_selected@2x.png"; sourceTree = "<group>"; };
 		1826BFE717816F7800D59525 /* issues_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = issues_button.png; sourceTree = "<group>"; };
-		1826BFE817816F7800D59525 /* issues_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button@2x.png"; sourceTree = "<group>"; };
 		182A5402177C68D70026D078 /* walkthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkthrough.png; sourceTree = "<group>"; };
 		182A5403177C68D70026D078 /* walkthrough@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walkthrough@2x.png"; sourceTree = "<group>"; };
 		1830590E177C52690065E6D1 /* WalkthroughVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughVC.h; sourceTree = "<group>"; };
@@ -93,6 +96,14 @@
 		1894AD59177DBF6F003538CE /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
 		1894AD5E177DC0BA003538CE /* ContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerVC.h; sourceTree = "<group>"; };
 		1894AD5F177DC0BA003538CE /* ContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerVC.m; sourceTree = "<group>"; };
+		18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button_select@2x.png"; sourceTree = "<group>"; };
+		18BCE17F1781993600BA7D89 /* issues_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button@2x.png"; sourceTree = "<group>"; };
+		18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		18BCE1861781A05300BA7D89 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
+		18BCE18A1781A0E400BA7D89 /* MyriadLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadLabel.h; sourceTree = "<group>"; };
+		18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadLabel.m; sourceTree = "<group>"; };
+		18BCE18D1781A2D400BA7D89 /* mapoverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapoverlay.png; sourceTree = "<group>"; };
+		18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapoverlay@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +124,7 @@
 		18305905177C51560065E6D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18BCE18217819BD000BA7D89 /* fonts */,
 				18305907177C516E0065E6D1 /* non-retina */,
 				18305906177C51670065E6D1 /* retina */,
 			);
@@ -161,6 +173,7 @@
 			children = (
 				1894AD50177DB346003538CE /* MapKit.framework */,
 				18456D91177987CA0045B75B /* Jansampark */,
+				18BCE1881781A09800BA7D89 /* Custom Classes */,
 				18456D92177987CA0045B75B /* Supporting Files */,
 				18305905177C51560065E6D1 /* Resources */,
 				18456D8A177987CA0045B75B /* Frameworks */,
@@ -190,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */,
-				1894AD5D177DC0A1003538CE /* Container */,
-				1894AD5C177DC08C003538CE /* Home */,
 				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
+				1894AD5D177DC0A1003538CE /* Container */,
+				1894AD5C177DC08C003538CE /* Home */,
 			);
 			path = Jansampark;
 			sourceTree = "<group>";
@@ -216,6 +229,7 @@
 		1894AD3A177D83EC003538CE /* home */ = {
 			isa = PBXGroup;
 			children = (
+				18BCE18D1781A2D400BA7D89 /* mapoverlay.png */,
 				1894AD52177DB6D2003538CE /* category_bg.png */,
 				1894AD46177D842C003538CE /* annotation.png */,
 				1894AD47177D842C003538CE /* info_button.png */,
@@ -229,6 +243,7 @@
 		1894AD3B177D8405003538CE /* home */ = {
 			isa = PBXGroup;
 			children = (
+				18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */,
 				1894AD53177DB6D2003538CE /* category_bg@2x.png */,
 				1894AD3C177D8421003538CE /* annotation@2x.png */,
 				1894AD3D177D8421003538CE /* info_button@2x.png */,
@@ -254,10 +269,10 @@
 		1894AD57177DBF63003538CE /* Container */ = {
 			isa = PBXGroup;
 			children = (
+				18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */,
+				18BCE17F1781993600BA7D89 /* issues_button@2x.png */,
 				1826BFE217816F7800D59525 /* analytics_button_select@2x.png */,
 				1826BFE417816F7800D59525 /* analytics_button@2x.png */,
-				1826BFE617816F7800D59525 /* issues_button_selected@2x.png */,
-				1826BFE817816F7800D59525 /* issues_button@2x.png */,
 				1894AD59177DBF6F003538CE /* tabbar_bg@2x.png */,
 			);
 			name = Container;
@@ -281,6 +296,25 @@
 				1894AD5F177DC0BA003538CE /* ContainerVC.m */,
 			);
 			name = Container;
+			sourceTree = "<group>";
+		};
+		18BCE18217819BD000BA7D89 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				18BCE1861781A05300BA7D89 /* MyriadPro-Semibold.otf */,
+				18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		18BCE1881781A09800BA7D89 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18BCE18A1781A0E400BA7D89 /* MyriadLabel.h */,
+				18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */,
+			);
+			name = "Custom Classes";
+			path = Jansampark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,10 +394,14 @@
 				1826BFEB17816F7800D59525 /* analytics_button.png in Resources */,
 				1826BFEC17816F7800D59525 /* analytics_button@2x.png in Resources */,
 				1826BFED17816F7800D59525 /* issues_button_select.png in Resources */,
-				1826BFEE17816F7800D59525 /* issues_button_selected@2x.png in Resources */,
 				1826BFEF17816F7800D59525 /* issues_button.png in Resources */,
-				1826BFF017816F7800D59525 /* issues_button@2x.png in Resources */,
 				188CDB9317818D1B004DFEA5 /* MainStoryboard.storyboard in Resources */,
+				18BCE1801781993600BA7D89 /* issues_button_select@2x.png in Resources */,
+				18BCE1811781993600BA7D89 /* issues_button@2x.png in Resources */,
+				18BCE18417819BDE00BA7D89 /* MyriadPro-Regular.otf in Resources */,
+				18BCE1871781A05300BA7D89 /* MyriadPro-Semibold.otf in Resources */,
+				18BCE18F1781A2D400BA7D89 /* mapoverlay.png in Resources */,
+				18BCE1901781A2D400BA7D89 /* mapoverlay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +417,7 @@
 				18456DA8177987CA0045B75B /* JSViewController.m in Sources */,
 				18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */,
 				1894AD60177DC0BA003538CE /* ContainerVC.m in Sources */,
+				18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
