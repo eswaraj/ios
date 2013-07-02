@@ -17,6 +17,12 @@
 		182A5405177C68D70026D078 /* walkthrough@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182A5403177C68D70026D078 /* walkthrough@2x.png */; };
 		182EF11B1782E38E00F6F694 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182EF1191782E38E00F6F694 /* OpenSans-Bold.ttf */; };
 		182EF11C1782E38E00F6F694 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 182EF11A1782E38E00F6F694 /* OpenSans-Light.ttf */; };
+		182EF1231782F99F00F6F694 /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 182EF11F1782F99F00F6F694 /* back_button.png */; };
+		182EF1241782F99F00F6F694 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182EF1201782F99F00F6F694 /* back_button@2x.png */; };
+		182EF1251782F99F00F6F694 /* water_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 182EF1211782F99F00F6F694 /* water_banner.png */; };
+		182EF1261782F99F00F6F694 /* water_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 182EF1221782F99F00F6F694 /* water_banner@2x.png */; };
+		182EF12A1782FF5400F6F694 /* IssuesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 182EF1291782FF5400F6F694 /* IssuesVC.m */; };
+		182EF12D1783003B00F6F694 /* IssuesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 182EF12C1783003B00F6F694 /* IssuesCell.m */; };
 		18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1830590F177C52690065E6D1 /* WalkthroughVC.m */; };
 		18456D8C177987CA0045B75B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8B177987CA0045B75B /* UIKit.framework */; };
 		18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18456D8D177987CA0045B75B /* Foundation.framework */; };
@@ -75,6 +81,14 @@
 		182A5403177C68D70026D078 /* walkthrough@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walkthrough@2x.png"; sourceTree = "<group>"; };
 		182EF1191782E38E00F6F694 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		182EF11A1782E38E00F6F694 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		182EF11F1782F99F00F6F694 /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
+		182EF1201782F99F00F6F694 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		182EF1211782F99F00F6F694 /* water_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_banner.png; sourceTree = "<group>"; };
+		182EF1221782F99F00F6F694 /* water_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water_banner@2x.png"; sourceTree = "<group>"; };
+		182EF1281782FF5400F6F694 /* IssuesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesVC.h; sourceTree = "<group>"; };
+		182EF1291782FF5400F6F694 /* IssuesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesVC.m; sourceTree = "<group>"; };
+		182EF12B1783003B00F6F694 /* IssuesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssuesCell.h; sourceTree = "<group>"; };
+		182EF12C1783003B00F6F694 /* IssuesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssuesCell.m; sourceTree = "<group>"; };
 		1830590E177C52690065E6D1 /* WalkthroughVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WalkthroughVC.h; sourceTree = "<group>"; };
 		1830590F177C52690065E6D1 /* WalkthroughVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WalkthroughVC.m; sourceTree = "<group>"; };
 		18456D88177987CA0045B75B /* Jansampark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jansampark.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +162,8 @@
 		182EF11D1782F94700F6F694 /* IssuesVC */ = {
 			isa = PBXGroup;
 			children = (
+				182EF1201782F99F00F6F694 /* back_button@2x.png */,
+				182EF1221782F99F00F6F694 /* water_banner@2x.png */,
 			);
 			name = IssuesVC;
 			sourceTree = "<group>";
@@ -155,8 +171,21 @@
 		182EF11E1782F95400F6F694 /* IssuesVC */ = {
 			isa = PBXGroup;
 			children = (
+				182EF11F1782F99F00F6F694 /* back_button.png */,
+				182EF1211782F99F00F6F694 /* water_banner.png */,
 			);
 			name = IssuesVC;
+			sourceTree = "<group>";
+		};
+		182EF1271782FF2D00F6F694 /* Issues */ = {
+			isa = PBXGroup;
+			children = (
+				182EF1281782FF5400F6F694 /* IssuesVC.h */,
+				182EF1291782FF5400F6F694 /* IssuesVC.m */,
+				182EF12B1783003B00F6F694 /* IssuesCell.h */,
+				182EF12C1783003B00F6F694 /* IssuesCell.m */,
+			);
+			name = Issues;
 			sourceTree = "<group>";
 		};
 		18305905177C51560065E6D1 /* Resources */ = {
@@ -245,6 +274,7 @@
 				188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */,
 				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
+				182EF1271782FF2D00F6F694 /* Issues */,
 				1894AD5D177DC0A1003538CE /* Container */,
 				1894AD5C177DC08C003538CE /* Home */,
 			);
@@ -482,6 +512,10 @@
 				18A2E2281782E0130061E18D /* water_button@2x.png in Resources */,
 				182EF11B1782E38E00F6F694 /* OpenSans-Bold.ttf in Resources */,
 				182EF11C1782E38E00F6F694 /* OpenSans-Light.ttf in Resources */,
+				182EF1231782F99F00F6F694 /* back_button.png in Resources */,
+				182EF1241782F99F00F6F694 /* back_button@2x.png in Resources */,
+				182EF1251782F99F00F6F694 /* water_banner.png in Resources */,
+				182EF1261782F99F00F6F694 /* water_banner@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +532,8 @@
 				18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */,
 				1894AD60177DC0BA003538CE /* ContainerVC.m in Sources */,
 				18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */,
+				182EF12A1782FF5400F6F694 /* IssuesVC.m in Sources */,
+				182EF12D1783003B00F6F694 /* IssuesCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

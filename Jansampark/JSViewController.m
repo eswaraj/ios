@@ -8,6 +8,7 @@
 
 #import "JSViewController.h"
 #import "WalkthroughVC.h"
+#import "IssuesVC.h"
 
 @interface JSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
@@ -36,6 +37,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - IBActions 
+
+- (IBAction)waterTapped:(id)sender {
+  IssuesVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssuesVC"];
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 #pragma mark - Custom Methods
 
