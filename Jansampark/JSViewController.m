@@ -53,7 +53,7 @@
     [self.mapSuperview setFrame:mapframe];
     
     CGRect buttonsFrame = self.buttonsView.frame;
-    buttonsFrame.origin.y = buttonsFrame.origin.y - 20;
+    buttonsFrame.origin.y = buttonsFrame.origin.y - 10;
     [self.buttonsView  setFrame:buttonsFrame];
   }
 }
