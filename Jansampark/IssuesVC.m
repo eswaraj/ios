@@ -50,7 +50,6 @@
 - (void)configureFonts {
   [self.issuesLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
   [self.complaintsLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
-  [self.complaintsLabel setFont:[UIFont fontWithName:@"MyriadPro-Regular" size:18]];
 }
 
 #pragma mark - TableView Datasource Methods
