@@ -1,4 +1,4 @@
-//
+ //
 //  IssuesCell.m
 //  Jansampark
 //
@@ -27,13 +27,6 @@
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-  self = [super initWithCoder:aDecoder];
-  if (self) {
-    [self configureFonts];
-  }
-  return self;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
@@ -43,6 +36,7 @@
 }
 
 - (void)configureFonts {
+  NSLog(@"%@",self.titleLabel.text);
   [self.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
   [self.categoryLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:9]];
   [self.percentLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];

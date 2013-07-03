@@ -9,6 +9,9 @@
 #import "IssuesVC.h"
 
 @interface IssuesVC ()
+@property (weak, nonatomic) IBOutlet UILabel *issuesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *complaintsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -26,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [self configureFonts];
 	// Do any additional setup after loading the view.
 }
 
@@ -39,6 +43,14 @@
 
 - (IBAction)backPressed:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Custom Methods
+
+- (void)configureFonts {
+  [self.issuesLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
+  [self.complaintsLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
+  [self.complaintsLabel setFont:[UIFont fontWithName:@"MyriadPro-Regular" size:18]];
 }
 
 #pragma mark - TableView Datasource Methods
@@ -55,7 +67,7 @@
   static NSString *cellIdentifier = @"IssuesCell";
   
   IssuesCell *cell = (IssuesCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  
+  [cell configureFonts];
   return cell;
 }
 @end

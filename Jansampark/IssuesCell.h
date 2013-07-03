@@ -10,4 +10,6 @@
 
 @interface IssuesCell : UITableViewCell
 
+- (void)configureFonts;
+
 @end
