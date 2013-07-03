@@ -60,6 +60,16 @@
 		18A2E2261782E0130061E18D /* transportation_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E21A1782E0130061E18D /* transportation_button@2x.png */; };
 		18A2E2271782E0130061E18D /* water_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E21B1782E0130061E18D /* water_button.png */; };
 		18A2E2281782E0130061E18D /* water_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E21C1782E0130061E18D /* water_button@2x.png */; };
+		18B4578817844A3A00DCA030 /* electricity_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4577E17844A3A00DCA030 /* electricity_banner.png */; };
+		18B4578917844A3A00DCA030 /* electricity_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4577F17844A3A00DCA030 /* electricity_banner@2x.png */; };
+		18B4578A17844A3A00DCA030 /* law_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578017844A3A00DCA030 /* law_banner.png */; };
+		18B4578B17844A3A00DCA030 /* law_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578117844A3A00DCA030 /* law_banner@2x.png */; };
+		18B4578C17844A3A00DCA030 /* road_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578217844A3A00DCA030 /* road_banner.png */; };
+		18B4578D17844A3A00DCA030 /* road_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578317844A3A00DCA030 /* road_banner@2x.png */; };
+		18B4578E17844A3A00DCA030 /* sewage_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578417844A3A00DCA030 /* sewage_banner.png */; };
+		18B4578F17844A3A00DCA030 /* sewage_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578517844A3A00DCA030 /* sewage_banner@2x.png */; };
+		18B4579017844A3A00DCA030 /* transport_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578617844A3A00DCA030 /* transport_banner.png */; };
+		18B4579117844A3A00DCA030 /* transport_banner@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B4578717844A3A00DCA030 /* transport_banner@2x.png */; };
 		18BCE1801781993600BA7D89 /* issues_button_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */; };
 		18BCE1811781993600BA7D89 /* issues_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17F1781993600BA7D89 /* issues_button@2x.png */; };
 		18BCE18417819BDE00BA7D89 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */; };
@@ -73,6 +83,8 @@
 		FC3B60731784527200953836 /* leftSegmentOn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B606F1784527200953836 /* leftSegmentOn.png */; };
 		FC3B60741784527200953836 /* rightSegmentOff.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B60701784527200953836 /* rightSegmentOff.png */; };
 		FC3B60751784527200953836 /* rightSegmentOn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B60711784527200953836 /* rightSegmentOn.png */; };
+		FC3B6078178456EF00953836 /* MyriadRegularLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6077178456EF00953836 /* MyriadRegularLabel.m */; };
+		FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +151,16 @@
 		18A2E21A1782E0130061E18D /* transportation_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transportation_button@2x.png"; sourceTree = "<group>"; };
 		18A2E21B1782E0130061E18D /* water_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_button.png; sourceTree = "<group>"; };
 		18A2E21C1782E0130061E18D /* water_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "water_button@2x.png"; sourceTree = "<group>"; };
+		18B4577E17844A3A00DCA030 /* electricity_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = electricity_banner.png; sourceTree = "<group>"; };
+		18B4577F17844A3A00DCA030 /* electricity_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electricity_banner@2x.png"; sourceTree = "<group>"; };
+		18B4578017844A3A00DCA030 /* law_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = law_banner.png; sourceTree = "<group>"; };
+		18B4578117844A3A00DCA030 /* law_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "law_banner@2x.png"; sourceTree = "<group>"; };
+		18B4578217844A3A00DCA030 /* road_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road_banner.png; sourceTree = "<group>"; };
+		18B4578317844A3A00DCA030 /* road_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "road_banner@2x.png"; sourceTree = "<group>"; };
+		18B4578417844A3A00DCA030 /* sewage_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sewage_banner.png; sourceTree = "<group>"; };
+		18B4578517844A3A00DCA030 /* sewage_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sewage_banner@2x.png"; sourceTree = "<group>"; };
+		18B4578617844A3A00DCA030 /* transport_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transport_banner.png; sourceTree = "<group>"; };
+		18B4578717844A3A00DCA030 /* transport_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transport_banner@2x.png"; sourceTree = "<group>"; };
 		18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button_select@2x.png"; sourceTree = "<group>"; };
 		18BCE17F1781993600BA7D89 /* issues_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button@2x.png"; sourceTree = "<group>"; };
 		18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
@@ -153,6 +175,10 @@
 		FC3B606F1784527200953836 /* leftSegmentOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftSegmentOn.png; sourceTree = "<group>"; };
 		FC3B60701784527200953836 /* rightSegmentOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightSegmentOff.png; sourceTree = "<group>"; };
 		FC3B60711784527200953836 /* rightSegmentOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightSegmentOn.png; sourceTree = "<group>"; };
+		FC3B6076178456EF00953836 /* MyriadRegularLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadRegularLabel.h; sourceTree = "<group>"; };
+		FC3B6077178456EF00953836 /* MyriadRegularLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadRegularLabel.m; sourceTree = "<group>"; };
+		FC3B607C1784574800953836 /* MyriadSemiboldLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadSemiboldLabel.h; sourceTree = "<group>"; };
+		FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadSemiboldLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +200,11 @@
 		182EF11D1782F94700F6F694 /* IssuesVC */ = {
 			isa = PBXGroup;
 			children = (
+				18B4577F17844A3A00DCA030 /* electricity_banner@2x.png */,
+				18B4578117844A3A00DCA030 /* law_banner@2x.png */,
+				18B4578317844A3A00DCA030 /* road_banner@2x.png */,
+				18B4578517844A3A00DCA030 /* sewage_banner@2x.png */,
+				18B4578717844A3A00DCA030 /* transport_banner@2x.png */,
 				182EF1201782F99F00F6F694 /* back_button@2x.png */,
 				182EF1221782F99F00F6F694 /* water_banner@2x.png */,
 			);
@@ -183,6 +214,11 @@
 		182EF11E1782F95400F6F694 /* IssuesVC */ = {
 			isa = PBXGroup;
 			children = (
+				18B4577E17844A3A00DCA030 /* electricity_banner.png */,
+				18B4578017844A3A00DCA030 /* law_banner.png */,
+				18B4578217844A3A00DCA030 /* road_banner.png */,
+				18B4578417844A3A00DCA030 /* sewage_banner.png */,
+				18B4578617844A3A00DCA030 /* transport_banner.png */,
 				182EF11F1782F99F00F6F694 /* back_button.png */,
 				182EF1211782F99F00F6F694 /* water_banner.png */,
 			);
@@ -423,8 +459,12 @@
 		18BCE1881781A09800BA7D89 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FC3B607C1784574800953836 /* MyriadSemiboldLabel.h */,
+				FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */,
 				18BCE18A1781A0E400BA7D89 /* MyriadLabel.h */,
 				18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */,
+				FC3B6076178456EF00953836 /* MyriadRegularLabel.h */,
+				FC3B6077178456EF00953836 /* MyriadRegularLabel.m */,
 			);
 			name = "Custom Classes";
 			path = Jansampark;
@@ -548,6 +588,16 @@
 				FC3B60731784527200953836 /* leftSegmentOn.png in Resources */,
 				FC3B60741784527200953836 /* rightSegmentOff.png in Resources */,
 				FC3B60751784527200953836 /* rightSegmentOn.png in Resources */,
+				18B4578817844A3A00DCA030 /* electricity_banner.png in Resources */,
+				18B4578917844A3A00DCA030 /* electricity_banner@2x.png in Resources */,
+				18B4578A17844A3A00DCA030 /* law_banner.png in Resources */,
+				18B4578B17844A3A00DCA030 /* law_banner@2x.png in Resources */,
+				18B4578C17844A3A00DCA030 /* road_banner.png in Resources */,
+				18B4578D17844A3A00DCA030 /* road_banner@2x.png in Resources */,
+				18B4578E17844A3A00DCA030 /* sewage_banner.png in Resources */,
+				18B4578F17844A3A00DCA030 /* sewage_banner@2x.png in Resources */,
+				18B4579017844A3A00DCA030 /* transport_banner.png in Resources */,
+				18B4579117844A3A00DCA030 /* transport_banner@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +647,8 @@
 				18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */,
 				182EF12A1782FF5400F6F694 /* IssuesVC.m in Sources */,
 				182EF12D1783003B00F6F694 /* IssuesCell.m in Sources */,
+				FC3B6078178456EF00953836 /* MyriadRegularLabel.m in Sources */,
+				FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

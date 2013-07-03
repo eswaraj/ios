@@ -9,7 +9,7 @@
 #import "ContainerVC.h"
 
 #define kAnimationArrowRatio .45
-#define kAnimationDuration 0.3
+#define kAnimationDuration 0.2
 
 typedef enum {
   kIssuesVC,
