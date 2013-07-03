@@ -86,6 +86,8 @@
 		FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */; };
 		FC3B60811784614000953836 /* OpenSansBold.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B60801784614000953836 /* OpenSansBold.m */; };
 		FC3B6084178461A100953836 /* OpenSansLight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6083178461A100953836 /* OpenSansLight.m */; };
+		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
+		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +184,9 @@
 		FC3B60801784614000953836 /* OpenSansBold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSansBold.m; sourceTree = "<group>"; };
 		FC3B6082178461A100953836 /* OpenSansLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSansLight.h; sourceTree = "<group>"; };
 		FC3B6083178461A100953836 /* OpenSansLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSansLight.m; sourceTree = "<group>"; };
+		FC3B6085178480B600953836 /* AnalyticsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsVC.h; sourceTree = "<group>"; };
+		FC3B6086178480B600953836 /* AnalyticsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsVC.m; sourceTree = "<group>"; };
+		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +414,8 @@
 				1830590F177C52690065E6D1 /* WalkthroughVC.m */,
 				18456DA6177987CA0045B75B /* JSViewController.h */,
 				18456DA7177987CA0045B75B /* JSViewController.m */,
+				FC3B6085178480B600953836 /* AnalyticsVC.h */,
+				FC3B6086178480B600953836 /* AnalyticsVC.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -478,6 +485,7 @@
 		FC3B606D1784526000953836 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				FC3B608817848E2500953836 /* bigEllipsBG.png */,
 				FC3B606E1784527200953836 /* leftSegmentOff.png */,
 				FC3B606F1784527200953836 /* leftSegmentOn.png */,
 				FC3B60701784527200953836 /* rightSegmentOff.png */,
@@ -603,6 +611,7 @@
 				18B4578F17844A3A00DCA030 /* sewage_banner@2x.png in Resources */,
 				18B4579017844A3A00DCA030 /* transport_banner.png in Resources */,
 				18B4579117844A3A00DCA030 /* transport_banner@2x.png in Resources */,
+				FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +664,7 @@
 				FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */,
 				FC3B60811784614000953836 /* OpenSansBold.m in Sources */,
 				FC3B6084178461A100953836 /* OpenSansLight.m in Sources */,
+				FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
