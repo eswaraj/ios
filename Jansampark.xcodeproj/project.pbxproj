@@ -74,7 +74,6 @@
 		18BCE1811781993600BA7D89 /* issues_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17F1781993600BA7D89 /* issues_button@2x.png */; };
 		18BCE18417819BDE00BA7D89 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */; };
 		18BCE1871781A05300BA7D89 /* MyriadPro-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE1861781A05300BA7D89 /* MyriadPro-Semibold.otf */; };
-		18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */; };
 		18BCE18F1781A2D400BA7D89 /* mapoverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18D1781A2D400BA7D89 /* mapoverlay.png */; };
 		18BCE1901781A2D400BA7D89 /* mapoverlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */; };
 		82594B018E3749D395BE314C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0462AC2F4744D1814BA6BE /* libPods.a */; };
@@ -85,6 +84,8 @@
 		FC3B60751784527200953836 /* rightSegmentOn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B60711784527200953836 /* rightSegmentOn.png */; };
 		FC3B6078178456EF00953836 /* MyriadRegularLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6077178456EF00953836 /* MyriadRegularLabel.m */; };
 		FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */; };
+		FC3B60811784614000953836 /* OpenSansBold.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B60801784614000953836 /* OpenSansBold.m */; };
+		FC3B6084178461A100953836 /* OpenSansLight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6083178461A100953836 /* OpenSansLight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,8 +166,6 @@
 		18BCE17F1781993600BA7D89 /* issues_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button@2x.png"; sourceTree = "<group>"; };
 		18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
 		18BCE1861781A05300BA7D89 /* MyriadPro-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Semibold.otf"; sourceTree = "<group>"; };
-		18BCE18A1781A0E400BA7D89 /* MyriadLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadLabel.h; sourceTree = "<group>"; };
-		18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadLabel.m; sourceTree = "<group>"; };
 		18BCE18D1781A2D400BA7D89 /* mapoverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapoverlay.png; sourceTree = "<group>"; };
 		18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapoverlay@2x.png"; sourceTree = "<group>"; };
 		5C0462AC2F4744D1814BA6BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +178,10 @@
 		FC3B6077178456EF00953836 /* MyriadRegularLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadRegularLabel.m; sourceTree = "<group>"; };
 		FC3B607C1784574800953836 /* MyriadSemiboldLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadSemiboldLabel.h; sourceTree = "<group>"; };
 		FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadSemiboldLabel.m; sourceTree = "<group>"; };
+		FC3B607F1784614000953836 /* OpenSansBold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSansBold.h; sourceTree = "<group>"; };
+		FC3B60801784614000953836 /* OpenSansBold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSansBold.m; sourceTree = "<group>"; };
+		FC3B6082178461A100953836 /* OpenSansLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenSansLight.h; sourceTree = "<group>"; };
+		FC3B6083178461A100953836 /* OpenSansLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenSansLight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,8 +464,10 @@
 			children = (
 				FC3B607C1784574800953836 /* MyriadSemiboldLabel.h */,
 				FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */,
-				18BCE18A1781A0E400BA7D89 /* MyriadLabel.h */,
-				18BCE18B1781A0E400BA7D89 /* MyriadLabel.m */,
+				FC3B607F1784614000953836 /* OpenSansBold.h */,
+				FC3B60801784614000953836 /* OpenSansBold.m */,
+				FC3B6082178461A100953836 /* OpenSansLight.h */,
+				FC3B6083178461A100953836 /* OpenSansLight.m */,
 				FC3B6076178456EF00953836 /* MyriadRegularLabel.h */,
 				FC3B6077178456EF00953836 /* MyriadRegularLabel.m */,
 			);
@@ -644,11 +649,12 @@
 				18456DA8177987CA0045B75B /* JSViewController.m in Sources */,
 				18305910177C52690065E6D1 /* WalkthroughVC.m in Sources */,
 				1894AD60177DC0BA003538CE /* ContainerVC.m in Sources */,
-				18BCE18C1781A0E400BA7D89 /* MyriadLabel.m in Sources */,
 				182EF12A1782FF5400F6F694 /* IssuesVC.m in Sources */,
 				182EF12D1783003B00F6F694 /* IssuesCell.m in Sources */,
 				FC3B6078178456EF00953836 /* MyriadRegularLabel.m in Sources */,
 				FC3B607E1784574800953836 /* MyriadSemiboldLabel.m in Sources */,
+				FC3B60811784614000953836 /* OpenSansBold.m in Sources */,
+				FC3B6084178461A100953836 /* OpenSansLight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
