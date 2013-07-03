@@ -1,0 +1,1268 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>TKStateMachine Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">TransitionKit 1.1.1 </a></h1>
+				<a id="developerHome" href="../index.html">Blake Watters</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TKStateMachine Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/currentState">&nbsp;&nbsp;&nbsp;&nbsp;currentState</option>
+	
+	<option value="//api/name/events">&nbsp;&nbsp;&nbsp;&nbsp;events</option>
+	
+	<option value="//api/name/initialState">&nbsp;&nbsp;&nbsp;&nbsp;initialState</option>
+	
+	<option value="//api/name/states">&nbsp;&nbsp;&nbsp;&nbsp;states</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/activate">&nbsp;&nbsp;&nbsp;&nbsp;- activate</option>
+	
+	<option value="//api/name/addEvent:">&nbsp;&nbsp;&nbsp;&nbsp;- addEvent:</option>
+	
+	<option value="//api/name/addEvents:">&nbsp;&nbsp;&nbsp;&nbsp;- addEvents:</option>
+	
+	<option value="//api/name/addState:">&nbsp;&nbsp;&nbsp;&nbsp;- addState:</option>
+	
+	<option value="//api/name/addStates:">&nbsp;&nbsp;&nbsp;&nbsp;- addStates:</option>
+	
+	<option value="//api/name/canFireEvent:">&nbsp;&nbsp;&nbsp;&nbsp;- canFireEvent:</option>
+	
+	<option value="//api/name/eventNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- eventNamed:</option>
+	
+	<option value="//api/name/fireEvent:error:">&nbsp;&nbsp;&nbsp;&nbsp;- fireEvent:error:</option>
+	
+	<option value="//api/name/isActive">&nbsp;&nbsp;&nbsp;&nbsp;- isActive</option>
+	
+	<option value="//api/name/isInState:">&nbsp;&nbsp;&nbsp;&nbsp;- isInState:</option>
+	
+	<option value="//api/name/stateNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- stateNamed:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing States">Managing States</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Events">Managing Events</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Activating the State Machine">Activating the State Machine</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Firing Events">Firing Events</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/currentState">currentState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/events">events</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initialState">initialState</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/states">states</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activate">activate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addEvent:">addEvent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addEvents:">addEvents:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addState:">addState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addStates:">addStates:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/canFireEvent:">canFireEvent:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/eventNamed:">eventNamed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fireEvent:error:">fireEvent:error:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isActive">isActive</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isInState:">isInState:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stateNamed:">stateNamed:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="TKStateMachine Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TKStateMachine Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSCoding<br />NSCopying</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">TKStateMachine.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>TKStateMachine</code> class provides an interface for modeling a state machine. The state machine supports the registration of an arbitrary number of <a href="#//api/name/states">states</a> and <a href="#//api/name/events">events</a> that trigger transitions between the <a href="#//api/name/states">states</a>.</p>
+
+<h2>Callback Sequence</h2>
+
+<p>When a state machine is activated, the following callbacks are invoked:</p>
+
+<ol>
+<li>Initial State: willEnterState &ndash; The block set with <code>setWillEnterStateBlock:</code> on the <a href="#//api/name/initialState"><code>initialState</code></a> is invoked.</li>
+<li>The <a href="#//api/name/initialState"><code>initialState</code></a> changes from <code>nil</code> to <code>self.</code>initialState<code></code></li>
+<li>Initial State: didEnterState &ndash; The block set with <code>setDidEnterStateBlock:</code> on the <a href="#//api/name/initialState"><code>initialState</code></a> is invoked.</li>
+</ol>
+
+
+<p>Each time an event is fired, the following callbacks are invoked:</p>
+
+<ol>
+<li>Event: shouldFireEvent &ndash; The block set with <code>setShouldFireEventBlock:</code> on the event being fired is consulted to determine if the event can be fired. If <code>NO</code> is returned then the event is declined and no further callbacks are invoked</li>
+<li>Event: willFireEvent &ndash; The block set with <code>setWillFireEventBlock:</code> on the event being fired is invoked.</li>
+<li>Old State: willExitState &ndash; The block set with <code>setWillExitStateBlock:</code> on the outgoing state is invoked.</li>
+<li>New State: willEnterState &ndash; The block set with <code>setWillEnterStateBlock:</code> on the incoming state is invoked.</li>
+<li>The <a href="#//api/name/currentState"><code>currentState</code></a> changes from the old state to the new state.</li>
+<li>New State: didEnterState &ndash; The block set with <code>setDidEnterStateBlock:</code> on the new current state is invoked.</li>
+<li>Old State: didExitState &ndash; The block set with <code>setDidExitStateBlock:</code> on the old state is invoked.</li>
+<li>Event: didFireEvent &ndash; The block set with <code>setDidFireEventBlock:</code> on the event being fired is invoked.</li>
+<li>Notification: After the event has completed and all block callbacks</li>
+</ol>
+
+
+<h2>Copying and Serialization Support</h2>
+
+<p>The <code>TKStateMachine</code> class is both <code>NSCoding</code> and <code>NSCopying</code> compliant. When copied, a new inactive state machine instance is created with the same <a href="#//api/name/states">states</a>, <a href="#//api/name/events">events</a>, and initial state. All blocks associated with the <a href="#//api/name/events">events</a> and <a href="#//api/name/states">states</a> are copied. When archived, the current state, initial state, <a href="#//api/name/states">states</a>, <a href="#//api/name/events">events</a> and activation state is preserved. All block callbacks associated with the <a href="#//api/name/states">states</a> and <a href="#//api/name/events">events</a> become <code>nil</code>.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Managing States" name="task_Managing States"></a>
+						<h3 class="subsubtitle task-title">Managing States</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/states">&nbsp;&nbsp;states</a></code>
+		<span class="tooltip"><p>The set of states that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKState.html"><code>TKState</code></a> object.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initialState">&nbsp;&nbsp;initialState</a></code>
+		<span class="tooltip"><p>The initial state of the receiver.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/currentState">&nbsp;&nbsp;currentState</a></code>
+		<span class="tooltip"><p>The current state of the receiver.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addState:">&ndash;&nbsp;addState:</a></code>
+		<span class="tooltip"><p>Adds a state to the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addStates:">&ndash;&nbsp;addStates:</a></code>
+		<span class="tooltip"><p>Adds an array of state objects to the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stateNamed:">&ndash;&nbsp;stateNamed:</a></code>
+		<span class="tooltip"><p>Retrieves the state with the given name from the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isInState:">&ndash;&nbsp;isInState:</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver is in the specified state.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Managing Events" name="task_Managing Events"></a>
+						<h3 class="subsubtitle task-title">Managing Events</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/events">&nbsp;&nbsp;events</a></code>
+		<span class="tooltip"><p>The set of events that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> object.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addEvent:">&ndash;&nbsp;addEvent:</a></code>
+		<span class="tooltip"><p>Adds an event to the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/addEvents:">&ndash;&nbsp;addEvents:</a></code>
+		<span class="tooltip"><p>Adds an array of event objects to the receiver.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/eventNamed:">&ndash;&nbsp;eventNamed:</a></code>
+		<span class="tooltip"><p>Retrieves the event with the given name from the receiver.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Activating the State Machine" name="task_Activating the State Machine"></a>
+						<h3 class="subsubtitle task-title">Activating the State Machine</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activate">&ndash;&nbsp;activate</a></code>
+		<span class="tooltip"><p>Activates the receiver by making it immutable and transitioning into the initial state.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isActive">&ndash;&nbsp;isActive</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver has been activated.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Firing Events" name="task_Firing Events"></a>
+						<h3 class="subsubtitle task-title">Firing Events</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/canFireEvent:">&ndash;&nbsp;canFireEvent:</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the specified event can be fired.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fireEvent:error:">&ndash;&nbsp;fireEvent:error:</a></code>
+		<span class="tooltip"><p>Fires an event to transition the state of the receiver. If the event fails to fire, then <code>NO</code> is returned and an error is set.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/currentState" title="currentState"></a>
+	<h3 class="subsubtitle method-title">currentState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The current state of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, readonly) TKState *currentState</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The current state of the receiver.</p>
+
+<p>When the machine is activated, the current state transitions from <code>nil</code> to the <a href="#//api/name/initialState"><code>initialState</code></a>. Subsequent state transitions are trigger by the firing of <a href="#//api/name/events">events</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/events" title="events"></a>
+	<h3 class="subsubtitle method-title">events</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The set of events that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSSet *events</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The set of events that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initialState" title="initialState"></a>
+	<h3 class="subsubtitle method-title">initialState</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The initial state of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) TKState *initialState</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The initial state of the receiver.</p>
+
+<p>When the machine is activated, it transitions into the initial state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/states" title="states"></a>
+	<h3 class="subsubtitle method-title">states</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The set of states that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKState.html"><code>TKState</code></a> object.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSSet *states</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The set of states that have been added to the receiver. Each instance of the set is a <a href="../Classes/TKState.html"><code>TKState</code></a> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/activate" title="activate"></a>
+	<h3 class="subsubtitle method-title">activate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Activates the receiver by making it immutable and transitioning into the initial state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)activate</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Activates the receiver by making it immutable and transitioning into the initial state.</p>
+
+<p>Once the state machine has been activated no further changes can be made to the registered <a href="#//api/name/events">events</a> and <a href="#//api/name/states">states</a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addEvent:" title="addEvent:"></a>
+	<h3 class="subsubtitle method-title">addEvent:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an event to the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addEvent:(TKEvent *)<em>event</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>event</em></dt>
+			<dd><p>The event to be added.
+@raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.
+@raises NSInternalInconsistencyException Raised if the given event references a <a href="../Classes/TKState.html"><code>TKState</code></a> that has not been registered with the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an event to the receiver.</p>
+
+<p>The state objects references by the event must be registered with the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addEvents:" title="addEvents:"></a>
+	<h3 class="subsubtitle method-title">addEvents:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an array of event objects to the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addEvents:(NSArray *)<em>arrayOfEvents</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>arrayOfEvents</em></dt>
+			<dd><p>An array of <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> objets to be added to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an array of event objects to the receiver.</p>
+
+<p>This is a convenience method whose implementation is equivalent to the following example code:</p>
+
+<pre><code>for (TKEvent *event in arrayOfEvents) {
+    [self addEvent:event];
+}
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addState:" title="addState:"></a>
+	<h3 class="subsubtitle method-title">addState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds a state to the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addState:(TKState *)<em>state</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>state</em></dt>
+			<dd><p>The state to be added.
+@raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds a state to the receiver.</p>
+
+<p>Before a state can be used in an event, it must be registered with the state machine.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addStates:" title="addStates:"></a>
+	<h3 class="subsubtitle method-title">addStates:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Adds an array of state objects to the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)addStates:(NSArray *)<em>arrayOfStates</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>arrayOfStates</em></dt>
+			<dd><p>An array of <a href="../Classes/TKState.html"><code>TKState</code></a> objets to be added to the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Adds an array of state objects to the receiver.</p>
+
+<p>This is a convenience method whose implementation is equivalent to the following example code:</p>
+
+<pre><code>for (TKState *state in arrayOfStates) {
+    [self addState:state];
+}
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/canFireEvent:" title="canFireEvent:"></a>
+	<h3 class="subsubtitle method-title">canFireEvent:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the specified event can be fired.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)canFireEvent:(id)<em>eventOrEventName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventOrEventName</em></dt>
+			<dd><p>A <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> object or an <code>NSString</code> object that identifies an event by name. The source <a href="#//api/name/states">states</a> of the specified event is compared with the current state of the receiver. If the <code>sourceStates</code> of the event is <code>nil</code>, then the event can be fired from any state. If the <code>sourcesStates</code> is not <code>nil</code>, then the event can only be fired if it includes the <a href="#//api/name/currentState"><code>currentState</code></a> of the receiver.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the event can be fired, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the specified event can be fired.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/eventNamed:" title="eventNamed:"></a>
+	<h3 class="subsubtitle method-title">eventNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the event with the given name from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (TKEvent *)eventNamed:(NSString *)<em>name</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the event to retrieve.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The event object with the given name or <code>nil</code> if it could not be found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieves the event with the given name from the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fireEvent:error:" title="fireEvent:error:"></a>
+	<h3 class="subsubtitle method-title">fireEvent:error:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Fires an event to transition the state of the receiver. If the event fails to fire, then <code>NO</code> is returned and an error is set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)fireEvent:(id)<em>eventOrEventName</em> error:(NSError **)<em>error</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>eventOrEventName</em></dt>
+			<dd><p>A <a href="../Classes/TKEvent.html"><code>TKEvent</code></a> object or an <code>NSString</code> object that identifies an event by name.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>error</em></dt>
+			<dd><p>A pointer to an <code>NSError</code> object that will be set if the event fails to fire.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the event is fired, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Fires an event to transition the state of the receiver. If the event fails to fire, then <code>NO</code> is returned and an error is set.</p>
+
+<p>If the receiver has not yet been activated, then the first event fired will <a href="#//api/name/activate">activate</a> it. If the specified transition is not permitted, then <code>NO</code> will be returned and an <code>TKInvalidTransitionError</code> will be created. If the <code>shouldFireEventBlock</code> of the specified event returns <code>NO</code>, then the event is declined, <code>NO</code> will be returned, and an <code>TKTransitionDeclinedError</code> will be created.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isActive" title="isActive"></a>
+	<h3 class="subsubtitle method-title">isActive</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver has been activated.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isActive</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver has been activated.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isInState:" title="isInState:"></a>
+	<h3 class="subsubtitle method-title">isInState:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver is in the specified state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isInState:(id)<em>stateOrStateName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>stateOrStateName</em></dt>
+			<dd><p>A <a href="../Classes/TKState.html"><code>TKState</code></a> object or an <code>NSString</code> object that identifies a state by name. The specified state is compared with the value of the <a href="#//api/name/currentState"><code>currentState</code></a> property.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is in the specified state, else <code>NO</code>.
+@raises NSInvalidArgumentException Raised if an invalid object is given.
+@raises NSInvalidArgumentException Raised if a string value is given that does not identify a registered state.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver is in the specified state.</p>
+
+<p>This is a convenience method whose functionality is equivalent to comparing the given state with the <a href="#//api/name/currentState"><code>currentState</code></a>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stateNamed:" title="stateNamed:"></a>
+	<h3 class="subsubtitle method-title">stateNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Retrieves the state with the given name from the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (TKState *)stateNamed:(NSString *)<em>name</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>name</em></dt>
+			<dd><p>The name of the state to retrieve.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The state object with the given name or <code>nil</code> if it could not be found.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Retrieves the state with the given name from the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TKStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-07-03)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

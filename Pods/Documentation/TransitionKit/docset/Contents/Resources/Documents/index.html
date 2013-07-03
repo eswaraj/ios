@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>TransitionKit 1.1.1 Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">TransitionKit 1.1.1 </a></h1>
+				<a id="developerHome" href="index.html">Blake Watters</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">TransitionKit 1.1.1 Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">TransitionKit 1.1.1 Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>TransitionKit</h1>
+
+<p><a href="https://travis-ci.org/blakewatters/TransitionKit"><img src="https://travis-ci.org/blakewatters/TransitionKit.png?branch=master,development" alt="Build Status" /></a></p>
+
+<p><strong>A simple, elegantly designed block based API for implementing State Machines in Objective-C</strong></p>
+
+<p>TransitionKit is a small Cocoa library that provides an API for implementing a state machine in Objective C. It is full-featured, completely documented, and very thoroughly unit tested. State machines are a great way to manage complexity in your application and TransitionKit provides you with a great way to take advantage of a state machine in your next iOS or Mac OS X application.</p>
+
+<h3>Features</h3>
+
+<ul>
+<li>Supports an arbitrary number of States and Events.</li>
+<li>States and Events support a thorough set of block based callbacks for responding to state transitions.</li>
+<li>States, Events, and State Machines are NSCopying and NSCoding compliant, enabling easy integration with archiving and copying in your custom classes.</li>
+<li>Strongly enforced. The state machine includes numerous runtime checks for misconfigurations, making it easy to debug and trust your state machines.</li>
+<li>Completely Documented. The entire library is marked up with Appledoc.</li>
+<li>Thorougly unit tested. You know it works and can make changes with confidence.</li>
+<li>Lightweight. TransitionKit has no dependencies beyond the Foundation library and works on iOS and Mac OS X.</li>
+</ul>
+
+
+<h2>Installation via CocoaPods</h2>
+
+<p>The recommended approach for installing TransitionKit is via the <a href="http://cocoapods.org/">CocoaPods</a> package manager, as it provides flexible dependency management and dead simple installation. For best results, it is recommended that you install via CocoaPods <strong>>= 0.16.0</strong> using Git <strong>>= 1.8.0</strong> installed via Homebrew.</p>
+
+<p>Install CocoaPods if not already available:</p>
+
+<p><code>bash
+$ [sudo] gem install cocoapods
+$ pod setup
+</code></p>
+
+<p>Change to the directory of your Xcode project, and Create and Edit your Podfile and add TransitionKit:</p>
+
+<p>``` bash
+$ cd /path/to/MyProject
+$ touch Podfile
+$ edit Podfile
+platform :ios, &lsquo;5.0&rsquo;</p>
+
+<h1>Or platform :osx, &lsquo;10.7&rsquo;</h1>
+
+<p>pod &lsquo;TransitionKit&rsquo;, &lsquo;~> 1.0.0&rsquo;
+```</p>
+
+<p>Install into your project:</p>
+
+<p><code>bash
+$ pod install
+</code></p>
+
+<p>Open your project in Xcode from the .xcworkspace file (not the usual project file)</p>
+
+<p><code>bash
+$ open MyProject.xcworkspace
+</code></p>
+
+<h2>Examples</h2>
+
+<h4>Simple Example</h4>
+
+<p>The following example is a simple state machine that models the state of a Message in an Inbox.</p>
+
+<p>```objc
+<a href="Classes/TKStateMachine.html">TKStateMachine</a> *inboxStateMachine = [TKStateMachine new];</p>
+
+<p><a href="Classes/TKState.html">TKState</a> <em>unread = [TKState stateWithName:@&ldquo;Unread&rdquo;];
+[unread setDidEnterStateBlock:^(<a href="Classes/TKState.html">TKState</a> </em>state, <a href="Classes/TKStateMachine.html">TKStateMachine</a> *stateMachine) {</p>
+
+<pre><code>[self incrementUnreadCount];
+</code></pre>
+
+<p>}];
+<a href="Classes/TKState.html">TKState</a> <em>read = [TKState stateWithName:@&ldquo;Read&rdquo;];
+[read setDidExitStateBlock:^(<a href="Classes/TKState.html">TKState</a> </em>state, <a href="Classes/TKStateMachine.html">TKStateMachine</a> *stateMachine) {</p>
+
+<pre><code>[self decrementUnreadCount];
+</code></pre>
+
+<p>}];
+<a href="Classes/TKState.html">TKState</a> <em>deleted = [TKState stateWithName:@&ldquo;Deleted&rdquo;];
+[deleted setDidEnterStateBlock:^(<a href="Classes/TKState.html">TKState</a> </em>state, <a href="Classes/TKStateMachine.html">TKStateMachine</a> *stateMachine) {</p>
+
+<pre><code>[self moveMessageToTrash];
+</code></pre>
+
+<p>}];</p>
+
+<p>[inboxStateMachine addStatesFromArry:@[ unread, read, deleted ]];
+inboxStateMachine.initialState = unread;</p>
+
+<p><a href="Classes/TKEvent.html">TKEvent</a> <em>viewMessage = [<a href="Classes/TKEvent.html">TKEvent</a> eventWithName:@&ldquo;View Message&rdquo; transitioningFromStates:@[ unread ] toState:read];
+<a href="Classes/TKEvent.html">TKEvent</a> </em>deleteMessage = [<a href="Classes/TKEvent.html">TKEvent</a> eventWithName:@&ldquo;Delete Message&rdquo; transitioningFromStates:@[ read, unread ] toState:deleted];
+<a href="Classes/TKEvent.html">TKEvent</a> *markAsUnread = [TKEvent eventWithName:@&ldquo;Mark as Unread&rdquo; transitioningFromStates:@[ read, deleted ] toState:unread];</p>
+
+<p>[inboxStateMachine addEventsFromArray:@[ viewMessage, deleteMessage, markAsUnread ]];</p>
+
+<p>// Activate the state machine
+[inboxStateMachine activate];</p>
+
+<p>[inboxStateMachine isInState:@&ldquo;Unread&rdquo;]; // YES, the initial state</p>
+
+<p>// Fire some events
+NSError *error = nil;
+BOOL success = [inboxStateMachine fireEvent:@&ldquo;View Message&rdquo; error:&amp;error]; // YES
+success = [inboxStateMachine fireEvent:@&ldquo;Delete Message&rdquo; error:&amp;error]; // YES
+success = [inboxStateMachine fireEvent:@&ldquo;Mark as Unread&rdquo; error:&amp;error]; // YES</p>
+
+<p>success = [inboxStateMachine canFireEvent:@&ldquo;Mark as Unread&rdquo;]; // NO</p>
+
+<p>// Error. Cannot mark an Unread message as Unread
+success = [inboxStateMachine fireEvent:@&ldquo;Mark as Unread&rdquo; error:&amp;error]; // NO</p>
+
+<p>// error is an TKInvalidTransitionError with a descriptive error message and failure reason
+```</p>
+
+<h2>Unit Tests</h2>
+
+<p>TransitionKit is tested using the <a href="https://github.com/allending/Kiwi">Kiwi</a> BDD library. In order to run the tests, you must do the following:</p>
+
+<ol>
+<li>Install the dependencies via CocoaPods: <code>pod install</code></li>
+<li>Open the workspace: <code>open TransitionKit.xcworkspace</code></li>
+<li>Run the specs via the <strong>Product</strong> menu > <strong>Test</strong></li>
+</ol>
+
+
+<h2>Contact</h2>
+
+<p>Blake Watters</p>
+
+<ul>
+<li><a href="http://github.com/blakewatters">http://github.com/blakewatters</a></li>
+<li><a href="http://twitter.com/blakewatters">http://twitter.com/blakewatters</a></li>
+<li>blakewatters@gmail.com</li>
+</ul>
+
+
+<h2>License</h2>
+
+<p>TransitionKit is available under the Apache 2 License. See the LICENSE file for more info.</p>
+						
+						
+					</div>
+					
+                        
+                    
+					
+					
+					<div class="index-column">
+						<h2 class="index-title">Class References</h2>
+						<ul>
+							
+							<li><a href="Classes/TKEvent.html">TKEvent</a></li>
+							
+							<li><a href="Classes/TKState.html">TKState</a></li>
+							
+							<li><a href="Classes/TKStateMachine.html">TKStateMachine</a></li>
+							
+						</ul>
+					</div>
+					
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-07-03)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>

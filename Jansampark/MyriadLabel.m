@@ -22,7 +22,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
   self = [super initWithCoder:aDecoder];
   if(self) {
-    [self setFont:[UIFont fontWithName:@"MyriadPro-Regular" size:16]];
+    [self setFont:[UIFont fontWithName:@"MyriadPro-Regular" size:self.font.pointSize]];
   }
   return self;
 }

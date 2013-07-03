@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RKMappingInfo.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RKMappingInfo</TokenIdentifier>
+			<Abstract type="html">Specifies the concrete object mapping and collection of property mappings that were applied for a given key path during the execution of an RKMappingOperation.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/setObjectMapping:</TokenIdentifier>
+			<Abstract type="html">The mapping that was applied.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKObjectMapping *objectMapping</Declaration>
+			
+			
+			<Anchor>//api/name/objectMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/objectMapping</TokenIdentifier>
+			<Abstract type="html">The mapping that was applied.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKObjectMapping *objectMapping</Declaration>
+			
+			
+			<Anchor>//api/name/objectMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKMappingInfo/objectMapping</TokenIdentifier>
+			<Abstract type="html">The mapping that was applied.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKObjectMapping *objectMapping</Declaration>
+			
+			
+			<Anchor>//api/name/objectMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/setDynamicMapping:</TokenIdentifier>
+			<Abstract type="html">The dynamic mapping, if any, that was used to perform the mapping.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKDynamicMapping *dynamicMapping</Declaration>
+			
+			
+			<Anchor>//api/name/dynamicMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/dynamicMapping</TokenIdentifier>
+			<Abstract type="html">The dynamic mapping, if any, that was used to perform the mapping.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKDynamicMapping *dynamicMapping</Declaration>
+			
+			
+			<Anchor>//api/name/dynamicMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKMappingInfo/dynamicMapping</TokenIdentifier>
+			<Abstract type="html">The dynamic mapping, if any, that was used to perform the mapping.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) RKDynamicMapping *dynamicMapping</Declaration>
+			
+			
+			<Anchor>//api/name/dynamicMapping</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/setPropertyMappings:</TokenIdentifier>
+			<Abstract type="html">The set of property mappings that were applied from the mapping. An empty set indicates that the mapping matched the representation, but all values were unchanged and thus no properties were set.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *propertyMappings</Declaration>
+			
+			
+			<Anchor>//api/name/propertyMappings</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/propertyMappings</TokenIdentifier>
+			<Abstract type="html">The set of property mappings that were applied from the mapping. An empty set indicates that the mapping matched the representation, but all values were unchanged and thus no properties were set.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *propertyMappings</Declaration>
+			
+			
+			<Anchor>//api/name/propertyMappings</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKMappingInfo/propertyMappings</TokenIdentifier>
+			<Abstract type="html">The set of property mappings that were applied from the mapping. An empty set indicates that the mapping matched the representation, but all values were unchanged and thus no properties were set.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *propertyMappings</Declaration>
+			
+			
+			<Anchor>//api/name/propertyMappings</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/setRelationshipMappingInfo:</TokenIdentifier>
+			<Abstract type="html">A dictionary whose keys are the destination key path for a mapped relationship and the value is an array of RKMappingInfo objects specifying the mapping details for each item within the collection.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *relationshipMappingInfo</Declaration>
+			
+			
+			<Anchor>//api/name/relationshipMappingInfo</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/relationshipMappingInfo</TokenIdentifier>
+			<Abstract type="html">A dictionary whose keys are the destination key path for a mapped relationship and the value is an array of RKMappingInfo objects specifying the mapping details for each item within the collection.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *relationshipMappingInfo</Declaration>
+			
+			
+			<Anchor>//api/name/relationshipMappingInfo</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKMappingInfo/relationshipMappingInfo</TokenIdentifier>
+			<Abstract type="html">A dictionary whose keys are the destination key path for a mapped relationship and the value is an array of RKMappingInfo objects specifying the mapping details for each item within the collection.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSDictionary *relationshipMappingInfo</Declaration>
+			
+			
+			<Anchor>//api/name/relationshipMappingInfo</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKMappingInfo/objectForKeyedSubscript:</TokenIdentifier>
+			<Abstract type="html">Retrieves the property mapping with the specified destination key path.</Abstract>
+			<DeclaredIn>RKMappingOperation.h</DeclaredIn>			
+			
+			<Declaration>- (id)objectForKeyedSubscript:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract type="html">An NSString object specifying the destination key-path for the property that is to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The RKPropertyMapping with the specified destination key path or nil if none was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/objectForKeyedSubscript:</Anchor>
+            <NodeRef refid="24"/>
+		</Token>
+		
+	</File>
+</Tokens>

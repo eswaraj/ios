@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/TKStateMachine.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/TKStateMachine</TokenIdentifier>
+			<Abstract type="html">The TKStateMachine class provides an interface for modeling a state machine. The state machine supports the registration of an arbitrary number of states and events that trigger transitions between the states.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/setStates:</TokenIdentifier>
+			<Abstract type="html">The set of states that have been added to the receiver. Each instance of the set is a TKState object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *states</Declaration>
+			
+			
+			<Anchor>//api/name/states</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/states</TokenIdentifier>
+			<Abstract type="html">The set of states that have been added to the receiver. Each instance of the set is a TKState object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *states</Declaration>
+			
+			
+			<Anchor>//api/name/states</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TKStateMachine/states</TokenIdentifier>
+			<Abstract type="html">The set of states that have been added to the receiver. Each instance of the set is a TKState object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *states</Declaration>
+			
+			
+			<Anchor>//api/name/states</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/setInitialState:</TokenIdentifier>
+			<Abstract type="html">The initial state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) TKState *initialState</Declaration>
+			
+			
+			<Anchor>//api/name/initialState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/initialState</TokenIdentifier>
+			<Abstract type="html">The initial state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) TKState *initialState</Declaration>
+			
+			
+			<Anchor>//api/name/initialState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TKStateMachine/initialState</TokenIdentifier>
+			<Abstract type="html">The initial state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) TKState *initialState</Declaration>
+			
+			
+			<Anchor>//api/name/initialState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/setCurrentState:</TokenIdentifier>
+			<Abstract type="html">The current state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) TKState *currentState</Declaration>
+			
+			
+			<Anchor>//api/name/currentState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/currentState</TokenIdentifier>
+			<Abstract type="html">The current state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) TKState *currentState</Declaration>
+			
+			
+			<Anchor>//api/name/currentState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TKStateMachine/currentState</TokenIdentifier>
+			<Abstract type="html">The current state of the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) TKState *currentState</Declaration>
+			
+			
+			<Anchor>//api/name/currentState</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/addState:</TokenIdentifier>
+			<Abstract type="html">Adds a state to the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)addState:(TKState *)state</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>state</Name>
+					<Abstract type="html">The state to be added.
+@raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addState:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/addStates:</TokenIdentifier>
+			<Abstract type="html">Adds an array of state objects to the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)addStates:(NSArray *)arrayOfStates</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>arrayOfStates</Name>
+					<Abstract type="html">An array of TKState objets to be added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addStates:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/stateNamed:</TokenIdentifier>
+			<Abstract type="html">Retrieves the state with the given name from the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (TKState *)stateNamed:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the state to retrieve.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The state object with the given name or nil if it could not be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/stateNamed:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/isInState:</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver is in the specified state.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isInState:(id)stateOrStateName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>stateOrStateName</Name>
+					<Abstract type="html">A TKState object or an NSString object that identifies a state by name. The specified state is compared with the value of the currentState property.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the receiver is in the specified state, else NO.
+@raises NSInvalidArgumentException Raised if an invalid object is given.
+@raises NSInvalidArgumentException Raised if a string value is given that does not identify a registered state.</Abstract></ReturnValue>
+			<Anchor>//api/name/isInState:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/setEvents:</TokenIdentifier>
+			<Abstract type="html">The set of events that have been added to the receiver. Each instance of the set is a TKEvent object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *events</Declaration>
+			
+			
+			<Anchor>//api/name/events</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/events</TokenIdentifier>
+			<Abstract type="html">The set of events that have been added to the receiver. Each instance of the set is a TKEvent object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *events</Declaration>
+			
+			
+			<Anchor>//api/name/events</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/TKStateMachine/events</TokenIdentifier>
+			<Abstract type="html">The set of events that have been added to the receiver. Each instance of the set is a TKEvent object.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSSet *events</Declaration>
+			
+			
+			<Anchor>//api/name/events</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/addEvent:</TokenIdentifier>
+			<Abstract type="html">Adds an event to the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)addEvent:(TKEvent *)event</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>event</Name>
+					<Abstract type="html">The event to be added.
+@raises TKStateMachineIsImmutableException Raised if an attempt is made to modify the state machine after it has been activated.
+@raises NSInternalInconsistencyException Raised if the given event references a TKState that has not been registered with the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addEvent:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/addEvents:</TokenIdentifier>
+			<Abstract type="html">Adds an array of event objects to the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)addEvents:(NSArray *)arrayOfEvents</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>arrayOfEvents</Name>
+					<Abstract type="html">An array of TKEvent objets to be added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addEvents:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/eventNamed:</TokenIdentifier>
+			<Abstract type="html">Retrieves the event with the given name from the receiver.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (TKEvent *)eventNamed:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the event to retrieve.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The event object with the given name or nil if it could not be found.</Abstract></ReturnValue>
+			<Anchor>//api/name/eventNamed:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/activate</TokenIdentifier>
+			<Abstract type="html">Activates the receiver by making it immutable and transitioning into the initial state.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)activate</Declaration>
+			
+			
+			<Anchor>//api/name/activate</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/isActive</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver has been activated.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isActive</Declaration>
+			
+			
+			<Anchor>//api/name/isActive</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/canFireEvent:</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the specified event can be fired.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)canFireEvent:(id)eventOrEventName</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventOrEventName</Name>
+					<Abstract type="html">A TKEvent object or an NSString object that identifies an event by name. The source states of the specified event is compared with the current state of the receiver. If the sourceStates of the event is nil, then the event can be fired from any state. If the sourcesStates is not nil, then the event can only be fired if it includes the currentState of the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the event can be fired, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/canFireEvent:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/TKStateMachine/fireEvent:error:</TokenIdentifier>
+			<Abstract type="html">Fires an event to transition the state of the receiver. If the event fails to fire, then NO is returned and an error is set.</Abstract>
+			<DeclaredIn>TKStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)fireEvent:(id)eventOrEventName error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventOrEventName</Name>
+					<Abstract type="html">A TKEvent object or an NSString object that identifies an event by name.</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">A pointer to an NSError object that will be set if the event fails to fire.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the event is fired, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/fireEvent:error:</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+	</File>
+</Tokens>

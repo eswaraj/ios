@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RKOperationStateMachine.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RKOperationStateMachine</TokenIdentifier>
+			<Abstract type="html">The RKOperationStateMachine class provides an implementation of a state machine that is suitable for implementing a concurrent NSOperation subclass via composition. The concurrency mechanism is a dispatch queue. The state machine takes care of correctly implementing all aspects of a concurrent NSOperation including:
+1. Asynchronous execution
+1. Locking
+1. Appropriate state transitions
+1. Cancellation
+1. State Instrospection</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/initWithOperation:dispatchQueue:</TokenIdentifier>
+			<Abstract type="html">Initializes a new state machine object with a given operation and dispatch queue.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithOperation:(NSOperation *)operation dispatchQueue:(dispatch_queue_t)dispatchQueue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>operation</Name>
+					<Abstract type="html">The operation that the receiver is modeling the concurrent lifecycle of.</Abstract>
+				</Parameter><Parameter>
+					<Name>dispatchQueue</Name>
+					<Abstract type="html">The dispatch queue on which the operation executes concurrently.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The receiver, initialized with the given operation and queue.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithOperation:dispatchQueue:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isReady</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver is ready to be started.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isReady</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is ready to be started, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isReady</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isExecuting</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver is executing.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isExecuting</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is executing, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isExecuting</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isCancelled</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver has been cancelled.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isCancelled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver has been cancelled, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isCancelled</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isFinished</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver has finished executing.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isFinished</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is finished, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isFinished</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/start</TokenIdentifier>
+			<Abstract type="html">Starts the operation by transitioning into the executing state and asychronously invoking the execution block on the operation dispatch queue.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/finish</TokenIdentifier>
+			<Abstract type="html">Finishes the operation by transitioning from the executing state to the finished state. The state transition is executed asynchronously on the operation dispatch queue. Invokes the finalization block just before the state changes from executing to finished.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)finish</Declaration>
+			
+			
+			<Anchor>//api/name/finish</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/cancel</TokenIdentifier>
+			<Abstract type="html">Marks the operation is being cancelled. Cancellation results in state transition because cancellation semantics can vary widely. Once the cancellation flag has been set (isCancelled return YES), the cancellation block is invoked asynchronously on the operation dispatch queue. The operation must be finished as soon as possible.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setExecutionBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed on the operation dispatch queue once the operation transitions to the executing state.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)setExecutionBlock:(void ( ^ ) ( void ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setExecutionBlock:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setCancellationBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed when the operation is cancelled. The block will be invoked on the operation dispatch queue. Cancellation does not trigger any state transition -- the operation must still be explicitly finished as soon as possible. If appropriate, the operation may be finished within the body of the cancellation block.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)setCancellationBlock:(void ( ^ ) ( void ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setCancellationBlock:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setFinalizationBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed when the operation is about to transition from executing to finished. This block is invoked regardless of the cancellation state. This block should be used to perform any last minute cleanup or preparation before the operation finishes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)setFinalizationBlock:(void ( ^ ) ( void ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setFinalizationBlock:</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setOperation:</TokenIdentifier>
+			<Abstract type="html">The operation that the receiver is modeling the lifecycle of.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSOperation *operation</Declaration>
+			
+			
+			<Anchor>//api/name/operation</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/operation</TokenIdentifier>
+			<Abstract type="html">The operation that the receiver is modeling the lifecycle of.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSOperation *operation</Declaration>
+			
+			
+			<Anchor>//api/name/operation</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKOperationStateMachine/operation</TokenIdentifier>
+			<Abstract type="html">The operation that the receiver is modeling the lifecycle of.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readonly) NSOperation *operation</Declaration>
+			
+			
+			<Anchor>//api/name/operation</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setDispatchQueue:</TokenIdentifier>
+			<Abstract type="html">The dispatch queue within which the state machine executes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</Declaration>
+			
+			
+			<Anchor>//api/name/dispatchQueue</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/dispatchQueue</TokenIdentifier>
+			<Abstract type="html">The dispatch queue within which the state machine executes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</Declaration>
+			
+			
+			<Anchor>//api/name/dispatchQueue</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKOperationStateMachine/dispatchQueue</TokenIdentifier>
+			<Abstract type="html">The dispatch queue within which the state machine executes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</Declaration>
+			
+			
+			<Anchor>//api/name/dispatchQueue</Anchor>
+            <NodeRef refid="36"/>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RKISO8601DateFormatter.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RKISO8601DateFormatter</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>
+			
+			<NodeRef refid="14"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setTimeZone:</TokenIdentifier>
+			<Abstract type="html">The time zone for tge formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSTimeZone *timeZone</Declaration>
+			
+			
+			<Anchor>//api/name/timeZone</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/timeZone</TokenIdentifier>
+			<Abstract type="html">The time zone for tge formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSTimeZone *timeZone</Declaration>
+			
+			
+			<Anchor>//api/name/timeZone</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/timeZone</TokenIdentifier>
+			<Abstract type="html">The time zone for tge formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSTimeZone *timeZone</Declaration>
+			
+			
+			<Anchor>//api/name/timeZone</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setLocale:</TokenIdentifier>
+			<Abstract type="html">The locale for the formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSLocale *locale</Declaration>
+			
+			
+			<Anchor>//api/name/locale</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/locale</TokenIdentifier>
+			<Abstract type="html">The locale for the formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSLocale *locale</Declaration>
+			
+			
+			<Anchor>//api/name/locale</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/locale</TokenIdentifier>
+			<Abstract type="html">The locale for the formatter.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSLocale *locale</Declaration>
+			
+			
+			<Anchor>//api/name/locale</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setParsesStrictly:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that determines if the receiver parses strictly.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL parsesStrictly</Declaration>
+			
+			
+			<Anchor>//api/name/parsesStrictly</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/parsesStrictly</TokenIdentifier>
+			<Abstract type="html">A Boolean value that determines if the receiver parses strictly.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL parsesStrictly</Declaration>
+			
+			
+			<Anchor>//api/name/parsesStrictly</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/parsesStrictly</TokenIdentifier>
+			<Abstract type="html">A Boolean value that determines if the receiver parses strictly.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL parsesStrictly</Declaration>
+			
+			
+			<Anchor>//api/name/parsesStrictly</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/dateComponentsFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>- (NSDateComponents *)dateComponentsFromString:(NSString *)string</Declaration>
+			
+			
+			<Anchor>//api/name/dateComponentsFromString:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/dateFromString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>- (NSDate *)dateFromString:(NSString *)string</Declaration>
+			
+			
+			<Anchor>//api/name/dateFromString:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setFormat:</TokenIdentifier>
+			<Abstract type="html">Default*: RKISO8601DateFormatCalendar</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) RKISO8601DateFormat format</Declaration>
+			
+			
+			<Anchor>//api/name/format</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/format</TokenIdentifier>
+			<Abstract type="html">Default*: RKISO8601DateFormatCalendar</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) RKISO8601DateFormat format</Declaration>
+			
+			
+			<Anchor>//api/name/format</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/format</TokenIdentifier>
+			<Abstract type="html">Default*: RKISO8601DateFormatCalendar</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) RKISO8601DateFormat format</Declaration>
+			
+			
+			<Anchor>//api/name/format</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setIncludeTime:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that specifies if time should be included in the formatted strings.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL includeTime</Declaration>
+			
+			
+			<Anchor>//api/name/includeTime</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/includeTime</TokenIdentifier>
+			<Abstract type="html">A Boolean value that specifies if time should be included in the formatted strings.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL includeTime</Declaration>
+			
+			
+			<Anchor>//api/name/includeTime</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/includeTime</TokenIdentifier>
+			<Abstract type="html">A Boolean value that specifies if time should be included in the formatted strings.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL includeTime</Declaration>
+			
+			
+			<Anchor>//api/name/includeTime</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/setTimeSeparator:</TokenIdentifier>
+			<Abstract type="html">The separator character to use between time components.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) unichar timeSeparator</Declaration>
+			
+			
+			<Anchor>//api/name/timeSeparator</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/timeSeparator</TokenIdentifier>
+			<Abstract type="html">The separator character to use between time components.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) unichar timeSeparator</Declaration>
+			
+			
+			<Anchor>//api/name/timeSeparator</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKISO8601DateFormatter/timeSeparator</TokenIdentifier>
+			<Abstract type="html">The separator character to use between time components.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) unichar timeSeparator</Declaration>
+			
+			
+			<Anchor>//api/name/timeSeparator</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKISO8601DateFormatter/stringFromDate:</TokenIdentifier>
+			<Abstract type="html">Returns an ISO-8601 string representation of the given date.</Abstract>
+			<DeclaredIn>RKISO8601DateFormatter.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)stringFromDate:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>date</Name>
+					<Abstract type="html">The date to be formatted into a string.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An ISO-8601 formatted string representation of the date.</Abstract></ReturnValue>
+			<Anchor>//api/name/stringFromDate:</Anchor>
+            <NodeRef refid="14"/>
+		</Token>
+		
+	</File>
+</Tokens>

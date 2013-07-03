@@ -1,0 +1,1067 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>RKOperationStateMachine Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.2 </a></h1>
+				<a id="developerHome" href="../index.html">Blake Watters</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">RKOperationStateMachine Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/dispatchQueue">&nbsp;&nbsp;&nbsp;&nbsp;dispatchQueue</option>
+	
+	<option value="//api/name/operation">&nbsp;&nbsp;&nbsp;&nbsp;operation</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cancel">&nbsp;&nbsp;&nbsp;&nbsp;- cancel</option>
+	
+	<option value="//api/name/finish">&nbsp;&nbsp;&nbsp;&nbsp;- finish</option>
+	
+	<option value="//api/name/initWithOperation:dispatchQueue:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithOperation:dispatchQueue:</option>
+	
+	<option value="//api/name/isCancelled">&nbsp;&nbsp;&nbsp;&nbsp;- isCancelled</option>
+	
+	<option value="//api/name/isExecuting">&nbsp;&nbsp;&nbsp;&nbsp;- isExecuting</option>
+	
+	<option value="//api/name/isFinished">&nbsp;&nbsp;&nbsp;&nbsp;- isFinished</option>
+	
+	<option value="//api/name/isReady">&nbsp;&nbsp;&nbsp;&nbsp;- isReady</option>
+	
+	<option value="//api/name/setCancellationBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- setCancellationBlock:</option>
+	
+	<option value="//api/name/setExecutionBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- setExecutionBlock:</option>
+	
+	<option value="//api/name/setFinalizationBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- setFinalizationBlock:</option>
+	
+	<option value="//api/name/start">&nbsp;&nbsp;&nbsp;&nbsp;- start</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Initializing a State Machine">Initializing a State Machine</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Inspecting State">Inspecting State</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Firing Events">Firing Events</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuring Event Handlers">Configuring Event Handlers</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Accessing Configuration">Accessing Configuration</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dispatchQueue">dispatchQueue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/operation">operation</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancel">cancel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/finish">finish</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithOperation:dispatchQueue:">initWithOperation:dispatchQueue:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isCancelled">isCancelled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isExecuting">isExecuting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isFinished">isFinished</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isReady">isReady</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCancellationBlock:">setCancellationBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setExecutionBlock:">setExecutionBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFinalizationBlock:">setFinalizationBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/start">start</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="RKOperationStateMachine Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">RKOperationStateMachine Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">RKOperationStateMachine.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>The <code>RKOperationStateMachine</code> class provides an implementation of a state machine that is suitable for implementing a concurrent <code>NSOperation</code> subclass via composition. The concurrency mechanism is a dispatch queue. The state machine takes care of correctly implementing all aspects of a concurrent <code>NSOperation</code> including:
+1. Asynchronous execution
+1. Locking
+1. Appropriate state transitions
+1. Cancellation
+1. State Instrospection</p>
+
+<p>The state machine begins its life in the ready state. Upon <a href="#//api/name/start">start</a>, the state transitions to executing and a user-supplied execution block is invoked on the operation&rsquo;s dispatch queue. The <a href="#//api/name/operation">operation</a> remains in the executing state until it is finished. Just before the <a href="#//api/name/operation">operation</a> is finished, a finalization block is invoked. In the event that the <a href="#//api/name/operation">operation</a> is cancelled, then an optional cancellation block is invoked. Note that because cancellation semantics can vary widely, a cancelled <a href="#//api/name/operation">operation</a> is merely flagged as being cancelled. It is the responsibility of the <a href="#//api/name/operation">operation</a> to ensure that a cancelled <a href="#//api/name/operation">operation</a> is finished as soon as possible.</p>
+
+<p>The underlying implementation of the state machine is backed by <a href="http://github.com/blakewatters/TransitionKit">TransitionKit</a></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Initializing a State Machine" name="task_Initializing a State Machine"></a>
+						<h3 class="subsubtitle task-title">Initializing a State Machine</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithOperation:dispatchQueue:">&ndash;&nbsp;initWithOperation:dispatchQueue:</a></code>
+		<span class="tooltip"><p>Initializes a new state machine object with a given <a href="#//api/name/operation">operation</a> and dispatch queue.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Inspecting State" name="task_Inspecting State"></a>
+						<h3 class="subsubtitle task-title">Inspecting State</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isReady">&ndash;&nbsp;isReady</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver is ready to be started.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isExecuting">&ndash;&nbsp;isExecuting</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver is executing.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isCancelled">&ndash;&nbsp;isCancelled</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver has been cancelled.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isFinished">&ndash;&nbsp;isFinished</a></code>
+		<span class="tooltip"><p>Returns a Boolean value that indicates if the receiver has finished executing.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Firing Events" name="task_Firing Events"></a>
+						<h3 class="subsubtitle task-title">Firing Events</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/start">&ndash;&nbsp;start</a></code>
+		<span class="tooltip"><p>Starts the <a href="#//api/name/operation">operation</a> by transitioning into the executing state and asychronously invoking the execution block on the <a href="#//api/name/operation">operation</a> dispatch queue.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/finish">&ndash;&nbsp;finish</a></code>
+		<span class="tooltip"><p>Finishes the <a href="#//api/name/operation">operation</a> by transitioning from the executing state to the finished state. The state transition is executed asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. Invokes the finalization block just before the state changes from executing to finished.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
+		<span class="tooltip"><p>Marks the <a href="#//api/name/operation">operation</a> is being cancelled. Cancellation results in state transition because cancellation semantics can vary widely. Once the cancellation flag has been set (<a href="#//api/name/isCancelled"><code>isCancelled</code></a> return <code>YES</code>), the cancellation block is invoked asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. The <a href="#//api/name/operation">operation</a> must be finished as soon as possible.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Configuring Event Handlers" name="task_Configuring Event Handlers"></a>
+						<h3 class="subsubtitle task-title">Configuring Event Handlers</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setExecutionBlock:">&ndash;&nbsp;setExecutionBlock:</a></code>
+		<span class="tooltip"><p>Sets a block to be executed on the <a href="#//api/name/operation">operation</a> dispatch queue once the <a href="#//api/name/operation">operation</a> transitions to the executing state.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCancellationBlock:">&ndash;&nbsp;setCancellationBlock:</a></code>
+		<span class="tooltip"><p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is cancelled. The block will be invoked on the <a href="#//api/name/operation">operation</a> dispatch queue. Cancellation does not trigger any state transition &mdash; the <a href="#//api/name/operation">operation</a> must still be explicitly finished as soon as possible. If appropriate, the <a href="#//api/name/operation">operation</a> may be finished within the body of the cancellation block.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFinalizationBlock:">&ndash;&nbsp;setFinalizationBlock:</a></code>
+		<span class="tooltip"><p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is about to transition from executing to finished. This block is invoked regardless of the cancellation state. This block should be used to perform any last minute cleanup or preparation before the <a href="#//api/name/operation">operation</a> finishes.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Accessing Configuration" name="task_Accessing Configuration"></a>
+						<h3 class="subsubtitle task-title">Accessing Configuration</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/operation">&nbsp;&nbsp;operation</a></code>
+		<span class="tooltip"><p>The operation that the receiver is modeling the lifecycle of.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dispatchQueue">&nbsp;&nbsp;dispatchQueue</a></code>
+		<span class="tooltip"><p>The dispatch queue within which the state machine executes.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/dispatchQueue" title="dispatchQueue"></a>
+	<h3 class="subsubtitle method-title">dispatchQueue</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The dispatch queue within which the state machine executes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The dispatch queue within which the state machine executes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/operation" title="operation"></a>
+	<h3 class="subsubtitle method-title">operation</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The operation that the receiver is modeling the lifecycle of.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, weak, readonly) NSOperation *operation</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The operation that the receiver is modeling the lifecycle of.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cancel" title="cancel"></a>
+	<h3 class="subsubtitle method-title">cancel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Marks the <a href="#//api/name/operation">operation</a> is being cancelled. Cancellation results in state transition because cancellation semantics can vary widely. Once the cancellation flag has been set (<a href="#//api/name/isCancelled"><code>isCancelled</code></a> return <code>YES</code>), the cancellation block is invoked asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. The <a href="#//api/name/operation">operation</a> must be finished as soon as possible.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Marks the <a href="#//api/name/operation">operation</a> is being cancelled. Cancellation results in state transition because cancellation semantics can vary widely. Once the cancellation flag has been set (<a href="#//api/name/isCancelled"><code>isCancelled</code></a> return <code>YES</code>), the cancellation block is invoked asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. The <a href="#//api/name/operation">operation</a> must be finished as soon as possible.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/finish" title="finish"></a>
+	<h3 class="subsubtitle method-title">finish</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Finishes the <a href="#//api/name/operation">operation</a> by transitioning from the executing state to the finished state. The state transition is executed asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. Invokes the finalization block just before the state changes from executing to finished.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)finish</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Finishes the <a href="#//api/name/operation">operation</a> by transitioning from the executing state to the finished state. The state transition is executed asynchronously on the <a href="#//api/name/operation">operation</a> dispatch queue. Invokes the finalization block just before the state changes from executing to finished.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithOperation:dispatchQueue:" title="initWithOperation:dispatchQueue:"></a>
+	<h3 class="subsubtitle method-title">initWithOperation:dispatchQueue:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes a new state machine object with a given <a href="#//api/name/operation">operation</a> and dispatch queue.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (id)initWithOperation:(NSOperation *)<em>operation</em> dispatchQueue:(dispatch_queue_t)<em>dispatchQueue</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>operation</em></dt>
+			<dd><p>The <a href="#//api/name/operation">operation</a> that the receiver is modeling the concurrent lifecycle of.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dispatchQueue</em></dt>
+			<dd><p>The dispatch queue on which the <a href="#//api/name/operation">operation</a> executes concurrently.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The receiver, initialized with the given <a href="#//api/name/operation">operation</a> and queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes a new state machine object with a given <a href="#//api/name/operation">operation</a> and dispatch queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isCancelled" title="isCancelled"></a>
+	<h3 class="subsubtitle method-title">isCancelled</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver has been cancelled.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isCancelled</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver has been cancelled, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver has been cancelled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isExecuting" title="isExecuting"></a>
+	<h3 class="subsubtitle method-title">isExecuting</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver is executing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isExecuting</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is executing, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver is executing.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isFinished" title="isFinished"></a>
+	<h3 class="subsubtitle method-title">isFinished</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver has finished executing.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isFinished</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is finished, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver has finished executing.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/isReady" title="isReady"></a>
+	<h3 class="subsubtitle method-title">isReady</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a Boolean value that indicates if the receiver is ready to be started.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isReady</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the receiver is ready to be started, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a Boolean value that indicates if the receiver is ready to be started.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCancellationBlock:" title="setCancellationBlock:"></a>
+	<h3 class="subsubtitle method-title">setCancellationBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is cancelled. The block will be invoked on the <a href="#//api/name/operation">operation</a> dispatch queue. Cancellation does not trigger any state transition &mdash; the <a href="#//api/name/operation">operation</a> must still be explicitly finished as soon as possible. If appropriate, the <a href="#//api/name/operation">operation</a> may be finished within the body of the cancellation block.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCancellationBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to be executed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is cancelled. The block will be invoked on the <a href="#//api/name/operation">operation</a> dispatch queue. Cancellation does not trigger any state transition &mdash; the <a href="#//api/name/operation">operation</a> must still be explicitly finished as soon as possible. If appropriate, the <a href="#//api/name/operation">operation</a> may be finished within the body of the cancellation block.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setExecutionBlock:" title="setExecutionBlock:"></a>
+	<h3 class="subsubtitle method-title">setExecutionBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a block to be executed on the <a href="#//api/name/operation">operation</a> dispatch queue once the <a href="#//api/name/operation">operation</a> transitions to the executing state.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setExecutionBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to be executed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets a block to be executed on the <a href="#//api/name/operation">operation</a> dispatch queue once the <a href="#//api/name/operation">operation</a> transitions to the executing state.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFinalizationBlock:" title="setFinalizationBlock:"></a>
+	<h3 class="subsubtitle method-title">setFinalizationBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is about to transition from executing to finished. This block is invoked regardless of the cancellation state. This block should be used to perform any last minute cleanup or preparation before the <a href="#//api/name/operation">operation</a> finishes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setFinalizationBlock:(void ( ^ ) ( void ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to be executed.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets a block to be executed when the <a href="#//api/name/operation">operation</a> is about to transition from executing to finished. This block is invoked regardless of the cancellation state. This block should be used to perform any last minute cleanup or preparation before the <a href="#//api/name/operation">operation</a> finishes.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/start" title="start"></a>
+	<h3 class="subsubtitle method-title">start</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Starts the <a href="#//api/name/operation">operation</a> by transitioning into the executing state and asychronously invoking the execution block on the <a href="#//api/name/operation">operation</a> dispatch queue.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)start</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Starts the <a href="#//api/name/operation">operation</a> by transitioning into the executing state and asychronously invoking the execution block on the <a href="#//api/name/operation">operation</a> dispatch queue.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKOperationStateMachine.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-07-03)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

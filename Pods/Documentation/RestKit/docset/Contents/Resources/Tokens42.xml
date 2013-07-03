@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RKRelationshipConnectionOperation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RKRelationshipConnectionOperation</TokenIdentifier>
+			<Abstract type="html">The RKRelationshipConnectionOperation class is a subclass of NSOperation that manages the connection of NSManagedObject relationships as described by an RKConnectionDescription object. When executed, the operation will find related objects by searching the associated managed object cache for objects matching the connection description and setting them as the value for the relationship being connected.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>
+			
+			<NodeRef refid="42"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/initWithManagedObject:connections:managedObjectCache:</TokenIdentifier>
+			<Abstract type="html">Initializes the receiver with a given managed object, connection mapping, and managed object cache.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithManagedObject:(NSManagedObject *)managedObject connections:(NSArray *)connections managedObjectCache:(id&lt;RKManagedObjectCaching&gt;)managedObjectCache</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>managedObject</Name>
+					<Abstract type="html">The object to attempt to connect a relationship to.</Abstract>
+				</Parameter><Parameter>
+					<Name>connections</Name>
+					<Abstract type="html">An array of connection objects describing how establish a Core Data relationship between objects.</Abstract>
+				</Parameter><Parameter>
+					<Name>managedObjectCache</Name>
+					<Abstract type="html">The managed object cache from which to attempt to fetch a matching object to satisfy the connection.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">The receiver, initialized with the given managed object, connection mapping, and managed object cache.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithManagedObject:connections:managedObjectCache:</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/setManagedObject:</TokenIdentifier>
+			<Abstract type="html">The managed object the receiver will attempt to connect a relationship for.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSManagedObject *managedObject</Declaration>
+			
+			
+			<Anchor>//api/name/managedObject</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/managedObject</TokenIdentifier>
+			<Abstract type="html">The managed object the receiver will attempt to connect a relationship for.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSManagedObject *managedObject</Declaration>
+			
+			
+			<Anchor>//api/name/managedObject</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRelationshipConnectionOperation/managedObject</TokenIdentifier>
+			<Abstract type="html">The managed object the receiver will attempt to connect a relationship for.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSManagedObject *managedObject</Declaration>
+			
+			
+			<Anchor>//api/name/managedObject</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/setConnections:</TokenIdentifier>
+			<Abstract type="html">An array of RKConnectionDescription objects describing the relationship connection the receiver will attempt to connect.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *connections</Declaration>
+			
+			
+			<Anchor>//api/name/connections</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/connections</TokenIdentifier>
+			<Abstract type="html">An array of RKConnectionDescription objects describing the relationship connection the receiver will attempt to connect.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *connections</Declaration>
+			
+			
+			<Anchor>//api/name/connections</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRelationshipConnectionOperation/connections</TokenIdentifier>
+			<Abstract type="html">An array of RKConnectionDescription objects describing the relationship connection the receiver will attempt to connect.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSArray *connections</Declaration>
+			
+			
+			<Anchor>//api/name/connections</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/setManagedObjectCache:</TokenIdentifier>
+			<Abstract type="html">The managed object cache the receiver will use to fetch a related object satisfying the connection mapping.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;RKManagedObjectCaching&gt; managedObjectCache</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectCache</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/managedObjectCache</TokenIdentifier>
+			<Abstract type="html">The managed object cache the receiver will use to fetch a related object satisfying the connection mapping.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;RKManagedObjectCaching&gt; managedObjectCache</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectCache</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRelationshipConnectionOperation/managedObjectCache</TokenIdentifier>
+			<Abstract type="html">The managed object cache the receiver will use to fetch a related object satisfying the connection mapping.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) id&lt;RKManagedObjectCaching&gt; managedObjectCache</Declaration>
+			
+			
+			<Anchor>//api/name/managedObjectCache</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/setConnectedValuesByRelationshipName:</TokenIdentifier>
+			<Abstract type="html">A dictionary keyed by the name of each relationship that was established by the receiver wherein each value is the objects or objects that were connected.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *connectedValuesByRelationshipName</Declaration>
+			
+			
+			<Anchor>//api/name/connectedValuesByRelationshipName</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/connectedValuesByRelationshipName</TokenIdentifier>
+			<Abstract type="html">A dictionary keyed by the name of each relationship that was established by the receiver wherein each value is the objects or objects that were connected.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *connectedValuesByRelationshipName</Declaration>
+			
+			
+			<Anchor>//api/name/connectedValuesByRelationshipName</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRelationshipConnectionOperation/connectedValuesByRelationshipName</TokenIdentifier>
+			<Abstract type="html">A dictionary keyed by the name of each relationship that was established by the receiver wherein each value is the objects or objects that were connected.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSDictionary *connectedValuesByRelationshipName</Declaration>
+			
+			
+			<Anchor>//api/name/connectedValuesByRelationshipName</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRelationshipConnectionOperation/setConnectionBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed on the operation attempted to establish the connection.</Abstract>
+			<DeclaredIn>RKRelationshipConnectionOperation.h</DeclaredIn>			
+			
+			<Declaration>- (void)setConnectionBlock:(void ( ^ ) ( RKRelationshipConnectionOperation *operation , RKConnectionDescription *connection , id connectedValue ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">A block object to be executed when the connection is evaluated. The block accepts two arguments: the operation itself and the value, if any, that was set for the relationship targetted by the connection description.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setConnectionBlock:</Anchor>
+            <NodeRef refid="42"/>
+		</Token>
+		
+	</File>
+</Tokens>

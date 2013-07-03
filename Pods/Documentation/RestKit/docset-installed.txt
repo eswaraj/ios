@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/dhruv/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.restkit.RestKit-0.20.2.docset
+Time: 2013-07-03 12:16:33 +0000
