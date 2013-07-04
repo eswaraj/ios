@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *rightSegment;
 @property (strong, nonatomic) IBOutlet OpenSansBold *locLabel;
 @property (strong, nonatomic) IBOutlet OpenSansBold *leftSegmentLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *bigCircleBG;
 @end
 
 @implementation AnalyticsVC
@@ -36,6 +37,10 @@
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"] forState:(UIControlStateHighlighted | UIControlStateSelected)];
   [self.rightSegment setImage:[UIImage imageNamed:@"rightSegmentOn"] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+  if(!IS_IPHONE_5) {
+    
+    [self.bigCircleBG setFrame:CGRectMake(104, 54, 113, 113)];
+  }
   
 }
 

@@ -618,8 +618,8 @@
 		FC3B606D1784526000953836 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				FC3B608817848E2500953836 /* bigEllipsBG.png */,
 				18A2E2101782DFE50061E18D /* buttons */,
+				FC3B608817848E2500953836 /* bigEllipsBG.png */,
 				FC3B606E1784527200953836 /* leftSegmentOff.png */,
 				FC3B606F1784527200953836 /* leftSegmentOn.png */,
 				FC3B60701784527200953836 /* rightSegmentOff.png */,

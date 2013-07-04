@@ -49,8 +49,6 @@
 #pragma mark - Custom Methods
 
 - (void)configureFonts {
-  [self.locationLabel setFont:[UIFont fontWithName:@"MyriadPro-Semibold" size:12]];
-  [self.categoryLabel setFont:[UIFont fontWithName:@"MyriadPro-Regular" size:19]];
 }
 
 - (void)configureUI {
@@ -58,12 +56,12 @@
     [self.categoryLabel setHidden:YES];
     
     CGRect mapframe = self.mapSuperview.frame;
-    mapframe.size.height = mapframe.size.height - 20;
+    mapframe.size.height = mapframe.size.height - 10;
     [self.mapSuperview setFrame:mapframe];
     
-    CGRect buttonsFrame = self.buttonsView.frame;
-    buttonsFrame.origin.y = buttonsFrame.origin.y - 10;
-    [self.buttonsView  setFrame:buttonsFrame];
+//    CGRect buttonsFrame = self.buttonsView.frame;
+//    buttonsFrame.origin.y = buttonsFrame.origin.y - 10;
+//    [self.buttonsView  setFrame:buttonsFrame];
   }
 }
 
