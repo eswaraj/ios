@@ -11,8 +11,6 @@
 @interface IssuesCell ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
-@property (weak, nonatomic) IBOutlet UILabel *percentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *complaintLabel;
 
 @end
 
@@ -39,8 +37,7 @@
   NSLog(@"%@",self.titleLabel.text);
   [self.titleLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
   [self.categoryLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:9]];
-  [self.percentLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:14]];
-  [self.complaintLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:9]];
+
 }
 
 @end
