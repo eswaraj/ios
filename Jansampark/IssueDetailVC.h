@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IssueDetailVC : UIViewController
+@interface IssueDetailVC : UIViewController <UINavigationControllerDelegate ,UIImagePickerControllerDelegate>
 
 @end

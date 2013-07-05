@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xtP-zy-jmA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xtP-zy-jmA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -415,14 +415,14 @@
                                         <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Even after several complaints sddfsfd sfsdfds fsdfsd fsdffds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YY1-md-Qhx" customClass="OpenSansBold">
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Even after several complaints sddfsfd sfsdfds fsdfsd fsdffds" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YY1-md-Qhx" customClass="OpenSansBold">
                                         <rect key="frame" x="26" y="211" width="267" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zrr-Af-fax">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zrr-Af-fax">
                                         <rect key="frame" x="235" y="183" width="58" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -433,32 +433,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="editTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="I4L-Gu-ROy"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zht-IJ-cSI">
-                                        <rect key="frame" x="157" y="282" width="115" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Remove photo" image="remove_photo.png">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MAi-s5-zh1">
-                                        <rect key="frame" x="157" y="323" width="115" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" image="retake_photo.png">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V96-3g-ecv">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V96-3g-ecv">
                                         <rect key="frame" x="92" y="396" width="143" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -470,10 +449,124 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_bg.png" id="udy-aj-ET8">
-                                        <rect key="frame" x="40" y="262" width="102" height="103"/>
+                                    <view contentMode="scaleToFill" id="Udn-gp-NUc" userLabel="Add photo view">
+                                        <rect key="frame" x="0.0" y="258" width="320" height="113"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zTS-If-J5H">
+                                                <rect key="frame" x="68" y="56" width="53" height="54"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Button" image="attach_photo_button.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="attachPhotoTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="TtH-3E-rii"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HGw-JW-eFI">
+                                                <rect key="frame" x="204" y="56" width="53" height="54"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Button" image="take_photo_button.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="takePhotoTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="nED-6P-xLh"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Attach Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NbR-P8-BEL" customClass="MyriadRegularLabel">
+                                                <rect key="frame" x="58" y="33" width="90" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yv8-Ok-Q91" customClass="MyriadRegularLabel">
+                                                <rect key="frame" x="150" y="72" width="20" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Take Photo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9wJ-QP-gBs" customClass="MyriadRegularLabel">
+                                                <rect key="frame" x="195" y="33" width="79" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.47843137250000001" green="0.47843137250000001" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" id="x0m-Qf-kd7" userLabel="Added photo view">
+                                        <rect key="frame" x="0.0" y="258" width="320" height="113"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zht-IJ-cSI">
+                                                <rect key="frame" x="157" y="24" width="115" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Remove photo" image="remove_photo.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removePhotoTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="0Hk-2Q-cgO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MAi-s5-zh1">
+                                                <rect key="frame" x="157" y="65" width="115" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" image="retake_photo.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removePhotoTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="0F7-cw-ctw"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="eYf-eg-I7z">
+                                                <rect key="frame" x="43" y="7" width="96" height="97"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="photo_bg.png" id="udy-aj-ET8">
+                                                <rect key="frame" x="40" y="4" width="102" height="103"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CrK-W6-FW5">
+                                        <rect key="frame" x="21" y="205" width="272" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="add_description_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addDescriptionTapped:" destination="LSv-eA-6Fh" eventType="touchUpInside" id="8ls-BW-dfs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -481,6 +574,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Btk-SI-igP"/>
+                    <connections>
+                        <outlet property="addDescriptionOutlet" destination="CrK-W6-FW5" id="ao5-4F-V89"/>
+                        <outlet property="addPhotoView" destination="Udn-gp-NUc" id="mYw-5t-qso"/>
+                        <outlet property="categoryLabel" destination="X1e-3t-y21" id="4Qt-OT-Q31"/>
+                        <outlet property="descriptionLabel" destination="YY1-md-Qhx" id="qXa-r2-IsE"/>
+                        <outlet property="editButtonOutlet" destination="Zrr-Af-fax" id="RD2-Ab-3o6"/>
+                        <outlet property="imageView" destination="eYf-eg-I7z" id="EMa-z4-BZg"/>
+                        <outlet property="issueNameLabel" destination="zdk-rN-quT" id="ooF-aw-dpn"/>
+                        <outlet property="photoAddedView" destination="x0m-Qf-kd7" id="fz2-f3-61j"/>
+                        <outlet property="systemLevelLabel" destination="9h2-ua-eYu" id="5WM-uz-mKS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPh-ob-GCS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1047,10 +1151,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_description_button.png" width="544" height="72"/>
         <image name="analytics_button.png" width="160" height="45"/>
         <image name="analytics_button_select.png" width="160" height="45"/>
         <image name="annotation.png" width="33" height="48"/>
         <image name="arrow_right.png" width="21" height="29"/>
+        <image name="attach_photo_button.png" width="106" height="108"/>
         <image name="back_button.png" width="19" height="16"/>
         <image name="bigEllipsBG.png" width="341" height="341"/>
         <image name="complaint_icon.png" width="15" height="10"/>
@@ -1078,6 +1184,7 @@
         <image name="sewage_button.png" width="83" height="83"/>
         <image name="sewage_button1.png" width="83" height="85"/>
         <image name="tabbar_bg.png" width="500" height="46"/>
+        <image name="take_photo_button.png" width="106" height="108"/>
         <image name="transport_button1.png" width="83" height="85"/>
         <image name="transportation_button.png" width="83" height="83"/>
         <image name="walkthrough.png" width="320" height="568"/>
@@ -1099,6 +1206,8 @@
         <class className="ContainerVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
             <relationships>
+                <relationship kind="action" name="analyticsTapped:"/>
+                <relationship kind="action" name="issuesTapped:"/>
                 <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
@@ -1109,6 +1218,23 @@
         </class>
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
+            <relationships>
+                <relationship kind="action" name="addDescriptionTapped:"/>
+                <relationship kind="action" name="attachPhotoTapped:"/>
+                <relationship kind="action" name="backTapped:"/>
+                <relationship kind="action" name="editTapped:"/>
+                <relationship kind="action" name="removePhotoTapped:"/>
+                <relationship kind="action" name="takePhotoTapped:"/>
+                <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="editButtonOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="issueNameLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="photoAddedView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="systemLevelLabel" candidateClass="OpenSansBold"/>
+            </relationships>
         </class>
         <class className="IssuesCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesCell.h"/>
