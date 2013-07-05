@@ -868,44 +868,56 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzp-Xm-LK6" customClass="OpenSansBold">
-                                <rect key="frame" x="117" y="93" width="86" height="28"/>
+                            <view contentMode="scaleToFill" id="rWL-hH-YPA">
+                                <rect key="frame" x="85" y="82" width="151" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Issues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0tm-fN-Bpp" customClass="OpenSansLight">
-                                <rect key="frame" x="135" y="118" width="50" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2354" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4eQ-h9-JcF" customClass="OpenSansBold">
-                                <rect key="frame" x="99" y="142" width="123" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Complaints" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P58-At-qux" customClass="OpenSansLight">
-                                <rect key="frame" x="117" y="168" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzp-Xm-LK6" customClass="OpenSansBold">
+                                        <rect key="frame" x="32" y="15" width="86" height="28"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Issues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0tm-fN-Bpp" customClass="OpenSansLight">
+                                        <rect key="frame" x="50" y="38" width="50" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2354" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4eQ-h9-JcF" customClass="OpenSansBold">
+                                        <rect key="frame" x="14" y="60" width="123" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Complaints" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="P58-At-qux" customClass="OpenSansLight">
+                                        <rect key="frame" x="32" y="84" width="86" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.92549019610000005" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <connections>
                         <outlet property="bigCircleBG" destination="oOp-si-TDi" id="DiP-Ae-jQ3"/>
+                        <outlet property="complaintsCountLabel" destination="4eQ-h9-JcF" id="grP-nO-iSO"/>
+                        <outlet property="complaintsLabel" destination="P58-At-qux" id="7fs-gT-ld6"/>
+                        <outlet property="issueCountLabel" destination="Mzp-Xm-LK6" id="3LU-Se-O2h"/>
+                        <outlet property="issuesLabel" destination="0tm-fN-Bpp" id="PoQ-En-WPM"/>
                         <outlet property="leftSegment" destination="ndN-lQ-3Ga" id="X9m-Ox-uTL"/>
                         <outlet property="leftSegmentLabel" destination="o3M-Gy-BJy" id="wfb-dr-EJY"/>
                         <outlet property="locLabel" destination="04g-7i-70Q" id="hh4-tw-jM1"/>
                         <outlet property="rightSegment" destination="C8z-Oe-fTm" id="DaQ-Fl-fbq"/>
+                        <outlet property="statisticsView" destination="rWL-hH-YPA" id="tFM-f7-VOJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wjt-Bs-tQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1089,11 +1101,18 @@
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
+                <relationship kind="action" name="leftSegmentTapped:"/>
+                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="complaintsCountLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
+                <relationship kind="outlet" name="issueCountLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansLight"/>
                 <relationship kind="outlet" name="leftSegment" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="leftSegmentLabel" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="locLabel" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="rightSegment" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="statisticsView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="ContainerVC" superclassName="UIViewController">
@@ -1127,7 +1146,6 @@
         <class className="JSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
             <relationships>
-                <relationship kind="action" name="waterTapped:"/>
                 <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
