@@ -118,6 +118,7 @@
 		FC3B6084178461A100953836 /* OpenSansLight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6083178461A100953836 /* OpenSansLight.m */; };
 		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
+		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -249,6 +250,8 @@
 		FC3B6085178480B600953836 /* AnalyticsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsVC.h; sourceTree = "<group>"; };
 		FC3B6086178480B600953836 /* AnalyticsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsVC.m; sourceTree = "<group>"; };
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
+		FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,6 +603,8 @@
 		18BCE1881781A09800BA7D89 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */,
+				FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */,
 				FC3B607C1784574800953836 /* MyriadSemiboldLabel.h */,
 				FC3B607D1784574800953836 /* MyriadSemiboldLabel.m */,
 				FC3B607F1784614000953836 /* OpenSansBold.h */,
@@ -829,6 +834,7 @@
 				FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */,
 				18B4579617847F5100DCA030 /* MyriadBoldLabel.m in Sources */,
 				18B457AF178485FB00DCA030 /* IssueDetailVC.m in Sources */,
+				FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

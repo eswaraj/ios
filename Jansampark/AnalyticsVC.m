@@ -9,6 +9,7 @@
 #import "AnalyticsVC.h"
 #import "OpenSansBold.h"
 #import "OpenSansLight.h"
+#import "UICountingLabel.h"
 
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
@@ -19,10 +20,10 @@
 @property (strong, nonatomic) IBOutlet OpenSansBold *locLabel;
 @property (strong, nonatomic) IBOutlet OpenSansBold *leftSegmentLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *bigCircleBG;
-@property (strong, nonatomic) IBOutlet OpenSansBold *issueCountLabel;
+@property (strong, nonatomic) IBOutlet UICountingLabel *issueCountLabel;
 @property (strong, nonatomic) IBOutlet OpenSansLight *issuesLabel;
 @property (strong, nonatomic) IBOutlet OpenSansLight *complaintsLabel;
-@property (strong, nonatomic) IBOutlet OpenSansBold *complaintsCountLabel;
+@property (strong, nonatomic) IBOutlet UICountingLabel *complaintsCountLabel;
 @property (strong, nonatomic) IBOutlet UIView *statisticsView;
 @end
 
@@ -54,8 +55,20 @@
     CGRect frame = self.statisticsView.frame;
     frame.origin.y -= 34;
     [self.statisticsView setFrame:frame];
+  } else {
+    [self.issueCountLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:30]];
+    [self.complaintsCountLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:30]];
   }
   
+  
+  
+}
+
+- (void)viewDidAppear:(BOOL)animated  {
+  [super viewDidAppear:animated];
+  
+  self.complaintsCountLabel.format = @"%d";
+  [self.complaintsCountLabel countFrom:0 to:2345 withDuration:1.4];
 }
 
 - (void)didReceiveMemoryWarning

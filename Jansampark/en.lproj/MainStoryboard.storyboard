@@ -872,7 +872,7 @@
                                 <rect key="frame" x="85" y="82" width="151" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzp-Xm-LK6" customClass="OpenSansBold">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzp-Xm-LK6" customClass="UICountingLabel">
                                         <rect key="frame" x="32" y="15" width="86" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -886,7 +886,7 @@
                                         <color key="textColor" red="0.21088047445255476" green="0.20834283759124086" blue="0.21470118613138686" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2354" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4eQ-h9-JcF" customClass="OpenSansBold">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2354" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4eQ-h9-JcF" customClass="UICountingLabel">
                                         <rect key="frame" x="14" y="60" width="123" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1097,84 +1097,6 @@
         <image name="water_button.png" width="83" height="83"/>
         <image name="water_button1.png" width="83" height="85"/>
     </resources>
-    <classes>
-        <class className="AnalyticsVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
-            <relationships>
-                <relationship kind="action" name="leftSegmentTapped:"/>
-                <relationship kind="action" name="rightSegmentTapped:"/>
-                <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="complaintsCountLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
-                <relationship kind="outlet" name="issueCountLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansLight"/>
-                <relationship kind="outlet" name="leftSegment" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="leftSegmentLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="locLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="rightSegment" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="statisticsView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="ContainerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="issuesOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tabBarBG" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tabView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="IssueDetailVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
-        </class>
-        <class className="IssuesCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="IssuesVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="JSViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapSuperview" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MyriadBoldLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldLabel.h"/>
-        </class>
-        <class className="MyriadRegularLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadRegularLabel.h"/>
-        </class>
-        <class className="MyriadSemiboldLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadSemiboldLabel.h"/>
-        </class>
-        <class className="OpenSansBold" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansBold.h"/>
-        </class>
-        <class className="OpenSansLight" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansLight.h"/>
-        </class>
-        <class className="WalkthroughVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
