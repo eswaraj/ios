@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="257" width="320" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w17-xH-sGZ">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w17-xH-sGZ">
                                         <rect key="frame" x="219" y="116" width="83" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -84,8 +84,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="HFk-aB-2ye"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RbN-QJ-eoO">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RbN-QJ-eoO">
                                         <rect key="frame" x="119" y="116" width="83" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -96,8 +99,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="x51-a5-ldF"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Qv-dy-KGO">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Qv-dy-KGO">
                                         <rect key="frame" x="16" y="116" width="83" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -108,8 +114,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="miD-5f-yCL"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sDU-Qt-uvW">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="sDU-Qt-uvW">
                                         <rect key="frame" x="219" y="0.0" width="83" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -120,8 +129,11 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="u5P-CC-dx1"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BJb-fV-631">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BJb-fV-631">
                                         <rect key="frame" x="117" y="0.0" width="83" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -133,7 +145,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="waterTapped:" destination="2" eventType="touchUpInside" id="yiw-g2-oNU"/>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="XA5-mD-xjZ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tqF-MW-dFv">
@@ -147,6 +159,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="categoryButtonTapped:" destination="2" eventType="touchUpInside" id="FhV-CY-V3o"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Road" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Tx-FR-TVZ" customClass="MyriadRegularLabel">
                                         <rect key="frame" x="39" y="87" width="41" height="21"/>
@@ -213,7 +228,7 @@
             <objects>
                 <viewController storyboardIdentifier="IssuesVC" id="SOU-I1-24y" customClass="IssuesVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yil-9C-7PC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="510"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="dLY-92-tfm" userLabel="Navbar">
@@ -245,11 +260,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="water_banner.png" id="Jwm-gm-aZD">
-                                <rect key="frame" x="0.0" y="50" width="320" height="103"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Water_banner.png" id="Jwm-gm-aZD">
+                                <rect key="frame" x="0.0" y="44" width="320" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="15 Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e7n-Zg-O2M">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="15 Issues" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e7n-Zg-O2M" customClass="OpenSansBold">
                                 <rect key="frame" x="241" y="124" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -257,7 +272,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fq0-Ty-gGc">
-                                <rect key="frame" x="0.0" y="153" width="320" height="349"/>
+                                <rect key="frame" x="0.0" y="147" width="320" height="363"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="separatorColor" red="0.91764705882352937" green="0.90588235294117647" blue="0.87450980392156863" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -273,17 +288,17 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Water Since 5 Days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q7M-if-6hh">
-                                                    <rect key="frame" x="17" y="10" width="217" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="No Water Since 5 Days" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q7M-if-6hh" customClass="MyriadSemiboldLabel">
+                                                    <rect key="frame" x="17" y="1" width="271" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.20784313725490194" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lack in infrastructure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFN-fD-8O4">
-                                                    <rect key="frame" x="17" y="25" width="193" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lack in infrastructure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JFN-fD-8O4" customClass="OpenSansBold">
+                                                    <rect key="frame" x="17" y="35" width="193" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
@@ -297,6 +312,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="categoryLabel" destination="JFN-fD-8O4" id="DH6-ip-KUV"/>
+                                            <outlet property="leftBar" destination="tNM-ne-wNk" id="pO9-PD-sgT"/>
                                             <outlet property="titleLabel" destination="Q7M-if-6hh" id="7ys-6E-maL"/>
                                             <segue destination="LSv-eA-6Fh" kind="push" id="Kl3-oV-zGb"/>
                                         </connections>
@@ -316,6 +332,7 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="banner" destination="Jwm-gm-aZD" id="GZn-W4-ziA"/>
                         <outlet property="issuesLabel" destination="e7n-Zg-O2M" id="f5l-NP-jpd"/>
                         <outlet property="titleLabel" destination="MTf-Wz-TTt" id="xyo-dm-GS4"/>
                     </connections>
@@ -329,7 +346,7 @@
             <objects>
                 <viewController id="LSv-eA-6Fh" customClass="IssueDetailVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="arp-N8-Hzc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="528"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="490"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="RKa-nE-c0f" userLabel="Navbar">
@@ -1068,7 +1085,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="water_banner.png" id="wny-Hn-nPq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Water_banner.png" id="wny-Hn-nPq">
                                 <rect key="frame" x="0.0" y="50" width="320" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1166,6 +1183,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Water_banner.png" width="320" height="103"/>
         <image name="add_description_button.png" width="544" height="72"/>
         <image name="analytics_button.png" width="160" height="45"/>
         <image name="analytics_button_select.png" width="160" height="45"/>
@@ -1203,7 +1221,6 @@
         <image name="transport_button1.png" width="83" height="85"/>
         <image name="transportation_button.png" width="83" height="83"/>
         <image name="walkthrough.png" width="320" height="568"/>
-        <image name="water_banner.png" width="320" height="103"/>
         <image name="water_button.png" width="83" height="83"/>
         <image name="water_button1.png" width="83" height="85"/>
     </resources>
