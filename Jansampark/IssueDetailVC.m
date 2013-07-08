@@ -8,6 +8,7 @@
 
 #import "IssueDetailVC.h"
 #import "OpenSansBold.h"
+#import <RestKit/RestKit.h>
 
 @interface IssueDetailVC ()
 
@@ -64,6 +65,32 @@
   self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
   [self presentViewController:self.imagePicker animated:YES completion:nil];
   
+}
+
+- (IBAction)postComplaint:(id)sender {
+  
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"45.34", @"lat",
+                          @"-70.34", @"long",
+                          @"water", @"issue_type",
+                          [NSNumber numberWithInt:11], @"issue_tmpl_id",
+                          @"pretty bad situation", @"txt",
+                          @"123", @"reporter_id",
+                          @"BH-234, Ashok Vihar, Delhi", @"addr", nil];
+  
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:@"/html/dev/micronews/?q=phonegap/post"
+                                   parameters:params
+                                      success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    
+     NSLog(@"success result : %@", mappingResult);
+     
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    
+    NSLog(@"failure error : %@", error);
+    
+  }];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {

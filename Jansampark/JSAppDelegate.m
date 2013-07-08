@@ -7,12 +7,13 @@
 //
 
 #import "JSAppDelegate.h"
-
+#import "JSAPIInterface.h"
 @implementation JSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+  [JSAPIInterface sharedInterface];
     return YES;
 }
 							

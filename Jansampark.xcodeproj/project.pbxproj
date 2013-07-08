@@ -122,6 +122,12 @@
 		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
+		FCE10080178AE31C006FDB2E /* JSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */; };
+		FCE10083178AE3CA006FDB2E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE10082178AE3CA006FDB2E /* Constants.m */; };
+		FCE10085178AE6DC006FDB2E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE10084178AE6DC006FDB2E /* SystemConfiguration.framework */; };
+		FCE10087178AE6FB006FDB2E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE10086178AE6FB006FDB2E /* MobileCoreServices.framework */; };
+		FCE1008A178AE81E006FDB2E /* Jansampark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */; };
+		FCE1008D178AEC63006FDB2E /* JSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1008C178AEC63006FDB2E /* JSModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -258,6 +264,15 @@
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
 		FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAPIInterface.h; sourceTree = "<group>"; };
+		FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAPIInterface.m; sourceTree = "<group>"; };
+		FCE10081178AE3CA006FDB2E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FCE10082178AE3CA006FDB2E /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FCE10084178AE6DC006FDB2E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FCE10086178AE6FB006FDB2E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FCE10089178AE81E006FDB2E /* Jansampark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jansampark.xcdatamodel; sourceTree = "<group>"; };
+		FCE1008B178AEC63006FDB2E /* JSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSModel.h; sourceTree = "<group>"; };
+		FCE1008C178AEC63006FDB2E /* JSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +280,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE10087178AE6FB006FDB2E /* MobileCoreServices.framework in Frameworks */,
+				FCE10085178AE6DC006FDB2E /* SystemConfiguration.framework in Frameworks */,
 				1894AD51177DB346003538CE /* MapKit.framework in Frameworks */,
 				18456D8C177987CA0045B75B /* UIKit.framework in Frameworks */,
 				18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */,
@@ -433,6 +450,8 @@
 		18456D8A177987CA0045B75B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FCE10086178AE6FB006FDB2E /* MobileCoreServices.framework */,
+				FCE10084178AE6DC006FDB2E /* SystemConfiguration.framework */,
 				1894AD50177DB346003538CE /* MapKit.framework */,
 				18456D8B177987CA0045B75B /* UIKit.framework */,
 				18456D8D177987CA0045B75B /* Foundation.framework */,
@@ -448,6 +467,11 @@
 				188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */,
 				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
+				FCE10081178AE3CA006FDB2E /* Constants.h */,
+				FCE10082178AE3CA006FDB2E /* Constants.m */,
+				FCE1008B178AEC63006FDB2E /* JSModel.h */,
+				FCE1008C178AEC63006FDB2E /* JSModel.m */,
+				FCE1007D178AE2D5006FDB2E /* APIInterface */,
 				182EF1271782FF2D00F6F694 /* Issues */,
 				1894AD5D177DC0A1003538CE /* Container */,
 				1894AD5C177DC08C003538CE /* Home */,
@@ -640,6 +664,16 @@
 				FC3B60711784527200953836 /* rightSegmentOn.png */,
 			);
 			name = Analytics;
+			sourceTree = "<group>";
+		};
+		FCE1007D178AE2D5006FDB2E /* APIInterface */ = {
+			isa = PBXGroup;
+			children = (
+				FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */,
+				FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */,
+				FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */,
+			);
+			name = APIInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -847,6 +881,10 @@
 				18B4579617847F5100DCA030 /* MyriadBoldLabel.m in Sources */,
 				18B457AF178485FB00DCA030 /* IssueDetailVC.m in Sources */,
 				FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */,
+				FCE10080178AE31C006FDB2E /* JSAPIInterface.m in Sources */,
+				FCE10083178AE3CA006FDB2E /* Constants.m in Sources */,
+				FCE1008A178AE81E006FDB2E /* Jansampark.xcdatamodeld in Sources */,
+				FCE1008D178AEC63006FDB2E /* JSModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +1012,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCE10089178AE81E006FDB2E /* Jansampark.xcdatamodel */,
+			);
+			currentVersion = FCE10089178AE81E006FDB2E /* Jansampark.xcdatamodel */;
+			path = Jansampark.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18456D80177987CA0045B75B /* Project object */;
 }
