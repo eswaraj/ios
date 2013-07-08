@@ -10,6 +10,7 @@
 
 @interface IssuesCell : UITableViewCell
 
-- (void)configureFonts;
+
+- (void)setObject:(NSDictionary*)issue;
 
 @end

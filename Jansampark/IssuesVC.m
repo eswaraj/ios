@@ -12,6 +12,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *issuesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (strong, nonatomic) NSArray * issuesArray;
+
+@property (weak, nonatomic) IBOutlet UIImageView *banner;
+
 @end
 
 @implementation IssuesVC
@@ -27,15 +31,10 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-  [self configureFonts];
-	// Do any additional setup after loading the view.
-}
+  [super viewDidLoad];
+  [self configureUI];
+  [self fetchPlist];
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - IBActions
@@ -46,8 +45,44 @@
 
 #pragma mark - Custom Methods
 
-- (void)configureFonts {
-  [self.issuesLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
+- (void)configureUI {
+  NSString *bannerName = [NSString stringWithFormat:@"%@_banner.png",self.category];
+  UIImage *bannerImage = [UIImage imageNamed:bannerName];
+  [self.banner setImage:bannerImage];
+
+}
+
+- (void)fetchPlist {
+  NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+  // get documents path
+  NSString *documentsPath = [paths objectAtIndex:0];
+  // get the path to our Data/plist file
+  NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"Category.plist"];
+  
+  // check to see if Data.plist exists in documents
+  if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+  {
+    // if not in documents, get property list from main bundle
+    plistPath = [[NSBundle mainBundle] pathForResource:@"Category" ofType:@"plist"];
+  }
+  
+  // read property list into memory as an NSData object
+  NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
+  NSString *errorDesc = nil;
+  NSPropertyListFormat format;
+  // convert static property liost into dictionary object
+  NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+  if (!temp)
+  {
+    NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
+  }
+  // assign values
+  NSDictionary * category = [temp objectForKey:self.category];
+  self.issuesArray = [NSArray arrayWithArray:[category objectForKey:@"Issues"]];
+  
+  //setup issue label
+  NSString *issueCount = [category objectForKey:@"count"];
+  self.issuesLabel.text = [NSString stringWithFormat:@"%@ Issues",issueCount];
 }
 
 #pragma mark - TableView Datasource Methods
@@ -57,14 +92,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 5;
+  return self.issuesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *cellIdentifier = @"IssuesCell";
   
   IssuesCell *cell = (IssuesCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-  [cell configureFonts];
+  [cell setObject:[self.issuesArray objectAtIndex:indexPath.row]];
   return cell;
 }
 @end

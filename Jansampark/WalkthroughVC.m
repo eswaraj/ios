@@ -47,7 +47,6 @@
   CGRect frame = self.scrollView.bounds;
   frame.origin.x = self.pageControl.currentPage*frame.size.width;
   [self.scrollView scrollRectToVisible:frame animated:YES];
-  NSLog(@"%d",self.pageControl.currentPage);
 }
 
 

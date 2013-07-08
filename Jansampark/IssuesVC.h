@@ -11,4 +11,6 @@
 
 @interface IssuesVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) NSString *category;
+
 @end

@@ -40,8 +40,32 @@
 
 #pragma mark - IBActions 
 
-- (IBAction)waterTapped:(id)sender {
+- (IBAction)categoryButtonTapped:(id)sender {
   IssuesVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssuesVC"];
+  UIButton *button = (UIButton *)sender;
+  switch (button.tag) {
+    case 0:
+      [vc setCategory:@"Road"];
+      break;
+    case 1:
+      [vc setCategory:@"Water"];
+      break;
+    case 2:
+      [vc setCategory:@"Transportation"];
+      break;
+    case 3:
+      [vc setCategory:@"Electricity"];
+      break;
+    case 4:
+      [vc setCategory:@"Law"];
+      break;
+    case 5:
+      [vc setCategory:@"Sewage"];
+      break;
+    default:
+      break;
+  }
+  
   [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -59,9 +83,6 @@
     mapframe.size.height = mapframe.size.height - 10;
     [self.mapSuperview setFrame:mapframe];
     
-//    CGRect buttonsFrame = self.buttonsView.frame;
-//    buttonsFrame.origin.y = buttonsFrame.origin.y - 10;
-//    [self.buttonsView  setFrame:buttonsFrame];
   }
 }
 

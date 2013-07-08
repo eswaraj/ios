@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Electricity</key>
+	<dict>
+		<key>count</key>
+		<string>18</string>
+		<key>Category_id</key>
+		<string>49</string>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<string>01</string>
+				<key>text</key>
+				<string>Enough these power cuts</string>
+				<key>sys_code</key>
+				<string>00</string>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<string>02</string>
+				<key>text</key>
+				<string>No 24*7 power in my area</string>
+				<key>sys_code</key>
+				<string>00</string>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<string>11</string>
+				<key>text</key>
+				<string>Power stations and transformers not well maintained</string>
+				<key>sys_code</key>
+				<string>01</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Water</key>
+	<dict>
+		<key>count</key>
+		<string>14</string>
+		<key>Category_id</key>
+		<string>48</string>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<string>01</string>
+				<key>text</key>
+				<string>No municipality water in this area</string>
+				<key>sys_code</key>
+				<string>00</string>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<string>02</string>
+				<key>text</key>
+				<string>We have to heavily rely on tankers for water supply</string>
+				<key>sys_code</key>
+				<string>00</string>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<string>11</string>
+				<key>text</key>
+				<string>Water pipes leaking all over the place</string>
+				<key>sys_code</key>
+				<string>01</string>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
