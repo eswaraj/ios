@@ -12,4 +12,7 @@
 
 + (JSModel *)sharedModel;
 
+- (UIColor *)configureColorWithSystemCode:(NSNumber *)systemCode;
+- (NSString *)systemLevelWithSystemCode:(NSNumber *)systemCode;
+
 @end

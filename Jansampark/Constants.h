@@ -12,3 +12,8 @@
 #define kModelURL [[NSBundle mainBundle] URLForResource:@"Jansampark" withExtension:@"momd"]
 #define kJSAPIBaseURL [NSURL URLWithString:@"http://50.57.224.47"]
 #define kDataStoreFileName @"JS.sqlite"
+
+
+@interface Constants : NSObject
+
+@end
