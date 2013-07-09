@@ -4,6 +4,8 @@
 <dict>
 	<key>Electricity</key>
 	<dict>
+		<key>Issue_name</key>
+		<string>Electricity</string>
 		<key>Category_id</key>
 		<integer>49</integer>
 		<key>Issues</key>
@@ -12,7 +14,7 @@
 				<key>tmpl_id</key>
 				<integer>1</integer>
 				<key>text</key>
-				<string>Enough these power cuts</string>
+				<string>Enough these power cuts, increase power generation capacity.</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -22,20 +24,86 @@
 				<key>text</key>
 				<string>No 24*7 power in my area</string>
 				<key>sys_code</key>
-				<string>00</string>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>tmpl_id</key>
 				<integer>11</integer>
 				<key>text</key>
-				<string>Power stations and transformers not well maintained</string>
+				<string>Power stations and transformers not well maintained,making my area look dirty.</string>
 				<key>sys_code</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>Transformers unprotected. Blast every now and then.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>13</integer>
+				<key>text</key>
+				<string>Powerlines are hanging too low in my neighbourhood.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>21</integer>
+				<key>text</key>
+				<string>Electricity department staffs are rude.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>22</integer>
+				<key>text</key>
+				<string>Electricity  department staff totally outdated .. Stoneage</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string>Power too costly, totally not affordable, reduce prices.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>No initative from power department on educating customer.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>42</integer>
+				<key>text</key>
+				<string>Why we do not have electricity awareness day, I want to know what I pay for.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
 	<key>Water</key>
 	<dict>
+		<key>Issue_name</key>
+		<string>Water</string>
 		<key>Category_id</key>
 		<integer>48</integer>
 		<key>Issues</key>
@@ -52,7 +120,7 @@
 				<key>tmpl_id</key>
 				<integer>2</integer>
 				<key>text</key>
-				<string>We have to heavily rely on tankers for water supply</string>
+				<string>We have to heavily rely on tankers for water supply, please look into it.</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -60,9 +128,65 @@
 				<key>tmpl_id</key>
 				<integer>11</integer>
 				<key>text</key>
-				<string>Water pipes leaking all over the place</string>
+				<string>Water pipes leaking all over the place, water contamination dangers.</string>
 				<key>sys_code</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>Municipality water tastes bad/oily.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>21</integer>
+				<key>text</key>
+				<string>Water department staff very rude.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>22</integer>
+				<key>text</key>
+				<string>Water department staff totally outdated .. Stoneage.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string>Water bills are too high.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>32</integer>
+				<key>text</key>
+				<string>Water becoming totally inaffordable.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>Don&apos;t know how water comes to the city , please launch a water awareness day.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
