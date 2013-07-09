@@ -72,25 +72,55 @@
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                           @"45.34", @"lat",
                           @"-70.34", @"long",
-                          @"water", @"issue_type",
-                          [NSNumber numberWithInt:11], @"issue_tmpl_id",
+                          [NSNumber numberWithInt:48], @"issue_type",
+                          [NSNumber numberWithInt:1], @"issue_tmpl_id",
                           @"pretty bad situation", @"txt",
                           @"123", @"reporter_id",
                           @"BH-234, Ashok Vihar, Delhi", @"addr", nil];
   
-  [[RKObjectManager sharedManager] postObject:nil
-                                         path:@"/html/dev/micronews/?q=phonegap/post"
-                                   parameters:params
-                                      success:
-   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+  UIImage *image = [UIImage imageNamed:@"law_button1@2x.png"];
+  
+  NSMutableURLRequest *request = [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil method:RKRequestMethodPOST path:@"/html/dev/micronews/?q=phonegap/post" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                name:@"img"
+                            fileName:@"photo.jpg"
+                            mimeType:@"image/jpeg"];
     
-     NSLog(@"success result : %@", mappingResult);
-     
-  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     
-    NSLog(@"failure error : %@", error);
+    [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                name:@"profile_img"
+                            fileName:@"photo.jpg"
+                            mimeType:@"image/jpeg"];
     
   }];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  RKObjectRequestOperation *operation =
+  [[RKObjectManager sharedManager] managedObjectRequestOperationWithRequest:request
+                                                       managedObjectContext:context
+                                                                    success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     
+   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    
+     NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
+     
+   }];
+  [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+  
+//  [[RKObjectManager sharedManager] postObject:nil
+//                                         path:@"/html/dev/micronews/?q=phonegap/post"
+//                                   parameters:params
+//                                      success:
+//   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//    
+//     NSLog(@"success result : %@", mappingResult);
+//     
+//  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//    
+//    NSLog(@"failure error : %@", error);
+//    
+//  }];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
