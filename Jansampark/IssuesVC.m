@@ -8,6 +8,7 @@
 
 #import "IssuesVC.h"
 
+
 @interface IssuesVC ()
 @property (weak, nonatomic) IBOutlet UILabel *issuesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -32,8 +33,9 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self configureUI];
   [self fetchPlist];
+  [self configureUI];
+  
 
 }
 
@@ -49,7 +51,7 @@
   NSString *bannerName = [NSString stringWithFormat:@"%@_banner.png",self.category];
   UIImage *bannerImage = [UIImage imageNamed:bannerName];
   [self.banner setImage:bannerImage];
-
+  [self.issuesLabel setText:[NSString stringWithFormat:@"%d Issues",self.issuesArray.count]];
 }
 
 - (void)fetchPlist {
@@ -80,9 +82,6 @@
   NSDictionary * category = [temp objectForKey:self.category];
   self.issuesArray = [NSArray arrayWithArray:[category objectForKey:@"Issues"]];
   
-  //setup issue label
-  NSString *issueCount = [category objectForKey:@"count"];
-  self.issuesLabel.text = [NSString stringWithFormat:@"%@ Issues",issueCount];
 }
 
 #pragma mark - TableView Datasource Methods

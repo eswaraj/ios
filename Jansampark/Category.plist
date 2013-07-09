@@ -4,23 +4,21 @@
 <dict>
 	<key>Electricity</key>
 	<dict>
-		<key>count</key>
-		<string>18</string>
 		<key>Category_id</key>
-		<string>49</string>
+		<integer>49</integer>
 		<key>Issues</key>
 		<array>
 			<dict>
 				<key>tmpl_id</key>
-				<string>01</string>
+				<integer>1</integer>
 				<key>text</key>
 				<string>Enough these power cuts</string>
 				<key>sys_code</key>
-				<string>00</string>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>tmpl_id</key>
-				<string>02</string>
+				<integer>2</integer>
 				<key>text</key>
 				<string>No 24*7 power in my area</string>
 				<key>sys_code</key>
@@ -28,45 +26,43 @@
 			</dict>
 			<dict>
 				<key>tmpl_id</key>
-				<string>11</string>
+				<integer>11</integer>
 				<key>text</key>
 				<string>Power stations and transformers not well maintained</string>
 				<key>sys_code</key>
-				<string>01</string>
+				<integer>1</integer>
 			</dict>
 		</array>
 	</dict>
 	<key>Water</key>
 	<dict>
-		<key>count</key>
-		<string>14</string>
 		<key>Category_id</key>
-		<string>48</string>
+		<integer>48</integer>
 		<key>Issues</key>
 		<array>
 			<dict>
 				<key>tmpl_id</key>
-				<string>01</string>
+				<integer>1</integer>
 				<key>text</key>
 				<string>No municipality water in this area</string>
 				<key>sys_code</key>
-				<string>00</string>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>tmpl_id</key>
-				<string>02</string>
+				<integer>2</integer>
 				<key>text</key>
 				<string>We have to heavily rely on tankers for water supply</string>
 				<key>sys_code</key>
-				<string>00</string>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>tmpl_id</key>
-				<string>11</string>
+				<integer>11</integer>
 				<key>text</key>
 				<string>Water pipes leaking all over the place</string>
 				<key>sys_code</key>
-				<string>01</string>
+				<integer>1</integer>
 			</dict>
 		</array>
 	</dict>
