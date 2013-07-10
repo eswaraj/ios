@@ -7,8 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface JSModel : NSObject
+typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
+
+@interface JSModel : NSObject <CLLocationManagerDelegate>
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong) NSString *address;
+
+// Location Methods
+- (void)startTrackingLocation;
+- (void)stopTrackingLocation;
+- (void)getAddressFromLocation:(CLLocation *)location
+                 completion:(JSLocationGeocodedBlock)block;
 
 + (JSModel *)sharedModel;
 

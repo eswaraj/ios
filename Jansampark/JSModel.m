@@ -33,6 +33,89 @@ static JSModel *sharedModel = nil;
   return sharedModel;
 }
 
+- (id)init {
+  self = [super init];
+  if(self) {
+    
+    //TODO store last location of user in core data
+    // SET A DEFAULT LOCATION (NEW YORK)
+    self.address = @"Banglore";
+  }
+  return self;
+}
+
+#pragma mark - Location Tracking Methods
+
+- (void)startTrackingLocation {
+  if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+    
+  } else {
+    if (!self.locationManager) {
+      self.locationManager = [[CLLocationManager alloc] init];
+      self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+      self.locationManager.delegate = self;
+    }
+    [self.locationManager startMonitoringSignificantLocationChanges];
+  }
+}
+
+- (void)stopTrackingLocation {
+  [self.locationManager stopMonitoringSignificantLocationChanges];
+}
+
+#pragma mark - CLLocationManager Delegate
+
+- (void)locationManager:(CLLocationManager *)manager
+    didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation {
+  self.currentLocation = newLocation;
+  // Reverse geocode the location to get the city
+  [[NSNotificationCenter defaultCenter]
+   postNotificationName:@"Location_Updated"
+   object:nil
+   userInfo:nil];
+
+  [self getAddressFromLocation:newLocation completion:^(NSString *geocodedLocation) {
+    self.address = geocodedLocation;
+  }];
+}
+
+
+- (void)getAddressFromLocation:(CLLocation *)location
+                 completion:(JSLocationGeocodedBlock)block {
+  
+  CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+  [geocoder reverseGeocodeLocation:location
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                   if (placemarks.count) {
+                     NSString *address =
+                     [self formattedLocationForPlacemark:[placemarks objectAtIndex:0]];
+                     block(address);
+
+                   }
+                 }];
+}
+
+- (NSString *)formattedLocationForPlacemark:(CLPlacemark *)place {
+  NSString *street = [place.addressDictionary valueForKey:@"Street"];
+  NSString *city = [place.addressDictionary valueForKey:@"City"];
+  NSString *state = [place.addressDictionary valueForKey:@"State"];
+  
+  NSString *address = @"";
+  if(street) {
+    address = [address stringByAppendingString:street];
+    address = [address stringByAppendingString:@", "];
+  }
+  if(city) {
+    address = [address stringByAppendingString:city];
+    address = [address stringByAppendingString:@", "];
+  }
+  if(state) {
+    address = [address stringByAppendingString:state];
+  }
+  return address;
+}
+
 - (UIColor *)configureColorWithSystemCode:(NSNumber *)systemCode {
   
   switch ([systemCode intValue]) {

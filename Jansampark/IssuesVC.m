@@ -7,6 +7,7 @@
 //
 
 #import "IssuesVC.h"
+#import "IssueDetailVC.h"
 
 
 @interface IssuesVC ()
@@ -14,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (strong, nonatomic) NSArray * issuesArray;
+@property (strong, nonatomic) NSString *issueCategory;
+@property (strong, nonatomic) NSNumber *issueType;
 
 @property (weak, nonatomic) IBOutlet UIImageView *banner;
 
@@ -82,6 +85,10 @@
   NSDictionary * category = [temp objectForKey:self.category];
   self.issuesArray = [NSArray arrayWithArray:[category objectForKey:@"Issues"]];
   
+  //setting issues category and tmpl_id from plist
+  self.issueCategory = [category objectForKey:@"Issue_name"];
+  self.issueType = [category objectForKey:@"Category_id"];
+  
 }
 
 #pragma mark - TableView Datasource Methods
@@ -101,4 +108,17 @@
   [cell setObject:[self.issuesArray objectAtIndex:indexPath.row]];
   return cell;
 }
+
+#pragma mark - Tableview Delegate Methods
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  IssueDetailVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueDetailVC"];
+  [vc setIssue:[self.issuesArray objectAtIndex:indexPath.row]];
+  [vc setIssueCategory:self.issueCategory];
+  [vc setIssueType:self.issueType];
+  
+  [self.navigationController pushViewController:vc animated:YES];
+}
+
 @end

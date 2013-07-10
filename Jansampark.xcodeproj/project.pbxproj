@@ -65,6 +65,7 @@
 		18456DA0177987CA0045B75B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18456D9F177987CA0045B75B /* Default@2x.png */; };
 		18456DA2177987CA0045B75B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18456DA1177987CA0045B75B /* Default-568h@2x.png */; };
 		18456DA8177987CA0045B75B /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18456DA7177987CA0045B75B /* JSViewController.m */; };
+		1887BEC7178D552100EC5AB4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1887BEC6178D552100EC5AB4 /* CoreLocation.framework */; };
 		188CDB9317818D1B004DFEA5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */; };
 		1894AD41177D8421003538CE /* annotation@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD3C177D8421003538CE /* annotation@2x.png */; };
 		1894AD42177D8421003538CE /* info_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD3D177D8421003538CE /* info_button@2x.png */; };
@@ -199,6 +200,7 @@
 		18456DA1177987CA0045B75B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		18456DA6177987CA0045B75B /* JSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
 		18456DA7177987CA0045B75B /* JSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+		1887BEC6178D552100EC5AB4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		188CDB9217818D1B004DFEA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1894AD3C177D8421003538CE /* annotation@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "annotation@2x.png"; sourceTree = "<group>"; };
 		1894AD3D177D8421003538CE /* info_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info_button@2x.png"; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1887BEC7178D552100EC5AB4 /* CoreLocation.framework in Frameworks */,
 				FCE10087178AE6FB006FDB2E /* MobileCoreServices.framework in Frameworks */,
 				FCE10085178AE6DC006FDB2E /* SystemConfiguration.framework in Frameworks */,
 				1894AD51177DB346003538CE /* MapKit.framework in Frameworks */,
@@ -460,6 +463,7 @@
 		18456D8A177987CA0045B75B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1887BEC6178D552100EC5AB4 /* CoreLocation.framework */,
 				FCE10086178AE6FB006FDB2E /* MobileCoreServices.framework */,
 				FCE10084178AE6DC006FDB2E /* SystemConfiguration.framework */,
 				1894AD50177DB346003538CE /* MapKit.framework */,

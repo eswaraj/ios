@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IssueDetailVC : UIViewController <UINavigationControllerDelegate ,UIImagePickerControllerDelegate>
+@interface IssueDetailVC : UIViewController <UINavigationControllerDelegate ,UIImagePickerControllerDelegate, UITextViewDelegate>
+
+@property (strong, nonatomic)  NSMutableDictionary *issue;
+@property (strong, nonatomic)  NSString *issueCategory;
+@property (strong, nonatomic)  NSNumber *issueType;
 
 @end

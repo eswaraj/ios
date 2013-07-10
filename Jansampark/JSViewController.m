@@ -9,12 +9,18 @@
 #import "JSViewController.h"
 #import "WalkthroughVC.h"
 #import "IssuesVC.h"
+#import "JSModel.h"
+#import <MapKit/MapKit.h>
+
+#define METERS_PER_MILE 1609.344
 
 @interface JSViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *buttonsView;
 @property (weak, nonatomic) IBOutlet UIView *mapSuperview;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end
 
@@ -29,8 +35,13 @@
   [self configureFonts];
   [self configureUI];
 
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(updateMap:)
+                                               name:@"Location_Updated"
+                                             object:nil];
   
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -86,4 +97,17 @@
   }
 }
 
+- (void)updateMap:(NSNotification *)notif {
+  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
+  
+  CLLocationCoordinate2D zoomLocation;
+  zoomLocation.latitude = currentLocation.coordinate.latitude;
+  zoomLocation.longitude= currentLocation.coordinate.longitude;
+  // 2
+  MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
+  [self.mapView setRegion:viewRegion animated:YES];
+  [[JSModel sharedModel] getAddressFromLocation:[JSModel sharedModel].currentLocation completion:^(NSString *geocodedLocation) {
+    [self.locationLabel setText:geocodedLocation];
+  }];
+}
 @end

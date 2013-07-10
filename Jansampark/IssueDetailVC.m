@@ -7,15 +7,19 @@
 //
 
 #import "IssueDetailVC.h"
-#import "OpenSansBold.h"
+#import "MyriadBoldLabel.h"
+#import "JSModel.h"
 #import <RestKit/RestKit.h>
 
 @interface IssueDetailVC ()
 
-@property (weak, nonatomic) IBOutlet OpenSansBold *categoryLabel;
-@property (weak, nonatomic) IBOutlet OpenSansBold *issueNameLabel;
-@property (weak, nonatomic) IBOutlet OpenSansBold *systemLevelLabel;
-@property (weak, nonatomic) IBOutlet OpenSansBold *descriptionLabel;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *issueNameLabel;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UIButton *editButtonOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *addDescriptionOutlet;
@@ -39,6 +43,7 @@
   self.imagePicker.allowsEditing = YES;
   self.imagePicker.delegate = self;
   
+  [self configureUI];
 }
 
 #pragma mark - IBActions 
@@ -48,12 +53,25 @@
 }
 
 - (IBAction)editTapped:(id)sender {
+  [self.editButtonOutlet setHidden:YES];
+  [self.addDescriptionOutlet setHidden:YES];
+  [self.descriptionLabel setHidden:YES];
+  [self.descriptionTextView setHidden:NO];
+  [self.descriptionTextView becomeFirstResponder];
 }
 
 - (IBAction)addDescriptionTapped:(id)sender {
+  [self.editButtonOutlet setHidden:YES];
+  [self.addDescriptionOutlet setHidden:YES];
+  [self.descriptionLabel setHidden:YES];
+  [self.descriptionTextView setHidden:NO];
+  [self.descriptionTextView becomeFirstResponder];
 }
 
 - (IBAction)removePhotoTapped:(id)sender {
+  [self.addPhotoView setHidden:NO];
+  [self.photoAddedView setHidden:YES];
+  self.imageView.image = nil;
 }
 
 - (IBAction)attachPhotoTapped:(id)sender {
@@ -62,23 +80,33 @@
 }
 
 - (IBAction)takePhotoTapped:(id)sender {
-  self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+  if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+  } else {
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+  }
+  
   [self presentViewController:self.imagePicker animated:YES completion:nil];
   
 }
 
+
 - (IBAction)postComplaint:(id)sender {
+  [self.activityIndicator startAnimating];
   
+  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
+  NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+  NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"45.34", @"lat",
-                          @"-70.34", @"long",
-                          [NSNumber numberWithInt:48], @"issue_type",
-                          [NSNumber numberWithInt:1], @"issue_tmpl_id",
-                          @"pretty bad situation", @"txt",
+                          latitude, @"lat",
+                          longitude, @"long",
+                          self.issueType, @"issue_type",
+                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
+                          self.descriptionLabel.text, @"txt",
                           @"123", @"reporter_id",
-                          @"BH-234, Ashok Vihar, Delhi", @"addr", nil];
+                          [JSModel sharedModel].address, @"addr", nil];
   
-  UIImage *image = [UIImage imageNamed:@"law_button1@2x.png"];
+  UIImage *image = self.imageView.image;
   
   NSMutableURLRequest *request = [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil method:RKRequestMethodPOST path:@"/html/dev/micronews/?q=phonegap/post" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
@@ -93,6 +121,7 @@
                             mimeType:@"image/jpeg"];
     
   }];
+  
   NSManagedObjectContext *context =
   [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
   RKObjectRequestOperation *operation =
@@ -102,8 +131,10 @@
    ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
      
    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-    
-     NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
+     if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
+       [self.activityIndicator stopAnimating];
+     }
+     NSLog(@"kdsjhfksjd - \n%@", error.localizedRecoverySuggestion);
      
    }];
   [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
@@ -123,10 +154,52 @@
 //  }];
 }
 
+#pragma mark - Custom Methods
+
+- (void)configureUI {
+  [self.descriptionTextView setFont:[UIFont fontWithName:@"MyriadPro-Bold" size:14]];
+  
+  [self.categoryLabel setText:self.issueCategory];
+  [self.issueNameLabel setText:[self.issue objectForKey:@"text"]];
+  
+  NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
+  NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
+  [self.systemLevelLabel setText:systemLevel];
+}
+
+#pragma mark - ImagePicker Delegates
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
   self.imageView.image = img;
   [picker dismissViewControllerAnimated:YES completion:nil];
   [self.addPhotoView setHidden:YES];
   [self.photoAddedView setHidden:NO];
 }
+
+#pragma mark - TextView Delegate
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+  
+  if([text isEqualToString:@"\n"]) {
+    [textView resignFirstResponder];
+    if (textView.text.length) {
+      [self.descriptionLabel setText:textView.text];
+      [self.descriptionTextView setHidden:YES];
+      [self.descriptionLabel setHidden:NO];
+      [self.addDescriptionOutlet setHidden:YES];
+      [self.editButtonOutlet setHidden:NO];
+    } else {
+      [self.descriptionLabel setText:@""];
+      [self.descriptionTextView setHidden:YES];
+      [self.descriptionLabel setHidden:YES];
+      [self.addDescriptionOutlet setHidden:NO];
+      [self.editButtonOutlet setHidden:YES];
+    }
+    
+    return NO;
+  }
+  
+  return YES;
+}
+
 @end
