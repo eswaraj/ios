@@ -2,6 +2,470 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Law</key>
+	<dict>
+		<key>Issue_name</key>
+		<string>Law &amp; Order</string>
+		<key>Category_id</key>
+		<integer>53</integer>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>1</integer>
+				<key>text</key>
+				<string>No close by police station in my area.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>Rowdiness in on the rise in the neighbourhood.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>3</integer>
+				<key>text</key>
+				<string>My area feels very insecure.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string>Judgements are dragging for long , improve the judiciary.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>11</integer>
+				<key>text</key>
+				<string>Police station not well maintained, gives gloomy feeling. </string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>court compounds not well maintained.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>21</integer>
+				<key>text</key>
+				<string>Police station staff not co-operative.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>22</integer>
+				<key>text</key>
+				<string>Quality of lawyers detriorating</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string>Courts are becoming totally unaffordable do something.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>32</integer>
+				<key>text</key>
+				<string>Increase constable/Inspector salary ,, bribes on rise.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>Police is not working too hard to reach to people.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>42</integer>
+				<key>text</key>
+				<string>High level of distrust on police.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>43</integer>
+				<key>text</key>
+				<string>Should not be there a police awareness day , once in 3 months , where citizen should be encouraged to review there police stations, if they are happy with service of staff.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>44</integer>
+				<key>text</key>
+				<string>court system sucks, i want to bow out of contract of signing the constitution.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>45</integer>
+				<key>text</key>
+				<string>Should not there be a court awareness day, once in 3 months, where citizens should be encouraged to review there courts, to check that they are  happy with service of the staff.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>Transportation</key>
+	<dict>
+		<key>Issue_name</key>
+		<string>Transportation</string>
+		<key>Category_id</key>
+		<integer>52</integer>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>1</integer>
+				<key>text</key>
+				<string>No public buses on this route</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>No public buses in my area.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>3</integer>
+				<key>text</key>
+				<string>Traffic congestion too much, we need metro tracks.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>4</integer>
+				<key>text</key>
+				<string> Public buses not sufficient.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>5</integer>
+				<key>text</key>
+				<string>This point has become congestion hotspot do something</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>11</integer>
+				<key>text</key>
+				<string>Public buses not clean.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>Upgrade public buses  with wifi</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>21</integer>
+				<key>text</key>
+				<string> Autorickshaw refusal menance here</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>22</integer>
+				<key>text</key>
+				<string> Public buses conductor being rude.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>23</integer>
+				<key>text</key>
+				<string>Autorickshaw misbehavior menance here.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>24</integer>
+				<key>text</key>
+				<string>Please have a training programme before giving auto licenses.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string>Autorickshaw not following meters ... overcharging.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>32</integer>
+				<key>text</key>
+				<string>Reduce public bus fare</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>As citizen want to how bus system work please launch a awareness campaign</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>Road</key>
+	<dict>
+		<key>Issue_name</key>
+		<string>Roads</string>
+		<key>Category_id</key>
+		<integer>51</integer>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>1</integer>
+				<key>text</key>
+				<string>What will we do without roads ,, no roads here city sucks.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>No roads in my area.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>11</integer>
+				<key>text</key>
+				<string>There are potholes everywhere on this road</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>Road is in bad shape.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>13</integer>
+				<key>text</key>
+				<string>These roads are dirty all the time, do something</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string> Road tax too much</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>How these road tender get allocate , as citizen we need to know , please launch a awareness programme</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>No cleanliness , launch an awareness programme on how citizens can help.</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
+			</dict>
+		</array>
+	</dict>
+	<key>Sewage</key>
+	<dict>
+		<key>Issue_name</key>
+		<string>Sewage &amp; Sanitation / Environment</string>
+		<key>Category_id</key>
+		<integer>50</integer>
+		<key>Issues</key>
+		<array>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>1</integer>
+				<key>text</key>
+				<string>No Sewage pipe in my area .</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>2</integer>
+				<key>text</key>
+				<string>No close by municipality Garbage truck in my area.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>3</integer>
+				<key>text</key>
+				<string> Please increase the garbage truck capacity.</string>
+				<key>sys_code</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>11</integer>
+				<key>text</key>
+				<string>sewage is over flowing everywhere.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>12</integer>
+				<key>text</key>
+				<string>Lot of manholes left open.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>13</integer>
+				<key>text</key>
+				<string>Lot of garbage is left unaddressed.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>14</integer>
+				<key>text</key>
+				<string>My surrounding has become a garbage yard, please take care of it. </string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>15</integer>
+				<key>text</key>
+				<string>Garbage has made environment like hell, is this the city we dreamt of.</string>
+				<key>sys_code</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>21</integer>
+				<key>text</key>
+				<string>Sewage / Sanitation department staff very rude.</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>22</integer>
+				<key>text</key>
+				<string>Sewage/Sanitation  department staff totally outdated .. Stoneage</string>
+				<key>sys_code</key>
+				<integer>2</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>31</integer>
+				<key>text</key>
+				<string>Sewage charges are too much.</string>
+				<key>sys_code</key>
+				<integer>3</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>41</integer>
+				<key>text</key>
+				<string>Streets are dirty all the time, please launch awareness programme. Explain how citizens can help</string>
+				<key>sys_code</key>
+				<integer>4</integer>
+			</dict>
+			<dict>
+				<key>tmpl_id</key>
+				<integer>51</integer>
+				<key>text</key>
+				<string>Others</string>
+				<key>sys_code</key>
+				<integer>5</integer>
+			</dict>
+		</array>
+	</dict>
 	<key>Electricity</key>
 	<dict>
 		<key>Issue_name</key>
