@@ -7,33 +7,24 @@
 //
 
 #import "IssueSummaryVC.h"
+#import "OpenSansBold.h"
 
 @interface IssueSummaryVC ()
-
+@property (weak, nonatomic) IBOutlet OpenSansBold *mlaNameOutlet;
+@property (weak, nonatomic) IBOutlet OpenSansBold *mlaConstituency;
+@property (weak, nonatomic) IBOutlet UIImageView *mlaImageOutlet;
 @end
 
 @implementation IssueSummaryVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+  [self configureUI];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - IBActions
 
@@ -41,4 +32,15 @@
   [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+#pragma mark - Custom Methods
+
+- (void)configureUI {
+  [self.mlaNameOutlet setText:[self.mla name]];
+  [self.mlaConstituency setText:[NSString stringWithFormat:@"MLA, %@",[self.mla constituency]]];
+  
+  NSURL *url = [NSURL URLWithString:[self.mla image]];
+  NSData *data = [NSData dataWithContentsOfURL:url];
+  [self.mlaImageOutlet setImage:[UIImage imageWithData:data]];
+  
+}
 @end

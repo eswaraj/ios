@@ -14,6 +14,8 @@
 		1822EC46178E9141006C1785 /* done_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1822EC43178E9141006C1785 /* done_button.png */; };
 		1822EC47178E9141006C1785 /* summary_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1822EC44178E9141006C1785 /* summary_bg.png */; };
 		1822EC4A178E9A3C006C1785 /* IssueSummaryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1822EC49178E9A3C006C1785 /* IssueSummaryVC.m */; };
+		1822EC4D178EC1FE006C1785 /* MLA.m in Sources */ = {isa = PBXBuildFile; fileRef = 1822EC4C178EC1FE006C1785 /* MLA.m */; };
+		1822EC50178EC266006C1785 /* MLA+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1822EC4F178EC266006C1785 /* MLA+JSAPIAdditions.m */; };
 		1826BFE917816F7800D59525 /* analytics_button_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE117816F7800D59525 /* analytics_button_select.png */; };
 		1826BFEA17816F7800D59525 /* analytics_button_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE217816F7800D59525 /* analytics_button_select@2x.png */; };
 		1826BFEB17816F7800D59525 /* analytics_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1826BFE317816F7800D59525 /* analytics_button.png */; };
@@ -146,6 +148,10 @@
 		1822EC44178E9141006C1785 /* summary_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = summary_bg.png; sourceTree = "<group>"; };
 		1822EC48178E9A3C006C1785 /* IssueSummaryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueSummaryVC.h; sourceTree = "<group>"; };
 		1822EC49178E9A3C006C1785 /* IssueSummaryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueSummaryVC.m; sourceTree = "<group>"; };
+		1822EC4B178EC1FE006C1785 /* MLA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLA.h; sourceTree = "<group>"; };
+		1822EC4C178EC1FE006C1785 /* MLA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLA.m; sourceTree = "<group>"; };
+		1822EC4E178EC266006C1785 /* MLA+JSAPIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MLA+JSAPIAdditions.h"; sourceTree = "<group>"; };
+		1822EC4F178EC266006C1785 /* MLA+JSAPIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MLA+JSAPIAdditions.m"; sourceTree = "<group>"; };
 		1826BFE117816F7800D59525 /* analytics_button_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analytics_button_select.png; sourceTree = "<group>"; };
 		1826BFE217816F7800D59525 /* analytics_button_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "analytics_button_select@2x.png"; sourceTree = "<group>"; };
 		1826BFE317816F7800D59525 /* analytics_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = analytics_button.png; sourceTree = "<group>"; };
@@ -709,6 +715,10 @@
 				FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */,
 				FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */,
 				FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */,
+				1822EC4B178EC1FE006C1785 /* MLA.h */,
+				1822EC4C178EC1FE006C1785 /* MLA.m */,
+				1822EC4E178EC266006C1785 /* MLA+JSAPIAdditions.h */,
+				1822EC4F178EC266006C1785 /* MLA+JSAPIAdditions.m */,
 			);
 			name = APIInterface;
 			sourceTree = "<group>";
@@ -927,6 +937,8 @@
 				FCE1008A178AE81E006FDB2E /* Jansampark.xcdatamodeld in Sources */,
 				FCE1008D178AEC63006FDB2E /* JSModel.m in Sources */,
 				1822EC4A178E9A3C006C1785 /* IssueSummaryVC.m in Sources */,
+				1822EC4D178EC1FE006C1785 /* MLA.m in Sources */,
+				1822EC50178EC266006C1785 /* MLA+JSAPIAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

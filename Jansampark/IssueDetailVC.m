@@ -10,6 +10,8 @@
 #import "MyriadBoldLabel.h"
 #import "JSModel.h"
 #import <RestKit/RestKit.h>
+#import "MLA+JSAPIAdditions.h"
+#import "IssueSummaryVC.h"
 
 @interface IssueDetailVC ()
 
@@ -134,7 +136,46 @@
      if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
        [self.activityIndicator stopAnimating];
      }
-     NSLog(@"kdsjhfksjd - \n%@", error.localizedRecoverySuggestion);
+     NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
+     
+     
+     [[RKObjectManager sharedManager] postObject:nil path:@"/html/dev/micronews/getmlaid.php?lat=12.88&long=77.655" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+       
+     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+       NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
+       NSError *e = nil;
+       NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &e];
+       NSLog(@"failed error - %@",[jsonArray objectForKey:@"consti_id"]);
+       NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+       [f setNumberStyle:NSNumberFormatterDecimalStyle];
+       NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
+       [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+         if(success) {
+           MLA *mla = [result objectAtIndex:0];
+           
+           IssueSummaryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+           [vc setMla:mla];
+           [self.navigationController pushViewController:vc animated:YES];
+         } else {
+           
+         }
+       }];
+       
+//       [[RKObjectManager sharedManager] postObject:nil path:@"http://50.57.224.47/html/dev/micronews/mla-info/31" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+//         
+//         
+//       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+//        NSLog(@"mapping result %@",error.userInfo);
+////         NSData *jsonData2 = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
+////         NSError *e2 = nil;
+////         NSDictionary *jsonArray2 = [NSJSONSerialization JSONObjectWithData: jsonData2 options: NSJSONReadingMutableContainers error: &e2];
+////         NSLog(@"2failed error - %@",jsonArray2);
+//       }];
+
+       
+     }];
+     
+     
      
    }];
   [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];

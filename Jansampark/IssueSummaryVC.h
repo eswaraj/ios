@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MLA+JSAPIAdditions.h"
 @interface IssueSummaryVC : UIViewController
+
+@property (strong, nonatomic) MLA *mla;
 
 @end

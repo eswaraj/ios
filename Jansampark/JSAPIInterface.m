@@ -8,6 +8,7 @@
 
 #import "JSAPIInterface.h"
 #import "Constants.h"
+#import "MLA+JSAPIAdditions.h"
 
 static JSAPIInterface *__instance = nil;
 
@@ -86,7 +87,19 @@ static JSAPIInterface *__instance = nil;
 }
 
 - (void)setupMappings {
+  NSIndexSet *successSet = RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful);
+  RKManagedObjectStore *store = [RKObjectManager sharedManager].managedObjectStore;
   
+  // Set User Response descriptor
+  RKEntityMapping *mlaMapping = [MLA restkitObjectMappingForStore:store];
+  RKResponseDescriptor *mlaDescriptor =
+  [RKResponseDescriptor responseDescriptorWithMapping:mlaMapping
+                                          pathPattern:@"/html/dev/micronews/mla-info/:mlaid"
+                                              keyPath:@"nodes.node"
+                                          statusCodes:successSet];
+  [[RKObjectManager sharedManager] addResponseDescriptor:mlaDescriptor];
+  
+
 }
 
 
