@@ -129,6 +129,7 @@
 		FC3B6084178461A100953836 /* OpenSansLight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6083178461A100953836 /* OpenSansLight.m */; };
 		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
+		FC49792D178F0DC40043B84A /* searchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC49792C178F0DC40043B84A /* searchBG.png */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
 		FCE10080178AE31C006FDB2E /* JSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */; };
 		FCE10083178AE3CA006FDB2E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE10082178AE3CA006FDB2E /* Constants.m */; };
@@ -281,6 +282,7 @@
 		FC3B6085178480B600953836 /* AnalyticsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsVC.h; sourceTree = "<group>"; };
 		FC3B6086178480B600953836 /* AnalyticsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsVC.m; sourceTree = "<group>"; };
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
+		FC49792C178F0DC40043B84A /* searchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBG.png; sourceTree = "<group>"; };
 		FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAPIInterface.h; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 		FC3B606D1784526000953836 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				FC49792C178F0DC40043B84A /* searchBG.png */,
 				18A2E2101782DFE50061E18D /* buttons */,
 				FC3B608817848E2500953836 /* bigEllipsBG.png */,
 				FC3B606E1784527200953836 /* leftSegmentOff.png */,
@@ -876,6 +879,7 @@
 				1822EC45178E9141006C1785 /* another_complaint_button.png in Resources */,
 				1822EC46178E9141006C1785 /* done_button.png in Resources */,
 				1822EC47178E9141006C1785 /* summary_bg.png in Resources */,
+				FC49792D178F0DC40043B84A /* searchBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

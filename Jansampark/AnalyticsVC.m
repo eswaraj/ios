@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet OpenSansLight *complaintsLabel;
 @property (strong, nonatomic) IBOutlet UICountingLabel *complaintsCountLabel;
 @property (strong, nonatomic) IBOutlet UIView *statisticsView;
+@property (strong, nonatomic) IBOutlet UIView *searchOverlay;
+@property (strong, nonatomic) IBOutlet UITextField *searchField;
 @end
 
 @implementation AnalyticsVC
@@ -60,7 +62,10 @@
     [self.complaintsCountLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:30]];
   }
   
+  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissOverlay)];
+  [self.searchOverlay addGestureRecognizer:tapGesture];
   
+  [self.searchField setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
   
 }
 
@@ -87,10 +92,26 @@
 }
 
 - (IBAction)rightSegmentTapped:(id)sender {
-  [self.rightSegment setSelected:YES];
-  [self.leftSegment setSelected:NO];
-  [self.leftSegmentLabel setTextColor:kGreyishColor];
-  [self.locLabel setTextColor:[UIColor whiteColor]];
+  
+  if(!self.rightSegment.isSelected) {
+    [self.rightSegment setSelected:YES];
+    [self.leftSegment setSelected:NO];
+    [self.leftSegmentLabel setTextColor:kGreyishColor];
+    [self.locLabel setTextColor:[UIColor whiteColor]];
+  } else {
+    [self displaySearchView];
+  }
+  
+}
+
+- (void)displaySearchView {
+  [self.searchOverlay setHidden:NO];
+  [self.searchField becomeFirstResponder];
+}
+
+- (void)dismissOverlay {
+  [self.searchOverlay setHidden:YES];
+  [self.searchField resignFirstResponder];
 }
 
 @end
