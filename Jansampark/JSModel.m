@@ -7,6 +7,7 @@
 //
 
 #import "JSModel.h"
+#import "CHCSVParser.h"
 
 #define k00Color [UIColor colorWithRed:0.91 green:0.41 blue:0.41 alpha:1]
 #define k01Color [UIColor colorWithRed:0.97 green:0.72 blue:0.33 alpha:1]
@@ -40,6 +41,7 @@ static JSModel *sharedModel = nil;
     //TODO store last location of user in core data
     // SET A DEFAULT LOCATION (NEW YORK)
     self.address = @"Banglore";
+    [self parseConstituencyData];
   }
   return self;
 }
@@ -168,5 +170,13 @@ static JSModel *sharedModel = nil;
       return @"Others";
       break;
   }
+}
+
+- (void)parseConstituencyData {
+  NSString* path = [[NSBundle mainBundle] pathForResource:@"centroid"
+                                                   ofType:@"txt"];
+  self.delhiConst =
+  [NSArray arrayWithContentsOfCSVFile:path
+                              options:CHCSVParserOptionsStripsLeadingAndTrailingWhitespace];
 }
 @end

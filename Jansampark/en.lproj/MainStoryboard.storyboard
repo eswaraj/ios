@@ -1221,7 +1221,7 @@ cmU
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" id="K0Y-DJ-yaA">
+                                    <imageView alpha="0.40000000000000002" contentMode="scaleToFill" id="K0Y-DJ-yaA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1236,7 +1236,48 @@ cmU
                                         <color key="textColor" red="0.73540145985401462" green="0.73856637773722633" blue="0.73728330291970801" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="jVl-Fz-cSW" id="h6B-R3-XZn"/>
+                                        </connections>
                                     </textField>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="c2x-pf-zDE">
+                                        <rect key="frame" x="33" y="75" width="255" height="435"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationSearchCell" rowHeight="30" id="WoB-xd-ABK" customClass="LocationSearchCell">
+                                                <rect key="frame" x="0.0" y="22" width="255" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="255" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView contentMode="scaleToFill" image="locationCellBG.png" id="exe-Bs-Cv6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="255" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bmP-Pv-hjc" customClass="OpenSansBold">
+                                                            <rect key="frame" x="11" y="4" width="220" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" red="0.73540145990000005" green="0.7385663777" blue="0.73728330289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="locationName" destination="bmP-Pv-hjc" id="xfy-vA-XWQ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="jVl-Fz-cSW" id="uah-lz-QNR"/>
+                                            <outlet property="delegate" destination="jVl-Fz-cSW" id="P2m-31-6zh"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1253,6 +1294,8 @@ cmU
                         <outlet property="leftSegment" destination="ndN-lQ-3Ga" id="X9m-Ox-uTL"/>
                         <outlet property="leftSegmentLabel" destination="o3M-Gy-BJy" id="wfb-dr-EJY"/>
                         <outlet property="locLabel" destination="04g-7i-70Q" id="hh4-tw-jM1"/>
+                        <outlet property="locationSearcdhBackgroundImage" destination="K0Y-DJ-yaA" id="06Z-Ay-aIr"/>
+                        <outlet property="locationTable" destination="c2x-pf-zDE" id="PKG-Wb-2Vx"/>
                         <outlet property="rightSegment" destination="C8z-Oe-fTm" id="DaQ-Fl-fbq"/>
                         <outlet property="searchField" destination="1HX-gy-fRh" id="HMM-Oo-WdQ"/>
                         <outlet property="searchOverlay" destination="2NP-ql-QCb" id="qUw-eB-kq7"/>
@@ -1422,6 +1465,7 @@ cmU
         <image name="law_button1.png" width="83" height="85"/>
         <image name="leftSegmentOff.png" width="257" height="59"/>
         <image name="leftSegmentOn.png" width="257" height="59"/>
+        <image name="locationCellBG.png" width="511" height="60"/>
         <image name="mapoverlay.png" width="320" height="163"/>
         <image name="navbar_logo.png" width="113" height="34"/>
         <image name="photo_bg.png" width="102" height="103"/>
@@ -1444,6 +1488,119 @@ cmU
         <image name="water_button.png" width="83" height="83"/>
         <image name="water_button1.png" width="83" height="85"/>
     </resources>
+    <classes>
+        <class className="AnalyticsVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
+                <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
+                <relationship kind="outlet" name="issueCountLabel" candidateClass="UICountingLabel"/>
+                <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansLight"/>
+                <relationship kind="outlet" name="leftSegment" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="leftSegmentLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="locLabel" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="locationSearcdhBackgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="locationTable" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="rightSegment" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="searchOverlay" candidateClass="UIView"/>
+                <relationship kind="outlet" name="statisticsView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="ContainerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
+                <relationship kind="outlet" name="issuesOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tabBarBG" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tabView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="IssueDetailVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="MyriadBoldLabel"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="MyriadBoldLabel"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="editButtonOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="issueNameLabel" candidateClass="MyriadBoldLabel"/>
+                <relationship kind="outlet" name="photoAddedView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="systemLevelLabel" candidateClass="MyriadBoldLabel"/>
+            </relationships>
+        </class>
+        <class className="IssueSummaryVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueSummaryVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mlaConstituency" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="mlaImageOutlet" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="mlaNameOutlet" candidateClass="OpenSansBold"/>
+            </relationships>
+        </class>
+        <class className="IssuesCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="leftBar" candidateClass="UIView"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="IssuesVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="JSViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapSuperview" candidateClass="UIView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="LocationSearchCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationSearchCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationName" candidateClass="OpenSansBold"/>
+            </relationships>
+        </class>
+        <class className="MyriadBoldLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldLabel.h"/>
+        </class>
+        <class className="MyriadRegularLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadRegularLabel.h"/>
+        </class>
+        <class className="MyriadSemiboldLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadSemiboldLabel.h"/>
+        </class>
+        <class className="OpenSansBold" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansBold.h"/>
+        </class>
+        <class className="OpenSansLight" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansLight.h"/>
+        </class>
+        <class className="UICountingLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICountingLabel.h"/>
+        </class>
+        <class className="WalkthroughVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

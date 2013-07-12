@@ -33,7 +33,7 @@
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);
   }];
-  }
+}
 
 
 @end

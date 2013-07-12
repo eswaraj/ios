@@ -10,10 +10,11 @@
 #import "OpenSansBold.h"
 #import "OpenSansLight.h"
 #import "UICountingLabel.h"
-
+#import "JSModel.h"
+#import "LocationSearchCell.h"
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
-@interface AnalyticsVC ()
+@interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *leftSegment;
 @property (strong, nonatomic) IBOutlet UIButton *rightSegment;
@@ -27,6 +28,9 @@
 @property (strong, nonatomic) IBOutlet UIView *statisticsView;
 @property (strong, nonatomic) IBOutlet UIView *searchOverlay;
 @property (strong, nonatomic) IBOutlet UITextField *searchField;
+@property (strong, nonatomic) NSArray *locationSearchResults;
+@property (strong, nonatomic) IBOutlet UITableView *locationTable;
+@property (strong, nonatomic) IBOutlet UIImageView *locationSearcdhBackgroundImage;
 @end
 
 @implementation AnalyticsVC
@@ -65,7 +69,13 @@
   UITapGestureRecognizer *tapGesture =
   [[UITapGestureRecognizer alloc] initWithTarget:self
                                           action:@selector(dismissOverlay)];
-  [self.searchOverlay addGestureRecognizer:tapGesture];
+  [self.locationSearcdhBackgroundImage addGestureRecognizer:tapGesture];
+  
+  UITapGestureRecognizer *tableTapGesture =
+  [[UITapGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(dismissOverlay)];
+  [self.locationTable addGestureRecognizer:tableTapGesture];
+  
   [self.searchField setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
 }
 
@@ -112,6 +122,69 @@
 - (void)dismissOverlay {
   [self.searchOverlay setHidden:YES];
   [self.searchField resignFirstResponder];
+}
+
+#pragma mark - TextField Delegates 
+
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string {
+  
+  NSString *newString = [textField.text stringByReplacingCharactersInRange:range
+                                                                withString:string];
+  
+  NSPredicate *searchPredicate = [NSPredicate predicateWithBlock:
+                                  ^BOOL(id evaluatedObject, NSDictionary *bindings) {
+    NSArray *object = (NSArray *)evaluatedObject;
+    if([self doesString:[object objectAtIndex:0] containSubstring:newString]) {
+      return YES;
+    } else {
+      return NO;
+    }
+  }];
+  
+  self.locationSearchResults =
+  [[[JSModel sharedModel] delhiConst] filteredArrayUsingPredicate:searchPredicate];
+  [self.locationTable reloadData];
+  
+  return YES;
+}
+
+- (BOOL)doesString:(NSString *)string containSubstring:(NSString *)substring{
+  if([string length] == 0 || [substring length] == 0)
+    return NO;
+  NSRange textRange;
+  textRange = [[string lowercaseString] rangeOfString:[substring lowercaseString]];
+  
+  if(textRange.location != NSNotFound)
+  {
+    return YES;
+  }else{
+    return NO;
+  }
+}
+
+#pragma mark - TableView DataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section  {
+  return self.locationSearchResults.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  LocationSearchCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LocationSearchCell"];
+  [cell.locationName setText:[[self.locationSearchResults objectAtIndex:indexPath.row] objectAtIndex:0]];
+  
+  UITapGestureRecognizer *cellapGesture =
+  [[UITapGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(doNothing:)];
+  [cell addGestureRecognizer:cellapGesture];
+  return cell;
+}
+
+- (void)doNothing:(id)sender {
+  int row = [self.locationTable indexPathForCell:(UITableViewCell *)[(UITapGestureRecognizer *)sender view]].row;
+  NSString *constituency = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:0];
+  NSLog(@"const : %@", constituency);
 }
 
 @end

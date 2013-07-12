@@ -16,6 +16,7 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSArray *delhiConst;
 
 // Location Methods
 - (void)startTrackingLocation;
