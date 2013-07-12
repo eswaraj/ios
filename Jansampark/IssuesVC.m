@@ -76,7 +76,11 @@
   NSString *errorDesc = nil;
   NSPropertyListFormat format;
   // convert static property liost into dictionary object
-  NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML mutabilityOption:NSPropertyListMutableContainersAndLeaves format:&format errorDescription:&errorDesc];
+  NSDictionary *temp =
+  (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML
+                                                   mutabilityOption:NSPropertyListMutableContainersAndLeaves
+                                                             format:&format
+                                                   errorDescription:&errorDesc];
   if (!temp)
   {
     NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);

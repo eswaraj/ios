@@ -27,7 +27,8 @@
             completion:(JSAPICompletionBlock)block {
 
   NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/mla-info/%@",mla_id];
-  [[RKObjectManager sharedManager] postObject:nil path:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+  [[RKObjectManager sharedManager] postObject:nil path:path parameters:nil success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     block(YES, [mappingResult array], nil);
   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
     block(NO, nil, error);

@@ -431,6 +431,8 @@
 		1835D1C5178AE6E700435DB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FCE1008B178AEC63006FDB2E /* JSModel.h */,
+				FCE1008C178AEC63006FDB2E /* JSModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -513,8 +515,6 @@
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
 				FCE10081178AE3CA006FDB2E /* Constants.h */,
 				FCE10082178AE3CA006FDB2E /* Constants.m */,
-				FCE1008B178AEC63006FDB2E /* JSModel.h */,
-				FCE1008C178AEC63006FDB2E /* JSModel.m */,
 				FCE1007D178AE2D5006FDB2E /* APIInterface */,
 				1835D1C5178AE6E700435DB1 /* Model */,
 				182EF1271782FF2D00F6F694 /* Issues */,

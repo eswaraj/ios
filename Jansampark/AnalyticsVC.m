@@ -62,11 +62,11 @@
     [self.complaintsCountLabel setFont:[UIFont fontWithName:@"OpenSans-Bold" size:30]];
   }
   
-  UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissOverlay)];
+  UITapGestureRecognizer *tapGesture =
+  [[UITapGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(dismissOverlay)];
   [self.searchOverlay addGestureRecognizer:tapGesture];
-  
   [self.searchField setFont:[UIFont fontWithName:@"OpenSans-Bold" size:12]];
-  
 }
 
 - (void)viewDidAppear:(BOOL)animated  {

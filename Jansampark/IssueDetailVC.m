@@ -110,7 +110,14 @@
   
   UIImage *image = self.imageView.image;
   
-  NSMutableURLRequest *request = [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil method:RKRequestMethodPOST path:@"/html/dev/micronews/?q=phonegap/post" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+  NSMutableURLRequest *request =
+  [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
+                                                           method:RKRequestMethodPOST
+                                                             path:@"/html/dev/micronews/?q=phonegap/post"
+                                                       parameters:params
+                                        constructingBodyWithBlock:
+   ^(id<AFMultipartFormData> formData) {
+     
     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
                                 name:@"img"
                             fileName:@"photo.jpg"
@@ -139,60 +146,36 @@
      NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
      
      
-     [[RKObjectManager sharedManager] postObject:nil path:@"/html/dev/micronews/getmlaid.php?lat=12.88&long=77.655" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     [[RKObjectManager sharedManager] postObject:nil
+                                            path:@"/html/dev/micronews/getmlaid.php?lat=12.88&long=77.655"
+                                      parameters:nil
+                                         success:
+      ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
        
      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
        NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
        NSError *e = nil;
-       NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData: jsonData options: NSJSONReadingMutableContainers error: &e];
-       NSLog(@"failed error - %@",[jsonArray objectForKey:@"consti_id"]);
+       NSDictionary *jsonArray =
+       [NSJSONSerialization JSONObjectWithData:jsonData
+                                       options:NSJSONReadingMutableContainers
+                                         error: &e];
        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
        [f setNumberStyle:NSNumberFormatterDecimalStyle];
        NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
        [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
          if(success) {
            MLA *mla = [result objectAtIndex:0];
-           
-           IssueSummaryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+           IssueSummaryVC *vc =
+           [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
            [vc setMla:mla];
            [self.navigationController pushViewController:vc animated:YES];
          } else {
            
          }
-       }];
-       
-//       [[RKObjectManager sharedManager] postObject:nil path:@"http://50.57.224.47/html/dev/micronews/mla-info/31" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//         
-//         
-//       } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//        NSLog(@"mapping result %@",error.userInfo);
-////         NSData *jsonData2 = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
-////         NSError *e2 = nil;
-////         NSDictionary *jsonArray2 = [NSJSONSerialization JSONObjectWithData: jsonData2 options: NSJSONReadingMutableContainers error: &e2];
-////         NSLog(@"2failed error - %@",jsonArray2);
-//       }];
-
-       
+       }];       
      }];
-     
-     
-     
    }];
   [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
-  
-//  [[RKObjectManager sharedManager] postObject:nil
-//                                         path:@"/html/dev/micronews/?q=phonegap/post"
-//                                   parameters:params
-//                                      success:
-//   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//    
-//     NSLog(@"success result : %@", mappingResult);
-//     
-//  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//    
-//    NSLog(@"failure error : %@", error);
-//    
-//  }];
 }
 
 #pragma mark - Custom Methods
@@ -210,7 +193,9 @@
 
 #pragma mark - ImagePicker Delegates
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)img
+                  editingInfo:(NSDictionary *)editInfo {
   self.imageView.image = img;
   [picker dismissViewControllerAnimated:YES completion:nil];
   [self.addPhotoView setHidden:YES];
@@ -219,7 +204,9 @@
 
 #pragma mark - TextView Delegate
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+- (BOOL)textView:(UITextView *)textView
+shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text {
   
   if([text isEqualToString:@"\n"]) {
     [textView resignFirstResponder];

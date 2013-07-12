@@ -53,14 +53,16 @@
 #pragma mark - Custom Methods
 
 - (void)configureUI {
-
-  self.scrollView.contentSize = CGSizeMake(3*self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+  self.scrollView.contentSize =
+  CGSizeMake(3 * self.scrollView.bounds.size.width,
+             self.scrollView.bounds.size.height);
 }
 
 - (void)updatePageControl {
   // First, determine which page is currently visible
   CGFloat pageWidth = self.scrollView.frame.size.width;
-  NSInteger page = (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
+  NSInteger page =
+  (NSInteger)floor((self.scrollView.contentOffset.x * 2.0f + pageWidth) / (pageWidth * 2.0f));
   
   // Update the page control
   self.pageControl.currentPage = page;
