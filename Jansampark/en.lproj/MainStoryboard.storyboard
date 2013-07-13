@@ -621,6 +621,22 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="aTK-ly-VnQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" id="8If-91-Az3">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" image="runningMan1.png" id="fZ8-hN-jQd">
+                                        <rect key="frame" x="60" y="130" width="200" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -635,6 +651,8 @@
                         <outlet property="editButtonOutlet" destination="Zrr-Af-fax" id="RD2-Ab-3o6"/>
                         <outlet property="imageView" destination="eYf-eg-I7z" id="EMa-z4-BZg"/>
                         <outlet property="issueNameLabel" destination="zdk-rN-quT" id="ooF-aw-dpn"/>
+                        <outlet property="loaderImage" destination="fZ8-hN-jQd" id="NUA-NE-cHe"/>
+                        <outlet property="loaderView" destination="aTK-ly-VnQ" id="aCj-BW-ipX"/>
                         <outlet property="photoAddedView" destination="x0m-Qf-kd7" id="fz2-f3-61j"/>
                         <outlet property="systemLevelLabel" destination="9h2-ua-eYu" id="5WM-uz-mKS"/>
                     </connections>
@@ -1476,6 +1494,7 @@ cmU
         <image name="rightSegmentOn.png" width="257" height="59"/>
         <image name="road_button.png" width="83" height="83"/>
         <image name="road_button1.png" width="83" height="85"/>
+        <image name="runningMan1.png" width="250" height="250"/>
         <image name="searchBG.png" width="511" height="68"/>
         <image name="sewage_button.png" width="83" height="83"/>
         <image name="sewage_button1.png" width="83" height="85"/>
@@ -1522,6 +1541,13 @@ cmU
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
+                <relationship kind="action" name="addDescriptionTapped:"/>
+                <relationship kind="action" name="attachPhotoTapped:"/>
+                <relationship kind="action" name="backTapped:"/>
+                <relationship kind="action" name="editTapped:"/>
+                <relationship kind="action" name="postComplaint:"/>
+                <relationship kind="action" name="removePhotoTapped:"/>
+                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
@@ -1531,6 +1557,8 @@ cmU
                 <relationship kind="outlet" name="editButtonOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="issueNameLabel" candidateClass="MyriadBoldLabel"/>
+                <relationship kind="outlet" name="loaderImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="loaderView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="photoAddedView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="systemLevelLabel" candidateClass="MyriadBoldLabel"/>
             </relationships>
@@ -1538,6 +1566,7 @@ cmU
         <class className="IssueSummaryVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueSummaryVC.h"/>
             <relationships>
+                <relationship kind="action" name="anotherComplaintPressed:"/>
                 <relationship kind="outlet" name="mlaConstituency" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="mlaImageOutlet" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="mlaNameOutlet" candidateClass="OpenSansBold"/>
@@ -1554,6 +1583,7 @@ cmU
         <class className="IssuesVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
             <relationships>
+                <relationship kind="action" name="backPressed:"/>
                 <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
@@ -1596,6 +1626,7 @@ cmU
         <class className="WalkthroughVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
             <relationships>
+                <relationship kind="action" name="pageControlClicked:"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>

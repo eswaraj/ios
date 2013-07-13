@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (nonatomic, retain) UIImagePickerController *imagePicker;
+@property (strong, nonatomic) IBOutlet UIImageView *loaderImage;
+@property (strong, nonatomic) IBOutlet UIView *loaderView;
 
 @end
 
@@ -46,6 +48,22 @@
   self.imagePicker.delegate = self;
   
   [self configureUI];
+  
+  [self.loaderImage setAnimationImages:[NSArray arrayWithObjects:
+                                       [UIImage imageNamed:@"runningMan1"],
+                                       [UIImage imageNamed:@"runningMan2"],
+                                       [UIImage imageNamed:@"runningMan3"],
+                                       [UIImage imageNamed:@"runningMan4"],
+                                       [UIImage imageNamed:@"runningMan5"],
+                                       [UIImage imageNamed:@"runningMan6"],
+                                       [UIImage imageNamed:@"runningMan7"],
+                                       [UIImage imageNamed:@"runningMan8"],
+                                       [UIImage imageNamed:@"runningMan9"],
+                                       [UIImage imageNamed:@"runningMan10"],
+                                       [UIImage imageNamed:@"runningMan11"],
+                                       [UIImage imageNamed:@"runningMan12"],
+                                       nil]];
+  [self.loaderImage setAnimationDuration:2];
 }
 
 #pragma mark - IBActions 
@@ -94,7 +112,9 @@
 
 
 - (IBAction)postComplaint:(id)sender {
-  [self.activityIndicator startAnimating];
+  //[self.activityIndicator startAnimating];
+  [self.loaderView setHidden:NO];
+  [self.loaderImage startAnimating];
   
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
@@ -141,7 +161,9 @@
      
    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
      if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
-       [self.activityIndicator stopAnimating];
+       //[self.activityIndicator stopAnimating];
+       [self.loaderImage stopAnimating];
+       [self.loaderView setHidden:YES];
      }
      NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
      
