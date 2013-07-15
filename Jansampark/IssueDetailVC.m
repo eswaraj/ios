@@ -22,6 +22,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *textviewBG;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *descriptionLabel;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UIButton *postButton4;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UIButton *editButtonOutlet;
@@ -62,6 +66,11 @@
   [self.descriptionTextView setHidden:NO];
   [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
+  
+  if(!IS_IPHONE_5) {
+    [self.scrollView setContentOffset:CGPointMake(0, 80) animated:YES];
+  }
+  
 }
 
 - (IBAction)addDescriptionTapped:(id)sender {
@@ -71,6 +80,11 @@
   [self.descriptionTextView setHidden:NO];
   [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
+  
+  if(!IS_IPHONE_5) {
+    [self.scrollView setContentOffset:CGPointMake(0, 80) animated:YES];
+  }
+  
 }
 
 - (IBAction)removePhotoTapped:(id)sender {
@@ -209,12 +223,12 @@
   NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
   NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
   [self.systemLevelLabel setText:systemLevel];
-  
-  UIImage * textviewImage = [[UIImage imageNamed:@"textview_bg.png"]
-                             resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)
-                             resizingMode:UIImageResizingModeStretch];
-  
-  self.textviewBG.image = textviewImage;
+
+  if(!IS_IPHONE_5) {
+    [self.postButton4 setHidden:NO];
+    self.scrollView.contentSize = self.scrollView.frame.size;
+    
+  }
 }
 
 #pragma mark - ImagePicker Delegates
@@ -247,7 +261,9 @@
       [self.addDescriptionOutlet setHidden:NO];
       [self.editButtonOutlet setHidden:YES];
     }
-    
+    if(!IS_IPHONE_5) {
+      [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
     return NO;
   }
   
