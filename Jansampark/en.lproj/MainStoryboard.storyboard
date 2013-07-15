@@ -222,6 +222,13 @@ bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Profile Picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gua-n1-z3v" customClass="MyriadBoldLabel">
+                                <rect key="frame" x="103" y="118" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -252,7 +259,7 @@ bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5bf-UD-uYL">
-                                        <rect key="frame" x="10" y="8" width="25" height="25"/>
+                                        <rect key="frame" x="9" y="9" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="info_button.png">
@@ -267,7 +274,7 @@ bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eYR-N3-jVT">
-                                        <rect key="frame" x="283" y="8" width="25" height="25"/>
+                                        <rect key="frame" x="283" y="9" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="profile_image.png">
@@ -278,7 +285,7 @@ bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="FjM-LY-Gdt" kind="modal" id="Itm-D5-0ZL"/>
+                                            <segue destination="FjM-LY-Gdt" kind="modal" modalTransitionStyle="flipHorizontal" id="Itm-D5-0ZL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1802,8 +1809,6 @@ cmU
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
-                <relationship kind="action" name="leftSegmentTapped:"/>
-                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
                 <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
@@ -1834,13 +1839,6 @@ cmU
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
-                <relationship kind="action" name="addDescriptionTapped:"/>
-                <relationship kind="action" name="attachPhotoTapped:"/>
-                <relationship kind="action" name="backTapped:"/>
-                <relationship kind="action" name="editTapped:"/>
-                <relationship kind="action" name="postComplaint:"/>
-                <relationship kind="action" name="removePhotoTapped:"/>
-                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
@@ -1887,7 +1885,6 @@ cmU
         <class className="JSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
             <relationships>
-                <relationship kind="action" name="categoryButtonTapped:"/>
                 <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
@@ -1920,10 +1917,6 @@ cmU
         <class className="ProfileVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
             <relationships>
-                <relationship kind="action" name="attachPhoto:"/>
-                <relationship kind="action" name="crossTapped:"/>
-                <relationship kind="action" name="removePhoto:"/>
-                <relationship kind="action" name="takePhoto:"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="addedPhotoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
