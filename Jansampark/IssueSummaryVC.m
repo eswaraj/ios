@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet OpenSansBold *mlaNameOutlet;
 @property (weak, nonatomic) IBOutlet OpenSansBold *mlaConstituency;
 @property (weak, nonatomic) IBOutlet UIImageView *mlaImageOutlet;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton4;
 @end
 
 @implementation IssueSummaryVC
@@ -35,6 +36,10 @@
 #pragma mark - Custom Methods
 
 - (void)configureUI {
+  if(!IS_IPHONE_5) {
+    [self.doneButton4 setHidden:NO];
+  }
+  
   [self.mlaNameOutlet setText:[self.mla name]];
   [self.mlaConstituency setText:[NSString stringWithFormat:@"MLA, %@",[self.mla constituency]]];
   

@@ -19,7 +19,12 @@
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *issueNameLabel;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *textviewBG;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UIButton *postButton4;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
@@ -77,7 +82,13 @@
   [self.addDescriptionOutlet setHidden:YES];
   [self.descriptionLabel setHidden:YES];
   [self.descriptionTextView setHidden:NO];
+  [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
+  
+  if(!IS_IPHONE_5) {
+    [self.scrollView setContentOffset:CGPointMake(0, 80) animated:YES];
+  }
+  
 }
 
 - (IBAction)addDescriptionTapped:(id)sender {
@@ -85,7 +96,13 @@
   [self.addDescriptionOutlet setHidden:YES];
   [self.descriptionLabel setHidden:YES];
   [self.descriptionTextView setHidden:NO];
+  [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
+  
+  if(!IS_IPHONE_5) {
+    [self.scrollView setContentOffset:CGPointMake(0, 80) animated:YES];
+  }
+  
 }
 
 - (IBAction)removePhotoTapped:(id)sender {
@@ -211,6 +228,12 @@
   NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
   NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
   [self.systemLevelLabel setText:systemLevel];
+
+  if(!IS_IPHONE_5) {
+    [self.postButton4 setHidden:NO];
+    self.scrollView.contentSize = self.scrollView.frame.size;
+    
+  }
 }
 
 #pragma mark - ImagePicker Delegates
@@ -235,17 +258,21 @@ shouldChangeTextInRange:(NSRange)range
     if (textView.text.length) {
       [self.descriptionLabel setText:textView.text];
       [self.descriptionTextView setHidden:YES];
+      [self.textviewBG setHidden:YES];
       [self.descriptionLabel setHidden:NO];
       [self.addDescriptionOutlet setHidden:YES];
       [self.editButtonOutlet setHidden:NO];
     } else {
       [self.descriptionLabel setText:@""];
       [self.descriptionTextView setHidden:YES];
+      [self.textviewBG setHidden:YES];
       [self.descriptionLabel setHidden:YES];
       [self.addDescriptionOutlet setHidden:NO];
       [self.editButtonOutlet setHidden:YES];
     }
-    
+    if(!IS_IPHONE_5) {
+      [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
     return NO;
   }
   
