@@ -182,7 +182,7 @@
        [self.loaderImage stopAnimating];
        [self.loaderView setHidden:YES];
      }
-     NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
+     NSLog(@"kdsjhfksjd - %@", error.userInfo);
      
      
      [[RKObjectManager sharedManager] postObject:nil
