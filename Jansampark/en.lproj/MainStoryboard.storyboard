@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xtP-zy-jmA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xtP-zy-jmA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--AboutVC-->
+        <scene sceneID="ZOf-ye-N64">
+            <objects>
+                <viewController id="E9R-cZ-f5b" customClass="AboutVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="syN-3m-E3B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="GlR-AI-rPy" userLabel="Navbar">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VPe-an-1gh">
+                                        <rect key="frame" x="134" y="10" width="52" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tpn-Wx-95u">
+                                        <rect key="frame" x="286" y="10" width="25" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="cross_button.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="crossTapped:" destination="E9R-cZ-f5b" eventType="touchUpInside" id="KRm-Cf-HiC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="VNB-rF-7mc">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cw1-PT-Ewp" customClass="MyriadRegularLabel">
+                                        <rect key="frame" x="14" y="13" width="295" height="700"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <mutableString key="text">In Olden days , king toured their kingdoms,  to check the well being of civilians.
+that there is no disconnect between what his Darbar members are telling and what junta is feeling.
+
+Just like any massive things , modern days vast empires , a country of 120 Crore , is divided into states and in turn constituency , total of 4200 , with each housing between 1.5-2 Lakh grown up and responsible citizens , working day and night to build their future in turn nation , looking forward to government in case there is a mis-happening.
+
+In Modern days set up with not updating our mechanism to connect to people , a disconnect has come up between junta and their representatives ,  information gap and inability to handle massive feedback , has led to poor unresponsive governance , to bridge the gap we have our tool.
+
+Empowering  Citizens and Strengthening Local Leadership .
+ 
+
+to judiye apne netaji se , bataiye apni yahan ki paani ,  bijli , sadak , saaf safai , yatayat ya lachar hoti kanoon vayvastha , jahan samsaya wahin se uthaiye , 
+cheese jab itni saral to uska labh uthaiye , khud bhi istemal kijiye aur auron ko bhi bataiye.
+aapki samsaya pahuche auron tak , aapas main baat ho aur bane dabab logon par.
+assembly main halla ho aapki samsaya ko lekar , aapko ahsas ho desh ka hissa hone ka.
+bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="VNB-rF-7mc" id="YYh-Pw-cdQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYR-Rj-DyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="824" y="-878"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
@@ -31,6 +107,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="E9R-cZ-f5b" kind="modal" modalTransitionStyle="flipHorizontal" id="AZw-GI-pVr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1501,6 +1580,7 @@ cmU
         <image name="back_button.png" width="19" height="16"/>
         <image name="bigEllipsBG.png" width="341" height="341"/>
         <image name="complaint_icon.png" width="15" height="10"/>
+        <image name="cross_button.png" width="50" height="50"/>
         <image name="done_button.png" width="196" height="79"/>
         <image name="done_small_button.png" width="117" height="63"/>
         <image name="edit_button.png" width="58" height="22"/>
@@ -1541,9 +1621,18 @@ cmU
         <image name="water_button1.png" width="83" height="85"/>
     </resources>
     <classes>
+        <class className="AboutVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutVC.h"/>
+            <relationships>
+                <relationship kind="action" name="crossTapped:"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
+                <relationship kind="action" name="leftSegmentTapped:"/>
+                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
                 <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
@@ -1574,6 +1663,13 @@ cmU
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
+                <relationship kind="action" name="addDescriptionTapped:"/>
+                <relationship kind="action" name="attachPhotoTapped:"/>
+                <relationship kind="action" name="backTapped:"/>
+                <relationship kind="action" name="editTapped:"/>
+                <relationship kind="action" name="postComplaint:"/>
+                <relationship kind="action" name="removePhotoTapped:"/>
+                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
