@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *issueNameLabel;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *textviewBG;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *descriptionLabel;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -59,6 +60,7 @@
   [self.addDescriptionOutlet setHidden:YES];
   [self.descriptionLabel setHidden:YES];
   [self.descriptionTextView setHidden:NO];
+  [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
 }
 
@@ -67,6 +69,7 @@
   [self.addDescriptionOutlet setHidden:YES];
   [self.descriptionLabel setHidden:YES];
   [self.descriptionTextView setHidden:NO];
+  [self.textviewBG setHidden:NO];
   [self.descriptionTextView becomeFirstResponder];
 }
 
@@ -206,6 +209,12 @@
   NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
   NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
   [self.systemLevelLabel setText:systemLevel];
+  
+  UIImage * textviewImage = [[UIImage imageNamed:@"textview_bg.png"]
+                             resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10)
+                             resizingMode:UIImageResizingModeStretch];
+  
+  self.textviewBG.image = textviewImage;
 }
 
 #pragma mark - ImagePicker Delegates
@@ -226,12 +235,14 @@
     if (textView.text.length) {
       [self.descriptionLabel setText:textView.text];
       [self.descriptionTextView setHidden:YES];
+      [self.textviewBG setHidden:YES];
       [self.descriptionLabel setHidden:NO];
       [self.addDescriptionOutlet setHidden:YES];
       [self.editButtonOutlet setHidden:NO];
     } else {
       [self.descriptionLabel setText:@""];
       [self.descriptionTextView setHidden:YES];
+      [self.textviewBG setHidden:YES];
       [self.descriptionLabel setHidden:YES];
       [self.addDescriptionOutlet setHidden:NO];
       [self.editButtonOutlet setHidden:YES];

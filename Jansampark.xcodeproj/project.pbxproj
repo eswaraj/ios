@@ -111,6 +111,7 @@
 		18B457AB178480DD00DCA030 /* retake_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B457A1178480DD00DCA030 /* retake_photo.png */; };
 		18B457AC178480DD00DCA030 /* retake_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B457A2178480DD00DCA030 /* retake_photo@2x.png */; };
 		18B457AF178485FB00DCA030 /* IssueDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B457AE178485FB00DCA030 /* IssueDetailVC.m */; };
+		18BC5C751793E619003E58B0 /* textview_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5C741793E619003E58B0 /* textview_bg.png */; };
 		18BCE1801781993600BA7D89 /* issues_button_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */; };
 		18BCE1811781993600BA7D89 /* issues_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17F1781993600BA7D89 /* issues_button@2x.png */; };
 		18BCE18417819BDE00BA7D89 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */; };
@@ -258,6 +259,7 @@
 		18B457A2178480DD00DCA030 /* retake_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retake_photo@2x.png"; sourceTree = "<group>"; };
 		18B457AD178485FB00DCA030 /* IssueDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailVC.h; sourceTree = "<group>"; };
 		18B457AE178485FB00DCA030 /* IssueDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailVC.m; sourceTree = "<group>"; };
+		18BC5C741793E619003E58B0 /* textview_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textview_bg.png; sourceTree = "<group>"; };
 		18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button_select@2x.png"; sourceTree = "<group>"; };
 		18BCE17F1781993600BA7D89 /* issues_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_button@2x.png"; sourceTree = "<group>"; };
 		18BCE18317819BDE00BA7D89 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-Regular.otf"; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 		18B45798178480CD00DCA030 /* Issue Detail */ = {
 			isa = PBXGroup;
 			children = (
+				18BC5C741793E619003E58B0 /* textview_bg.png */,
 				180D2F851786CA720031B524 /* add_description_button.png */,
 				180D2F861786CA720031B524 /* attach_photo_button.png */,
 				180D2F871786CA720031B524 /* take_photo_button.png */,
@@ -876,6 +879,7 @@
 				1822EC45178E9141006C1785 /* another_complaint_button.png in Resources */,
 				1822EC46178E9141006C1785 /* done_button.png in Resources */,
 				1822EC47178E9141006C1785 /* summary_bg.png in Resources */,
+				18BC5C751793E619003E58B0 /* textview_bg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
