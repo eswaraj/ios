@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <KSReachability.h>
 
 typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
@@ -17,6 +18,10 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSArray *delhiConst;
+
+@property (nonatomic, strong) KSReachability *reachability;
+
+@property (nonatomic, strong) NSMutableArray *operationQueue;
 
 // Location Methods
 - (void)startTrackingLocation;
@@ -29,4 +34,7 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 - (UIColor *)configureColorWithSystemCode:(NSNumber *)systemCode;
 - (NSString *)systemLevelWithSystemCode:(NSNumber *)systemCode;
 
+- (BOOL)isNetworkReachable;
+
+- (void)runBackgroundTimer;
 @end

@@ -1839,6 +1839,14 @@ cmU
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
+                <relationship kind="action" name="addDescriptionTapped:"/>
+                <relationship kind="action" name="attachPhotoTapped:"/>
+                <relationship kind="action" name="backTapped:"/>
+                <relationship kind="action" name="editTapped:"/>
+                <relationship kind="action" name="postAllCalls:"/>
+                <relationship kind="action" name="postComplaint:"/>
+                <relationship kind="action" name="removePhotoTapped:"/>
+                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
@@ -1860,6 +1868,7 @@ cmU
         <class className="IssueSummaryVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueSummaryVC.h"/>
             <relationships>
+                <relationship kind="action" name="anotherComplaintPressed:"/>
                 <relationship kind="outlet" name="doneButton4" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mlaConstituency" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="mlaImageOutlet" candidateClass="UIImageView"/>
@@ -1885,6 +1894,7 @@ cmU
         <class className="JSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
             <relationships>
+                <relationship kind="action" name="categoryButtonTapped:"/>
                 <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
@@ -1928,6 +1938,7 @@ cmU
         <class className="WalkthroughVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
             <relationships>
+                <relationship kind="action" name="pageControlClicked:"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>

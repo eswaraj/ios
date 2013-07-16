@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 1
 
+// KSReachability
+#define COCOAPODS_POD_AVAILABLE_KSReachability
+#define COCOAPODS_VERSION_MAJOR_KSReachability 1
+#define COCOAPODS_VERSION_MINOR_KSReachability 3
+#define COCOAPODS_VERSION_PATCH_KSReachability 0
+
 // RestKit
 #define COCOAPODS_POD_AVAILABLE_RestKit
 #define COCOAPODS_VERSION_MAJOR_RestKit 0
