@@ -9,7 +9,7 @@
 #import "JSAppDelegate.h"
 #import "JSAPIInterface.h"
 #import "JSModel.h"
-
+#import <KSReachability.h>
 @implementation JSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -17,9 +17,12 @@
     // Override point for customization after application launch.
   [JSAPIInterface sharedInterface];
   [[JSModel sharedModel] startTrackingLocation];
+  
+  [JSModel sharedModel].reachability = [KSReachability reachabilityToHost:nil];
+  [[JSModel sharedModel] runBackgroundTimer];
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
   // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

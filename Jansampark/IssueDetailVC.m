@@ -12,6 +12,7 @@
 #import <RestKit/RestKit.h>
 #import "MLA+JSAPIAdditions.h"
 #import "IssueSummaryVC.h"
+#import <KSReachability/KSReachability.h>
 
 @interface IssueDetailVC ()
 
@@ -40,6 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *loaderImage;
 @property (strong, nonatomic) IBOutlet UIView *loaderView;
 
+
 @end
 
 @implementation IssueDetailVC
@@ -47,6 +49,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+  
 	// Do any additional setup after loading the view.
   self.imagePicker = [[UIImagePickerController alloc] init];
   self.imagePicker.allowsEditing = YES;
@@ -132,7 +136,41 @@
   //[self.activityIndicator startAnimating];
   [self.loaderView setHidden:NO];
   [self.loaderImage startAnimating];
+
+    
+  //checking network reachability
+  if ([[JSModel sharedModel] isNetworkReachable]) {
+    RKObjectRequestOperation * operation = [self operationWithFetchingMLA];
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+  } else {
+    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stopLoader) userInfo:nil repeats:NO];
+    RKObjectRequestOperation * operation = [self operationInBackground];
+    if(![[JSModel sharedModel] operationQueue]) {
+      [JSModel sharedModel].operationQueue = [[NSMutableArray alloc] init];
+      
+    }
+    [[JSModel sharedModel].operationQueue addObject:operation];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                    message:@"Your issue will be posted automatically when network is available"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+  }
   
+}
+
+
+
+#pragma mark - Custom Methods
+
+- (void)stopLoader {
+  [self.loaderView setHidden:YES];
+  [self.loaderImage stopAnimating];
+}
+
+- (RKObjectRequestOperation *)operationWithFetchingMLA {
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
@@ -155,18 +193,18 @@
                                         constructingBodyWithBlock:
    ^(id<AFMultipartFormData> formData) {
      
-    [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                name:@"img"
-                            fileName:@"photo.jpg"
-                            mimeType:@"image/jpeg"];
-    
-    
-    [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                name:@"profile_img"
-                            fileName:@"photo.jpg"
-                            mimeType:@"image/jpeg"];
-    
-  }];
+     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                 name:@"img"
+                             fileName:@"photo.jpg"
+                             mimeType:@"image/jpeg"];
+     
+     
+     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                 name:@"profile_img"
+                             fileName:@"photo.jpg"
+                             mimeType:@"image/jpeg"];
+     
+   }];
   
   NSManagedObjectContext *context =
   [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -176,13 +214,13 @@
                                                                     success:
    ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
      
-   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-     if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
-       //[self.activityIndicator stopAnimating];
-       [self.loaderImage stopAnimating];
-       [self.loaderView setHidden:YES];
+   } failure:
+   ^(RKObjectRequestOperation *operation, NSError *error) {
+     if ([error.localizedRecoverySuggestion isEqualToString:@"\r\nsuccess"]) {
+       NSLog(@"sucess is working");
      }
-     NSLog(@"kdsjhfksjd - %@", error.localizedRecoverySuggestion);
+     NSLog(@"kdsjhfksjd - %@", error.userInfo);
+
      
      
      [[RKObjectManager sharedManager] postObject:nil
@@ -190,35 +228,98 @@
                                       parameters:nil
                                          success:
       ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-       
-     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-       NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
-       NSError *e = nil;
-       NSDictionary *jsonArray =
-       [NSJSONSerialization JSONObjectWithData:jsonData
-                                       options:NSJSONReadingMutableContainers
-                                         error: &e];
-       NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-       [f setNumberStyle:NSNumberFormatterDecimalStyle];
-       NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
-       [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
-         if(success) {
-           MLA *mla = [result objectAtIndex:0];
-           IssueSummaryVC *vc =
-           [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
-           [vc setMla:mla];
-           [self.navigationController pushViewController:vc animated:YES];
-         } else {
-           
-         }
-       }];       
-     }];
+        
+      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *e = nil;
+        NSDictionary *jsonArray =
+        [NSJSONSerialization JSONObjectWithData:jsonData
+                                        options:NSJSONReadingMutableContainers
+                                          error: &e];
+        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
+        [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+          if(success) {
+            MLA *mla = [result objectAtIndex:0];
+            IssueSummaryVC *vc =
+            [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+            [vc setMla:mla];
+            [self.loaderImage stopAnimating];
+            [self.loaderView setHidden:YES];
+            [self.navigationController pushViewController:vc animated:YES];
+          } else {
+            
+          }
+        }];
+      }];
    }];
-  [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+ return operation;
 }
 
-#pragma mark - Custom Methods
+- (RKObjectRequestOperation *)operationInBackground {
+  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
+  NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+  NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          latitude, @"lat",
+                          longitude, @"long",
+                          self.issueType, @"issue_type",
+                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
+                          self.descriptionLabel.text, @"txt",
+                          @"123", @"reporter_id",
+                          [JSModel sharedModel].address, @"addr", nil];
+  
+  UIImage *image = self.imageView.image;
+  
+  NSMutableURLRequest *request =
+  [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
+                                                           method:RKRequestMethodPOST
+                                                             path:@"/html/dev/micronews/?q=phonegap/post"
+                                                       parameters:params
+                                        constructingBodyWithBlock:
+   ^(id<AFMultipartFormData> formData) {
+     
+     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                 name:@"img"
+                             fileName:@"photo.jpg"
+                             mimeType:@"image/jpeg"];
+     
+     
+     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+                                 name:@"profile_img"
+                             fileName:@"photo.jpg"
+                             mimeType:@"image/jpeg"];
+     
+   }];
+  
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  RKObjectRequestOperation *operation =
+  [[RKObjectManager sharedManager] managedObjectRequestOperationWithRequest:request
+                                                       managedObjectContext:context
+                                                                    success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     
+   } failure:
+   ^(RKObjectRequestOperation *operation, NSError *error) {
+     if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
+       //[self.activityIndicator stopAnimating];
+       [self.loaderImage stopAnimating];
+       [self.loaderView setHidden:YES];
+     }
+     NSLog(@"kdsjhfksjd - %@", error.userInfo);
+    
+     if ([JSModel sharedModel].operationQueue.count&&[[JSModel sharedModel] isNetworkReachable]) {
+       RKObjectRequestOperation * queuedOperation =
+       [[JSModel sharedModel].operationQueue objectAtIndex:0];
+       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
+       [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
+     }
+        }];
 
+  return operation;
+}
 - (void)configureUI {
   [self.descriptionTextView setFont:[UIFont fontWithName:@"MyriadPro-Bold" size:14]];
   

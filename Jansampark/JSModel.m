@@ -8,6 +8,7 @@
 
 #import "JSModel.h"
 #import "CHCSVParser.h"
+#import <RestKit/RestKit.h>
 
 #define k00Color [UIColor colorWithRed:0.91 green:0.41 blue:0.41 alpha:1]
 #define k01Color [UIColor colorWithRed:0.97 green:0.72 blue:0.33 alpha:1]
@@ -22,6 +23,12 @@
 #define kSystemLevel3 @"Poor Pricing"
 #define kSystemLevel4 @"Awareness"
 #define kSystemLevel5 @"Others"
+
+@interface JSModel()
+
+@property (strong, nonatomic) NSTimer * timer;
+
+@end
 
 @implementation JSModel
 
@@ -178,5 +185,27 @@ static JSModel *sharedModel = nil;
   self.delhiConst =
   [NSArray arrayWithContentsOfCSVFile:path
                               options:CHCSVParserOptionsStripsLeadingAndTrailingWhitespace];
+}
+
+- (BOOL)isNetworkReachable {
+  if(self.reachability.reachable) {
+    return YES;
+  } else {
+    return NO;
+  }
+}
+
+- (void)runBackgroundTimer {
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:40 target:self selector:@selector(runOperationQueue) userInfo:nil repeats:YES];
+}
+
+- (void)runOperationQueue {
+  NSLog(@"timer running");
+  if ([JSModel sharedModel].operationQueue.count&&[[JSModel sharedModel] isNetworkReachable]) {
+    RKObjectRequestOperation * queuedOperation =
+    [[JSModel sharedModel].operationQueue objectAtIndex:0];
+    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
+    [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
+  }
 }
 @end

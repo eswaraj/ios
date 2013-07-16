@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mapSuperview;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+@property (weak, nonatomic) IBOutlet UIButton *profileButtonOutlet;
 
 @end
 
@@ -34,10 +35,15 @@
 //[self presentViewController:wVC animated:NO completion:nil];
   [self configureFonts];
   [self configureUI];
+  [self updateProfileImage];
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(updateMap:)
                                                name:@"Location_Updated"
+                                             object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(updateProfileImage)
+                                               name:@"PROFILE_PIC_UPDATED"
                                              object:nil];
   
 }
@@ -109,5 +115,16 @@
   [[JSModel sharedModel] getAddressFromLocation:[JSModel sharedModel].currentLocation completion:^(NSString *geocodedLocation) {
     [self.locationLabel setText:geocodedLocation];
   }];
+}
+
+- (void)updateProfileImage {
+  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  UIImage* image = [UIImage imageWithData:imageData];
+  if(image!=nil) {
+    [self.profileButtonOutlet setImage:image forState:UIControlStateNormal];
+  } else {
+    [self.profileButtonOutlet setImage:[UIImage imageNamed:@"profile_image.png"]
+                              forState:UIControlStateNormal];
+  }
 }
 @end
