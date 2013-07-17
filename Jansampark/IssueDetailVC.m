@@ -171,20 +171,25 @@
 }
 
 - (RKObjectRequestOperation *)operationWithFetchingMLA {
+  UIImage *temp = [UIImage imageNamed:@"temp1.jpg"];
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          latitude, @"lat",
-                          longitude, @"long",
+                          @"12.88", @"lat",
+                          @"77.655", @"long",
                           self.issueType, @"issue_type",
                           [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
                           @"123", @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
-  
-  UIImage *image = self.imageView.image;
-  
+  UIImage *image;
+  if(self.imageView.image) {
+    image = self.imageView.image;
+  } else {
+    image = nil;
+  }
+  NSLog(@"details %@",params);
   NSMutableURLRequest *request =
   [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
                                                            method:RKRequestMethodPOST
@@ -193,16 +198,18 @@
                                         constructingBodyWithBlock:
    ^(id<AFMultipartFormData> formData) {
      
+     
      [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
                                  name:@"img"
                              fileName:@"photo.jpg"
                              mimeType:@"image/jpeg"];
      
      
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                 name:@"profile_img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
+//     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
+//                                 name:@"profile_img"
+//                             fileName:@"photo.jpg"
+//                             mimeType:@"image/jpeg"];
+//    
      
    }];
   
@@ -216,7 +223,7 @@
      
    } failure:
    ^(RKObjectRequestOperation *operation, NSError *error) {
-     if ([error.localizedRecoverySuggestion isEqualToString:@"\r\nsuccess"]) {
+     if ([error.localizedRecoverySuggestion isEqualToString:@"success"]) {
        NSLog(@"sucess is working");
      }
      NSLog(@"kdsjhfksjd - %@", error.userInfo);

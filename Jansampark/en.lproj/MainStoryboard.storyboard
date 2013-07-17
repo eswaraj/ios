@@ -46,10 +46,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cw1-PT-Ewp" customClass="MyriadRegularLabel">
-                                        <rect key="frame" x="14" y="13" width="295" height="700"/>
+                                        <rect key="frame" x="14" y="44" width="295" height="463"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <string key="text">In Olden days , king toured their kingdoms,  to check the well being of civilians.
+                                        <mutableString key="text">In Olden days , king toured their kingdoms,  to check the well being of civilians.
 that there is no disconnect between what his Darbar members are telling and what junta is feeling.
 
 Just like any massive things , modern days vast empires , a country of 120 Crore , is divided into states and in turn constituency , total of 4200 , with each housing between 1.5-2 Lakh grown up and responsible citizens , working day and night to build their future in turn nation , looking forward to government in case there is a mis-happening.
@@ -57,15 +56,27 @@ Just like any massive things , modern days vast empires , a country of 120 Crore
 In Modern days set up with not updating our mechanism to connect to people , a disconnect has come up between junta and their representatives ,  information gap and inability to handle massive feedback , has led to poor unresponsive governance , to bridge the gap we have our tool.
 
 Empowering  Citizens and Strengthening Local Leadership .
- 
-
-to judiye apne netaji se , bataiye apni yahan ki paani ,  bijli , sadak , saaf safai , yatayat ya lachar hoti kanoon vayvastha , jahan samsaya wahin se uthaiye , 
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eIf-vs-XWr" customClass="MyriadBoldItLabel">
+                                        <rect key="frame" x="12" y="516" width="295" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">to judiye apne netaji se , bataiye apni yahan ki paani ,  bijli , sadak , saaf safai , yatayat ya lachar hoti kanoon vayvastha , jahan samsaya wahin se uthaiye , 
 cheese jab itni saral to uska labh uthaiye , khud bhi istemal kijiye aur auron ko bhi bataiye.
 aapki samsaya pahuche auron tak , aapas main baat ho aur bane dabab logon par.
 assembly main halla ho aapki samsaya ko lekar , aapko ahsas ho desh ka hissa hone ka.
 bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jansampark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08W-Wd-rus" customClass="MyriadBoldLabel">
+                                        <rect key="frame" x="112" y="13" width="97" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1803,6 +1814,7 @@ cmU
         <class className="AboutVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutVC.h"/>
             <relationships>
+                <relationship kind="action" name="crossTapped:"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
@@ -1828,6 +1840,8 @@ cmU
         <class className="ContainerVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
             <relationships>
+                <relationship kind="action" name="analyticsTapped:"/>
+                <relationship kind="action" name="issuesTapped:"/>
                 <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
@@ -1839,14 +1853,6 @@ cmU
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
-                <relationship kind="action" name="addDescriptionTapped:"/>
-                <relationship kind="action" name="attachPhotoTapped:"/>
-                <relationship kind="action" name="backTapped:"/>
-                <relationship kind="action" name="editTapped:"/>
-                <relationship kind="action" name="postAllCalls:"/>
-                <relationship kind="action" name="postComplaint:"/>
-                <relationship kind="action" name="removePhotoTapped:"/>
-                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
@@ -1894,7 +1900,6 @@ cmU
         <class className="JSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
             <relationships>
-                <relationship kind="action" name="categoryButtonTapped:"/>
                 <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
@@ -1908,6 +1913,9 @@ cmU
             <relationships>
                 <relationship kind="outlet" name="locationName" candidateClass="OpenSansBold"/>
             </relationships>
+        </class>
+        <class className="MyriadBoldItLabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldItLabel.h"/>
         </class>
         <class className="MyriadBoldLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldLabel.h"/>
@@ -1927,6 +1935,10 @@ cmU
         <class className="ProfileVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
             <relationships>
+                <relationship kind="action" name="attachPhoto:"/>
+                <relationship kind="action" name="crossTapped:"/>
+                <relationship kind="action" name="removePhoto:"/>
+                <relationship kind="action" name="takePhoto:"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="addedPhotoView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
@@ -1938,7 +1950,6 @@ cmU
         <class className="WalkthroughVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
             <relationships>
-                <relationship kind="action" name="pageControlClicked:"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
