@@ -165,6 +165,16 @@
 
 #pragma mark - Custom Methods
 
+- (UIImage *)getProfileImage {
+  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  UIImage* image = [UIImage imageWithData:imageData];
+  if(image!=nil) {
+    return image;
+  } else {
+    return nil;
+  }
+}
+
 - (void)stopLoader {
   [self.loaderView setHidden:YES];
   [self.loaderImage stopAnimating];
@@ -188,11 +198,13 @@
   } else {
     image = nil;
   }
+  UIImage *profileImage = [self getProfileImage];
+  
   NSLog(@"details %@",params);
  RKObjectRequestOperation *operation =
   [MLA postComplaintWithParams:params
                          image:image
-               andProfileImage:image
+               andProfileImage:profileImage
                     completion:^(BOOL success, NSArray *result, NSError *error) {
     NSData *jsonData = [error.localizedRecoverySuggestion
                         dataUsingEncoding:NSUTF8StringEncoding];
@@ -283,12 +295,13 @@
   } else {
     image = nil;
   }
+  UIImage *profileImage = [self getProfileImage];
 
   
   RKObjectRequestOperation *operation =
   [MLA postComplaintWithParams:params
                          image:image
-               andProfileImage:image
+               andProfileImage:profileImage
                     completion:^(BOOL success, NSArray *result, NSError *error) {
                       
                       

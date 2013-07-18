@@ -49,19 +49,21 @@
                                         constructingBodyWithBlock:
    ^(id<AFMultipartFormData> formData) {
      
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(img, 1)
-                                 name:@"img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
-     
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(profile_img, 1)
-                                 name:@"profile_img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
+     if (img) {
+       [formData appendPartWithFileData:UIImageJPEGRepresentation(img, 1)
+                                   name:@"img"
+                               fileName:@"photo.jpg"
+                               mimeType:@"image/jpeg"];
+     }
      
      
+     if(profile_img) {
+       [formData appendPartWithFileData:UIImageJPEGRepresentation(profile_img, 1)
+                                   name:@"profile_img"
+                               fileName:@"photo.jpg"
+                               mimeType:@"image/jpeg"];
+     }
+
    }];
   
   NSManagedObjectContext *context =
