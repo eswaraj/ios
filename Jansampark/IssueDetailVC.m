@@ -169,10 +169,25 @@
   NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
   UIImage* image = [UIImage imageWithData:imageData];
   if(image!=nil) {
+    image = [self image:image ScaledToSize:CGSizeMake(60, 60)];
     return image;
   } else {
     return nil;
   }
+}
+
+- (UIImage*)image:(UIImage *)img ScaledToSize:(CGSize)newSize {
+  
+  UIGraphicsBeginImageContext(newSize);
+  
+  [img drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+  
+  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+  
+  UIGraphicsEndImageContext();
+  
+  return newImage;
+  
 }
 
 - (void)stopLoader {
@@ -184,17 +199,23 @@
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"12.88", @"lat",
-                          @"77.655", @"long",
+                          latitude, @"lat",
+                          longitude, @"long",
                           self.issueType, @"issue_type",
                           [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
-                          @"123", @"reporter_id",
+                          UUID, @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
   UIImage *image;
   if(self.imageView.image) {
     image = self.imageView.image;
+    if(image.size.height>image.size.width) {
+      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
+    } else {
+      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
+    }
   } else {
     image = nil;
   }
@@ -237,6 +258,9 @@
                           IssueSummaryVC *vc =
                           [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
                           [vc setMla:mla];
+                          vc.issueCategory = self.issueCategory;
+                          vc.systemLevel = self.systemLevelLabel.text;
+                          vc.address = [JSModel sharedModel].address;
                           [self.loaderImage stopAnimating];
                           [self.loaderView setHidden:YES];
                           [self.navigationController pushViewController:vc animated:YES];
@@ -281,23 +305,29 @@
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"12.88", @"lat",
-                          @"77.655", @"long",
+                          latitude, @"lat",
+                          longitude, @"long",
                           self.issueType, @"issue_type",
                           [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
-                          @"123", @"reporter_id",
+                          UUID, @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
   UIImage *image;
   if(self.imageView.image) {
     image = self.imageView.image;
+    if(image.size.height>image.size.width) {
+      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
+    } else {
+      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
+    }
   } else {
     image = nil;
   }
   UIImage *profileImage = [self getProfileImage];
 
-  
+    NSLog(@"details %@",params);
   RKObjectRequestOperation *operation =
   [MLA postComplaintWithParams:params
                          image:image

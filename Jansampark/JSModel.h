@@ -37,4 +37,6 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 - (BOOL)isNetworkReachable;
 
 - (void)runBackgroundTimer;
+
+- (NSString *)GetUUID;
 @end
