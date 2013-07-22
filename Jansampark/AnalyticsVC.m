@@ -12,6 +12,7 @@
 #import "UICountingLabel.h"
 #import "JSModel.h"
 #import "LocationSearchCell.h"
+#import <RestKit/RestKit.h>
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
 @interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -47,6 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  [self fetchData];
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
                     forState:(UIControlStateHighlighted | UIControlStateSelected)];
@@ -176,15 +178,87 @@ replacementString:(NSString *)string {
   
   UITapGestureRecognizer *cellapGesture =
   [[UITapGestureRecognizer alloc] initWithTarget:self
-                                          action:@selector(doNothing:)];
+                                          action:@selector(cellSelected:)];
   [cell addGestureRecognizer:cellapGesture];
   return cell;
 }
 
-- (void)doNothing:(id)sender {
+- (void)cellSelected:(id)sender {
   int row = [self.locationTable indexPathForCell:(UITableViewCell *)[(UITapGestureRecognizer *)sender view]].row;
-  NSString *constituency = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:0];
-  NSLog(@"const : %@", constituency);
+  NSString *constituency = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:1];
+  int constituencyID = constituency.intValue;
+  
+  NSLog(@"const : %d", constituencyID);
+}
+
+
+- (void)fetchData {
+  NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/get_summary.php?cid=13&time_frame=1m"];
+  
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:path
+                                   parameters:nil
+                                      success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     
+   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+     NSData *jsonData = [error.localizedRecoverySuggestion
+                         dataUsingEncoding:NSUTF8StringEncoding];
+     NSError *e = nil;
+     NSDictionary *jsonDictionary =
+     [NSJSONSerialization JSONObjectWithData:jsonData
+                                     options:NSJSONReadingMutableContainers
+                                       error: &e];
+     
+    
+     [[JSModel sharedModel] setWaterAnalytics:[jsonDictionary objectForKey:@"48"]];
+     [[JSModel sharedModel] setRoadAnalytics:[jsonDictionary objectForKey:@"51"]];
+     [[JSModel sharedModel] setElectricityAnalytics:[jsonDictionary objectForKey:@"49"]];
+     [[JSModel sharedModel] setLawAnalytics:[jsonDictionary objectForKey:@"53"]];
+     [[JSModel sharedModel] setSewageAnalytics:[jsonDictionary objectForKey:@"50"]];
+     [[JSModel sharedModel] setTransportationAnalytics:[jsonDictionary objectForKey:@"52"]];
+     
+     [self refreshAnalytics];
+   }];
+
+}
+
+- (void)refreshAnalytics {
+  
+  
+  NSArray *water = [[JSModel sharedModel] waterAnalytics];
+  int totalWaterCount = [self totalCountInIssue:water];
+  
+  NSArray *sewage = [[JSModel sharedModel] sewageAnalytics];
+  int totalSewageCount = [self totalCountInIssue:sewage];
+  
+  NSArray *electricity = [[JSModel sharedModel] electricityAnalytics];
+  int totalElectricityCount = [self totalCountInIssue:electricity];
+  
+  NSArray *transportation = [[JSModel sharedModel] transportationAnalytics];
+  int totalTransportationCount = [self totalCountInIssue:transportation];
+  
+  NSArray *road = [[JSModel sharedModel] roadAnalytics];
+  int totalRoadCount = [self totalCountInIssue:road];
+  
+  NSArray *law = [[JSModel sharedModel] lawAnalytics];
+  int totalLawCount = [self totalCountInIssue:law];
+
+  
+  int totalNumberOfComplaints = totalWaterCount + totalSewageCount +
+                                totalElectricityCount + totalLawCount +
+                                totalTransportationCount + totalRoadCount;
+
+  
+  
+}
+
+- (int)totalCountInIssue:(NSArray *)issue {
+  int totalCount = 0;
+  for(NSDictionary *dict in issue) {
+    totalCount += [[dict objectForKey:@"counter"] intValue];
+  }
+  return totalCount;
 }
 
 @end

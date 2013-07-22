@@ -1819,6 +1819,8 @@ look into the matter.</string>
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
+                <relationship kind="action" name="leftSegmentTapped:"/>
+                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
                 <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
@@ -1838,8 +1840,6 @@ look into the matter.</string>
         <class className="ContainerVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
             <relationships>
-                <relationship kind="action" name="analyticsTapped:"/>
-                <relationship kind="action" name="issuesTapped:"/>
                 <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
                 <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
@@ -1851,11 +1851,6 @@ look into the matter.</string>
         <class className="IssueDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
             <relationships>
-                <relationship kind="action" name="attachPhotoTapped:"/>
-                <relationship kind="action" name="editTapped:"/>
-                <relationship kind="action" name="postComplaint:"/>
-                <relationship kind="action" name="removePhotoTapped:"/>
-                <relationship kind="action" name="takePhotoTapped:"/>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
@@ -1898,7 +1893,6 @@ look into the matter.</string>
         <class className="IssuesVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
             <relationships>
-                <relationship kind="action" name="backPressed:"/>
                 <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
@@ -1953,7 +1947,6 @@ look into the matter.</string>
         <class className="WalkthroughVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
             <relationships>
-                <relationship kind="action" name="pageControlClicked:"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>

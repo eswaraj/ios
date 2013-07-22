@@ -72,7 +72,7 @@
                                        [UIImage imageNamed:@"runningMan11"],
                                        [UIImage imageNamed:@"runningMan12"],
                                        nil]];
-  [self.loaderImage setAnimationDuration:2];
+  [self.loaderImage setAnimationDuration:1];
 }
 
 #pragma mark - IBActions 
