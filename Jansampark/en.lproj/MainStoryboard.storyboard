@@ -1320,7 +1320,7 @@ look into the matter.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Delhi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="04g-7i-70Q" customClass="OpenSansBold">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Delhi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="04g-7i-70Q" customClass="OpenSansBold">
                                 <rect key="frame" x="168" y="16" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1872,7 +1872,6 @@ look into the matter.</string>
         <class className="IssueSummaryVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueSummaryVC.h"/>
             <relationships>
-                <relationship kind="action" name="anotherComplaintPressed:"/>
                 <relationship kind="outlet" name="addressLabel" candidateClass="MyriadBoldLabel"/>
                 <relationship kind="outlet" name="doneButton4" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="issueCategoryLabel" candidateClass="MyriadBoldLabel"/>
@@ -1893,6 +1892,7 @@ look into the matter.</string>
         <class className="IssuesVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
             <relationships>
+                <relationship kind="action" name="backPressed:"/>
                 <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>

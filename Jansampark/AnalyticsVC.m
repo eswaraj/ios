@@ -48,7 +48,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  [self fetchData];
+  [self fetchDataWithID:13];
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
                     forState:(UIControlStateHighlighted | UIControlStateSelected)];
@@ -185,15 +185,19 @@ replacementString:(NSString *)string {
 
 - (void)cellSelected:(id)sender {
   int row = [self.locationTable indexPathForCell:(UITableViewCell *)[(UITapGestureRecognizer *)sender view]].row;
+  NSString *constituencyName= [[self.locationSearchResults objectAtIndex:row]objectAtIndex:0];
   NSString *constituency = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:1];
   int constituencyID = constituency.intValue;
   
+  [self.locLabel setText:constituencyName];
   NSLog(@"const : %d", constituencyID);
+  [self dismissOverlay];
+  [self fetchDataWithID:constituencyID];
 }
 
 
-- (void)fetchData {
-  NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/get_summary.php?cid=13&time_frame=1m"];
+- (void)fetchDataWithID:(int)id {
+  NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/get_summary.php?cid=%d&time_frame=1m",id];
   
   [[RKObjectManager sharedManager] postObject:nil
                                          path:path
