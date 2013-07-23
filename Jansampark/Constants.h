@@ -13,6 +13,13 @@
 #define kJSAPIBaseURL [NSURL URLWithString:@"http://50.57.224.47"]
 #define kDataStoreFileName @"JS.sqlite"
 
+#define kTotalComplaints @"TotalComplaints"
+#define kWaterComplaints @"WaterComplaints"
+#define kRoadComplaints @"RoadComplaints"
+#define kElectricityComplaints @"ElectricityComplaints"
+#define kSewageComplaints @"SewageComplaints"
+#define kLawComplaints @"LawComplaints"
+#define kTransportationComplaints @"TransportationComplaints"
 
 @interface Constants : NSObject
 

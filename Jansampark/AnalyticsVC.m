@@ -12,7 +12,10 @@
 #import "UICountingLabel.h"
 #import "JSModel.h"
 #import "LocationSearchCell.h"
+#import "MyriadBoldLabel.h"
+#import "Constants.h"
 #import <RestKit/RestKit.h>
+#import "MLA.h"
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
 @interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -32,6 +35,14 @@
 @property (strong, nonatomic) NSArray *locationSearchResults;
 @property (strong, nonatomic) IBOutlet UITableView *locationTable;
 @property (strong, nonatomic) IBOutlet UIImageView *locationSearcdhBackgroundImage;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *waterPercent;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *transportationPercent;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *electricityPercent;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *lawPercent;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *sewagePercent;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *roadPercent;
+@property (assign, nonatomic) int totalNumberOfComplaints;
+
 @end
 
 @implementation AnalyticsVC
@@ -48,7 +59,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  //if ([[JSModel sharedModel] isNetworkReachable]) {
   [self fetchDataWithID:13];
+  //}
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
                     forState:(UIControlStateHighlighted | UIControlStateSelected)];
@@ -85,7 +98,7 @@
   [super viewDidAppear:animated];
   
   self.complaintsCountLabel.format = @"%d";
-  [self.complaintsCountLabel countFrom:0 to:2345 withDuration:1.4];
+  [self.complaintsCountLabel countFrom:0 to:self.totalNumberOfComplaints withDuration:0.5];
 }
 
 - (void)didReceiveMemoryWarning
@@ -213,7 +226,18 @@ replacementString:(NSString *)string {
      [NSJSONSerialization JSONObjectWithData:jsonData
                                      options:NSJSONReadingMutableContainers
                                        error: &e];
-     
+
+     NSDictionary *mappingsDictionary = @{ @"someKeyPath": @"name"};
+     MLA *appUser = [[MLA alloc] init];
+     RKMapperOperation *mapper = [[RKMapperOperation alloc] initWithRepresentation:jsonDictionary mappingsDictionary:mappingsDictionary];
+     mapper.targetObject = appUser;
+     NSError *mappingError = nil;
+     BOOL isMapped = [mapper execute:&mappingError];
+     if (isMapped && !mappingError) {
+       // Yay! Mapping finished successfully
+       NSLog(@"mapper: %@", [mapper representation]);
+       NSLog(@"firstname is %@", appUser.name);
+     }
     
      [[JSModel sharedModel] setWaterAnalytics:[jsonDictionary objectForKey:@"48"]];
      [[JSModel sharedModel] setRoadAnalytics:[jsonDictionary objectForKey:@"51"]];
@@ -249,12 +273,29 @@ replacementString:(NSString *)string {
   int totalLawCount = [self totalCountInIssue:law];
 
   
-  int totalNumberOfComplaints = totalWaterCount + totalSewageCount +
+  self.totalNumberOfComplaints = totalWaterCount + totalSewageCount +
                                 totalElectricityCount + totalLawCount +
                                 totalTransportationCount + totalRoadCount;
-
+  //temporary
+  self.totalNumberOfComplaints = 2000;
   
+  self.roadPercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalRoadCount*100/self.totalNumberOfComplaints)];
+  self.sewagePercent.text = [NSString stringWithFormat:@"%d%%",(int)(totalSewageCount*100/self.totalNumberOfComplaints)];
+  self.electricityPercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalElectricityCount*100/self.totalNumberOfComplaints)];
+  self.transportationPercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalTransportationCount*100/self.totalNumberOfComplaints)];
+  self.waterPercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalWaterCount*100/self.totalNumberOfComplaints)];
+  self.lawPercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalLawCount*100/self.totalNumberOfComplaints)];
+  self.complaintsCountLabel.text =
+  [NSString stringWithFormat:@"%d",(int)self.totalNumberOfComplaints];
   
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setInteger:self.totalNumberOfComplaints forKey:kTotalComplaints];
+ // [defaults setInteger:<#(NSInteger)#> forKey:<#(NSString *)#>]
 }
 
 - (int)totalCountInIssue:(NSArray *)issue {
