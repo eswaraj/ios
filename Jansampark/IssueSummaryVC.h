@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MLA+JSAPIAdditions.h"
+#import "MyriadBoldLabel.h"
 @interface IssueSummaryVC : UIViewController
 
 @property (strong, nonatomic) MLA *mla;
 
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *issueCategoryLabel;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
+@property (weak, nonatomic) IBOutlet MyriadBoldLabel *addressLabel;
+
+@property (strong, nonatomic) NSString *issueCategory;
+@property (strong, nonatomic) NSString *systemLevel;
+@property (strong, nonatomic) NSString *address;
 @end

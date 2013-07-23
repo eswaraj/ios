@@ -36,4 +36,64 @@
 }
 
 
++ (RKObjectRequestOperation *)postComplaintWithParams:(NSDictionary *)params
+                          image:(UIImage*)img
+                andProfileImage:(UIImage *)profile_img
+                     completion:(JSAPICompletionBlock)block {
+  
+  NSMutableURLRequest *request =
+  [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
+                                                           method:RKRequestMethodPOST
+                                                             path:@"/html/dev/micronews/?q=phonegap/post"
+                                                       parameters:params
+                                        constructingBodyWithBlock:
+   ^(id<AFMultipartFormData> formData) {
+     
+     if (img) {
+       [formData appendPartWithFileData:UIImageJPEGRepresentation(img, 1)
+                                   name:@"img"
+                               fileName:@"photo.jpg"
+                               mimeType:@"image/jpeg"];
+     }
+     
+     
+     if(profile_img) {
+       [formData appendPartWithFileData:UIImageJPEGRepresentation(profile_img, 1)
+                                   name:@"profile_img"
+                               fileName:@"photo.jpg"
+                               mimeType:@"image/jpeg"];
+     }
+
+   }];
+  
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  RKObjectRequestOperation *operation =
+  [[RKObjectManager sharedManager] managedObjectRequestOperationWithRequest:request
+                                                       managedObjectContext:context
+                                                                    success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     block(YES, [mappingResult array], nil);
+   } failure:
+   ^(RKObjectRequestOperation *operation, NSError *error) {
+     block(NO, nil, error);
+   }];
+  return operation;
+}
+
++ (void)fetchMLAIdWithLat:(NSString *)lat
+                   andLon:(NSString *)lon
+               completion:(JSAPICompletionBlock)block {
+  NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/getmlaid.php?lat=%@&long=%@",lat,lon];
+  
+  [[RKObjectManager sharedManager] postObject:nil
+                                         path:path
+                                   parameters:nil
+                                      success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+     block(YES, [mappingResult array], nil);
+   } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+     block(NO, nil, error);
+   }];
+}
 @end

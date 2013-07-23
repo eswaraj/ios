@@ -84,6 +84,8 @@
 		1894AD5A177DBF6F003538CE /* tabbar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD58177DBF6F003538CE /* tabbar_bg.png */; };
 		1894AD5B177DBF6F003538CE /* tabbar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1894AD59177DBF6F003538CE /* tabbar_bg@2x.png */; };
 		1894AD60177DC0BA003538CE /* ContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1894AD5F177DC0BA003538CE /* ContainerVC.m */; };
+		18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 18983AD61796B6BD00DF80F1 /* MyriadPro-BoldIt.otf */; };
+		18983ADA1796B71500DF80F1 /* MyriadBoldItLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18983AD91796B71500DF80F1 /* MyriadBoldItLabel.m */; };
 		18A2E21D1782E0130061E18D /* electricity_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E2111782E0130061E18D /* electricity_button.png */; };
 		18A2E21E1782E0130061E18D /* electricity_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E2121782E0130061E18D /* electricity_button@2x.png */; };
 		18A2E21F1782E0130061E18D /* law_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A2E2131782E0130061E18D /* law_button.png */; };
@@ -253,6 +255,9 @@
 		1894AD59177DBF6F003538CE /* tabbar_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_bg@2x.png"; sourceTree = "<group>"; };
 		1894AD5E177DC0BA003538CE /* ContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerVC.h; sourceTree = "<group>"; };
 		1894AD5F177DC0BA003538CE /* ContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerVC.m; sourceTree = "<group>"; };
+		18983AD61796B6BD00DF80F1 /* MyriadPro-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MyriadPro-BoldIt.otf"; sourceTree = "<group>"; };
+		18983AD81796B71500DF80F1 /* MyriadBoldItLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyriadBoldItLabel.h; sourceTree = "<group>"; };
+		18983AD91796B71500DF80F1 /* MyriadBoldItLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyriadBoldItLabel.m; sourceTree = "<group>"; };
 		18A2E2111782E0130061E18D /* electricity_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = electricity_button.png; sourceTree = "<group>"; };
 		18A2E2121782E0130061E18D /* electricity_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "electricity_button@2x.png"; sourceTree = "<group>"; };
 		18A2E2131782E0130061E18D /* law_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = law_button.png; sourceTree = "<group>"; };
@@ -732,6 +737,7 @@
 		18BCE18217819BD000BA7D89 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				18983AD61796B6BD00DF80F1 /* MyriadPro-BoldIt.otf */,
 				18B4579217847F0A00DCA030 /* MyriadPro-Bold.otf */,
 				182EF1191782E38E00F6F694 /* OpenSans-Bold.ttf */,
 				182EF11A1782E38E00F6F694 /* OpenSans-Light.ttf */,
@@ -758,6 +764,8 @@
 				FC3B6077178456EF00953836 /* MyriadRegularLabel.m */,
 				18B4579417847F5100DCA030 /* MyriadBoldLabel.h */,
 				18B4579517847F5100DCA030 /* MyriadBoldLabel.m */,
+				18983AD81796B71500DF80F1 /* MyriadBoldItLabel.h */,
+				18983AD91796B71500DF80F1 /* MyriadBoldItLabel.m */,
 			);
 			name = "Custom Classes";
 			path = Jansampark;
@@ -984,6 +992,7 @@
 				18BC5C8517940AEC003E58B0 /* walkthrough.png in Resources */,
 				18BC5C8617940AEC003E58B0 /* walkthrough@2x.png in Resources */,
 				18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */,
+				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,6 +1060,7 @@
 				FC31D3371790289000F1A60B /* LocationSearchCell.m in Sources */,
 				18BC5C82179407D5003E58B0 /* AboutVC.m in Sources */,
 				18BC5C8B17940E6E003E58B0 /* ProfileVC.m in Sources */,
+				18983ADA1796B71500DF80F1 /* MyriadBoldItLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

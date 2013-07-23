@@ -23,6 +23,12 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
 @property (nonatomic, strong) NSMutableArray *operationQueue;
 
+@property (nonatomic, strong) NSArray *waterAnalytics;
+@property (nonatomic, strong) NSArray *roadAnalytics;
+@property (nonatomic, strong) NSArray *transportationAnalytics;
+@property (nonatomic, strong) NSArray *sewageAnalytics;
+@property (nonatomic, strong) NSArray *lawAnalytics;
+@property (nonatomic, strong) NSArray *electricityAnalytics;
 // Location Methods
 - (void)startTrackingLocation;
 - (void)stopTrackingLocation;
@@ -37,4 +43,6 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 - (BOOL)isNetworkReachable;
 
 - (void)runBackgroundTimer;
+
+- (NSString *)GetUUID;
 @end

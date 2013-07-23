@@ -47,5 +47,9 @@
   NSData *data = [NSData dataWithContentsOfURL:url];
   [self.mlaImageOutlet setImage:[UIImage imageWithData:data]];
   
+  [self.issueCategoryLabel setText:self.issueCategory];
+  [self.systemLevelLabel setText:self.systemLevel];
+  [self.addressLabel setText:self.address];
+  
 }
 @end

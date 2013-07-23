@@ -47,6 +47,8 @@ static JSModel *sharedModel = nil;
     
     //TODO store last location of user in core data
     // SET A DEFAULT LOCATION (NEW YORK)
+    CLLocation * defaultLocation = [[CLLocation alloc] initWithLatitude:12.88 longitude:77.655];
+    [self setCurrentLocation:defaultLocation];
     self.address = @"Banglore";
     [self parseConstituencyData];
   }
@@ -207,5 +209,12 @@ static JSModel *sharedModel = nil;
     [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
     [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
   }
+}
+
+- (NSString *)GetUUID {
+  CFUUIDRef theUUID = CFUUIDCreate(NULL);
+  CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+  CFRelease(theUUID);
+  return (__bridge NSString *)string;
 }
 @end

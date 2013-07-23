@@ -33,6 +33,7 @@
 	// Do any additional setup after loading the view.
   [self configureUI];
   self.scrollView.delegate = self;
+  [self performSelector:@selector(dismissThisView) withObject:nil afterDelay:7];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,6 +44,9 @@
 
 #pragma mark - IBActions
 
+-(void)dismissThisView {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)pageControlClicked:(id)sender {
   CGRect frame = self.scrollView.bounds;
   frame.origin.x = self.pageControl.currentPage*frame.size.width;
