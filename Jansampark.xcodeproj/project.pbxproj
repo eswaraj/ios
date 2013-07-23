@@ -157,7 +157,6 @@
 		FC49792D178F0DC40043B84A /* searchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC49792C178F0DC40043B84A /* searchBG.png */; };
 		FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */; };
 		FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB8179EB0AE00982188 /* Analytic.m */; };
-		FC6FEEBB179EB34500982188 /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = FC6FEEBA179EB34500982188 /* file.json */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
 		FCE10080178AE31C006FDB2E /* JSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */; };
 		FCE10083178AE3CA006FDB2E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE10082178AE3CA006FDB2E /* Constants.m */; };
@@ -346,7 +345,6 @@
 		FC6FEEB6179E984200982188 /* RestKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitAdditions.h; sourceTree = "<group>"; };
 		FC6FEEB7179EB0AE00982188 /* Analytic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analytic.h; sourceTree = "<group>"; };
 		FC6FEEB8179EB0AE00982188 /* Analytic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytic.m; sourceTree = "<group>"; };
-		FC6FEEBA179EB34500982188 /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = "<group>"; };
 		FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAPIInterface.h; sourceTree = "<group>"; };
@@ -844,7 +842,6 @@
 				FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */,
 				FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */,
 				FC6FEEB6179E984200982188 /* RestKitAdditions.h */,
-				FC6FEEBA179EB34500982188 /* file.json */,
 				FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */,
 			);
 			name = APIInterface;
@@ -1024,7 +1021,6 @@
 				18BC5C8617940AEC003E58B0 /* walkthrough@2x.png in Resources */,
 				18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */,
 				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
-				FC6FEEBB179EB34500982188 /* file.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
