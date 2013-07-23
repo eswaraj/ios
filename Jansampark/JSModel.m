@@ -55,6 +55,56 @@ static JSModel *sharedModel = nil;
   return self;
 }
 
+#pragma mark - CoreData Method
+
+// deletes all objects of an entity
+- (void)deleteAllObjectsForEntity:(NSString *)entity {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entity
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  for (NSManagedObject *managedObject in items) {
+    [context deleteObject:managedObject];
+  }
+  if (![context saveToPersistentStore:&error]) {
+    NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+  }
+}
+
+- (NSArray *)fetchAllObjectsForEntity:(NSString *)entity {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entity
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  
+  return items;
+}
+
+- (NSArray *)fetchAnalyticForIssue:(NSString *)issue {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Analytic"
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"issue == %@", issue];
+  [fetchRequest setPredicate:predicate];
+  
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  
+  return items;
+}
+
 #pragma mark - Location Tracking Methods
 
 - (void)startTrackingLocation {

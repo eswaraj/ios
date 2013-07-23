@@ -9,6 +9,8 @@
 #import "JSAPIInterface.h"
 #import "Constants.h"
 #import "MLA+JSAPIAdditions.h"
+#import "Analytic+JSAPIAdditions.h"
+#import "JSModel.h"
 
 static JSAPIInterface *__instance = nil;
 
@@ -98,8 +100,6 @@ static JSAPIInterface *__instance = nil;
                                               keyPath:@"nodes.node"
                                           statusCodes:successSet];
   [[RKObjectManager sharedManager] addResponseDescriptor:mlaDescriptor];
-  
-
 }
 
 

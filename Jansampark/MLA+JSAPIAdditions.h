@@ -9,10 +9,9 @@
 #import "MLA.h"
 #import <RestKit/RestKit.h>
 #import "JSAPIInterface.h"
+#import "RestKitAdditions.h"
 
-@interface MLA (JSAPIAdditions)
-
-+(RKEntityMapping *)restkitObjectMappingForStore:(RKManagedObjectStore *)store;
+@interface MLA (JSAPIAdditions) <RestKitAdditions>
 
 + (void)fetchMLAIdWithLat:(NSString *)lat
                    andLon:(NSString *)lon

@@ -23,12 +23,10 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
 @property (nonatomic, strong) NSMutableArray *operationQueue;
 
-@property (nonatomic, strong) NSArray *waterAnalytics;
-@property (nonatomic, strong) NSArray *roadAnalytics;
-@property (nonatomic, strong) NSArray *transportationAnalytics;
-@property (nonatomic, strong) NSArray *sewageAnalytics;
-@property (nonatomic, strong) NSArray *lawAnalytics;
-@property (nonatomic, strong) NSArray *electricityAnalytics;
+- (void)deleteAllObjectsForEntity:(NSString *)entity;
+- (NSArray *)fetchAllObjectsForEntity:(NSString *)entity;
+- (NSArray *)fetchAnalyticForIssue:(NSString *)issue;
+
 // Location Methods
 - (void)startTrackingLocation;
 - (void)stopTrackingLocation;

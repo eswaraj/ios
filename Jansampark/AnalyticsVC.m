@@ -15,7 +15,7 @@
 #import "MyriadBoldLabel.h"
 #import "Constants.h"
 #import <RestKit/RestKit.h>
-#import "MLA.h"
+#import "Analytic+JSAPIAdditions.h"
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
 @interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -226,25 +226,38 @@ replacementString:(NSString *)string {
      [NSJSONSerialization JSONObjectWithData:jsonData
                                      options:NSJSONReadingMutableContainers
                                        error: &e];
-
-     NSDictionary *mappingsDictionary = @{ @"someKeyPath": @"name"};
-     MLA *appUser = [[MLA alloc] init];
-     RKMapperOperation *mapper = [[RKMapperOperation alloc] initWithRepresentation:jsonDictionary mappingsDictionary:mappingsDictionary];
-     mapper.targetObject = appUser;
-     NSError *mappingError = nil;
-     BOOL isMapped = [mapper execute:&mappingError];
-     if (isMapped && !mappingError) {
-       // Yay! Mapping finished successfully
-       NSLog(@"mapper: %@", [mapper representation]);
-       NSLog(@"firstname is %@", appUser.name);
+     
+     [[JSModel sharedModel] deleteAllObjectsForEntity:@"Analytic"];
+     
+     NSArray *waterArray = [jsonDictionary objectForKey:@"48"];
+     for(NSDictionary *dict in waterArray) {
+       [self performMappingForSource:dict andIssue:@"48"];
      }
-    
-     [[JSModel sharedModel] setWaterAnalytics:[jsonDictionary objectForKey:@"48"]];
-     [[JSModel sharedModel] setRoadAnalytics:[jsonDictionary objectForKey:@"51"]];
-     [[JSModel sharedModel] setElectricityAnalytics:[jsonDictionary objectForKey:@"49"]];
-     [[JSModel sharedModel] setLawAnalytics:[jsonDictionary objectForKey:@"53"]];
-     [[JSModel sharedModel] setSewageAnalytics:[jsonDictionary objectForKey:@"50"]];
-     [[JSModel sharedModel] setTransportationAnalytics:[jsonDictionary objectForKey:@"52"]];
+     
+     NSArray *roadArray = [jsonDictionary objectForKey:@"51"];
+     for(NSDictionary *dict in roadArray) {
+       [self performMappingForSource:dict andIssue:@"51"];
+     }
+     
+     NSArray *electricityArray = [jsonDictionary objectForKey:@"49"];
+     for(NSDictionary *dict in electricityArray) {
+       [self performMappingForSource:dict andIssue:@"49"];
+     }
+     
+     NSArray *lawArray = [jsonDictionary objectForKey:@"53"];
+     for(NSDictionary *dict in lawArray) {
+       [self performMappingForSource:dict andIssue:@"53"];
+     }
+     
+     NSArray *sewageArray = [jsonDictionary objectForKey:@"50"];
+     for(NSDictionary *dict in sewageArray) {
+       [self performMappingForSource:dict andIssue:@"50"];
+     }
+     
+     NSArray *transportationArray = [jsonDictionary objectForKey:@"52"];
+     for(NSDictionary *dict in transportationArray) {
+       [self performMappingForSource:dict andIssue:@"52"];
+     }    
      
      [self refreshAnalytics];
    }];
@@ -254,22 +267,22 @@ replacementString:(NSString *)string {
 - (void)refreshAnalytics {
   
   
-  NSArray *water = [[JSModel sharedModel] waterAnalytics];
+  NSArray *water = [[JSModel sharedModel] fetchAnalyticForIssue:@"48"];
   int totalWaterCount = [self totalCountInIssue:water];
   
-  NSArray *sewage = [[JSModel sharedModel] sewageAnalytics];
+  NSArray *sewage = [[JSModel sharedModel] fetchAnalyticForIssue:@"50"];
   int totalSewageCount = [self totalCountInIssue:sewage];
   
-  NSArray *electricity = [[JSModel sharedModel] electricityAnalytics];
+  NSArray *electricity = [[JSModel sharedModel] fetchAnalyticForIssue:@"49"];
   int totalElectricityCount = [self totalCountInIssue:electricity];
   
-  NSArray *transportation = [[JSModel sharedModel] transportationAnalytics];
+  NSArray *transportation = [[JSModel sharedModel] fetchAnalyticForIssue:@"52"];
   int totalTransportationCount = [self totalCountInIssue:transportation];
   
-  NSArray *road = [[JSModel sharedModel] roadAnalytics];
+  NSArray *road = [[JSModel sharedModel] fetchAnalyticForIssue:@"51"];
   int totalRoadCount = [self totalCountInIssue:road];
   
-  NSArray *law = [[JSModel sharedModel] lawAnalytics];
+  NSArray *law = [[JSModel sharedModel] fetchAnalyticForIssue:@"53"];
   int totalLawCount = [self totalCountInIssue:law];
 
   
@@ -281,7 +294,8 @@ replacementString:(NSString *)string {
   
   self.roadPercent.text =
   [NSString stringWithFormat:@"%d%%",(int)(totalRoadCount*100/self.totalNumberOfComplaints)];
-  self.sewagePercent.text = [NSString stringWithFormat:@"%d%%",(int)(totalSewageCount*100/self.totalNumberOfComplaints)];
+  self.sewagePercent.text =
+  [NSString stringWithFormat:@"%d%%",(int)(totalSewageCount*100/self.totalNumberOfComplaints)];
   self.electricityPercent.text =
   [NSString stringWithFormat:@"%d%%",(int)(totalElectricityCount*100/self.totalNumberOfComplaints)];
   self.transportationPercent.text =
@@ -292,18 +306,37 @@ replacementString:(NSString *)string {
   [NSString stringWithFormat:@"%d%%",(int)(totalLawCount*100/self.totalNumberOfComplaints)];
   self.complaintsCountLabel.text =
   [NSString stringWithFormat:@"%d",(int)self.totalNumberOfComplaints];
-  
-  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-  [defaults setInteger:self.totalNumberOfComplaints forKey:kTotalComplaints];
- // [defaults setInteger:<#(NSInteger)#> forKey:<#(NSString *)#>]
 }
 
 - (int)totalCountInIssue:(NSArray *)issue {
   int totalCount = 0;
-  for(NSDictionary *dict in issue) {
-    totalCount += [[dict objectForKey:@"counter"] intValue];
+  for(Analytic *analytic in issue) {
+    totalCount += analytic.counter.intValue;
   }
   return totalCount;
 }
+
+- (void)performMappingForSource:(NSDictionary *)source andIssue:(NSString *)issue {
+  
+  NSMutableDictionary *modifiedSourceDict = [[NSMutableDictionary alloc] initWithDictionary:source];
+  [modifiedSourceDict setObject:issue forKey:@"issue"];
+  
+  RKManagedObjectStore *store = [RKObjectManager sharedManager].managedObjectStore;
+  NSEntityDescription *entity =
+  [NSEntityDescription entityForName:@"Analytic" inManagedObjectContext:store.persistentStoreManagedObjectContext];
+  
+  Analytic *analytic = [[Analytic alloc] initWithEntity:entity
+                                       insertIntoManagedObjectContext:store.persistentStoreManagedObjectContext];
+  RKEntityMapping *analyticMapping = [Analytic restkitObjectMappingForStore:store];
+  
+  RKMappingOperation *operation = [[RKMappingOperation alloc] initWithSourceObject:modifiedSourceDict
+                                                                 destinationObject:analytic
+                                                                           mapping:analyticMapping];
+  NSError *error = nil;
+  [operation performMapping:&error];
+  [[[[RKObjectManager sharedManager] managedObjectStore] persistentStoreManagedObjectContext] save:&error];
+}
+
+
 
 @end
