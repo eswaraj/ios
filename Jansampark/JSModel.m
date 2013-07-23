@@ -47,10 +47,62 @@ static JSModel *sharedModel = nil;
     
     //TODO store last location of user in core data
     // SET A DEFAULT LOCATION (NEW YORK)
+    CLLocation * defaultLocation = [[CLLocation alloc] initWithLatitude:12.88 longitude:77.655];
+    [self setCurrentLocation:defaultLocation];
     self.address = @"Banglore";
     [self parseConstituencyData];
   }
   return self;
+}
+
+#pragma mark - CoreData Method
+
+// deletes all objects of an entity
+- (void)deleteAllObjectsForEntity:(NSString *)entity {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entity
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  for (NSManagedObject *managedObject in items) {
+    [context deleteObject:managedObject];
+  }
+  if (![context saveToPersistentStore:&error]) {
+    NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+  }
+}
+
+- (NSArray *)fetchAllObjectsForEntity:(NSString *)entity {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:entity
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  
+  return items;
+}
+
+- (NSArray *)fetchAnalyticForIssue:(NSString *)issue {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Analytic"
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"issue == %@", issue];
+  [fetchRequest setPredicate:predicate];
+  
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  
+  return items;
 }
 
 #pragma mark - Location Tracking Methods
@@ -207,5 +259,12 @@ static JSModel *sharedModel = nil;
     [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
     [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
   }
+}
+
+- (NSString *)GetUUID {
+  CFUUIDRef theUUID = CFUUIDCreate(NULL);
+  CFStringRef string = CFUUIDCreateString(NULL, theUUID);
+  CFRelease(theUUID);
+  return (__bridge NSString *)string;
 }
 @end

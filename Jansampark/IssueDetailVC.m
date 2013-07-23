@@ -72,7 +72,7 @@
                                        [UIImage imageNamed:@"runningMan11"],
                                        [UIImage imageNamed:@"runningMan12"],
                                        nil]];
-  [self.loaderImage setAnimationDuration:2];
+  [self.loaderImage setAnimationDuration:1];
 }
 
 #pragma mark - IBActions 
@@ -165,6 +165,31 @@
 
 #pragma mark - Custom Methods
 
+- (UIImage *)getProfileImage {
+  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  UIImage* image = [UIImage imageWithData:imageData];
+  if(image!=nil) {
+    image = [self image:image ScaledToSize:CGSizeMake(60, 60)];
+    return image;
+  } else {
+    return nil;
+  }
+}
+
+- (UIImage*)image:(UIImage *)img ScaledToSize:(CGSize)newSize {
+  
+  UIGraphicsBeginImageContext(newSize);
+  
+  [img drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+  
+  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+  
+  UIGraphicsEndImageContext();
+  
+  return newImage;
+  
+}
+
 - (void)stopLoader {
   [self.loaderView setHidden:YES];
   [self.loaderImage stopAnimating];
@@ -174,86 +199,105 @@
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                           latitude, @"lat",
                           longitude, @"long",
                           self.issueType, @"issue_type",
                           [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
-                          @"123", @"reporter_id",
+                          UUID, @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
+  UIImage *image;
+  if(self.imageView.image) {
+    image = self.imageView.image;
+    if(image.size.height>image.size.width) {
+      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
+    } else {
+      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
+    }
+  } else {
+    image = nil;
+  }
+  UIImage *profileImage = [self getProfileImage];
   
-  UIImage *image = self.imageView.image;
-  
-  NSMutableURLRequest *request =
-  [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
-                                                           method:RKRequestMethodPOST
-                                                             path:@"/html/dev/micronews/?q=phonegap/post"
-                                                       parameters:params
-                                        constructingBodyWithBlock:
-   ^(id<AFMultipartFormData> formData) {
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                 name:@"img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
-     
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                 name:@"profile_img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
-     
-   }];
-  
-  NSManagedObjectContext *context =
-  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
-  RKObjectRequestOperation *operation =
-  [[RKObjectManager sharedManager] managedObjectRequestOperationWithRequest:request
-                                                       managedObjectContext:context
-                                                                    success:
-   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-     
-   } failure:
-   ^(RKObjectRequestOperation *operation, NSError *error) {
-     if ([error.localizedRecoverySuggestion isEqualToString:@"\r\nsuccess"]) {
-       NSLog(@"sucess is working");
-     }
-     NSLog(@"kdsjhfksjd - %@", error.userInfo);
+  NSLog(@"details %@",params);
+ RKObjectRequestOperation *operation =
+  [MLA postComplaintWithParams:params
+                         image:image
+               andProfileImage:profileImage
+                    completion:^(BOOL success, NSArray *result, NSError *error) {
+    NSData *jsonData = [error.localizedRecoverySuggestion
+                        dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *e = nil;
+    NSDictionary *jsonArray =
+    [NSJSONSerialization JSONObjectWithData:jsonData
+                                    options:NSJSONReadingMutableContainers
+                                      error: &e];
+    
+    NSString * status = [jsonArray objectForKey:@"status"];
+    NSLog(@" status is %@",status);
+    
+    if([status rangeOfString:@"success"].location != NSNotFound) {
+      [MLA fetchMLAIdWithLat:@"12.88"
+                      andLon:@"77.655"
+                  completion:^(BOOL success, NSArray *result, NSError *error) {
+                    NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
+                    NSError *e = nil;
+                    NSDictionary *jsonArray =
+                    [NSJSONSerialization JSONObjectWithData:jsonData
+                                                    options:NSJSONReadingMutableContainers
+                                                      error: &e];
+                    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+                    [f setNumberStyle:NSNumberFormatterDecimalStyle];
+                    NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
+                    if(mla_id!=nil) {
+                      [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+                        if(success) {
+                          MLA *mla = [result objectAtIndex:0];
+                          IssueSummaryVC *vc =
+                          [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+                          [vc setMla:mla];
+                          vc.issueCategory = self.issueCategory;
+                          vc.systemLevel = self.systemLevelLabel.text;
+                          vc.address = [JSModel sharedModel].address;
+                          [self.loaderImage stopAnimating];
+                          [self.loaderView setHidden:YES];
+                          [self.navigationController pushViewController:vc animated:YES];
+                        } else {
+                          UIAlertView *alertView =
+                          [[UIAlertView alloc] initWithTitle:@"Complaint Posted"
+                                                     message:@"Error Showing MLA Information"
+                                                    delegate:nil cancelButtonTitle:@"OK"
+                                           otherButtonTitles: nil];
+                          [alertView show];
+                        }
+                      }];
+                    } else {
+                      UIAlertView *alertView =
+                      [[UIAlertView alloc] initWithTitle:@"Complaint Posted"
+                                                 message:@"Error Showing MLA Information"
+                                                delegate:nil cancelButtonTitle:@"OK"
+                                       otherButtonTitles: nil];
+                      [alertView show];
+                    }
+                    
+                  }];
 
-     
-     
-     [[RKObjectManager sharedManager] postObject:nil
-                                            path:@"/html/dev/micronews/getmlaid.php?lat=12.88&long=77.655"
-                                      parameters:nil
-                                         success:
-      ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        
-      } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *e = nil;
-        NSDictionary *jsonArray =
-        [NSJSONSerialization JSONObjectWithData:jsonData
-                                        options:NSJSONReadingMutableContainers
-                                          error: &e];
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
-        [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
-          if(success) {
-            MLA *mla = [result objectAtIndex:0];
-            IssueSummaryVC *vc =
-            [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
-            [vc setMla:mla];
-            [self.loaderImage stopAnimating];
-            [self.loaderView setHidden:YES];
-            [self.navigationController pushViewController:vc animated:YES];
-          } else {
-            
-          }
-        }];
-      }];
-   }];
+    } else {
+      UIAlertView *alertView =
+      [[UIAlertView alloc] initWithTitle:@"Error Posting Complaint"
+                                 message:@"Please try again after some time"
+                                delegate:nil cancelButtonTitle:@"OK"
+                       otherButtonTitles: nil];
+      [alertView show];
+      
+    }
+                      
+  }];
+
+
+  
  return operation;
 }
 
@@ -261,54 +305,49 @@
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                           latitude, @"lat",
                           longitude, @"long",
                           self.issueType, @"issue_type",
                           [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
-                          @"123", @"reporter_id",
+                          UUID, @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
-  
-  UIImage *image = self.imageView.image;
-  
-  NSMutableURLRequest *request =
-  [[RKObjectManager sharedManager] multipartFormRequestWithObject:nil
-                                                           method:RKRequestMethodPOST
-                                                             path:@"/html/dev/micronews/?q=phonegap/post"
-                                                       parameters:params
-                                        constructingBodyWithBlock:
-   ^(id<AFMultipartFormData> formData) {
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                 name:@"img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
-     
-     
-     [formData appendPartWithFileData:UIImageJPEGRepresentation(image, 1)
-                                 name:@"profile_img"
-                             fileName:@"photo.jpg"
-                             mimeType:@"image/jpeg"];
-     
-   }];
-  
-  NSManagedObjectContext *context =
-  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  UIImage *image;
+  if(self.imageView.image) {
+    image = self.imageView.image;
+    if(image.size.height>image.size.width) {
+      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
+    } else {
+      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
+    }
+  } else {
+    image = nil;
+  }
+  UIImage *profileImage = [self getProfileImage];
+
+    NSLog(@"details %@",params);
   RKObjectRequestOperation *operation =
-  [[RKObjectManager sharedManager] managedObjectRequestOperationWithRequest:request
-                                                       managedObjectContext:context
-                                                                    success:
-   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-     
-   } failure:
-   ^(RKObjectRequestOperation *operation, NSError *error) {
-     if ([error.localizedRecoverySuggestion isEqualToString:@"\nsuccess"]) {
-       //[self.activityIndicator stopAnimating];
-       [self.loaderImage stopAnimating];
-       [self.loaderView setHidden:YES];
-     }
-     NSLog(@"kdsjhfksjd - %@", error.userInfo);
+  [MLA postComplaintWithParams:params
+                         image:image
+               andProfileImage:profileImage
+                    completion:^(BOOL success, NSArray *result, NSError *error) {
+                      
+                      
+//remove this code in the final app - only for testing
+                      
+                      NSData *jsonData = [error.localizedRecoverySuggestion
+                                          dataUsingEncoding:NSUTF8StringEncoding];
+                      NSError *e = nil;
+                      NSDictionary *jsonArray =
+                      [NSJSONSerialization JSONObjectWithData:jsonData
+                                                      options:NSJSONReadingMutableContainers
+                                                        error: &e];
+                      
+                      NSString * status = [jsonArray objectForKey:@"status"];
+                      NSLog(@" status is %@",status);
+  //remove till here
     
      if ([JSModel sharedModel].operationQueue.count&&[[JSModel sharedModel] isNetworkReachable]) {
        RKObjectRequestOperation * queuedOperation =
@@ -320,6 +359,8 @@
 
   return operation;
 }
+
+
 - (void)configureUI {
   [self.descriptionTextView setFont:[UIFont fontWithName:@"MyriadPro-Bold" size:14]];
   

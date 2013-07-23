@@ -20,6 +20,13 @@
   
   [JSModel sharedModel].reachability = [KSReachability reachabilityToHost:nil];
   [[JSModel sharedModel] runBackgroundTimer];
+  
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
+  if(!UUID.length) {
+    UUID = [[JSModel sharedModel] GetUUID];
+    [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"UUID"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+  }
     return YES;
 }
 

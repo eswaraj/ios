@@ -9,12 +9,20 @@
 #import "MLA.h"
 #import <RestKit/RestKit.h>
 #import "JSAPIInterface.h"
+#import "RestKitAdditions.h"
 
-@interface MLA (JSAPIAdditions)
+@interface MLA (JSAPIAdditions) <RestKitAdditions>
 
-+(RKEntityMapping *)restkitObjectMappingForStore:(RKManagedObjectStore *)store;
++ (void)fetchMLAIdWithLat:(NSString *)lat
+                   andLon:(NSString *)lon
+               completion:(JSAPICompletionBlock)block;
 
 + (void)fetchMLAWithId:(NSNumber *)mla_id
                 completion:(JSAPICompletionBlock)block;
+
++ (RKObjectRequestOperation *)postComplaintWithParams:(NSDictionary *)params
+                          image:(UIImage*)img
+                andProfileImage:(UIImage *)profile_img
+            completion:(JSAPICompletionBlock)block;
 
 @end
