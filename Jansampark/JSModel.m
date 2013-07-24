@@ -248,17 +248,34 @@ static JSModel *sharedModel = nil;
 }
 
 - (void)runBackgroundTimer {
-  self.timer = [NSTimer scheduledTimerWithTimeInterval:40 target:self selector:@selector(runOperationQueue) userInfo:nil repeats:YES];
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:20
+                                                target:self
+                                              selector:@selector(runOperationQueue)
+                                              userInfo:nil
+                                               repeats:YES];
 }
 
+- (void)stopBackgroundTimer {
+  [self.timer invalidate];
+  self.timer =  nil;
+}
+
+
 - (void)runOperationQueue {
-  NSLog(@"timer running");
-  if ([JSModel sharedModel].operationQueue.count&&[[JSModel sharedModel] isNetworkReachable]) {
+  if ([JSModel sharedModel].operationQueue.count && [[JSModel sharedModel] isNetworkReachable]) {
     RKObjectRequestOperation * queuedOperation =
     [[JSModel sharedModel].operationQueue objectAtIndex:0];
     [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
     [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
   }
+}
+
+- (NSDictionary *)jsonFromHTMLError:(NSError **)error {
+  NSData *jsonData = [[*error localizedRecoverySuggestion] dataUsingEncoding:NSUTF8StringEncoding];
+  NSError *e = nil;
+  return [NSJSONSerialization JSONObjectWithData:jsonData
+                                         options:NSJSONReadingMutableContainers
+                                           error:&e];
 }
 
 - (NSString *)GetUUID {

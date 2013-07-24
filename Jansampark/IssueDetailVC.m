@@ -48,7 +48,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
   
   
 	// Do any additional setup after loading the view.
@@ -59,23 +59,23 @@
   [self configureUI];
   
   [self.loaderImage setAnimationImages:[NSArray arrayWithObjects:
-                                       [UIImage imageNamed:@"runningMan1"],
-                                       [UIImage imageNamed:@"runningMan2"],
-                                       [UIImage imageNamed:@"runningMan3"],
-                                       [UIImage imageNamed:@"runningMan4"],
-                                       [UIImage imageNamed:@"runningMan5"],
-                                       [UIImage imageNamed:@"runningMan6"],
-                                       [UIImage imageNamed:@"runningMan7"],
-                                       [UIImage imageNamed:@"runningMan8"],
-                                       [UIImage imageNamed:@"runningMan9"],
-                                       [UIImage imageNamed:@"runningMan10"],
-                                       [UIImage imageNamed:@"runningMan11"],
-                                       [UIImage imageNamed:@"runningMan12"],
-                                       nil]];
+                                        [UIImage imageNamed:@"runningMan1"],
+                                        [UIImage imageNamed:@"runningMan2"],
+                                        [UIImage imageNamed:@"runningMan3"],
+                                        [UIImage imageNamed:@"runningMan4"],
+                                        [UIImage imageNamed:@"runningMan5"],
+                                        [UIImage imageNamed:@"runningMan6"],
+                                        [UIImage imageNamed:@"runningMan7"],
+                                        [UIImage imageNamed:@"runningMan8"],
+                                        [UIImage imageNamed:@"runningMan9"],
+                                        [UIImage imageNamed:@"runningMan10"],
+                                        [UIImage imageNamed:@"runningMan11"],
+                                        [UIImage imageNamed:@"runningMan12"],
+                                        nil]];
   [self.loaderImage setAnimationDuration:1];
 }
 
-#pragma mark - IBActions 
+#pragma mark - IBActions
 
 - (IBAction)backTapped:(id)sender {
   [self.navigationController popViewControllerAnimated:YES];
@@ -136,15 +136,29 @@
   //[self.activityIndicator startAnimating];
   [self.loaderView setHidden:NO];
   [self.loaderImage startAnimating];
-
-    
+  
+  
   //checking network reachability
+  
+  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
+  NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
+  NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
+  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+                          latitude, @"lat",
+                          longitude, @"long",
+                          self.issueType, @"issue_type",
+                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
+                          self.descriptionLabel.text, @"txt",
+                          UUID, @"reporter_id",
+                          [JSModel sharedModel].address, @"addr", nil];
+  
   if ([[JSModel sharedModel] isNetworkReachable]) {
-    RKObjectRequestOperation * operation = [self operationWithFetchingMLA];
+    RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
     [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
   } else {
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stopLoader) userInfo:nil repeats:NO];
-    RKObjectRequestOperation * operation = [self operationInBackground];
+    RKObjectRequestOperation * operation = [self backgroundOperationWithParams:params];
     if(![[JSModel sharedModel] operationQueue]) {
       [JSModel sharedModel].operationQueue = [[NSMutableArray alloc] init];
       
@@ -168,26 +182,46 @@
 - (UIImage *)getProfileImage {
   NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
   UIImage* image = [UIImage imageWithData:imageData];
-  if(image!=nil) {
-    image = [self image:image ScaledToSize:CGSizeMake(60, 60)];
+  if(!image) {
+    image = [self compressImage:image toSize:CGSizeMake(60, 60)];
     return image;
   } else {
     return nil;
   }
 }
 
+- (UIImage *)getIssueImage {
+  UIImage *image = nil;
+  if(self.imageView.image) {
+    image = [self compressImage:self.imageView.image toSize:CGSizeMake(800, 800)];
+  }
+  return image;
+}
+
+- (UIImage *)compressImage:(UIImage *)image toSize:(CGSize)size {
+  float newWidth = 0;
+  float newHeight = 0;
+  
+  if(image.size.height > image.size.width) {
+    if(image.size.height > size.height) {
+      newHeight = size.height;
+      newWidth = (image.size.width / image.size.height) * size.height;
+    }
+  } else {
+    if(image.size.width > size.width) {
+      newWidth = size.width;
+      newHeight = (image.size.height / image.size.width) * size.width;
+    }
+  }
+  return [self image:image ScaledToSize:CGSizeMake(newWidth, newHeight)];
+}
+
 - (UIImage*)image:(UIImage *)img ScaledToSize:(CGSize)newSize {
-  
   UIGraphicsBeginImageContext(newSize);
-  
   [img drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-  
   UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-  
   UIGraphicsEndImageContext();
-  
   return newImage;
-  
 }
 
 - (void)stopLoader {
@@ -195,168 +229,67 @@
   [self.loaderImage stopAnimating];
 }
 
-- (RKObjectRequestOperation *)operationWithFetchingMLA {
-  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
-  NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
-  NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
-  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
-  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          latitude, @"lat",
-                          longitude, @"long",
-                          self.issueType, @"issue_type",
-                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
-                          self.descriptionLabel.text, @"txt",
-                          UUID, @"reporter_id",
-                          [JSModel sharedModel].address, @"addr", nil];
-  UIImage *image;
-  if(self.imageView.image) {
-    image = self.imageView.image;
-    if(image.size.height>image.size.width) {
-      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
-    } else {
-      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
-    }
-  } else {
-    image = nil;
-  }
-  UIImage *profileImage = [self getProfileImage];
+- (RKObjectRequestOperation *)MLAOperationWithParams:(NSDictionary *)params {
   
-  NSLog(@"details %@",params);
- RKObjectRequestOperation *operation =
-  [MLA postComplaintWithParams:params
-                         image:image
-               andProfileImage:profileImage
-                    completion:^(BOOL success, NSArray *result, NSError *error) {
-    NSData *jsonData = [error.localizedRecoverySuggestion
-                        dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *e = nil;
-    NSDictionary *jsonArray =
-    [NSJSONSerialization JSONObjectWithData:jsonData
-                                    options:NSJSONReadingMutableContainers
-                                      error: &e];
-    
-    NSString * status = [jsonArray objectForKey:@"status"];
-    NSLog(@" status is %@",status);
-    
-    if([status rangeOfString:@"success"].location != NSNotFound) {
-      [MLA fetchMLAIdWithLat:@"12.88"
-                      andLon:@"77.655"
-                  completion:^(BOOL success, NSArray *result, NSError *error) {
-                    NSData *jsonData = [error.localizedRecoverySuggestion dataUsingEncoding:NSUTF8StringEncoding];
-                    NSError *e = nil;
-                    NSDictionary *jsonArray =
-                    [NSJSONSerialization JSONObjectWithData:jsonData
-                                                    options:NSJSONReadingMutableContainers
-                                                      error: &e];
-                    NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-                    [f setNumberStyle:NSNumberFormatterDecimalStyle];
-                    NSNumber * mla_id = [f numberFromString:[jsonArray objectForKey:@"consti_id"]];
-                    if(mla_id!=nil) {
-                      [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
-                        if(success) {
-                          MLA *mla = [result objectAtIndex:0];
-                          IssueSummaryVC *vc =
-                          [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
-                          [vc setMla:mla];
-                          vc.issueCategory = self.issueCategory;
-                          vc.systemLevel = self.systemLevelLabel.text;
-                          vc.address = [JSModel sharedModel].address;
-                          [self.loaderImage stopAnimating];
-                          [self.loaderView setHidden:YES];
-                          [self.navigationController pushViewController:vc animated:YES];
-                        } else {
-                          UIAlertView *alertView =
-                          [[UIAlertView alloc] initWithTitle:@"Complaint Posted"
-                                                     message:@"Error Showing MLA Information"
-                                                    delegate:nil cancelButtonTitle:@"OK"
-                                           otherButtonTitles: nil];
-                          [alertView show];
-                        }
-                      }];
-                    } else {
-                      UIAlertView *alertView =
-                      [[UIAlertView alloc] initWithTitle:@"Complaint Posted"
-                                                 message:@"Error Showing MLA Information"
-                                                delegate:nil cancelButtonTitle:@"OK"
-                                       otherButtonTitles: nil];
-                      [alertView show];
-                    }
-                    
-                  }];
-
-    } else {
-      UIAlertView *alertView =
-      [[UIAlertView alloc] initWithTitle:@"Error Posting Complaint"
-                                 message:@"Please try again after some time"
-                                delegate:nil cancelButtonTitle:@"OK"
-                       otherButtonTitles: nil];
-      [alertView show];
-      
-    }
-                      
-  }];
-
-
-  
- return operation;
-}
-
-- (RKObjectRequestOperation *)operationInBackground {
-  CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
-  NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
-  NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
-  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
-  NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                          latitude, @"lat",
-                          longitude, @"long",
-                          self.issueType, @"issue_type",
-                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
-                          self.descriptionLabel.text, @"txt",
-                          UUID, @"reporter_id",
-                          [JSModel sharedModel].address, @"addr", nil];
-  UIImage *image;
-  if(self.imageView.image) {
-    image = self.imageView.image;
-    if(image.size.height>image.size.width) {
-      image = [self image:image ScaledToSize:CGSizeMake(600, 800)];
-    } else {
-      image = [self image:image ScaledToSize:CGSizeMake(800, 600)];
-    }
-  } else {
-    image = nil;
-  }
-  UIImage *profileImage = [self getProfileImage];
-
-    NSLog(@"details %@",params);
   RKObjectRequestOperation *operation =
   [MLA postComplaintWithParams:params
-                         image:image
-               andProfileImage:profileImage
-                    completion:^(BOOL success, NSArray *result, NSError *error) {
-                      
-                      
-//remove this code in the final app - only for testing
-                      
-                      NSData *jsonData = [error.localizedRecoverySuggestion
-                                          dataUsingEncoding:NSUTF8StringEncoding];
-                      NSError *e = nil;
-                      NSDictionary *jsonArray =
-                      [NSJSONSerialization JSONObjectWithData:jsonData
-                                                      options:NSJSONReadingMutableContainers
-                                                        error: &e];
-                      
-                      NSString * status = [jsonArray objectForKey:@"status"];
-                      NSLog(@" status is %@",status);
-  //remove till here
-    
-     if ([JSModel sharedModel].operationQueue.count&&[[JSModel sharedModel] isNetworkReachable]) {
-       RKObjectRequestOperation * queuedOperation =
-       [[JSModel sharedModel].operationQueue objectAtIndex:0];
-       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
-       [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
+                         image:[self getIssueImage]
+               andProfileImage:[self getProfileImage]
+                    completion:nil];
+  
+  [MLA fetchMLAIdWithLat:[params objectForKey:@"lat"]
+                  andLon:[params objectForKey:@"long"]
+              completion:
+   ^(BOOL success, NSArray *result, NSError *error) {
+     
+     NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
+     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+     [f setNumberStyle:NSNumberFormatterDecimalStyle];
+     NSNumber * mla_id = [f numberFromString:[jsonDict objectForKey:@"consti_id"]];
+     if([self validMLAId:mla_id]) {
+       if(!mla_id) {
+         [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+           if(success) {
+             MLA *mla = [result objectAtIndex:0];
+             IssueSummaryVC *vc =
+             [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+             [vc setMla:mla];
+             vc.issueCategory = self.issueCategory;
+             vc.systemLevel = self.systemLevelLabel.text;
+             vc.address = [JSModel sharedModel].address;
+             [self.loaderImage stopAnimating];
+             [self.loaderView setHidden:YES];
+             [self.navigationController pushViewController:vc animated:YES];
+           } else {
+             [self showMLAInfoErrorAlert];
+           }
+         }];
+       } else {
+         [self showMLAInfoErrorAlert];
+       }
+     } else {
+       UIAlertView *alertView =
+       [[UIAlertView alloc] initWithTitle:@"Coming Soon"
+                                  message:@"Sorry, we will be coming to your area soon!"
+                                 delegate:nil cancelButtonTitle:@"OK"
+                        otherButtonTitles: nil];
+       [alertView show];
      }
-        }];
+     
+   }];
+  
+  return operation;
+}
 
+- (RKObjectRequestOperation *)backgroundOperationWithParams:(NSDictionary *)params {
+  RKObjectRequestOperation *operation =
+  [MLA postComplaintWithParams:params
+                         image:[self getIssueImage]
+               andProfileImage:[self getProfileImage]
+                    completion:
+   ^(BOOL success, NSArray *result, NSError *error) {
+     [[JSModel sharedModel] runOperationQueue];
+   }];
   return operation;
 }
 
@@ -370,12 +303,27 @@
   NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
   NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
   [self.systemLevelLabel setText:systemLevel];
-
+  
   if(!IS_IPHONE_5) {
     [self.postButton4 setHidden:NO];
     self.scrollView.contentSize = self.scrollView.frame.size;
     
   }
+}
+
+- (void)showMLAInfoErrorAlert {
+  UIAlertView *alertView =
+  [[UIAlertView alloc] initWithTitle:@"Error"
+                             message:@"There was some error fetching MLA information"
+                            delegate:nil cancelButtonTitle:@"OK"
+                   otherButtonTitles: nil];
+  [alertView show];
+}
+
+- (BOOL)validMLAId:(NSNumber *)mlaID {
+  
+  //search in constitunecies in model
+  return YES;
 }
 
 #pragma mark - ImagePicker Delegates
