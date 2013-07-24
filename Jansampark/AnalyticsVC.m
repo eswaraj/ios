@@ -229,36 +229,38 @@ replacementString:(NSString *)string {
      
      [[JSModel sharedModel] deleteAllObjectsForEntity:@"Analytic"];
      
-     NSArray *waterArray = [jsonDictionary objectForKey:@"48"];
-     for(NSDictionary *dict in waterArray) {
-       [self performMappingForSource:dict andIssue:@"48"];
+     if(jsonDictionary) {
+       NSArray *waterArray = [jsonDictionary objectForKey:@"48"];
+       for(NSDictionary *dict in waterArray) {
+         [self performMappingForSource:dict andIssue:@"48"];
+       }
+       
+       NSArray *roadArray = [jsonDictionary objectForKey:@"51"];
+       for(NSDictionary *dict in roadArray) {
+         [self performMappingForSource:dict andIssue:@"51"];
+       }
+       
+       NSArray *electricityArray = [jsonDictionary objectForKey:@"49"];
+       for(NSDictionary *dict in electricityArray) {
+         [self performMappingForSource:dict andIssue:@"49"];
+       }
+       
+       NSArray *lawArray = [jsonDictionary objectForKey:@"53"];
+       for(NSDictionary *dict in lawArray) {
+         [self performMappingForSource:dict andIssue:@"53"];
+       }
+       
+       NSArray *sewageArray = [jsonDictionary objectForKey:@"50"];
+       for(NSDictionary *dict in sewageArray) {
+         [self performMappingForSource:dict andIssue:@"50"];
+       }
+       
+       NSArray *transportationArray = [jsonDictionary objectForKey:@"52"];
+       for(NSDictionary *dict in transportationArray) {
+         [self performMappingForSource:dict andIssue:@"52"];
+       }   
      }
-     
-     NSArray *roadArray = [jsonDictionary objectForKey:@"51"];
-     for(NSDictionary *dict in roadArray) {
-       [self performMappingForSource:dict andIssue:@"51"];
-     }
-     
-     NSArray *electricityArray = [jsonDictionary objectForKey:@"49"];
-     for(NSDictionary *dict in electricityArray) {
-       [self performMappingForSource:dict andIssue:@"49"];
-     }
-     
-     NSArray *lawArray = [jsonDictionary objectForKey:@"53"];
-     for(NSDictionary *dict in lawArray) {
-       [self performMappingForSource:dict andIssue:@"53"];
-     }
-     
-     NSArray *sewageArray = [jsonDictionary objectForKey:@"50"];
-     for(NSDictionary *dict in sewageArray) {
-       [self performMappingForSource:dict andIssue:@"50"];
-     }
-     
-     NSArray *transportationArray = [jsonDictionary objectForKey:@"52"];
-     for(NSDictionary *dict in transportationArray) {
-       [self performMappingForSource:dict andIssue:@"52"];
-     }    
-     
+
      [self refreshAnalytics];
    }];
 

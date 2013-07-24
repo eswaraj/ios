@@ -16,15 +16,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VPe-an-1gh">
-                                        <rect key="frame" x="134" y="10" width="52" height="24"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VPe-an-1gh">
+                                        <rect key="frame" x="97" y="11" width="126" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tpn-Wx-95u">
-                                        <rect key="frame" x="286" y="10" width="25" height="25"/>
+                                        <rect key="frame" x="10" y="10" width="25" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="cross_button.png">
@@ -45,38 +45,56 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cw1-PT-Ewp" customClass="MyriadRegularLabel">
-                                        <rect key="frame" x="14" y="44" width="295" height="463"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">In Olden days , king toured their kingdoms,  to check the well being of civilians.
-that there is no disconnect between what his Darbar members are telling and what junta is feeling.
-
-Just like any massive things , modern days vast empires , a country of 120 Crore , is divided into states and in turn constituency , total of 4200 , with each housing between 1.5-2 Lakh grown up and responsible citizens , working day and night to build their future in turn nation , looking forward to government in case there is a mis-happening.
-
-In Modern days set up with not updating our mechanism to connect to people , a disconnect has come up between junta and their representatives ,  information gap and inability to handle massive feedback , has led to poor unresponsive governance , to bridge the gap we have our tool.
-
-Empowering  Citizens and Strengthening Local Leadership .
-</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eIf-vs-XWr" customClass="MyriadBoldItLabel">
-                                        <rect key="frame" x="12" y="516" width="295" height="200"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">to judiye apne netaji se , bataiye apni yahan ki paani ,  bijli , sadak , saaf safai , yatayat ya lachar hoti kanoon vayvastha , jahan samsaya wahin se uthaiye , 
-cheese jab itni saral to uska labh uthaiye , khud bhi istemal kijiye aur auron ko bhi bataiye.
-aapki samsaya pahuche auron tak , aapas main baat ho aur bane dabab logon par.
-assembly main halla ho aapki samsaya ko lekar , aapko ahsas ho desh ka hissa hone ka.
-bhag lijiye is nai pranali main , button dabbiye .  apne adhikar ko vapas paaiye.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Jansampark" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08W-Wd-rus" customClass="MyriadBoldLabel">
-                                        <rect key="frame" x="112" y="13" width="97" height="21"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Swaraj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="08W-Wd-rus" customClass="MyriadBoldLabel">
+                                        <rect key="frame" x="111" y="28" width="97" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OgH-8v-g6E" customClass="OpenSansLight">
+                                        <rect key="frame" x="13" y="335" width="297" height="203"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">In a modern day set up, a disconnect between the citizens and their representatives, information gap and the inability to handle massive feedbacks has led to a poor unresponsive governance. Swaraj is an initiative to bridge this gap and empower citizens to strengthen local leadership. It helps you to raise your problems within seconds and we will make sure they are heard and acted upon.</string>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="13" name="Verdana"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r7e-5V-hVP" customClass="OpenSansLight">
+                                        <rect key="frame" x="13" y="48" width="297" height="304"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <mutableString key="content">In olden days, kings toured their kingdoms to check the well-being of civilians and make sure that there is no disconnect between the information received from his darbar members and the civilian. Analogous to the historic kingdoms is a vast empire today, a country of 120 crore divided into states and in turn constituencies, a total of 4200 with each housing between 1.5-2 lakh grown up and responsible citizens working day and night to build their future for the country. What they want in turn is to get their day-to-day problems heard and resolved efficiently by the governing bodies of the nation.</mutableString>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="13" name="Verdana"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mff-2h-wli" customClass="OpenSansLight">
+                                        <rect key="frame" x="13" y="480" width="297" height="264"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">All that needs to be done is to choose the issue category, select the issue from a predefined list and tap a button to post the issue from your current location received via GPS. Now, isn’t that simple! So, if you have problem in your locality, what are you waiting for? </string>
+                                                <attributes>
+                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="13" name="Verdana"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1923,9 +1941,6 @@ look into the matter.</string>
             <relationships>
                 <relationship kind="outlet" name="locationName" candidateClass="OpenSansBold"/>
             </relationships>
-        </class>
-        <class className="MyriadBoldItLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldItLabel.h"/>
         </class>
         <class className="MyriadBoldLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldLabel.h"/>
