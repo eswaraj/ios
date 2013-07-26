@@ -154,6 +154,7 @@
 		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
 		FC49792D178F0DC40043B84A /* searchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC49792C178F0DC40043B84A /* searchBG.png */; };
+		FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5309AA17A2A07B005466BF /* whiteCircle.png */; };
 		FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */; };
 		FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB8179EB0AE00982188 /* Analytic.m */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
@@ -338,6 +339,7 @@
 		FC3B6086178480B600953836 /* AnalyticsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsVC.m; sourceTree = "<group>"; };
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
 		FC49792C178F0DC40043B84A /* searchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBG.png; sourceTree = "<group>"; };
+		FC5309AA17A2A07B005466BF /* whiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCircle.png; sourceTree = "<group>"; };
 		FC6FEEB3179E8FC300982188 /* Analytic+JSAPIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Analytic+JSAPIAdditions.h"; sourceTree = "<group>"; };
 		FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Analytic+JSAPIAdditions.m"; sourceTree = "<group>"; };
 		FC6FEEB6179E984200982188 /* RestKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitAdditions.h; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				1822EC42178E9141006C1785 /* another_complaint_button.png */,
 				1822EC43178E9141006C1785 /* done_button.png */,
 				1822EC44178E9141006C1785 /* summary_bg.png */,
+				FC5309AA17A2A07B005466BF /* whiteCircle.png */,
 			);
 			name = "Issue Summary";
 			sourceTree = "<group>";
@@ -1017,6 +1020,7 @@
 				18BC5C8617940AEC003E58B0 /* walkthrough@2x.png in Resources */,
 				18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */,
 				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
+				FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

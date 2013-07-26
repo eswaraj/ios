@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *addressLabel;
 
+@property (strong, nonatomic) NSString *issueTitle;
 @property (strong, nonatomic) NSString *issueCategory;
 @property (strong, nonatomic) NSString *systemLevel;
 @property (strong, nonatomic) NSString *address;

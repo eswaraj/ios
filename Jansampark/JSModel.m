@@ -10,12 +10,12 @@
 #import "CHCSVParser.h"
 #import <RestKit/RestKit.h>
 
-#define k00Color [UIColor colorWithRed:0.91 green:0.41 blue:0.41 alpha:1]
-#define k01Color [UIColor colorWithRed:0.97 green:0.72 blue:0.33 alpha:1]
-#define k02Color [UIColor colorWithRed:0.38 green:0.59 blue:0.87 alpha:1]
-#define k03Color [UIColor colorWithRed:0.53 green:0.42 blue:0.79 alpha:1]
-#define k04Color [UIColor colorWithRed:0.55 green:0.79 blue:0.35 alpha:1]
-#define k05Color [UIColor clearColor];
+#define k00Color [UIColor colorWithRed:1 green:0 blue:0.1 alpha:1]
+#define k01Color [UIColor colorWithRed:1 green:1 blue:0.33 alpha:1]
+#define k02Color [UIColor colorWithRed:0.02 green:0.44 blue:0.73 alpha:1]
+#define k03Color [UIColor colorWithRed:0.75 green:0.3 blue:0.31 alpha:1]
+#define k04Color [UIColor colorWithRed:0.0 green:0.69 blue:0.36 alpha:1]
+#define k05Color [UIColor grayColor];
 
 #define kSystemLevel0 @"Lack of infrastructure"
 #define kSystemLevel1 @"Lack of maintainance"

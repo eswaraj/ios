@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet OpenSansBold *mlaConstituency;
 @property (weak, nonatomic) IBOutlet UIImageView *mlaImageOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton4;
+@property (strong, nonatomic) IBOutlet MyriadBoldLabel *issueTitleLabel;
 @end
 
 @implementation IssueSummaryVC
@@ -47,9 +48,12 @@
   NSData *data = [NSData dataWithContentsOfURL:url];
   [self.mlaImageOutlet setImage:[UIImage imageWithData:data]];
   
+  NSLog(@"UNIIMAGE  : %@", data);
+  
   [self.issueCategoryLabel setText:self.issueCategory];
   [self.systemLevelLabel setText:self.systemLevel];
   [self.addressLabel setText:self.address];
+  [self.issueTitleLabel setText:self.issueTitle];
   
 }
 @end

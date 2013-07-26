@@ -60,7 +60,7 @@
 {
     [super viewDidLoad];
   //if ([[JSModel sharedModel] isNetworkReachable]) {
-  [self fetchDataWithID:13];
+  [self fetchDataWithID:74];
   //}
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
@@ -291,23 +291,25 @@ replacementString:(NSString *)string {
   self.totalNumberOfComplaints = totalWaterCount + totalSewageCount +
                                 totalElectricityCount + totalLawCount +
                                 totalTransportationCount + totalRoadCount;
-  //temporary
-  self.totalNumberOfComplaints = 2000;
+  NSLog(@"total comps: %d %d %d %d %d %d", totalElectricityCount, totalLawCount, totalRoadCount, totalSewageCount, totalTransportationCount, totalWaterCount);
+  //temporary  
+  if(self.totalNumberOfComplaints) {
+    self.roadPercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalRoadCount*100)/self.totalNumberOfComplaints)];
+    self.sewagePercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalSewageCount*100)/self.totalNumberOfComplaints)];
+    self.electricityPercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalElectricityCount*100)/self.totalNumberOfComplaints)];
+    self.transportationPercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalTransportationCount*100)/self.totalNumberOfComplaints)];
+    self.waterPercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalWaterCount*100)/self.totalNumberOfComplaints)];
+    self.lawPercent.text =
+    [NSString stringWithFormat:@"%d%%",(int)((totalLawCount*100)/self.totalNumberOfComplaints)];
+    self.complaintsCountLabel.text =
+    [NSString stringWithFormat:@"%d",(int)self.totalNumberOfComplaints];
+  }
   
-  self.roadPercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalRoadCount*100/self.totalNumberOfComplaints)];
-  self.sewagePercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalSewageCount*100/self.totalNumberOfComplaints)];
-  self.electricityPercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalElectricityCount*100/self.totalNumberOfComplaints)];
-  self.transportationPercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalTransportationCount*100/self.totalNumberOfComplaints)];
-  self.waterPercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalWaterCount*100/self.totalNumberOfComplaints)];
-  self.lawPercent.text =
-  [NSString stringWithFormat:@"%d%%",(int)(totalLawCount*100/self.totalNumberOfComplaints)];
-  self.complaintsCountLabel.text =
-  [NSString stringWithFormat:@"%d",(int)self.totalNumberOfComplaints];
 }
 
 - (int)totalCountInIssue:(NSArray *)issue {

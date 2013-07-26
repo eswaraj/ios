@@ -235,7 +235,9 @@
   [MLA postComplaintWithParams:params
                          image:[self getIssueImage]
                andProfileImage:[self getProfileImage]
-                    completion:nil];
+                    completion:^(BOOL success, NSArray *result, NSError *error) {
+                      
+                    }];
   
   [MLA fetchMLAIdWithLat:[params objectForKey:@"lat"]
                   andLon:[params objectForKey:@"long"]
@@ -243,11 +245,9 @@
    ^(BOOL success, NSArray *result, NSError *error) {
      
      NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
-     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-     [f setNumberStyle:NSNumberFormatterDecimalStyle];
-     NSNumber * mla_id = [f numberFromString:[jsonDict objectForKey:@"consti_id"]];
+     NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
      if([self validMLAId:mla_id]) {
-       if(!mla_id) {
+       if(mla_id) {
          [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
            if(success) {
              MLA *mla = [result objectAtIndex:0];
@@ -257,6 +257,7 @@
              vc.issueCategory = self.issueCategory;
              vc.systemLevel = self.systemLevelLabel.text;
              vc.address = [JSModel sharedModel].address;
+             vc.issueTitle = [self.issue objectForKey:@"text"];
              [self.loaderImage stopAnimating];
              [self.loaderView setHidden:YES];
              [self.navigationController pushViewController:vc animated:YES];
