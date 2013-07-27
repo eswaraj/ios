@@ -112,7 +112,10 @@
   // 2
   MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
   [self.mapView setRegion:viewRegion animated:YES];
-  [[JSModel sharedModel] getAddressFromLocation:[JSModel sharedModel].currentLocation completion:^(NSString *geocodedLocation) {
+  [[JSModel sharedModel] getAddressFromLocation:[JSModel sharedModel].currentLocation
+                                     completion:
+   ^(NSString *geocodedLocation) {
+     NSLog(@"geocodedloca : %@", geocodedLocation);
     [self.locationLabel setText:geocodedLocation];
   }];
 }

@@ -155,6 +155,8 @@
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
 		FC49792D178F0DC40043B84A /* searchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC49792C178F0DC40043B84A /* searchBG.png */; };
 		FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5309AA17A2A07B005466BF /* whiteCircle.png */; };
+		FC5CEDD517A4057400D43871 /* bangalore.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5CEDD417A4057400D43871 /* bangalore.txt */; };
+		FC5CEDDA17A41B0E00D43871 /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5CEDD917A41B0E00D43871 /* DSActivityView.m */; };
 		FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */; };
 		FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB8179EB0AE00982188 /* Analytic.m */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
@@ -340,6 +342,9 @@
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
 		FC49792C178F0DC40043B84A /* searchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBG.png; sourceTree = "<group>"; };
 		FC5309AA17A2A07B005466BF /* whiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCircle.png; sourceTree = "<group>"; };
+		FC5CEDD417A4057400D43871 /* bangalore.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangalore.txt; sourceTree = "<group>"; };
+		FC5CEDD817A41B0E00D43871 /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
+		FC5CEDD917A41B0E00D43871 /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
 		FC6FEEB3179E8FC300982188 /* Analytic+JSAPIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Analytic+JSAPIAdditions.h"; sourceTree = "<group>"; };
 		FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Analytic+JSAPIAdditions.m"; sourceTree = "<group>"; };
 		FC6FEEB6179E984200982188 /* RestKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitAdditions.h; sourceTree = "<group>"; };
@@ -445,6 +450,7 @@
 				18305906177C51670065E6D1 /* retina */,
 				1835D1C3178AC1C300435DB1 /* Category.plist */,
 				FC31D32E17900B0200F1A60B /* centroid.txt */,
+				FC5CEDD417A4057400D43871 /* bangalore.txt */,
 			);
 			name = Resources;
 			path = Jansampark;
@@ -577,6 +583,7 @@
 		18456D91177987CA0045B75B /* Jansampark */ = {
 			isa = PBXGroup;
 			children = (
+				FC5CEDD617A41AF300D43871 /* Helpers */,
 				188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */,
 				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
@@ -812,6 +819,23 @@
 			name = Analytics;
 			sourceTree = "<group>";
 		};
+		FC5CEDD617A41AF300D43871 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FC5CEDD717A41AF900D43871 /* DSActivityView */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FC5CEDD717A41AF900D43871 /* DSActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				FC5CEDD817A41B0E00D43871 /* DSActivityView.h */,
+				FC5CEDD917A41B0E00D43871 /* DSActivityView.m */,
+			);
+			name = DSActivityView;
+			sourceTree = "<group>";
+		};
 		FC6FEEB1179E8F9500982188 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -1021,6 +1045,7 @@
 				18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */,
 				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
 				FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */,
+				FC5CEDD517A4057400D43871 /* bangalore.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,6 +1116,7 @@
 				18983ADA1796B71500DF80F1 /* MyriadBoldItLabel.m in Sources */,
 				FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */,
 				FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */,
+				FC5CEDDA17A41B0E00D43871 /* DSActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,9 @@
 #import "Constants.h"
 #import <RestKit/RestKit.h>
 #import "Analytic+JSAPIAdditions.h"
+#import "MLA+JSAPIAdditions.h"
+#import "DSActivityView.h"
+
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
 @interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -42,6 +45,11 @@
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *sewagePercent;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *roadPercent;
 @property (assign, nonatomic) int totalNumberOfComplaints;
+@property (strong, nonatomic) IBOutlet OpenSansBold *currentCityLabel;
+@property (strong, nonatomic) IBOutlet UIView *disableAnalyticsView;
+
+@property (strong, nonatomic) NSNumber *currentConstituencyID;
+@property (strong, nonatomic) NSNumber *currentCityID;
 
 @end
 
@@ -59,9 +67,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  //if ([[JSModel sharedModel] isNetworkReachable]) {
-  [self fetchDataWithID:74];
-  //}
+  
+  [DSBezelActivityView newActivityViewForView:self.view];
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(fetchAnalytics)
+                                               name:@"Location_Updated"
+                                             object:nil];
 	// Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
                     forState:(UIControlStateHighlighted | UIControlStateSelected)];
@@ -114,6 +125,7 @@
   [self.rightSegment setSelected:NO];
   [self.leftSegmentLabel setTextColor:[UIColor whiteColor]];
   [self.locLabel setTextColor:kGreyishColor];
+  [self refreshAnalyticsForConstID:self.currentCityID];
 }
 
 - (IBAction)rightSegmentTapped:(id)sender {
@@ -123,6 +135,8 @@
     [self.leftSegment setSelected:NO];
     [self.leftSegmentLabel setTextColor:kGreyishColor];
     [self.locLabel setTextColor:[UIColor whiteColor]];
+    [self refreshAnalyticsForConstID:self.currentConstituencyID];
+    
   } else {
     [self displaySearchView];
   }
@@ -199,18 +213,54 @@ replacementString:(NSString *)string {
 - (void)cellSelected:(id)sender {
   int row = [self.locationTable indexPathForCell:(UITableViewCell *)[(UITapGestureRecognizer *)sender view]].row;
   NSString *constituencyName= [[self.locationSearchResults objectAtIndex:row]objectAtIndex:0];
-  NSString *constituency = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:1];
-  int constituencyID = constituency.intValue;
+  NSString *constituencyLat = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:2];
+  NSString *constituencyLong = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:3];
+
+  
   
   [self.locLabel setText:constituencyName];
-  NSLog(@"const : %d", constituencyID);
   [self dismissOverlay];
-  [self fetchDataWithID:constituencyID];
+  
+  [DSBezelActivityView newActivityViewForView:self.view];
+  [MLA fetchMLAIdWithLat:constituencyLat
+                  andLon:constituencyLong
+              completion:
+   ^(BOOL success, NSArray *result, NSError *error) {
+     
+     NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
+     NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
+     NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
+     
+     if([self validMLAId:mla_id] && !drop_bit.intValue) {
+       if(mla_id) {
+         self.currentConstituencyID = mla_id;
+         [self fetchDataWithID:mla_id];
+         [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+           if(success) {
+             
+             MLA *mla = [result objectAtIndex:0];
+             [self.locLabel setText:mla.constituency];
+             [self enableAnalytics];
+             
+           } else {
+             [self disableAnalytics];
+           }
+         }];
+       } else {
+         [self disableAnalytics];
+       }
+     } else {
+       [self disableAnalytics];
+     }
+   }];
+
+  
 }
 
 
-- (void)fetchDataWithID:(int)id {
-  NSString *path = [NSString stringWithFormat:@"/html/dev/micronews/get_summary.php?cid=%d&time_frame=1m",id];
+- (void)fetchDataWithID:(NSNumber *)constID {
+  NSString *path =
+  [NSString stringWithFormat:@"/html/dev/micronews/get_summary.php?cid=%d&time_frame=1w",constID.intValue];
   
   [[RKObjectManager sharedManager] postObject:nil
                                          path:path
@@ -226,8 +276,9 @@ replacementString:(NSString *)string {
      [NSJSONSerialization JSONObjectWithData:jsonData
                                      options:NSJSONReadingMutableContainers
                                        error: &e];
+
      
-     [[JSModel sharedModel] deleteAllObjectsForEntity:@"Analytic"];
+     [[JSModel sharedModel] deleteAnalyticObjectsForCID:constID];
      
      if(jsonDictionary) {
        NSArray *waterArray = [jsonDictionary objectForKey:@"48"];
@@ -260,31 +311,34 @@ replacementString:(NSString *)string {
          [self performMappingForSource:dict andIssue:@"52"];
        }   
      }
-
-     [self refreshAnalytics];
+     
+     if(self.leftSegment.isSelected) {
+       [self refreshAnalyticsForConstID:self.currentCityID];
+     } else {
+       [self refreshAnalyticsForConstID:self.currentConstituencyID];
+     }
    }];
-
 }
 
-- (void)refreshAnalytics {
+- (void)refreshAnalyticsForConstID:(NSNumber *)constID {
   
   
-  NSArray *water = [[JSModel sharedModel] fetchAnalyticForIssue:@"48"];
+  NSArray *water = [[JSModel sharedModel] fetchAnalyticForIssue:@"48" constituency:constID];
   int totalWaterCount = [self totalCountInIssue:water];
   
-  NSArray *sewage = [[JSModel sharedModel] fetchAnalyticForIssue:@"50"];
+  NSArray *sewage = [[JSModel sharedModel] fetchAnalyticForIssue:@"50" constituency:constID];
   int totalSewageCount = [self totalCountInIssue:sewage];
   
-  NSArray *electricity = [[JSModel sharedModel] fetchAnalyticForIssue:@"49"];
+  NSArray *electricity = [[JSModel sharedModel] fetchAnalyticForIssue:@"49" constituency:constID];
   int totalElectricityCount = [self totalCountInIssue:electricity];
   
-  NSArray *transportation = [[JSModel sharedModel] fetchAnalyticForIssue:@"52"];
+  NSArray *transportation = [[JSModel sharedModel] fetchAnalyticForIssue:@"52" constituency:constID];
   int totalTransportationCount = [self totalCountInIssue:transportation];
   
-  NSArray *road = [[JSModel sharedModel] fetchAnalyticForIssue:@"51"];
+  NSArray *road = [[JSModel sharedModel] fetchAnalyticForIssue:@"51" constituency:constID];
   int totalRoadCount = [self totalCountInIssue:road];
   
-  NSArray *law = [[JSModel sharedModel] fetchAnalyticForIssue:@"53"];
+  NSArray *law = [[JSModel sharedModel] fetchAnalyticForIssue:@"53" constituency:constID];
   int totalLawCount = [self totalCountInIssue:law];
 
   
@@ -341,6 +395,86 @@ replacementString:(NSString *)string {
   [[[[RKObjectManager sharedManager] managedObjectStore] persistentStoreManagedObjectContext] save:&error];
 }
 
+- (void)fetchAnalytics {
+  
+  [[JSModel sharedModel] getCityFromLocation:[JSModel sharedModel].currentLocation
+                                  completion:
+   ^(NSString *geocodedLocation) {
+     if([[geocodedLocation lowercaseString] isEqualToString:@"karnataka"]) {
+       geocodedLocation = @"Bangalore";
+     }
+     [self.currentCityLabel setText:geocodedLocation];
+     if([[geocodedLocation lowercaseString] isEqualToString:@"delhi"] ||
+        [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"]) {
+       self.currentCityID = [NSNumber numberWithInt:999];
+       [self fetchDataWithID:self.currentCityID];
+       [self fetchConstituencyAnalytics];
+     } else if([[geocodedLocation lowercaseString] isEqualToString:@"bangalore"] ||
+               [[geocodedLocation lowercaseString] isEqualToString:@"bangalooru"]) {
+       self.currentCityID = [NSNumber numberWithInt:998];
+       [self fetchDataWithID:self.currentCityID];
+       [self fetchConstituencyAnalytics];
+     } else {
+       [self disableAnalytics];
+     }
+  }];
+}
 
+- (void)fetchConstituencyAnalytics {
+  NSString *latitude =
+  [NSString stringWithFormat:@"%.04f",[JSModel sharedModel].currentLocation.coordinate.latitude];
+  NSString *longitude =
+  [NSString stringWithFormat:@"%.04f",[JSModel sharedModel].currentLocation.coordinate.longitude];
+  [MLA fetchMLAIdWithLat:latitude
+                  andLon:longitude
+              completion:
+   ^(BOOL success, NSArray *result, NSError *error) {
+     
+     NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
+     NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
+     NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
+     
+     if([self validMLAId:mla_id] && !drop_bit.intValue) {
+       if(mla_id) {
+         self.currentConstituencyID = mla_id;
+         [self fetchDataWithID:mla_id];
+         [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
+           if(success) {
+            
+             MLA *mla = [result objectAtIndex:0];
+             [self.locLabel setText:mla.constituency];
+             [self enableAnalytics];
+             
+           } else {
+             [self disableAnalytics];
+           }
+         }];
+       } else {
+         [self disableAnalytics];
+       }
+     } else {
+       [self disableAnalytics];
+     }
+   }];
+}
+
+- (BOOL)validMLAId:(NSNumber *)mlaID {
+  //search in constitunecies in model
+  if(mlaID.intValue == 74) {
+    return NO;
+  }
+  return YES;
+}
+
+- (void)disableAnalytics {
+  [self.disableAnalyticsView setHidden:NO];
+  [DSBezelActivityView removeViewAnimated:YES];
+}
+
+- (void)enableAnalytics {
+  [self.disableAnalyticsView setHidden:YES];
+  [DSBezelActivityView removeViewAnimated:YES];
+
+}
 
 @end

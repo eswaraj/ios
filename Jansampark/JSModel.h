@@ -24,13 +24,16 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 @property (nonatomic, strong) NSMutableArray *operationQueue;
 
 - (void)deleteAllObjectsForEntity:(NSString *)entity;
+- (void)deleteAnalyticObjectsForCID:(NSNumber *)cid;
 - (NSArray *)fetchAllObjectsForEntity:(NSString *)entity;
-- (NSArray *)fetchAnalyticForIssue:(NSString *)issue;
-
+- (NSArray *)fetchAnalyticForIssue:(NSString *)issue constituency:(NSNumber *)constID;
+- (NSArray *)fetchAnalyticForConstituency:(NSNumber *)constID;
 // Location Methods
 - (void)startTrackingLocation;
 - (void)stopTrackingLocation;
 - (void)getAddressFromLocation:(CLLocation *)location
+                 completion:(JSLocationGeocodedBlock)block;
+- (void)getCityFromLocation:(CLLocation *)location
                  completion:(JSLocationGeocodedBlock)block;
 
 + (JSModel *)sharedModel;

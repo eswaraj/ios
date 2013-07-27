@@ -47,9 +47,9 @@ static JSModel *sharedModel = nil;
     
     //TODO store last location of user in core data
     // SET A DEFAULT LOCATION (NEW YORK)
-    CLLocation * defaultLocation = [[CLLocation alloc] initWithLatitude:12.88 longitude:77.655];
+    CLLocation * defaultLocation = [[CLLocation alloc] initWithLatitude:29.0167 longitude:12.234];
     [self setCurrentLocation:defaultLocation];
-    self.address = @"Banglore";
+    self.address = @"Delhi";
     [self parseConstituencyData];
   }
   return self;
@@ -75,6 +75,29 @@ static JSModel *sharedModel = nil;
   }
 }
 
+- (void)deleteAnalyticObjectsForCID:(NSNumber *)cid {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Analytic"
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"constituencyID == %@", cid];
+    [fetchRequest setPredicate:predicate];
+  
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  for (NSManagedObject *managedObject in items) {
+    [context deleteObject:managedObject];
+    NSLog(@"%@ object deleted",entityDescription);
+  }
+  if (![context saveToPersistentStore:&error]) {
+    NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+  }
+}
+
 - (NSArray *)fetchAllObjectsForEntity:(NSString *)entity {
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
   NSManagedObjectContext *context =
@@ -88,7 +111,7 @@ static JSModel *sharedModel = nil;
   return items;
 }
 
-- (NSArray *)fetchAnalyticForIssue:(NSString *)issue {
+- (NSArray *)fetchAnalyticForIssue:(NSString *)issue constituency:(NSNumber *)constID {
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
   NSManagedObjectContext *context =
   [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
@@ -96,7 +119,7 @@ static JSModel *sharedModel = nil;
                                                        inManagedObjectContext:context];
   [fetchRequest setEntity:entityDescription];
   
-  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"issue == %@", issue];
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"issue == %@ && constituencyID == %@", issue, constID];
   [fetchRequest setPredicate:predicate];
   
   NSError *error;
@@ -105,6 +128,23 @@ static JSModel *sharedModel = nil;
   return items;
 }
 
+- (NSArray *)fetchAnalyticForConstituency:(NSNumber *)constID {
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSManagedObjectContext *context =
+  [RKObjectManager sharedManager].managedObjectStore.mainQueueManagedObjectContext;
+  NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Analytic"
+                                                       inManagedObjectContext:context];
+  [fetchRequest setEntity:entityDescription];
+  
+  NSPredicate *predicate = [NSPredicate predicateWithFormat:@"constituencyID == %@", constID];
+  [fetchRequest setPredicate:predicate];
+  
+  NSError *error;
+  NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
+  
+  return items;
+
+}
 #pragma mark - Location Tracking Methods
 
 - (void)startTrackingLocation {
@@ -136,6 +176,8 @@ static JSModel *sharedModel = nil;
    object:nil
    userInfo:nil];
 
+  NSLog(@"oldLoc : %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
+  NSLog(@"newLocation : %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
   [self getAddressFromLocation:newLocation completion:^(NSString *geocodedLocation) {
     self.address = geocodedLocation;
   }];
@@ -153,6 +195,24 @@ static JSModel *sharedModel = nil;
                      [self formattedLocationForPlacemark:[placemarks objectAtIndex:0]];
                      block(address);
 
+                   }
+                 }];
+}
+
+- (void)getCityFromLocation:(CLLocation *)location
+                    completion:(JSLocationGeocodedBlock)block {
+  
+  CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+  [geocoder reverseGeocodeLocation:location
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                   if (placemarks.count) {
+                     NSString *city =
+                     [[[placemarks objectAtIndex:0] addressDictionary] valueForKey:@"City"];
+                     
+                     if(!city) {
+                       city = [[[placemarks objectAtIndex:0] addressDictionary] valueForKey:@"State"];
+                     }
+                     block(city);
                    }
                  }];
 }
