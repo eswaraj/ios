@@ -16,4 +16,8 @@ typedef void (^JSAPIBlock)(BOOL success, id result, NSError *error);
 
 - (void)fetchMLAInfoWithCompletion:(JSAPIBlock)block;
 
+- (void)fetchMLAIDWithCompletion:(JSAPIBlock)block;
+
+- (void)fetchMLAIDWithLat:(NSString *)lat lon:(NSString *)lon completion:(JSAPIBlock)block;
+
 @end

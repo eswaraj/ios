@@ -42,14 +42,32 @@ static JSAPIInteracter *shared = nil;
 #pragma mark - API Calls
 
 - (void)fetchMLAInfoWithCompletion:(JSAPIBlock)block {
+  [self fetchMLAIDWithCompletion:^(BOOL success, id result, NSError *error) {
+    if(success) {
+      [MLA fetchMLAWithId:result completion:
+       ^(BOOL success, NSArray *result, NSError *error) {
+         if(success) {
+           block(YES, [result objectAtIndex:0], nil);
+         } else {
+           block(NO, nil, error);
+         }
+       }];
+    }
+  }];
+}
+
+- (void)fetchMLAIDWithCompletion:(JSAPIBlock)block {
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude =
   [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude =
   [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
-  
-  [MLA fetchMLAIdWithLat:latitude
-                  andLon:longitude
+  [self fetchMLAIDWithLat:latitude lon:longitude completion:block];
+}
+
+- (void)fetchMLAIDWithLat:(NSString *)lat lon:(NSString *)lon completion:(JSAPIBlock)block {
+  [MLA fetchMLAIdWithLat:lat
+                  andLon:lon
               completion:
    ^(BOOL success, NSArray *result, NSError *error) {
      
@@ -58,14 +76,7 @@ static JSAPIInteracter *shared = nil;
      NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
      
      if(!drop_bit.intValue && mla_id) {
-       [MLA fetchMLAWithId:mla_id completion:
-        ^(BOOL success, NSArray *result, NSError *error) {
-         if(success) {
-           block(YES, [result objectAtIndex:0], nil);
-         } else {
-           block(NO, nil, error);
-         }
-       }];
+       block(YES, mla_id, nil);
      } else {
        UIAlertView *alertView =
        [[UIAlertView alloc] initWithTitle:@"Coming Soon"
@@ -73,8 +84,8 @@ static JSAPIInteracter *shared = nil;
                                  delegate:nil cancelButtonTitle:@"OK"
                         otherButtonTitles: nil];
        [alertView show];
+       block(NO, nil, error);
      }
-     
    }];
 }
 

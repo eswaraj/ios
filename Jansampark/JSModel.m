@@ -93,7 +93,6 @@ static JSModel *sharedModel = nil;
   NSArray * items  = [context executeFetchRequest:fetchRequest error:&error];
   for (NSManagedObject *managedObject in items) {
     [context deleteObject:managedObject];
-    NSLog(@"%@ object deleted",entityDescription);
   }
   if (![context saveToPersistentStore:&error]) {
     NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
@@ -178,8 +177,6 @@ static JSModel *sharedModel = nil;
    object:nil
    userInfo:nil];
 
-  NSLog(@"oldLoc : %f %f", oldLocation.coordinate.latitude, oldLocation.coordinate.longitude);
-  NSLog(@"newLocation : %f %f", newLocation.coordinate.latitude, newLocation.coordinate.longitude);
   [self getAddressFromLocation:newLocation completion:^(NSString *geocodedLocation) {
     self.address = geocodedLocation;
   }];
