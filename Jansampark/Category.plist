@@ -451,7 +451,7 @@
 	<key>Sewage</key>
 	<dict>
 		<key>Issue_name</key>
-		<string>Sewage &amp; Sanitation / Environment</string>
+		<string>Sewage</string>
 		<key>Category_id</key>
 		<integer>50</integer>
 		<key>Issues</key>

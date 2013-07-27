@@ -234,10 +234,9 @@
    ^(BOOL success, id result, NSError *error) {
      if(success) {
        
-       RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
-       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+      
        
-       MLA *mla = [result objectAtIndex:0];
+       MLA *mla = result;
        IssueSummaryVC *vc =
        [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
        [vc setMla:mla];
@@ -247,8 +246,12 @@
        vc.issueTitle = [self.issue objectForKey:@"text"];
        [self.loaderImage stopAnimating];
        [self.loaderView setHidden:YES];
+       
+       
        [self.navigationController pushViewController:vc animated:YES];
-      
+       RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
+       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+
      } else {
        [[JSModel sharedModel] showMLAInfoAlert];
      }
