@@ -13,20 +13,20 @@
 #import "MLA+JSAPIAdditions.h"
 #import "IssueSummaryVC.h"
 #import <KSReachability/KSReachability.h>
+#import "JSAPIInteracter.h"
 
 @interface IssueDetailVC ()
 
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *issueNameLabel;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *systemLevelLabel;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (weak, nonatomic) IBOutlet UIImageView *textviewBG;
 @property (weak, nonatomic) IBOutlet MyriadBoldLabel *descriptionLabel;
 
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIImageView *textviewBG;
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property (weak, nonatomic) IBOutlet UIButton *postButton4;
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (weak, nonatomic) IBOutlet UIButton *editButtonOutlet;
@@ -41,38 +41,16 @@
 @property (strong, nonatomic) IBOutlet UIImageView *loaderImage;
 @property (strong, nonatomic) IBOutlet UIView *loaderView;
 
-
 @end
 
 @implementation IssueDetailVC
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
   [super viewDidLoad];
-  
-  
 	// Do any additional setup after loading the view.
-  self.imagePicker = [[UIImagePickerController alloc] init];
-  self.imagePicker.allowsEditing = YES;
-  self.imagePicker.delegate = self;
-  
+  [self configureImagePicker];
   [self configureUI];
-  
-  [self.loaderImage setAnimationImages:[NSArray arrayWithObjects:
-                                        [UIImage imageNamed:@"runningMan1"],
-                                        [UIImage imageNamed:@"runningMan2"],
-                                        [UIImage imageNamed:@"runningMan3"],
-                                        [UIImage imageNamed:@"runningMan4"],
-                                        [UIImage imageNamed:@"runningMan5"],
-                                        [UIImage imageNamed:@"runningMan6"],
-                                        [UIImage imageNamed:@"runningMan7"],
-                                        [UIImage imageNamed:@"runningMan8"],
-                                        [UIImage imageNamed:@"runningMan9"],
-                                        [UIImage imageNamed:@"runningMan10"],
-                                        [UIImage imageNamed:@"runningMan11"],
-                                        [UIImage imageNamed:@"runningMan12"],
-                                        nil]];
-  [self.loaderImage setAnimationDuration:1];
+  [self setupLoader];
 }
 
 #pragma mark - IBActions
@@ -154,35 +132,27 @@
                           [JSModel sharedModel].address, @"addr", nil];
   
   if ([[JSModel sharedModel] isNetworkReachable]) {
-    RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
-    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+    [self fetchResponsibleMLAInfoWithPostParams:params];
   } else {
-    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(stopLoader) userInfo:nil repeats:NO];
-    RKObjectRequestOperation * operation = [self backgroundOperationWithParams:params];
-    if(![[JSModel sharedModel] operationQueue]) {
-      [JSModel sharedModel].operationQueue = [[NSMutableArray alloc] init];
-      
-    }
-    [[JSModel sharedModel].operationQueue addObject:operation];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
-                                                    message:@"Your issue will be posted automatically when network is available"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    [[JSModel sharedModel] showNetworkError];
   }
-  
 }
 
 
 
 #pragma mark - Custom Methods
 
+- (void)configureImagePicker {
+  self.imagePicker = [[UIImagePickerController alloc] init];
+  self.imagePicker.allowsEditing = YES;
+  self.imagePicker.delegate = self;
+}
+
 - (UIImage *)getProfileImage {
-  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  NSData* imageData =
+  [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
   UIImage* image = [UIImage imageWithData:imageData];
-  if(!image) {
+  if(image) {
     image = [self compressImage:image toSize:CGSizeMake(60, 60)];
     return image;
   } else {
@@ -224,13 +194,30 @@
   return newImage;
 }
 
+- (void)setupLoader {
+  [self.loaderImage setAnimationImages:[NSArray arrayWithObjects:
+                                        [UIImage imageNamed:@"runningMan1"],
+                                        [UIImage imageNamed:@"runningMan2"],
+                                        [UIImage imageNamed:@"runningMan3"],
+                                        [UIImage imageNamed:@"runningMan4"],
+                                        [UIImage imageNamed:@"runningMan5"],
+                                        [UIImage imageNamed:@"runningMan6"],
+                                        [UIImage imageNamed:@"runningMan7"],
+                                        [UIImage imageNamed:@"runningMan8"],
+                                        [UIImage imageNamed:@"runningMan9"],
+                                        [UIImage imageNamed:@"runningMan10"],
+                                        [UIImage imageNamed:@"runningMan11"],
+                                        [UIImage imageNamed:@"runningMan12"],
+                                        nil]];
+  [self.loaderImage setAnimationDuration:1];
+}
+
 - (void)stopLoader {
   [self.loaderView setHidden:YES];
   [self.loaderImage stopAnimating];
 }
 
 - (RKObjectRequestOperation *)MLAOperationWithParams:(NSDictionary *)params {
-  
   RKObjectRequestOperation *operation =
   [MLA postComplaintWithParams:params
                          image:[self getIssueImage]
@@ -238,62 +225,36 @@
                     completion:^(BOOL success, NSArray *result, NSError *error) {
                       
                     }];
-  
-  [MLA fetchMLAIdWithLat:[params objectForKey:@"lat"]
-                  andLon:[params objectForKey:@"long"]
-              completion:
-   ^(BOOL success, NSArray *result, NSError *error) {
-     
-     NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
-     NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
-     if([self validMLAId:mla_id]) {
-       if(mla_id) {
-         [MLA fetchMLAWithId:mla_id completion:^(BOOL success, NSArray *result, NSError *error) {
-           if(success) {
-             MLA *mla = [result objectAtIndex:0];
-             IssueSummaryVC *vc =
-             [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
-             [vc setMla:mla];
-             vc.issueCategory = self.issueCategory;
-             vc.systemLevel = self.systemLevelLabel.text;
-             vc.address = [JSModel sharedModel].address;
-             vc.issueTitle = [self.issue objectForKey:@"text"];
-             [self.loaderImage stopAnimating];
-             [self.loaderView setHidden:YES];
-             [self.navigationController pushViewController:vc animated:YES];
-           } else {
-             [self showMLAInfoErrorAlert];
-           }
-         }];
-       } else {
-         [self showMLAInfoErrorAlert];
-       }
+  return operation;
+}
+
+
+- (void)fetchResponsibleMLAInfoWithPostParams:(NSDictionary *)params {
+  [[JSAPIInteracter shared] fetchMLAInfoWithCompletion:
+   ^(BOOL success, id result, NSError *error) {
+     if(success) {
+       
+       RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
+       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+       
+       MLA *mla = [result objectAtIndex:0];
+       IssueSummaryVC *vc =
+       [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
+       [vc setMla:mla];
+       vc.issueCategory = self.issueCategory;
+       vc.systemLevel = self.systemLevelLabel.text;
+       vc.address = [JSModel sharedModel].address;
+       vc.issueTitle = [self.issue objectForKey:@"text"];
+       [self.loaderImage stopAnimating];
+       [self.loaderView setHidden:YES];
+       [self.navigationController pushViewController:vc animated:YES];
+      
      } else {
-       UIAlertView *alertView =
-       [[UIAlertView alloc] initWithTitle:@"Coming Soon"
-                                  message:@"Sorry, we will be coming to your area soon!"
-                                 delegate:nil cancelButtonTitle:@"OK"
-                        otherButtonTitles: nil];
-       [alertView show];
+       [[JSModel sharedModel] showMLAInfoAlert];
      }
-     
-   }];
+  }];
   
-  return operation;
 }
-
-- (RKObjectRequestOperation *)backgroundOperationWithParams:(NSDictionary *)params {
-  RKObjectRequestOperation *operation =
-  [MLA postComplaintWithParams:params
-                         image:[self getIssueImage]
-               andProfileImage:[self getProfileImage]
-                    completion:
-   ^(BOOL success, NSArray *result, NSError *error) {
-     [[JSModel sharedModel] runOperationQueue];
-   }];
-  return operation;
-}
-
 
 - (void)configureUI {
   [self.descriptionTextView setFont:[UIFont fontWithName:@"MyriadPro-Bold" size:14]];
@@ -312,20 +273,7 @@
   }
 }
 
-- (void)showMLAInfoErrorAlert {
-  UIAlertView *alertView =
-  [[UIAlertView alloc] initWithTitle:@"Error"
-                             message:@"There was some error fetching MLA information"
-                            delegate:nil cancelButtonTitle:@"OK"
-                   otherButtonTitles: nil];
-  [alertView show];
-}
 
-- (BOOL)validMLAId:(NSNumber *)mlaID {
-  
-  //search in constitunecies in model
-  return YES;
-}
 
 #pragma mark - ImagePicker Delegates
 

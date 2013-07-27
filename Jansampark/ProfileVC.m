@@ -7,6 +7,7 @@
 //
 
 #import "ProfileVC.h"
+#import "WalkthroughVC.h"
 
 @interface ProfileVC ()
 @property (weak, nonatomic) IBOutlet UIView *addedPhotoView;
@@ -64,6 +65,7 @@
   self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
   [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
+
 - (IBAction)takePhoto:(id)sender {
   if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
     self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
@@ -72,6 +74,13 @@
   }
   
   [self presentViewController:self.imagePicker animated:YES completion:nil];
+  
+}
+
+
+- (IBAction)howItWorksTapped:(id)sender {
+  WalkthroughVC *wVC = (WalkthroughVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"WalkthroughVC"];
+  [self presentViewController:wVC animated:YES completion:nil];
 }
 
 #pragma mark - Custom Methods
@@ -95,31 +104,13 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
         didFinishPickingImage:(UIImage *)img
                   editingInfo:(NSDictionary *)editInfo {
-  NSData *imageData2 = [[NSData alloc] initWithData:UIImageJPEGRepresentation((img), 0.5)];
-  
-  int imageSize2 = imageData2.length;
-  NSLog(@"SIZE OF IMAGE: %i ", imageSize2);
-  
-  img = [self image:img ScaledToSize:CGSizeMake(60, 60)];
-  NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation((img), 0.5)];
-  
-  int imageSize = imageData.length;
-  NSLog(@"SIZE OF IMAGE: %i ", imageSize);
-  
   self.profileImage.image = img;
   [picker dismissViewControllerAnimated:YES completion:nil];
   [self.addPhotoView setHidden:YES];
   [self.addedPhotoView setHidden:NO];
-  [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(img) forKey:@"profile_image"];
+  [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(img)
+                                            forKey:@"profile_image"];
   [[NSUserDefaults standardUserDefaults] synchronize];
-  
 }
 
-- (UIImage*)image:(UIImage *)img ScaledToSize:(CGSize)newSize {
-  UIGraphicsBeginImageContext(newSize);
-  [img drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
-  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  return newImage;
-}
 @end

@@ -18,9 +18,7 @@
   [JSAPIInterface sharedInterface];
   [[JSModel sharedModel] startTrackingLocation];
   
-  [JSModel sharedModel].reachability = [KSReachability reachabilityToHost:nil];
-  [[JSModel sharedModel] runBackgroundTimer];
-  
+  [JSModel sharedModel].reachability = [KSReachability reachabilityToHost:nil];  
   NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
   if(!UUID.length) {
     UUID = [[JSModel sharedModel] GetUUID];

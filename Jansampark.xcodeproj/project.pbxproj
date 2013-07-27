@@ -126,7 +126,7 @@
 		18BCE18F1781A2D400BA7D89 /* mapoverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18D1781A2D400BA7D89 /* mapoverlay.png */; };
 		18BCE1901781A2D400BA7D89 /* mapoverlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */; };
 		82594B018E3749D395BE314C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C0462AC2F4744D1814BA6BE /* libPods.a */; };
-		FC31D32F17900B0200F1A60B /* centroid.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC31D32E17900B0200F1A60B /* centroid.txt */; };
+		FC31D32F17900B0200F1A60B /* delhi.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC31D32E17900B0200F1A60B /* delhi.txt */; };
 		FC31D33217900E6800F1A60B /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31D33117900E6800F1A60B /* CHCSVParser.m */; };
 		FC31D334179025C200F1A60B /* locationCellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC31D333179025C200F1A60B /* locationCellBG.png */; };
 		FC31D3371790289000F1A60B /* LocationSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC31D3361790289000F1A60B /* LocationSearchCell.m */; };
@@ -153,10 +153,14 @@
 		FC3B6084178461A100953836 /* OpenSansLight.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6083178461A100953836 /* OpenSansLight.m */; };
 		FC3B6087178480B600953836 /* AnalyticsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3B6086178480B600953836 /* AnalyticsVC.m */; };
 		FC3B608917848E2500953836 /* bigEllipsBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3B608817848E2500953836 /* bigEllipsBG.png */; };
+		FC3FFC1417A45E390036A8CC /* AnalyticsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FFC1317A45E390036A8CC /* AnalyticsDetailVC.m */; };
+		FC3FFC1717A45E6B0036A8CC /* AnalyticsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3FFC1617A45E6B0036A8CC /* AnalyticsCell.m */; };
 		FC49792D178F0DC40043B84A /* searchBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC49792C178F0DC40043B84A /* searchBG.png */; };
 		FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5309AA17A2A07B005466BF /* whiteCircle.png */; };
 		FC5CEDD517A4057400D43871 /* bangalore.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC5CEDD417A4057400D43871 /* bangalore.txt */; };
 		FC5CEDDA17A41B0E00D43871 /* DSActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5CEDD917A41B0E00D43871 /* DSActivityView.m */; };
+		FC5CEDDD17A4228900D43871 /* JSAPIInteracter.m in Sources */ = {isa = PBXBuildFile; fileRef = FC5CEDDC17A4228800D43871 /* JSAPIInteracter.m */; };
+		FC5CEDDF17A42EE700D43871 /* howItWorksButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5CEDDE17A42EE700D43871 /* howItWorksButton.png */; };
 		FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */; };
 		FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB8179EB0AE00982188 /* Analytic.m */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
@@ -306,7 +310,7 @@
 		18BCE18D1781A2D400BA7D89 /* mapoverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapoverlay.png; sourceTree = "<group>"; };
 		18BCE18E1781A2D400BA7D89 /* mapoverlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapoverlay@2x.png"; sourceTree = "<group>"; };
 		5C0462AC2F4744D1814BA6BE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC31D32E17900B0200F1A60B /* centroid.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = centroid.txt; sourceTree = "<group>"; };
+		FC31D32E17900B0200F1A60B /* delhi.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = delhi.txt; sourceTree = "<group>"; };
 		FC31D33017900E6800F1A60B /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
 		FC31D33117900E6800F1A60B /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		FC31D333179025C200F1A60B /* locationCellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationCellBG.png; sourceTree = "<group>"; };
@@ -340,11 +344,18 @@
 		FC3B6085178480B600953836 /* AnalyticsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsVC.h; sourceTree = "<group>"; };
 		FC3B6086178480B600953836 /* AnalyticsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsVC.m; sourceTree = "<group>"; };
 		FC3B608817848E2500953836 /* bigEllipsBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigEllipsBG.png; sourceTree = "<group>"; };
+		FC3FFC1217A45E390036A8CC /* AnalyticsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsDetailVC.h; sourceTree = "<group>"; };
+		FC3FFC1317A45E390036A8CC /* AnalyticsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsDetailVC.m; sourceTree = "<group>"; };
+		FC3FFC1517A45E6B0036A8CC /* AnalyticsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsCell.h; sourceTree = "<group>"; };
+		FC3FFC1617A45E6B0036A8CC /* AnalyticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsCell.m; sourceTree = "<group>"; };
 		FC49792C178F0DC40043B84A /* searchBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBG.png; sourceTree = "<group>"; };
 		FC5309AA17A2A07B005466BF /* whiteCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteCircle.png; sourceTree = "<group>"; };
 		FC5CEDD417A4057400D43871 /* bangalore.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bangalore.txt; sourceTree = "<group>"; };
 		FC5CEDD817A41B0E00D43871 /* DSActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSActivityView.h; sourceTree = "<group>"; };
 		FC5CEDD917A41B0E00D43871 /* DSActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSActivityView.m; sourceTree = "<group>"; };
+		FC5CEDDB17A4228800D43871 /* JSAPIInteracter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAPIInteracter.h; sourceTree = "<group>"; };
+		FC5CEDDC17A4228800D43871 /* JSAPIInteracter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSAPIInteracter.m; sourceTree = "<group>"; };
+		FC5CEDDE17A42EE700D43871 /* howItWorksButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howItWorksButton.png; sourceTree = "<group>"; };
 		FC6FEEB3179E8FC300982188 /* Analytic+JSAPIAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Analytic+JSAPIAdditions.h"; sourceTree = "<group>"; };
 		FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Analytic+JSAPIAdditions.m"; sourceTree = "<group>"; };
 		FC6FEEB6179E984200982188 /* RestKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitAdditions.h; sourceTree = "<group>"; };
@@ -430,6 +441,8 @@
 		182EF1271782FF2D00F6F694 /* Issues */ = {
 			isa = PBXGroup;
 			children = (
+				18456DA6177987CA0045B75B /* JSViewController.h */,
+				18456DA7177987CA0045B75B /* JSViewController.m */,
 				182EF1281782FF5400F6F694 /* IssuesVC.h */,
 				182EF1291782FF5400F6F694 /* IssuesVC.m */,
 				182EF12B1783003B00F6F694 /* IssuesCell.h */,
@@ -449,7 +462,7 @@
 				18305907177C516E0065E6D1 /* non-retina */,
 				18305906177C51670065E6D1 /* retina */,
 				1835D1C3178AC1C300435DB1 /* Category.plist */,
-				FC31D32E17900B0200F1A60B /* centroid.txt */,
+				FC31D32E17900B0200F1A60B /* delhi.txt */,
 				FC5CEDD417A4057400D43871 /* bangalore.txt */,
 			);
 			name = Resources;
@@ -495,6 +508,7 @@
 		18305909177C517B0065E6D1 /* walkthrough */ = {
 			isa = PBXGroup;
 			children = (
+				FC5CEDDE17A42EE700D43871 /* howItWorksButton.png */,
 				18BC5C8417940AEC003E58B0 /* walkthrough@2x.png */,
 			);
 			name = walkthrough;
@@ -548,7 +562,6 @@
 			isa = PBXGroup;
 			children = (
 				18456D91177987CA0045B75B /* Jansampark */,
-				18BCE1881781A09800BA7D89 /* Custom Classes */,
 				18456D92177987CA0045B75B /* Supporting Files */,
 				18305905177C51560065E6D1 /* Resources */,
 				18456D8A177987CA0045B75B /* Frameworks */,
@@ -583,7 +596,6 @@
 		18456D91177987CA0045B75B /* Jansampark */ = {
 			isa = PBXGroup;
 			children = (
-				FC5CEDD617A41AF300D43871 /* Helpers */,
 				188CDB9117818D1B004DFEA5 /* MainStoryboard.storyboard */,
 				18456D9A177987CA0045B75B /* JSAppDelegate.h */,
 				18456D9B177987CA0045B75B /* JSAppDelegate.m */,
@@ -591,9 +603,12 @@
 				FCE10082178AE3CA006FDB2E /* Constants.m */,
 				FCE1007D178AE2D5006FDB2E /* APIInterface */,
 				1835D1C5178AE6E700435DB1 /* Model */,
-				182EF1271782FF2D00F6F694 /* Issues */,
 				1894AD5D177DC0A1003538CE /* Container */,
-				1894AD5C177DC08C003538CE /* Home */,
+				182EF1271782FF2D00F6F694 /* Issues */,
+				FC3FFC1117A45DBD0036A8CC /* Analytics */,
+				1894AD5C177DC08C003538CE /* Settings */,
+				18BCE1881781A09800BA7D89 /* Custom Classes */,
+				FC5CEDD617A41AF300D43871 /* Helpers */,
 			);
 			path = Jansampark;
 			sourceTree = "<group>";
@@ -665,23 +680,17 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
-		1894AD5C177DC08C003538CE /* Home */ = {
+		1894AD5C177DC08C003538CE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				1830590E177C52690065E6D1 /* WalkthroughVC.h */,
 				1830590F177C52690065E6D1 /* WalkthroughVC.m */,
-				18456DA6177987CA0045B75B /* JSViewController.h */,
-				18456DA7177987CA0045B75B /* JSViewController.m */,
-				FC3B6085178480B600953836 /* AnalyticsVC.h */,
-				FC3B6086178480B600953836 /* AnalyticsVC.m */,
-				FC31D3351790289000F1A60B /* LocationSearchCell.h */,
-				FC31D3361790289000F1A60B /* LocationSearchCell.m */,
 				18BC5C80179407D5003E58B0 /* AboutVC.h */,
 				18BC5C81179407D5003E58B0 /* AboutVC.m */,
 				18BC5C8917940E6E003E58B0 /* ProfileVC.h */,
 				18BC5C8A17940E6E003E58B0 /* ProfileVC.m */,
 			);
-			name = Home;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		1894AD5D177DC0A1003538CE /* Container */ = {
@@ -782,7 +791,6 @@
 				18983AD91796B71500DF80F1 /* MyriadBoldItLabel.m */,
 			);
 			name = "Custom Classes";
-			path = Jansampark;
 			sourceTree = "<group>";
 		};
 		FC31D34417919E3100F1A60B /* RunningMan */ = {
@@ -815,6 +823,21 @@
 				FC3B606F1784527200953836 /* leftSegmentOn.png */,
 				FC3B60701784527200953836 /* rightSegmentOff.png */,
 				FC3B60711784527200953836 /* rightSegmentOn.png */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		FC3FFC1117A45DBD0036A8CC /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				FC3B6085178480B600953836 /* AnalyticsVC.h */,
+				FC3B6086178480B600953836 /* AnalyticsVC.m */,
+				FC31D3351790289000F1A60B /* LocationSearchCell.h */,
+				FC31D3361790289000F1A60B /* LocationSearchCell.m */,
+				FC3FFC1217A45E390036A8CC /* AnalyticsDetailVC.h */,
+				FC3FFC1317A45E390036A8CC /* AnalyticsDetailVC.m */,
+				FC3FFC1517A45E6B0036A8CC /* AnalyticsCell.h */,
+				FC3FFC1617A45E6B0036A8CC /* AnalyticsCell.m */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
@@ -867,6 +890,8 @@
 				FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */,
 				FC6FEEB6179E984200982188 /* RestKitAdditions.h */,
 				FCE10088178AE81E006FDB2E /* Jansampark.xcdatamodeld */,
+				FC5CEDDB17A4228800D43871 /* JSAPIInteracter.h */,
+				FC5CEDDC17A4228800D43871 /* JSAPIInteracter.m */,
 			);
 			name = APIInterface;
 			sourceTree = "<group>";
@@ -1022,7 +1047,7 @@
 				1822EC46178E9141006C1785 /* done_button.png in Resources */,
 				1822EC47178E9141006C1785 /* summary_bg.png in Resources */,
 				FC49792D178F0DC40043B84A /* searchBG.png in Resources */,
-				FC31D32F17900B0200F1A60B /* centroid.txt in Resources */,
+				FC31D32F17900B0200F1A60B /* delhi.txt in Resources */,
 				FC31D334179025C200F1A60B /* locationCellBG.png in Resources */,
 				FC31D35117919E3C00F1A60B /* runningMan1.png in Resources */,
 				FC31D35217919E3C00F1A60B /* runningMan2.png in Resources */,
@@ -1046,6 +1071,7 @@
 				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
 				FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */,
 				FC5CEDD517A4057400D43871 /* bangalore.txt in Resources */,
+				FC5CEDDF17A42EE700D43871 /* howItWorksButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1117,6 +1143,9 @@
 				FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */,
 				FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */,
 				FC5CEDDA17A41B0E00D43871 /* DSActivityView.m in Sources */,
+				FC5CEDDD17A4228900D43871 /* JSAPIInteracter.m in Sources */,
+				FC3FFC1417A45E390036A8CC /* AnalyticsDetailVC.m in Sources */,
+				FC3FFC1717A45E6B0036A8CC /* AnalyticsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

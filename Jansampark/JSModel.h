@@ -18,10 +18,12 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSArray *delhiConst;
+@property (nonatomic, strong) NSArray *bangaloreConst;
+@property (nonatomic, assign) BOOL analyticsAppeared;
 
 @property (nonatomic, strong) KSReachability *reachability;
 
-@property (nonatomic, strong) NSMutableArray *operationQueue;
++ (JSModel *)sharedModel;
 
 - (void)deleteAllObjectsForEntity:(NSString *)entity;
 - (void)deleteAnalyticObjectsForCID:(NSNumber *)cid;
@@ -36,17 +38,16 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 - (void)getCityFromLocation:(CLLocation *)location
                  completion:(JSLocationGeocodedBlock)block;
 
-+ (JSModel *)sharedModel;
 
 - (UIColor *)configureColorWithSystemCode:(NSNumber *)systemCode;
 - (NSString *)systemLevelWithSystemCode:(NSNumber *)systemCode;
 
 - (BOOL)isNetworkReachable;
 
-- (void)runBackgroundTimer;
-- (void)runOperationQueue;
-
 - (NSString *)GetUUID;
 - (NSDictionary *)jsonFromHTMLError:(NSError **)error;
+
+- (void)showMLAInfoAlert;
+- (void)showNetworkError;
 
 @end
