@@ -52,7 +52,7 @@
      if (img) {
        [formData appendPartWithFileData:UIImageJPEGRepresentation(img, 1)
                                    name:@"img"
-                               fileName:@"photo.jpg"
+                               fileName:@"issuePic.jpg"
                                mimeType:@"image/jpeg"];
      }
      
@@ -60,7 +60,7 @@
      if(profile_img) {
        [formData appendPartWithFileData:UIImageJPEGRepresentation(profile_img, 1)
                                    name:@"profile_img"
-                               fileName:@"photo.jpg"
+                               fileName:@"profilePic.jpg"
                                mimeType:@"image/jpeg"];
      }
 

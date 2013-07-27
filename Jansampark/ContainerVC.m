@@ -7,6 +7,7 @@
 //
 
 #import "ContainerVC.h"
+#import "JSModel.h"
 
 #define kAnimationArrowRatio .45
 #define kAnimationDuration 0.2
@@ -74,6 +75,13 @@ typedef enum {
 }
 
 - (IBAction)analyticsTapped:(id)sender {
+  
+  if(![[JSModel sharedModel] analyticsAppeared]) {
+    [[JSModel sharedModel] setAnalyticsAppeared:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AnalyticsTapped" object:nil];
+    
+  }
+  
   if(self.currentVC != kAnalyticsVC) {
     self.currentVC = kAnalyticsVC;
     [self removeAllContainerViews];

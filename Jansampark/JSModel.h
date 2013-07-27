@@ -18,6 +18,8 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSArray *delhiConst;
+@property (nonatomic, strong) NSArray *bangaloreConst;
+@property (nonatomic, assign) BOOL analyticsAppeared;
 
 @property (nonatomic, strong) KSReachability *reachability;
 
@@ -43,10 +45,9 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
 - (BOOL)isNetworkReachable;
 
-- (void)runBackgroundTimer;
-- (void)runOperationQueue;
-
 - (NSString *)GetUUID;
 - (NSDictionary *)jsonFromHTMLError:(NSError **)error;
 
+- (void)showMLAInfoAlert;
+- (void)showNetworkError;
 @end

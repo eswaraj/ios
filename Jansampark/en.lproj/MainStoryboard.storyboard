@@ -258,6 +258,21 @@
                                 <color key="textColor" red="0.21176470588235294" green="0.21176470588235294" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kjF-k5-pBA">
+                                <rect key="frame" x="89" y="481" width="143" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="howItWorksButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="howItWorksTapped:" destination="FjM-LY-Gdt" eventType="touchUpInside" id="zci-Ye-2G6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1201,6 +1216,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gCY-1s-1jF">
+                                <rect key="frame" x="216" y="6" width="98" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="done_button.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="anotherComplaintPressed:" destination="2z9-zV-hyB" eventType="touchUpInside" id="J6U-Qy-UcL"/>
+                                    <action selector="dismissTapped:" destination="Fwe-bL-d7n" eventType="touchUpInside" id="97L-yr-2Aj"/>
+                                </connections>
+                            </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="AUY-GY-4fG">
                                 <rect key="frame" x="129" y="491" width="62" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1864,6 +1895,7 @@
         <image name="edit_button.png" width="58" height="22"/>
         <image name="electricity_button.png" width="83" height="83"/>
         <image name="electricity_button1.png" width="83" height="85"/>
+        <image name="howItWorksButton.png" width="286" height="79"/>
         <image name="info_button.png" width="25" height="25"/>
         <image name="issue_icon.png" width="10" height="11"/>
         <image name="issues_button.png" width="160" height="45"/>
@@ -1910,8 +1942,6 @@
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
-                <relationship kind="action" name="leftSegmentTapped:"/>
-                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
                 <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>

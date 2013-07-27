@@ -11,7 +11,7 @@
 #import <RestKit/RestKit.h>
 
 #define k00Color [UIColor colorWithRed:1 green:0 blue:0.1 alpha:1]
-#define k01Color [UIColor colorWithRed:1 green:1 blue:0.33 alpha:1]
+#define k01Color [UIColor colorWithRed:1 green:0.8 blue:0.2 alpha:1]
 #define k02Color [UIColor colorWithRed:0.02 green:0.44 blue:0.73 alpha:1]
 #define k03Color [UIColor colorWithRed:0.75 green:0.3 blue:0.31 alpha:1]
 #define k04Color [UIColor colorWithRed:0.0 green:0.69 blue:0.36 alpha:1]
@@ -50,6 +50,7 @@ static JSModel *sharedModel = nil;
     CLLocation * defaultLocation = [[CLLocation alloc] initWithLatitude:29.0167 longitude:12.234];
     [self setCurrentLocation:defaultLocation];
     self.address = @"Delhi";
+    self.analyticsAppeared = NO;
     [self parseConstituencyData];
   }
   return self;
@@ -292,10 +293,16 @@ static JSModel *sharedModel = nil;
 }
 
 - (void)parseConstituencyData {
-  NSString* path = [[NSBundle mainBundle] pathForResource:@"centroid"
-                                                   ofType:@"txt"];
+  NSString *delhiPath = [[NSBundle mainBundle] pathForResource:@"delhi"
+                                                        ofType:@"txt"];
   self.delhiConst =
-  [NSArray arrayWithContentsOfCSVFile:path
+  [NSArray arrayWithContentsOfCSVFile:delhiPath
+                              options:CHCSVParserOptionsStripsLeadingAndTrailingWhitespace];
+  
+  NSString *bangalorePath = [[NSBundle mainBundle] pathForResource:@"bangalore"
+                                                            ofType:@"txt"];
+  self.bangaloreConst =
+  [NSArray arrayWithContentsOfCSVFile:bangalorePath
                               options:CHCSVParserOptionsStripsLeadingAndTrailingWhitespace];
 }
 
@@ -304,29 +311,6 @@ static JSModel *sharedModel = nil;
     return YES;
   } else {
     return NO;
-  }
-}
-
-- (void)runBackgroundTimer {
-  self.timer = [NSTimer scheduledTimerWithTimeInterval:20
-                                                target:self
-                                              selector:@selector(runOperationQueue)
-                                              userInfo:nil
-                                               repeats:YES];
-}
-
-- (void)stopBackgroundTimer {
-  [self.timer invalidate];
-  self.timer =  nil;
-}
-
-
-- (void)runOperationQueue {
-  if ([JSModel sharedModel].operationQueue.count && [[JSModel sharedModel] isNetworkReachable]) {
-    RKObjectRequestOperation * queuedOperation =
-    [[JSModel sharedModel].operationQueue objectAtIndex:0];
-    [[RKObjectManager sharedManager] enqueueObjectRequestOperation:queuedOperation];
-    [[JSModel sharedModel].operationQueue removeObjectAtIndex:0];
   }
 }
 
@@ -344,4 +328,24 @@ static JSModel *sharedModel = nil;
   CFRelease(theUUID);
   return (__bridge NSString *)string;
 }
+
+- (void)showMLAInfoErrorAlert {
+  UIAlertView *alertView =
+  [[UIAlertView alloc] initWithTitle:@"Oops!"
+                             message:@"An error occured while fetching the MLA information"
+                            delegate:nil cancelButtonTitle:@"OK"
+                   otherButtonTitles: nil];
+  [alertView show];
+}
+
+- (void)showNetworkError {
+  UIAlertView *alert =
+  [[UIAlertView alloc] initWithTitle:@"No network connection"
+                             message:@"Please try again when the network is available"
+                            delegate:nil
+                   cancelButtonTitle:@"OK"
+                   otherButtonTitles:nil];
+  [alert show];
+}
+
 @end

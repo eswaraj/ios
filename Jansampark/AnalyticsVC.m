@@ -67,13 +67,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
   [DSBezelActivityView newActivityViewForView:self.view];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(fetchAnalytics)
                                                name:@"Location_Updated"
                                              object:nil];
-	// Do any additional setup after loading the view.
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(fetchAnalytics)
+                                               name:@"AnalyticsTapped"
+                                             object:nil];
+	
+  // Do any additional setup after loading the view.
   [self.leftSegment setImage:[UIImage imageNamed:@"leftSegmentOn"]
                     forState:(UIControlStateHighlighted | UIControlStateSelected)];
   [self.rightSegment setImage:[UIImage imageNamed:@"rightSegmentOn"]
@@ -107,7 +111,6 @@
 
 - (void)viewDidAppear:(BOOL)animated  {
   [super viewDidAppear:animated];
-  
   self.complaintsCountLabel.format = @"%d";
   [self.complaintsCountLabel countFrom:0 to:self.totalNumberOfComplaints withDuration:0.5];
 }
@@ -172,10 +175,15 @@ replacementString:(NSString *)string {
     }
   }];
   
+  NSArray *constArray;
+  if(self.currentCityID.intValue == 999) {
+    constArray = [[JSModel sharedModel] delhiConst];
+  } else if(self.currentCityID.intValue == 998) {
+    constArray = [[JSModel sharedModel] bangaloreConst];
+  }
   self.locationSearchResults =
-  [[[JSModel sharedModel] delhiConst] filteredArrayUsingPredicate:searchPredicate];
+  [constArray filteredArrayUsingPredicate:searchPredicate];
   [self.locationTable reloadData];
-  
   return YES;
 }
 
@@ -212,12 +220,10 @@ replacementString:(NSString *)string {
 
 - (void)cellSelected:(id)sender {
   int row = [self.locationTable indexPathForCell:(UITableViewCell *)[(UITapGestureRecognizer *)sender view]].row;
-  NSString *constituencyName= [[self.locationSearchResults objectAtIndex:row]objectAtIndex:0];
+  NSString *constituencyName = [[self.locationSearchResults objectAtIndex:row]objectAtIndex:0];
   NSString *constituencyLat = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:2];
   NSString *constituencyLong = [[self.locationSearchResults objectAtIndex:row] objectAtIndex:3];
 
-  
-  
   [self.locLabel setText:constituencyName];
   [self dismissOverlay];
   
@@ -231,7 +237,7 @@ replacementString:(NSString *)string {
      NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
      NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
      
-     if([self validMLAId:mla_id] && !drop_bit.intValue) {
+     if(!drop_bit.intValue) {
        if(mla_id) {
          self.currentConstituencyID = mla_id;
          [self fetchDataWithID:mla_id];
@@ -397,27 +403,30 @@ replacementString:(NSString *)string {
 
 - (void)fetchAnalytics {
   
-  [[JSModel sharedModel] getCityFromLocation:[JSModel sharedModel].currentLocation
-                                  completion:
-   ^(NSString *geocodedLocation) {
-     if([[geocodedLocation lowercaseString] isEqualToString:@"karnataka"]) {
-       geocodedLocation = @"Bangalore";
-     }
-     [self.currentCityLabel setText:geocodedLocation];
-     if([[geocodedLocation lowercaseString] isEqualToString:@"delhi"] ||
-        [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"]) {
-       self.currentCityID = [NSNumber numberWithInt:999];
-       [self fetchDataWithID:self.currentCityID];
-       [self fetchConstituencyAnalytics];
-     } else if([[geocodedLocation lowercaseString] isEqualToString:@"bangalore"] ||
-               [[geocodedLocation lowercaseString] isEqualToString:@"bangalooru"]) {
-       self.currentCityID = [NSNumber numberWithInt:998];
-       [self fetchDataWithID:self.currentCityID];
-       [self fetchConstituencyAnalytics];
-     } else {
-       [self disableAnalytics];
-     }
-  }];
+  if([[JSModel sharedModel] analyticsAppeared]) {
+    [[JSModel sharedModel] getCityFromLocation:[JSModel sharedModel].currentLocation
+                                    completion:
+     ^(NSString *geocodedLocation) {
+       if([[geocodedLocation lowercaseString] isEqualToString:@"karnataka"]) {
+         geocodedLocation = @"Bangalore";
+       }
+       [self.currentCityLabel setText:geocodedLocation];
+       if([[geocodedLocation lowercaseString] isEqualToString:@"delhi"] ||
+          [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"]) {
+         self.currentCityID = [NSNumber numberWithInt:999];
+         [self fetchDataWithID:self.currentCityID];
+         [self fetchConstituencyAnalytics];
+       } else if([[geocodedLocation lowercaseString] isEqualToString:@"bangalore"] ||
+                 [[geocodedLocation lowercaseString] isEqualToString:@"bangalooru"]) {
+         self.currentCityID = [NSNumber numberWithInt:998];
+         [self fetchDataWithID:self.currentCityID];
+         [self fetchConstituencyAnalytics];
+       } else {
+         [self disableAnalytics];
+       }
+     }];
+  }
+
 }
 
 - (void)fetchConstituencyAnalytics {
@@ -434,7 +443,7 @@ replacementString:(NSString *)string {
      NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
      NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
      
-     if([self validMLAId:mla_id] && !drop_bit.intValue) {
+     if(!drop_bit.intValue) {
        if(mla_id) {
          self.currentConstituencyID = mla_id;
          [self fetchDataWithID:mla_id];
@@ -456,14 +465,6 @@ replacementString:(NSString *)string {
        [self disableAnalytics];
      }
    }];
-}
-
-- (BOOL)validMLAId:(NSNumber *)mlaID {
-  //search in constitunecies in model
-  if(mlaID.intValue == 74) {
-    return NO;
-  }
-  return YES;
 }
 
 - (void)disableAnalytics {

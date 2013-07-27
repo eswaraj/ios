@@ -13,9 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (weak, nonatomic) IBOutlet UIView *leftBar;
-
-
-
 @end
 
 @implementation IssuesCell
@@ -52,7 +49,5 @@
   [self.categoryLabel setText:systemLevel];
   
 }
-
-
 
 @end

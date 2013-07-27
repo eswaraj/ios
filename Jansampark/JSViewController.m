@@ -115,7 +115,6 @@
   [[JSModel sharedModel] getAddressFromLocation:[JSModel sharedModel].currentLocation
                                      completion:
    ^(NSString *geocodedLocation) {
-     NSLog(@"geocodedloca : %@", geocodedLocation);
     [self.locationLabel setText:geocodedLocation];
   }];
 }
