@@ -47,9 +47,7 @@
   NSURL *url = [NSURL URLWithString:[self.mla image]];
   NSData *data = [NSData dataWithContentsOfURL:url];
   [self.mlaImageOutlet setImage:[UIImage imageWithData:data]];
-  
-  NSLog(@"UNIIMAGE  : %@", data);
-  
+
   [self.issueCategoryLabel setText:self.issueCategory];
   [self.systemLevelLabel setText:self.systemLevel];
   [self.addressLabel setText:self.address];

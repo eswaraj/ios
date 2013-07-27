@@ -38,8 +38,6 @@
   [super viewDidLoad];
   [self fetchPlist];
   [self configureUI];
-  
-
 }
 
 #pragma mark - IBActions
@@ -58,48 +56,18 @@
 }
 
 - (void)fetchPlist {
-  NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-  // get documents path
-  NSString *documentsPath = [paths objectAtIndex:0];
-  // get the path to our Data/plist file
-  NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"Category.plist"];
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"Category" ofType: @"plist"];
+  NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
   
-  // check to see if Data.plist exists in documents
-  if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-  {
-    // if not in documents, get property list from main bundle
-    plistPath = [[NSBundle mainBundle] pathForResource:@"Category" ofType:@"plist"];
-  }
-  
-  // read property list into memory as an NSData object
-  NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-  NSString *errorDesc = nil;
-  NSPropertyListFormat format;
-  // convert static property liost into dictionary object
-  NSDictionary *temp =
-  (NSDictionary *)[NSPropertyListSerialization propertyListFromData:plistXML
-                                                   mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                                             format:&format
-                                                   errorDescription:&errorDesc];
-  if (!temp)
-  {
-    NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-  }
-  // assign values
-  NSDictionary * category = [temp objectForKey:self.category];
+  NSDictionary * category = [dict objectForKey:self.category];
   self.issuesArray = [NSArray arrayWithArray:[category objectForKey:@"Issues"]];
   
   //setting issues category and tmpl_id from plist
   self.issueCategory = [category objectForKey:@"Issue_name"];
   self.issueType = [category objectForKey:@"Category_id"];
-  
 }
 
 #pragma mark - TableView Datasource Methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return 54.0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.issuesArray.count;
@@ -115,7 +83,7 @@
 
 #pragma mark - Tableview Delegate Methods
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
   IssueDetailVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueDetailVC"];
   [vc setIssue:[self.issuesArray objectAtIndex:indexPath.row]];

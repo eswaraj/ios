@@ -23,7 +23,7 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
 @property (nonatomic, strong) KSReachability *reachability;
 
-@property (nonatomic, strong) NSMutableArray *operationQueue;
++ (JSModel *)sharedModel;
 
 - (void)deleteAllObjectsForEntity:(NSString *)entity;
 - (void)deleteAnalyticObjectsForCID:(NSNumber *)cid;
@@ -38,7 +38,6 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 - (void)getCityFromLocation:(CLLocation *)location
                  completion:(JSLocationGeocodedBlock)block;
 
-+ (JSModel *)sharedModel;
 
 - (UIColor *)configureColorWithSystemCode:(NSNumber *)systemCode;
 - (NSString *)systemLevelWithSystemCode:(NSNumber *)systemCode;
@@ -50,4 +49,5 @@ typedef void (^JSLocationGeocodedBlock)(NSString *geocodedLocation);
 
 - (void)showMLAInfoAlert;
 - (void)showNetworkError;
+
 @end

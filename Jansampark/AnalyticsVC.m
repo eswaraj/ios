@@ -18,6 +18,7 @@
 #import "Analytic+JSAPIAdditions.h"
 #import "MLA+JSAPIAdditions.h"
 #import "DSActivityView.h"
+#import "AnalyticsDetailVC.h"
 
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
 
@@ -115,13 +116,56 @@
   [self.complaintsCountLabel countFrom:0 to:self.totalNumberOfComplaints withDuration:0.5];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - IBActionMethods
+
+- (IBAction)categoryButtonTapped:(id)sender {
+  AnalyticsDetailVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"AnalyticsDetailVC"];
+  UIButton *button = (UIButton *)sender;
   
+  NSNumber *constID;
+  if(self.leftSegment.isSelected) {
+    constID = self.currentCityID;
+  } else {
+    constID = self.currentConstituencyID;
+  }
   
+  switch (button.tag) {
+    case 0:
+      [vc setCategory:@"Road"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"51"
+                                                       constituency:constID]];
+      break;
+    case 1:
+      [vc setCategory:@"Water"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"48"
+                                                       constituency:constID]];
+      break;
+    case 2:
+      [vc setCategory:@"Transportation"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"52"
+                                                       constituency:constID]];
+      break;
+    case 3:
+      [vc setCategory:@"Electricity"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"49"
+                                                       constituency:constID]];
+      break;
+    case 4:
+      [vc setCategory:@"Law"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"53"
+                                                       constituency:constID]];
+      break;
+    case 5:
+      [vc setCategory:@"Sewage"];
+      [vc setAnalytics:[[JSModel sharedModel] fetchAnalyticForIssue:@"50"
+                                                       constituency:constID]];
+      break;
+    default:
+      break;
+  }
+  [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 - (IBAction)leftSegmentTapped:(id)sender {
   [self.leftSegment setSelected:YES];

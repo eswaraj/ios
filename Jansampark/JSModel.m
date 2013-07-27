@@ -52,6 +52,7 @@ static JSModel *sharedModel = nil;
     self.address = @"Delhi";
     self.analyticsAppeared = NO;
     [self parseConstituencyData];
+    [self fetchCategoryDataFromPlist];
   }
   return self;
 }
@@ -314,6 +315,10 @@ static JSModel *sharedModel = nil;
   }
 }
 
+- (void)fetchCategoryDataFromPlist {
+  
+}
+
 - (NSDictionary *)jsonFromHTMLError:(NSError **)error {
   NSData *jsonData = [[*error localizedRecoverySuggestion] dataUsingEncoding:NSUTF8StringEncoding];
   NSError *e = nil;
@@ -329,7 +334,7 @@ static JSModel *sharedModel = nil;
   return (__bridge NSString *)string;
 }
 
-- (void)showMLAInfoErrorAlert {
+- (void)showMLAInfoAlert {
   UIAlertView *alertView =
   [[UIAlertView alloc] initWithTitle:@"Oops!"
                              message:@"An error occured while fetching the MLA information"
