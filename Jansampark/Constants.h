@@ -13,6 +13,8 @@
 #define kJSAPIBaseURL [NSURL URLWithString:@"http://50.57.224.47"]
 #define kDataStoreFileName @"JS.sqlite"
 
+// Complaint Category Keys
+
 #define kTotalComplaints @"TotalComplaints"
 #define kWaterComplaints @"WaterComplaints"
 #define kRoadComplaints @"RoadComplaints"
@@ -21,6 +23,14 @@
 #define kLawComplaints @"LawComplaints"
 #define kTransportationComplaints @"TransportationComplaints"
 
-@interface Constants : NSObject
+//NSUserDefaults
 
-@end
+#define kLastAnalyticsUpdateKey @"kLastAnalyticsUpdateKey"
+#define kProfileImageKey @"kProfileImageKey"
+#define kUUIDKey @"kUUIDKey"
+
+// Notifications
+
+extern NSString *const LOC_UPDATED_NOTIF;
+extern NSString *const ANALYTICS_ENTRY_NOTIF;
+extern NSString *const PIC_UPDATED_NOTIF;

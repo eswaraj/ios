@@ -8,6 +8,7 @@
 
 #import "ProfileVC.h"
 #import "WalkthroughVC.h"
+#import "Constants.h"
 
 @interface ProfileVC ()
 @property (weak, nonatomic) IBOutlet UIView *addedPhotoView;
@@ -48,7 +49,7 @@
 
 - (IBAction)crossTapped:(id)sender {
   [self dismissViewControllerAnimated:YES completion:^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"PROFILE_PIC_UPDATED" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PIC_UPDATED_NOTIF object:nil];
   }];
 }
 
@@ -57,7 +58,7 @@
   [self.addedPhotoView setHidden:YES];
   self.profileImage.image = nil;
   
-  [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"profile_image"];
+  [[NSUserDefaults standardUserDefaults] removeObjectForKey:kProfileImageKey];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -86,7 +87,7 @@
 #pragma mark - Custom Methods
 
 - (void)configureUI {
-  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:kProfileImageKey];
   UIImage* image = [UIImage imageWithData:imageData];
   if(image==nil) {
     [self.addPhotoView setHidden:NO];
@@ -109,7 +110,7 @@
   [self.addPhotoView setHidden:YES];
   [self.addedPhotoView setHidden:NO];
   [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(img)
-                                            forKey:@"profile_image"];
+                                            forKey:kProfileImageKey];
   [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

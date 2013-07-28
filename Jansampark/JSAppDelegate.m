@@ -10,6 +10,7 @@
 #import "JSAPIInterface.h"
 #import "JSModel.h"
 #import <KSReachability.h>
+#import "Constants.h"
 @implementation JSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -19,10 +20,10 @@
   [[JSModel sharedModel] startTrackingLocation];
   
   [JSModel sharedModel].reachability = [KSReachability reachabilityToHost:nil];  
-  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:kUUIDKey];
   if(!UUID.length) {
     UUID = [[JSModel sharedModel] GetUUID];
-    [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:@"UUID"];
+    [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:kUUIDKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
   }
     return YES;

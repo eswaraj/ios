@@ -9,6 +9,7 @@
 #import "JSModel.h"
 #import "CHCSVParser.h"
 #import <RestKit/RestKit.h>
+#import "Constants.h"
 
 #define k00Color [UIColor colorWithRed:1 green:0 blue:0.1 alpha:1]
 #define k01Color [UIColor colorWithRed:1 green:0.8 blue:0.2 alpha:1]
@@ -173,7 +174,7 @@ static JSModel *sharedModel = nil;
   self.currentLocation = newLocation;
   // Reverse geocode the location to get the city
   [[NSNotificationCenter defaultCenter]
-   postNotificationName:@"Location_Updated"
+   postNotificationName:LOC_UPDATED_NOTIF
    object:nil
    userInfo:nil];
 

@@ -8,6 +8,6 @@
 
 #import "Constants.h"
 
-@implementation Constants 
-
-@end
+NSString *const LOC_UPDATED_NOTIF = @"LOC_UPDATED_NOTIF";
+NSString *const ANALYTICS_ENTRY_NOTIF = @"ANALYTICS_ENTRY_NOTIF";
+NSString *const PIC_UPDATED_NOTIF = @"PIC_UPDATED_NOTIF";

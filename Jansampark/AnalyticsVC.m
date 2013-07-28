@@ -74,6 +74,7 @@
   [super viewDidAppear:animated];
   self.complaintsCountLabel.format = @"%d";
   [self.complaintsCountLabel countFrom:0 to:self.totalNumberOfComplaints withDuration:0.5];
+  [self refreshAnalyticsIfRequired];
 }
 
 #pragma mark - Initial Setup Methods
@@ -81,11 +82,11 @@
 - (void)addNotifObserver {
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(fetchAnalytics)
-                                               name:@"Location_Updated"
+                                               name:LOC_UPDATED_NOTIF
                                              object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(fetchAnalytics)
-                                               name:@"AnalyticsTapped"
+                                               name:ANALYTICS_ENTRY_NOTIF
                                              object:nil];
 }
 
@@ -442,6 +443,10 @@ replacementString:(NSString *)string {
 
 - (void)fetchAnalytics {
   
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  [defaults setObject:[NSDate date] forKey:kLastAnalyticsUpdateKey];
+  [defaults synchronize];
+  
   if([[JSModel sharedModel] analyticsAppeared]) {
     [[JSModel sharedModel] getCityFromLocation:[JSModel sharedModel].currentLocation
                                     completion:
@@ -500,6 +505,19 @@ replacementString:(NSString *)string {
 - (void)enableAnalytics {
   [self.disableAnalyticsView setHidden:YES];
   [DSBezelActivityView removeViewAnimated:YES];
+}
+
+- (void)refreshAnalyticsIfRequired {
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  if([defaults objectForKey:kLastAnalyticsUpdateKey]) {
+    NSDate *lastUpdateDate = [defaults objectForKey:kLastAnalyticsUpdateKey];
+    NSDate *currentDate = [NSDate date];
+    NSLog(@"time since %f", [currentDate timeIntervalSinceDate:lastUpdateDate]);
+    if([currentDate timeIntervalSinceDate:lastUpdateDate] >= 86400) {
+      [DSBezelActivityView newActivityViewForView:self.view];
+      [self fetchAnalytics];
+    }
+  }
 }
 
 @end

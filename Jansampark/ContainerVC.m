@@ -8,6 +8,7 @@
 
 #import "ContainerVC.h"
 #import "JSModel.h"
+#import "Constants.h"
 
 #define kAnimationArrowRatio .45
 #define kAnimationDuration 0.2
@@ -78,8 +79,8 @@ typedef enum {
   
   if(![[JSModel sharedModel] analyticsAppeared]) {
     [[JSModel sharedModel] setAnalyticsAppeared:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"AnalyticsTapped" object:nil];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:ANALYTICS_ENTRY_NOTIF
+                                                        object:nil];
   }
   
   if(self.currentVC != kAnalyticsVC) {

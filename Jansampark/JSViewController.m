@@ -11,6 +11,7 @@
 #import "IssuesVC.h"
 #import "JSModel.h"
 #import <MapKit/MapKit.h>
+#import "Constants.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -39,11 +40,11 @@
 
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(updateMap:)
-                                               name:@"Location_Updated"
+                                               name:LOC_UPDATED_NOTIF
                                              object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(updateProfileImage)
-                                               name:@"PROFILE_PIC_UPDATED"
+                                               name:PIC_UPDATED_NOTIF
                                              object:nil];
   
 }
@@ -120,7 +121,7 @@
 }
 
 - (void)updateProfileImage {
-  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:kProfileImageKey];
   UIImage* image = [UIImage imageWithData:imageData];
   if(image!=nil) {
     [self.profileButtonOutlet setImage:image forState:UIControlStateNormal];

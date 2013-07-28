@@ -14,6 +14,7 @@
 #import "IssueSummaryVC.h"
 #import <KSReachability/KSReachability.h>
 #import "JSAPIInteracter.h"
+#import "Constants.h"
 
 @interface IssueDetailVC ()
 
@@ -121,7 +122,7 @@
   CLLocation *currentLocation = [JSModel sharedModel].currentLocation;
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
-  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:@"UUID"];
+  NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:kUUIDKey];
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                           latitude, @"lat",
                           longitude, @"long",
@@ -150,7 +151,7 @@
 
 - (UIImage *)getProfileImage {
   NSData* imageData =
-  [[NSUserDefaults standardUserDefaults] objectForKey:@"profile_image"];
+  [[NSUserDefaults standardUserDefaults] objectForKey:kProfileImageKey];
   UIImage* image = [UIImage imageWithData:imageData];
   if(image) {
     image = [self compressImage:image toSize:CGSizeMake(60, 60)];
