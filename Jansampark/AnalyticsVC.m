@@ -22,6 +22,7 @@
 #import "JSAPIInteracter.h"
 
 #define kGreyishColor [UIColor colorWithRed:0.77 green:0.77 blue:0.77 alpha:1]
+#define kAnalyticsUpdateTime 86400
 
 @interface AnalyticsVC () <UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -64,7 +65,6 @@
   [super viewDidLoad];
   
   [DSBezelActivityView newActivityViewForView:self.view];
-  
   [self addNotifObserver];
   [self configureUI];
   [self configureGestures];
@@ -512,8 +512,7 @@ replacementString:(NSString *)string {
   if([defaults objectForKey:kLastAnalyticsUpdateKey]) {
     NSDate *lastUpdateDate = [defaults objectForKey:kLastAnalyticsUpdateKey];
     NSDate *currentDate = [NSDate date];
-    NSLog(@"time since %f", [currentDate timeIntervalSinceDate:lastUpdateDate]);
-    if([currentDate timeIntervalSinceDate:lastUpdateDate] >= 86400) {
+    if([currentDate timeIntervalSinceDate:lastUpdateDate] >= kAnalyticsUpdateTime) {
       [DSBezelActivityView newActivityViewForView:self.view];
       [self fetchAnalytics];
     }

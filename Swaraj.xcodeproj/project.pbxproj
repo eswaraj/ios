@@ -163,6 +163,8 @@
 		FC5CEDDF17A42EE700D43871 /* howItWorksButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FC5CEDDE17A42EE700D43871 /* howItWorksButton.png */; };
 		FC6FEEB5179E8FC300982188 /* Analytic+JSAPIAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB4179E8FC300982188 /* Analytic+JSAPIAdditions.m */; };
 		FC6FEEB9179EB0AE00982188 /* Analytic.m in Sources */ = {isa = PBXBuildFile; fileRef = FC6FEEB8179EB0AE00982188 /* Analytic.m */; };
+		FC9FC12C17A51FDA00B1E3F9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9FC12B17A51FDA00B1E3F9 /* libTestFlight.a */; };
+		FC9FC12F17A5201800B1E3F9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9FC12E17A5201800B1E3F9 /* libz.dylib */; };
 		FCE1007C1786D5F7006FDB2E /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */; };
 		FCE10080178AE31C006FDB2E /* JSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE1007F178AE31C006FDB2E /* JSAPIInterface.m */; };
 		FCE10083178AE3CA006FDB2E /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE10082178AE3CA006FDB2E /* Constants.m */; };
@@ -232,14 +234,14 @@
 		1836445A178571ED0090C40E /* Water_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Water_banner.png; sourceTree = "<group>"; };
 		1836445B178571ED0090C40E /* Water_banner@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Water_banner@2x.png"; sourceTree = "<group>"; };
 		1836446C178574580090C40E /* arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_right.png; sourceTree = "<group>"; };
-		18456D88177987CA0045B75B /* Jansampark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jansampark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18456D88177987CA0045B75B /* Swaraj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swaraj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18456D8B177987CA0045B75B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		18456D8D177987CA0045B75B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18456D8F177987CA0045B75B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		18456D93177987CA0045B75B /* Jansampark-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jansampark-Info.plist"; sourceTree = "<group>"; };
+		18456D93177987CA0045B75B /* Swaraj-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Swaraj-Info.plist"; sourceTree = "<group>"; };
 		18456D95177987CA0045B75B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		18456D97177987CA0045B75B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		18456D99177987CA0045B75B /* Jansampark-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jansampark-Prefix.pch"; sourceTree = "<group>"; };
+		18456D99177987CA0045B75B /* Swaraj-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swaraj-Prefix.pch"; sourceTree = "<group>"; };
 		18456D9A177987CA0045B75B /* JSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSAppDelegate.h; sourceTree = "<group>"; };
 		18456D9B177987CA0045B75B /* JSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSAppDelegate.m; sourceTree = "<group>"; };
 		18456D9D177987CA0045B75B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -361,6 +363,9 @@
 		FC6FEEB6179E984200982188 /* RestKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestKitAdditions.h; sourceTree = "<group>"; };
 		FC6FEEB7179EB0AE00982188 /* Analytic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Analytic.h; sourceTree = "<group>"; };
 		FC6FEEB8179EB0AE00982188 /* Analytic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Analytic.m; sourceTree = "<group>"; };
+		FC9FC12B17A51FDA00B1E3F9 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		FC9FC12D17A51FED00B1E3F9 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		FC9FC12E17A5201800B1E3F9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		FCE1007A1786D5F7006FDB2E /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		FCE1007B1786D5F7006FDB2E /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		FCE1007E178AE31C006FDB2E /* JSAPIInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSAPIInterface.h; sourceTree = "<group>"; };
@@ -379,6 +384,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9FC12F17A5201800B1E3F9 /* libz.dylib in Frameworks */,
 				1887BEC7178D552100EC5AB4 /* CoreLocation.framework in Frameworks */,
 				FCE10087178AE6FB006FDB2E /* MobileCoreServices.framework in Frameworks */,
 				FCE10085178AE6DC006FDB2E /* SystemConfiguration.framework in Frameworks */,
@@ -387,6 +393,7 @@
 				18456D8E177987CA0045B75B /* Foundation.framework in Frameworks */,
 				18456D90177987CA0045B75B /* CoreGraphics.framework in Frameworks */,
 				82594B018E3749D395BE314C /* libPods.a in Frameworks */,
+				FC9FC12C17A51FDA00B1E3F9 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +580,7 @@
 		18456D89177987CA0045B75B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18456D88177987CA0045B75B /* Jansampark.app */,
+				18456D88177987CA0045B75B /* Swaraj.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -581,6 +588,8 @@
 		18456D8A177987CA0045B75B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC9FC12E17A5201800B1E3F9 /* libz.dylib */,
+				FC9FC12B17A51FDA00B1E3F9 /* libTestFlight.a */,
 				1887BEC6178D552100EC5AB4 /* CoreLocation.framework */,
 				FCE10086178AE6FB006FDB2E /* MobileCoreServices.framework */,
 				FCE10084178AE6DC006FDB2E /* SystemConfiguration.framework */,
@@ -616,10 +625,10 @@
 		18456D92177987CA0045B75B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18456D93177987CA0045B75B /* Jansampark-Info.plist */,
+				18456D93177987CA0045B75B /* Swaraj-Info.plist */,
 				18456D94177987CA0045B75B /* InfoPlist.strings */,
 				18456D97177987CA0045B75B /* main.m */,
-				18456D99177987CA0045B75B /* Jansampark-Prefix.pch */,
+				18456D99177987CA0045B75B /* Swaraj-Prefix.pch */,
 				18456D9D177987CA0045B75B /* Default.png */,
 				18456D9F177987CA0045B75B /* Default@2x.png */,
 				18456DA1177987CA0045B75B /* Default-568h@2x.png */,
@@ -845,6 +854,7 @@
 		FC5CEDD617A41AF300D43871 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FC9FC12D17A51FED00B1E3F9 /* TestFlight.h */,
 				FC5CEDD717A41AF900D43871 /* DSActivityView */,
 			);
 			name = Helpers;
@@ -899,9 +909,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18456D87177987CA0045B75B /* Jansampark */ = {
+		18456D87177987CA0045B75B /* Swaraj */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Jansampark" */;
+			buildConfigurationList = 18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Swaraj" */;
 			buildPhases = (
 				A63B8F9E4A3D4732A48204BF /* Check Pods Manifest.lock */,
 				18456D84177987CA0045B75B /* Sources */,
@@ -913,9 +923,9 @@
 			);
 			dependencies = (
 			);
-			name = Jansampark;
+			name = Swaraj;
 			productName = Jansampark;
-			productReference = 18456D88177987CA0045B75B /* Jansampark.app */;
+			productReference = 18456D88177987CA0045B75B /* Swaraj.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -928,7 +938,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Grappus;
 			};
-			buildConfigurationList = 18456D83177987CA0045B75B /* Build configuration list for PBXProject "Jansampark" */;
+			buildConfigurationList = 18456D83177987CA0045B75B /* Build configuration list for PBXProject "Swaraj" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -940,7 +950,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18456D87177987CA0045B75B /* Jansampark */,
+				18456D87177987CA0045B75B /* Swaraj */,
 			);
 		};
 /* End PBXProject section */
@@ -1231,10 +1241,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02EFC0802F2E4A2AB56CE7AF /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Jansampark/Jansampark-Prefix.pch";
-				INFOPLIST_FILE = "Jansampark/Jansampark-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Jansampark/Swaraj-Prefix.pch";
+				INFOPLIST_FILE = "Jansampark/Swaraj-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(LOCAL_LIBRARY_DIR)/WebServer/Documents/clients/Grappus/Jansampark\"",
+				);
+				PRODUCT_NAME = Swaraj;
+				PROVISIONING_PROFILE = "1025538D-1DAF-47CC-997C-A9338F8A5522";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1025538D-1DAF-47CC-997C-A9338F8A5522";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1243,10 +1261,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02EFC0802F2E4A2AB56CE7AF /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Jansampark/Jansampark-Prefix.pch";
-				INFOPLIST_FILE = "Jansampark/Jansampark-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Jansampark/Swaraj-Prefix.pch";
+				INFOPLIST_FILE = "Jansampark/Swaraj-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(LOCAL_LIBRARY_DIR)/WebServer/Documents/clients/Grappus/Jansampark\"",
+				);
+				PRODUCT_NAME = Swaraj;
+				PROVISIONING_PROFILE = "1025538D-1DAF-47CC-997C-A9338F8A5522";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1025538D-1DAF-47CC-997C-A9338F8A5522";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1254,7 +1280,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18456D83177987CA0045B75B /* Build configuration list for PBXProject "Jansampark" */ = {
+		18456D83177987CA0045B75B /* Build configuration list for PBXProject "Swaraj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18456DA9177987CA0045B75B /* Debug */,
@@ -1263,7 +1289,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Jansampark" */ = {
+		18456DAB177987CA0045B75B /* Build configuration list for PBXNativeTarget "Swaraj" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18456DAC177987CA0045B75B /* Debug */,

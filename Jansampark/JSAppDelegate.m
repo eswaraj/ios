@@ -11,6 +11,8 @@
 #import "JSModel.h"
 #import <KSReachability.h>
 #import "Constants.h"
+#import "TestFlight.h"
+
 @implementation JSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -26,6 +28,8 @@
     [[NSUserDefaults standardUserDefaults] setObject:UUID forKey:kUUIDKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
   }
+  
+  [TestFlight takeOff:@"6436852a-dac3-4796-9772-58f948f3e106"];
     return YES;
 }
 
