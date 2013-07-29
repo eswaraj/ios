@@ -18,9 +18,9 @@
 #define k04Color [UIColor colorWithRed:0.0 green:0.69 blue:0.36 alpha:1]
 #define k05Color [UIColor grayColor];
 
-#define kSystemLevel0 @"Lack of infrastructure"
-#define kSystemLevel1 @"Lack of maintainance"
-#define kSystemLevel2 @"Lack of Quality of staff"
+#define kSystemLevel0 @"Lack of Infrastructure"
+#define kSystemLevel1 @"Lack of Maintenance"
+#define kSystemLevel2 @"Lack of Quality of Staff"
 #define kSystemLevel3 @"Poor Pricing"
 #define kSystemLevel4 @"Awareness"
 #define kSystemLevel5 @"Others"
@@ -265,7 +265,7 @@ static JSModel *sharedModel = nil;
 }
 
 - (NSString *)systemLevelWithSystemCode:(NSNumber *)systemCode {
-  
+  NSLog(@"systemCode : %@", systemCode);
   switch ([systemCode intValue]) {
     case 0:
       return kSystemLevel0;

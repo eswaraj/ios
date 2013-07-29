@@ -123,11 +123,19 @@
   NSString *latitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude = [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
   NSString *UUID = [[NSUserDefaults standardUserDefaults] objectForKey:kUUIDKey];
+  
+  NSNumber *number = [self.issue objectForKey:@"tmpl_id"];
+  if(self.systemLevel) {
+    number = [NSNumber numberWithInt:(self.systemLevel.intValue * 10)];
+  }
+  
+  
+  NSLog(@"number : %d", number.intValue);
   NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                           latitude, @"lat",
                           longitude, @"long",
                           self.issueType, @"issue_type",
-                          [self.issue objectForKey:@"tmpl_id"], @"issue_tmpl_id",
+                          number, @"issue_tmpl_id",
                           self.descriptionLabel.text, @"txt",
                           UUID, @"reporter_id",
                           [JSModel sharedModel].address, @"addr", nil];
@@ -266,7 +274,13 @@
   [self.categoryLabel setText:self.issueCategory];
   [self.issueNameLabel setText:[self.issue objectForKey:@"text"]];
   
+  
   NSNumber *sys_code = [self.issue objectForKey:@"sys_code"];
+  
+  if(self.systemLevel) {
+    sys_code = self.systemLevel;
+  }
+  
   NSString *systemLevel = [[JSModel sharedModel] systemLevelWithSystemCode:sys_code];
   [self.systemLevelLabel setText:systemLevel];
   

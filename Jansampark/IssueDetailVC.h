@@ -13,5 +13,7 @@
 @property (strong, nonatomic)  NSMutableDictionary *issue;
 @property (strong, nonatomic)  NSString *issueCategory;
 @property (strong, nonatomic)  NSNumber *issueType;
+@property (assign, nonatomic)  NSNumber *templateID;
+@property (assign, nonatomic)  NSNumber *systemLevel;
 
 @end

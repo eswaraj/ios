@@ -8,7 +8,7 @@
 
 #import "IssuesVC.h"
 #import "IssueDetailVC.h"
-
+#import "SystemLevelVC.h"
 
 @interface IssuesVC ()
 @property (weak, nonatomic) IBOutlet UILabel *issuesLabel;
@@ -84,13 +84,20 @@
 #pragma mark - Tableview Delegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  IssueDetailVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueDetailVC"];
-  [vc setIssue:[self.issuesArray objectAtIndex:indexPath.row]];
-  [vc setIssueCategory:self.issueCategory];
-  [vc setIssueType:self.issueType];
-  
-  [self.navigationController pushViewController:vc animated:YES];
+  int systemCode = [[[self.issuesArray objectAtIndex:indexPath.row] objectForKey:@"sys_code"] intValue];
+  if(systemCode == 5) {
+    SystemLevelVC *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"SystemLevelVC"];
+    [svc setIssue:[self.issuesArray objectAtIndex:indexPath.row]];
+    [svc setIssueCategory:self.issueCategory];
+    [svc setIssueType:self.issueType];
+    [self.navigationController pushViewController:svc animated:YES];
+  } else {
+    IssueDetailVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"IssueDetailVC"];
+    [vc setIssue:[self.issuesArray objectAtIndex:indexPath.row]];
+    [vc setIssueCategory:self.issueCategory];
+    [vc setIssueType:self.issueType];
+    [self.navigationController pushViewController:vc animated:YES];
+  }
 }
 
 @end

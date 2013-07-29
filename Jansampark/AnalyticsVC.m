@@ -449,6 +449,14 @@ replacementString:(NSString *)string {
     [NSString stringWithFormat:@"%d%%",(int)((totalLawCount*100)/self.totalNumberOfComplaints)];
     self.complaintsCountLabel.text =
     [NSString stringWithFormat:@"%d",(int)self.totalNumberOfComplaints];
+  } else {
+    self.roadPercent.text = @"0%";
+    self.sewagePercent.text = @"0%";
+    self.electricityPercent.text = @"0%";
+    self.transportationPercent.text = @"0%";
+    self.waterPercent.text = @"0%";
+    self.lawPercent.text = @"0%";
+    self.complaintsCountLabel.text = @"0";
   }
   
 }

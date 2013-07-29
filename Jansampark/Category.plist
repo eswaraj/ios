@@ -136,39 +136,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
@@ -298,39 +266,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
@@ -412,39 +348,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
@@ -558,39 +462,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
@@ -688,39 +560,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
@@ -810,39 +650,7 @@
 				<key>text</key>
 				<string>Others</string>
 				<key>sys_code</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>10</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>20</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>2</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>30</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>3</integer>
-			</dict>
-			<dict>
-				<key>tmpl_id</key>
-				<integer>40</integer>
-				<key>text</key>
-				<string>Others</string>
-				<key>sys_code</key>
-				<integer>4</integer>
+				<integer>5</integer>
 			</dict>
 		</array>
 	</dict>
