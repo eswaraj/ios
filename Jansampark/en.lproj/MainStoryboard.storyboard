@@ -24,7 +24,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tpn-Wx-95u">
-                                        <rect key="frame" x="10" y="10" width="25" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="cross_button.png">
@@ -313,8 +313,8 @@
                                             <segue destination="E9R-cZ-f5b" kind="modal" modalTransitionStyle="flipHorizontal" id="AZw-GI-pVr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eYR-N3-jVT">
-                                        <rect key="frame" x="283" y="9" width="25" height="25"/>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eYR-N3-jVT">
+                                        <rect key="frame" x="274" y="0.0" width="46" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="profile_image.png">
@@ -907,7 +907,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VJt-0P-csb">
-                                        <rect key="frame" x="15" y="13" width="19" height="16"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="back_button.png">
@@ -1361,7 +1361,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ndN-lQ-3Ga">
-                                <rect key="frame" x="31" y="21" width="129" height="30"/>
+                                <rect key="frame" x="31" y="16" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="leftSegmentOff.png">
@@ -1377,7 +1377,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="C8z-Oe-fTm">
-                                <rect key="frame" x="160" y="21" width="129" height="30"/>
+                                <rect key="frame" x="160" y="16" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="rightSegmentOff.png">
@@ -1392,15 +1392,15 @@
                                     <action selector="rightSegmentTapped:" destination="jVl-Fz-cSW" eventType="touchUpInside" id="lHH-YS-56A"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Overall" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o3M-Gy-BJy" customClass="OpenSansBold">
-                                <rect key="frame" x="76" y="26" width="55" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o3M-Gy-BJy" customClass="OpenSansBold">
+                                <rect key="frame" x="41" y="21" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Adarsh Nagar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="04g-7i-70Q" customClass="OpenSansBold">
-                                <rect key="frame" x="168" y="26" width="102" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Constituency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="04g-7i-70Q" customClass="OpenSansBold">
+                                <rect key="frame" x="168" y="21" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.76884694343065696" green="0.77614621350364965" blue="0.76853330291970801" alpha="1" colorSpace="calibratedRGB"/>
@@ -1410,20 +1410,6 @@
                                 <rect key="frame" x="75" y="58" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current City :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="b1J-oS-gbq" customClass="OpenSansBold">
-                                <rect key="frame" x="35" y="1" width="127" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.76884694340000004" green="0.77614621350000002" blue="0.76853330289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Delhi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="mcz-VB-9Fp" customClass="OpenSansBold">
-                                <rect key="frame" x="166" y="1" width="127" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="mto-x1-HZc">
                                 <rect key="frame" x="0.0" y="257" width="320" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -1724,6 +1710,70 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="Ga0-yx-maJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView alpha="0.40000000596046448" contentMode="scaleToFill" id="tjD-zO-m31">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="510"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleToFill" image="locationCellBG.png" id="4TL-1P-Vt9">
+                                        <rect key="frame" x="33" y="45" width="255" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="New Delhi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jc3-ge-Xls" customClass="OpenSansBold">
+                                        <rect key="frame" x="44" y="49" width="220" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.73540145990000005" green="0.7385663777" blue="0.73728330289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WiW-QG-Hui">
+                                        <rect key="frame" x="33" y="45" width="255" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="delhiTapped:" destination="jVl-Fz-cSW" eventType="touchUpInside" id="LCI-lt-v8J"/>
+                                        </connections>
+                                    </button>
+                                    <imageView contentMode="scaleToFill" image="locationCellBG.png" id="dum-I9-mKo">
+                                        <rect key="frame" x="33" y="75" width="255" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Bangalore" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bVk-Cn-q1X" customClass="OpenSansBold">
+                                        <rect key="frame" x="44" y="79" width="220" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.73540145990000005" green="0.7385663777" blue="0.73728330289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bcq-p8-TC3">
+                                        <rect key="frame" x="33" y="75" width="255" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bangaloreTapped:" destination="jVl-Fz-cSW" eventType="touchUpInside" id="kbw-5J-fcd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.92549019610000005" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1731,9 +1781,11 @@
                     <navigationItem key="navigationItem" id="bZZ-3n-dA0"/>
                     <connections>
                         <outlet property="bigCircleBG" destination="oOp-si-TDi" id="DiP-Ae-jQ3"/>
+                        <outlet property="citySelectorBackgroundImage" destination="tjD-zO-m31" id="L7P-IH-70e"/>
+                        <outlet property="citySelectorView" destination="Ga0-yx-maJ" id="u1K-ME-Wi9"/>
                         <outlet property="complaintsCountLabel" destination="4eQ-h9-JcF" id="grP-nO-iSO"/>
                         <outlet property="complaintsLabel" destination="P58-At-qux" id="7fs-gT-ld6"/>
-                        <outlet property="currentCityLabel" destination="mcz-VB-9Fp" id="yhB-CN-mKX"/>
+                        <outlet property="currentCityLabel" destination="o3M-Gy-BJy" id="v8L-kd-p6h"/>
                         <outlet property="disableAnalyticsView" destination="rJI-Kx-ZUg" id="zHQ-hm-TTP"/>
                         <outlet property="electricityPercent" destination="Gjt-mj-wNj" id="fu2-KH-W7E"/>
                         <outlet property="issueCountLabel" destination="Mzp-Xm-LK6" id="3LU-Se-O2h"/>
@@ -1938,7 +1990,7 @@
         <image name="back_button.png" width="19" height="16"/>
         <image name="bigEllipsBG.png" width="341" height="341"/>
         <image name="complaint_icon.png" width="15" height="10"/>
-        <image name="cross_button.png" width="50" height="50"/>
+        <image name="cross_button.png" width="25" height="25"/>
         <image name="done_button.png" width="196" height="79"/>
         <image name="done_small_button.png" width="117" height="63"/>
         <image name="edit_button.png" width="58" height="22"/>
@@ -1959,7 +2011,7 @@
         <image name="photo_bg.png" width="102" height="103"/>
         <image name="post_button.png" width="143" height="40"/>
         <image name="post_small_button.png" width="117" height="63"/>
-        <image name="profile_image.png" width="50" height="50"/>
+        <image name="profile_image.png" width="25" height="25"/>
         <image name="remove_photo.png" width="115" height="28"/>
         <image name="retake_photo.png" width="115" height="28"/>
         <image name="rightSegmentOff.png" width="257" height="59"/>
@@ -1981,177 +2033,6 @@
         <image name="water_button1.png" width="83" height="85"/>
         <image name="whiteCircle.png" width="200" height="200"/>
     </resources>
-    <classes>
-        <class className="AboutVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="AnalyticsCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="complaintsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftBar" candidateClass="UIView"/>
-                <relationship kind="outlet" name="percentageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="MyriadSemiboldLabel"/>
-            </relationships>
-        </class>
-        <class className="AnalyticsDetailVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsDetailVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansBold"/>
-            </relationships>
-        </class>
-        <class className="AnalyticsVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="complaintsCountLabel" candidateClass="UICountingLabel"/>
-                <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansLight"/>
-                <relationship kind="outlet" name="currentCityLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="disableAnalyticsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="electricityPercent" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="issueCountLabel" candidateClass="UICountingLabel"/>
-                <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansLight"/>
-                <relationship kind="outlet" name="lawPercent" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="leftSegment" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="leftSegmentLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="locLabel" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="locationSearcdhBackgroundImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="locationTable" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="rightSegment" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="roadPercent" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="searchField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="searchOverlay" candidateClass="UIView"/>
-                <relationship kind="outlet" name="sewagePercent" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="statisticsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="transportationPercent" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="waterPercent" candidateClass="MyriadBoldLabel"/>
-            </relationships>
-        </class>
-        <class className="ContainerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContainerVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="analyticsContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="analyticsOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="issueContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="issuesOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tabBarBG" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tabView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="IssueDetailVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueDetailVC.h"/>
-            <relationships>
-                <relationship kind="action" name="addDescriptionTapped:"/>
-                <relationship kind="action" name="attachPhotoTapped:"/>
-                <relationship kind="action" name="backTapped:"/>
-                <relationship kind="action" name="editTapped:"/>
-                <relationship kind="action" name="postComplaint:"/>
-                <relationship kind="action" name="removePhotoTapped:"/>
-                <relationship kind="action" name="takePhotoTapped:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="addDescriptionOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="editButtonOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="issueNameLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="loaderImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="loaderView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="photoAddedView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="postButton4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="systemLevelLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="textviewBG" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="IssueSummaryVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssueSummaryVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="doneButton4" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="issueCategoryLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="issueTitleLabel" candidateClass="MyriadBoldLabel"/>
-                <relationship kind="outlet" name="mlaConstituency" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="mlaImageOutlet" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="mlaNameOutlet" candidateClass="OpenSansBold"/>
-                <relationship kind="outlet" name="systemLevelLabel" candidateClass="MyriadBoldLabel"/>
-            </relationships>
-        </class>
-        <class className="IssuesCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="leftBar" candidateClass="UIView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="IssuesVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IssuesVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="issuesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="JSViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JSViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="buttonsView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="categoryLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="mapSuperview" candidateClass="UIView"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="profileButtonOutlet" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="LocationSearchCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationSearchCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="locationName" candidateClass="OpenSansBold"/>
-            </relationships>
-        </class>
-        <class className="MyriadBoldLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadBoldLabel.h"/>
-        </class>
-        <class className="MyriadRegularLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadRegularLabel.h"/>
-        </class>
-        <class className="MyriadSemiboldLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyriadSemiboldLabel.h"/>
-        </class>
-        <class className="OpenSansBold" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansBold.h"/>
-        </class>
-        <class className="OpenSansLight" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/OpenSansLight.h"/>
-        </class>
-        <class className="ProfileVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ProfileVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addPhotoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="addedPhotoView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="UICountingLabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICountingLabel.h"/>
-        </class>
-        <class className="WalkthroughVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WalkthroughVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

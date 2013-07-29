@@ -54,6 +54,8 @@
 @property (assign, nonatomic) int totalNumberOfComplaints;
 @property (strong, nonatomic) NSNumber *currentConstituencyID;
 @property (strong, nonatomic) NSNumber *currentCityID;
+@property (strong, nonatomic) IBOutlet UIView *citySelectorView;
+@property (strong, nonatomic) IBOutlet UIImageView *citySelectorBackgroundImage;
 
 @end
 
@@ -118,6 +120,11 @@
                                           action:@selector(dismissOverlay)];
   [self.locationSearcdhBackgroundImage addGestureRecognizer:tapGesture];
   
+  UITapGestureRecognizer *cityTapGesture =
+  [[UITapGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(dismissOverlay)];
+  [self.citySelectorBackgroundImage addGestureRecognizer:cityTapGesture];
+  
   UITapGestureRecognizer *tableTapGesture =
   [[UITapGestureRecognizer alloc] initWithTarget:self
                                           action:@selector(dismissOverlay)];
@@ -176,11 +183,16 @@
 
 
 - (IBAction)leftSegmentTapped:(id)sender {
-  [self.leftSegment setSelected:YES];
-  [self.rightSegment setSelected:NO];
-  [self.leftSegmentLabel setTextColor:[UIColor whiteColor]];
-  [self.locLabel setTextColor:kGreyishColor];
-  [self refreshAnalyticsForConstID:self.currentCityID];
+  
+  if(!self.leftSegment.isSelected) {
+    [self.leftSegment setSelected:YES];
+    [self.rightSegment setSelected:NO];
+    [self.leftSegmentLabel setTextColor:[UIColor whiteColor]];
+    [self.locLabel setTextColor:kGreyishColor];
+    [self refreshAnalyticsForConstID:self.currentCityID];
+  } else {
+    [self displayCitySelector];
+  }
 }
 
 - (IBAction)rightSegmentTapped:(id)sender {
@@ -197,6 +209,30 @@
   }
 }
 
+- (IBAction)delhiTapped:(id)sender {
+  [self dismissOverlay];
+  if(!(self.currentCityID.intValue == 999)) {
+    self.currentCityID = [NSNumber numberWithInt:999];
+    [DSBezelActivityView newActivityViewForView:self.view];
+    [self fetchDataWithID:self.currentCityID];
+    [self fetchConstituencyAnalytics];
+    [self.currentCityLabel setText:@"New Delhi"];
+  }
+  
+}
+
+- (IBAction)bangaloreTapped:(id)sender {
+  [self dismissOverlay];
+  if(!(self.currentCityID.intValue == 998)) {
+    self.currentCityID = [NSNumber numberWithInt:998];
+    [DSBezelActivityView newActivityViewForView:self.view];
+    [self fetchDataWithID:self.currentCityID];
+    [self fetchConstituencyAnalytics];
+    [self.currentCityLabel setText:@"Bangalore"];
+  }
+  
+}
+
 - (void)displaySearchView {
   [self.searchOverlay setHidden:NO];
   [self.searchField becomeFirstResponder];
@@ -204,7 +240,12 @@
 
 - (void)dismissOverlay {
   [self.searchOverlay setHidden:YES];
+  [self.citySelectorView setHidden:YES];
   [self.searchField resignFirstResponder];
+}
+
+- (void)displayCitySelector {
+  [self.citySelectorView setHidden:NO];
 }
 
 #pragma mark - TextField Delegates
@@ -293,13 +334,13 @@ replacementString:(NSString *)string {
           if(success) {
             MLA *mla = [result objectAtIndex:0];
             [self.locLabel setText:mla.constituency];
-            [self enableAnalytics];
+            [self enableConstAnalytics];
           } else {
-            [self disableAnalytics];
+            [self disableConstAnalytics];
           }
         }];
      } else {
-       [self disableAnalytics];
+       [self disableConstAnalytics];
      }
    }];
 }
@@ -454,19 +495,24 @@ replacementString:(NSString *)string {
        if([[geocodedLocation lowercaseString] isEqualToString:@"karnataka"]) {
          geocodedLocation = @"Bangalore";
        }
-       [self.currentCityLabel setText:geocodedLocation];
        if([[geocodedLocation lowercaseString] isEqualToString:@"delhi"] ||
-          [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"]) {
+          [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"] ||
+          [[geocodedLocation lowercaseString] isEqualToString:@"newdelhi"]) {
          self.currentCityID = [NSNumber numberWithInt:999];
          [self fetchDataWithID:self.currentCityID];
          [self fetchConstituencyAnalytics];
+         [self.currentCityLabel setText:@"New Delhi"];
        } else if([[geocodedLocation lowercaseString] isEqualToString:@"bangalore"] ||
                  [[geocodedLocation lowercaseString] isEqualToString:@"bangalooru"]) {
          self.currentCityID = [NSNumber numberWithInt:998];
          [self fetchDataWithID:self.currentCityID];
          [self fetchConstituencyAnalytics];
+         [self.currentCityLabel setText:@"Bangalore"];
        } else {
-         [self disableAnalytics];
+         self.currentCityID = [NSNumber numberWithInt:999];
+         [self fetchDataWithID:self.currentCityID];
+         [self fetchConstituencyAnalytics];
+         [self.currentCityLabel setText:@"New Delhi"];
        }
      }];
   }
@@ -486,24 +532,31 @@ replacementString:(NSString *)string {
           if(success) {
             MLA *mla = [result objectAtIndex:0];
             [self.locLabel setText:mla.constituency];
-            [self enableAnalytics];
+            [self enableConstAnalytics];
           } else {
-            [self disableAnalytics];
+            [self disableConstAnalytics];
           }
         }];
      } else {
-       [self disableAnalytics];
+       [self disableConstAnalytics];
      }
    }];
 }
 
-- (void)disableAnalytics {
-  [self.disableAnalyticsView setHidden:NO];
+- (void)disableConstAnalytics {
+  //[self.disableAnalyticsView setHidden:NO];
+  
+  [self.rightSegment setEnabled:NO];
+  [self.rightSegment setSelected:NO];
+  [self.leftSegment setSelected:YES];
+  [self refreshAnalyticsForConstID:self.currentCityID];  
   [DSBezelActivityView removeViewAnimated:YES];
 }
 
-- (void)enableAnalytics {
-  [self.disableAnalyticsView setHidden:YES];
+- (void)enableConstAnalytics {
+  //[self.disableAnalyticsView setHidden:YES];
+  
+  [self.rightSegment setEnabled:YES];
   [DSBezelActivityView removeViewAnimated:YES];
 }
 

@@ -80,7 +80,7 @@ static JSAPIInteracter *shared = nil;
      } else {
        UIAlertView *alertView =
        [[UIAlertView alloc] initWithTitle:@"Coming Soon"
-                                  message:@"Sorry, we will be coming to your area soon!"
+                                  message:@"Analytics currently available for Delhi and Bangalore. Coming to your area soon!"
                                  delegate:nil cancelButtonTitle:@"OK"
                         otherButtonTitles: nil];
        [alertView show];
