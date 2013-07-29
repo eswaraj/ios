@@ -100,10 +100,11 @@
     [cell.complaintsLabel setText:[NSString stringWithFormat:@"%d Complaints", otherSum]];
     [cell.percentageLabel setText:[NSString stringWithFormat:@"%d%%", percentage]];
   } else {
+    [cell setAnalyticPercentage:percentage];
     [cell setAnalytic:cellAnalytic];
   }
   
-  [cell setAnalyticPercentage:percentage];
+  
   [cell setObject:[self.issuesArray objectAtIndex:indexPath.row]];
   
   return cell;
