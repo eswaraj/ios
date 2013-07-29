@@ -1251,8 +1251,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 02EFC0802F2E4A2AB56CE7AF /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dhruv Goel (T25G8T4G34)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dhruv Goel (T25G8T4G34)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Dhruv Goel (XMT2EHZ7LF)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Jansampark/Swaraj-Prefix.pch";
 				INFOPLIST_FILE = "Jansampark/Swaraj-Info.plist";
@@ -1261,8 +1261,8 @@
 					"\"$(LOCAL_LIBRARY_DIR)/WebServer/Documents/clients/Grappus/Jansampark\"",
 				);
 				PRODUCT_NAME = Swaraj;
-				PROVISIONING_PROFILE = "1863DD86-99B3-42C1-9846-8487E6F65E69";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1863DD86-99B3-42C1-9846-8487E6F65E69";
+				PROVISIONING_PROFILE = "1025538D-1DAF-47CC-997C-A9338F8A5522";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1025538D-1DAF-47CC-997C-A9338F8A5522";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;

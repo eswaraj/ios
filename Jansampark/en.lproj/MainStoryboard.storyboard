@@ -698,7 +698,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="WH1-YE-9ID" userLabel="View1">
-                                <rect key="frame" x="0.0" y="44" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="45" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="T4W-qw-H5P" userLabel="left color">
@@ -736,7 +736,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="iQw-Qi-zW4" userLabel="View2">
-                                <rect key="frame" x="0.0" y="99" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="6Jg-Jp-9aU" userLabel="left color">
@@ -774,7 +774,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="mwn-vP-RTT" userLabel="View3">
-                                <rect key="frame" x="0.0" y="154" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="155" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="D1C-ZJ-8ca" userLabel="left color">
@@ -812,7 +812,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="Qh8-dq-TkI" userLabel="View4">
-                                <rect key="frame" x="0.0" y="209" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="210" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="gat-a3-rMR" userLabel="left color">
@@ -850,7 +850,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="AyY-tP-Knq" userLabel="View5">
-                                <rect key="frame" x="0.0" y="264" width="320" height="54"/>
+                                <rect key="frame" x="0.0" y="265" width="320" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="LdR-FI-qw5" userLabel="left color">
@@ -888,7 +888,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="eEg-Bm-xjv"/>
                 </viewController>
