@@ -1197,6 +1197,13 @@
                                         <rect key="frame" x="59" y="129" width="200" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submitting Issue and retrieving responsible MLA information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fe5-YD-XNT" customClass="OpenSansBold">
+                                        <rect key="frame" x="20" y="387" width="280" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -1410,6 +1417,7 @@
                         <outlet property="mlaConstituency" destination="U1B-TL-a0J" id="TQq-qD-daA"/>
                         <outlet property="mlaImageOutlet" destination="dTQ-zu-xey" id="iOO-sg-IDL"/>
                         <outlet property="mlaNameOutlet" destination="KJQ-RZ-G84" id="ZiH-0r-raj"/>
+                        <outlet property="summaryLabel" destination="9F8-ZM-wYq" id="GCS-Tx-IAY"/>
                         <outlet property="systemLevelLabel" destination="k35-Dq-r8u" id="CQC-fJ-cRv"/>
                     </connections>
                 </viewController>
@@ -2367,6 +2375,7 @@
                 <relationship kind="outlet" name="mlaConstituency" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="mlaImageOutlet" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="mlaNameOutlet" candidateClass="OpenSansBold"/>
+                <relationship kind="outlet" name="summaryLabel" candidateClass="MyriadRegularLabel"/>
                 <relationship kind="outlet" name="systemLevelLabel" candidateClass="MyriadBoldLabel"/>
             </relationships>
         </class>

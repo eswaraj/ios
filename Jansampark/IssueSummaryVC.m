@@ -8,6 +8,7 @@
 
 #import "IssueSummaryVC.h"
 #import "OpenSansBold.h"
+#import "MyriadRegularLabel.h"
 
 @interface IssueSummaryVC ()
 @property (weak, nonatomic) IBOutlet OpenSansBold *mlaNameOutlet;
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mlaImageOutlet;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton4;
 @property (strong, nonatomic) IBOutlet MyriadBoldLabel *issueTitleLabel;
+@property (strong, nonatomic) IBOutlet MyriadRegularLabel *summaryLabel;
 @end
 
 @implementation IssueSummaryVC
@@ -28,6 +30,21 @@
 }
 
 
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  if([self.mla.constituency isEqualToString:@"Rest_of_India"]) {
+    
+    UIAlertView *alertView =
+    [[UIAlertView alloc] initWithTitle:@"Coming Soon"
+                               message:@"MLA information could not be fetched as the service is currently not available in this location. Will be coming here soon!."
+                              delegate:nil cancelButtonTitle:@"OK"
+                     otherButtonTitles: nil];
+    [alertView show];
+    
+  }
+  
+}
 #pragma mark - IBActions
 
 - (IBAction)anotherComplaintPressed:(id)sender {

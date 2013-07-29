@@ -241,10 +241,10 @@
 - (void)fetchResponsibleMLAInfoWithPostParams:(NSDictionary *)params {
   [[JSAPIInteracter shared] fetchMLAInfoWithCompletion:
    ^(BOOL success, id result, NSError *error) {
+     
+     NSLog(@"result: %@", result);
+     
      if(success) {
-       
-      
-       
        MLA *mla = result;
        IssueSummaryVC *vc =
        [self.storyboard instantiateViewControllerWithIdentifier:@"IssueSummaryVC"];
@@ -255,14 +255,17 @@
        vc.issueTitle = [self.issue objectForKey:@"text"];
        [self.loaderImage stopAnimating];
        [self.loaderView setHidden:YES];
-       
-       
        [self.navigationController pushViewController:vc animated:YES];
-       RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
-       [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
-
+       if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
+         RKObjectRequestOperation * operation = [self MLAOperationWithParams:params];
+         [[RKObjectManager sharedManager] enqueueObjectRequestOperation:operation];
+       }
      } else {
+      
+       [self.loaderImage stopAnimating];
+       [self.loaderView setHidden:YES];
        [[JSModel sharedModel] showMLAInfoAlert];
+       
      }
   }];
   

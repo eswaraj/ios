@@ -332,9 +332,15 @@ replacementString:(NSString *)string {
        [MLA fetchMLAWithId:result completion:
         ^(BOOL success, NSArray *result, NSError *error) {
           if(success) {
+            
             MLA *mla = [result objectAtIndex:0];
-            [self.locLabel setText:mla.constituency];
-            [self enableConstAnalytics];
+            if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
+              [self.locLabel setText:mla.constituency];
+              [self enableConstAnalytics];
+            } else {
+              [self disableConstAnalytics];
+            }
+            
           } else {
             [self disableConstAnalytics];
           }
@@ -545,9 +551,16 @@ replacementString:(NSString *)string {
           
           [DSBezelActivityView removeViewAnimated:YES];
           if(success) {
+            
             MLA *mla = [result objectAtIndex:0];
-            [self.locLabel setText:mla.constituency];
-            [self enableConstAnalytics];
+            
+            if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
+              [self.locLabel setText:mla.constituency];
+              [self enableConstAnalytics];
+            } else {
+              [self disableConstAnalytics];
+            }
+            
           } else {
             [self disableConstAnalytics];
           }
@@ -570,7 +583,7 @@ replacementString:(NSString *)string {
   
   UIAlertView *alertView =
   [[UIAlertView alloc] initWithTitle:@"Coming Soon"
-                             message:@"Analytics currently available for Delhi and Bangalore. Coming to your area soon!"
+                             message:@"Analytics currently available only for Delhi and Bangalore. Coming to your area soon!"
                             delegate:nil cancelButtonTitle:@"OK"
                    otherButtonTitles: nil];
   [alertView show];

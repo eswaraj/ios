@@ -62,7 +62,9 @@ static JSAPIInteracter *shared = nil;
   [NSString stringWithFormat:@"%f",currentLocation.coordinate.latitude];
   NSString *longitude =
   [NSString stringWithFormat:@"%f",currentLocation.coordinate.longitude];
-  [self fetchMLAIDWithLat:latitude lon:longitude completion:block];
+  [self fetchMLAIDWithLat:latitude lon:longitude completion:^(BOOL success, id result, NSError *error) {
+    block(success, result, error);
+  }];
 }
 
 - (void)fetchMLAIDWithLat:(NSString *)lat lon:(NSString *)lon completion:(JSAPIBlock)block {
@@ -73,13 +75,15 @@ static JSAPIInteracter *shared = nil;
      
      NSDictionary *jsonDict = [[JSModel sharedModel] jsonFromHTMLError:&error];
      NSNumber * mla_id = [jsonDict objectForKey:@"consti_id"];
-     NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
+     //NSNumber * drop_bit = [jsonDict objectForKey:@"ol_drop_bit"];
      
-     if(!drop_bit.intValue && mla_id) {
-       block(YES, mla_id, nil);
-     } else {
-       block(NO, nil, error);
-     }
+     block(YES, mla_id, nil);
+     
+//     if(!drop_bit.intValue && mla_id) {
+//       block(YES, mla_id, nil);
+//     } else {
+//       block(YES, mla_id, nil);
+//     }
    }];
 }
 
