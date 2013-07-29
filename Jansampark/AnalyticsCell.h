@@ -15,6 +15,8 @@
 
 - (void)setObject:(NSDictionary*)issue;
 
+@property (strong, nonatomic) IBOutlet UILabel *complaintsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *percentageLabel;
 @property (nonatomic, strong) Analytic *analytic;
 @property (nonatomic, assign) int analyticPercentage;
 @end

@@ -78,12 +78,6 @@ static JSAPIInteracter *shared = nil;
      if(!drop_bit.intValue && mla_id) {
        block(YES, mla_id, nil);
      } else {
-       UIAlertView *alertView =
-       [[UIAlertView alloc] initWithTitle:@"Coming Soon"
-                                  message:@"Analytics currently available for Delhi and Bangalore. Coming to your area soon!"
-                                 delegate:nil cancelButtonTitle:@"OK"
-                        otherButtonTitles: nil];
-       [alertView show];
        block(NO, nil, error);
      }
    }];

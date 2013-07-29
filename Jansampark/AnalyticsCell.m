@@ -16,8 +16,8 @@
 @property (strong, nonatomic) IBOutlet MyriadSemiboldLabel *titleLabel;
 @property (strong, nonatomic) IBOutlet OpenSansBold *categoryLabel;
 @property (strong, nonatomic) IBOutlet UIView *leftBar;
-@property (strong, nonatomic) IBOutlet UILabel *percentageLabel;
-@property (strong, nonatomic) IBOutlet UILabel *complaintsLabel;
+
+
 
 
 @end

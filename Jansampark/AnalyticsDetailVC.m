@@ -89,9 +89,23 @@
     percentage = (int)((cellAnalytic.counter.intValue * 100) / self.totalComplaints);
   }
   
+  if(indexPath.row == (self.issuesArray.count - 1)) {
+    
+    int otherSum = 0;
+    for(int i = indexPath.row; i < (indexPath.row + 5); i++) {
+      Analytic *analytic = [self.analytics objectAtIndex:i];
+      otherSum += analytic.counter.intValue;
+    }
+    percentage = (int)((otherSum * 100) / self.totalComplaints);
+    [cell.complaintsLabel setText:[NSString stringWithFormat:@"%d Complaints", otherSum]];
+    [cell.percentageLabel setText:[NSString stringWithFormat:@"%d%%", percentage]];
+  } else {
+    [cell setAnalytic:cellAnalytic];
+  }
+  
   [cell setAnalyticPercentage:percentage];
   [cell setObject:[self.issuesArray objectAtIndex:indexPath.row]];
-  [cell setAnalytic:cellAnalytic];
+  
   return cell;
 }
 

@@ -116,7 +116,6 @@
 		18BC5C7F17940733003E58B0 /* cross_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5C7E17940733003E58B0 /* cross_button.png */; };
 		18BC5C82179407D5003E58B0 /* AboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C81179407D5003E58B0 /* AboutVC.m */; };
 		18BC5C8517940AEC003E58B0 /* walkthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5C8317940AEC003E58B0 /* walkthrough.png */; };
-		18BC5C8617940AEC003E58B0 /* walkthrough@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5C8417940AEC003E58B0 /* walkthrough@2x.png */; };
 		18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BC5C8717940D9B003E58B0 /* profile_image.png */; };
 		18BC5C8B17940E6E003E58B0 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5C8A17940E6E003E58B0 /* ProfileVC.m */; };
 		18BCE1801781993600BA7D89 /* issues_button_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BCE17E1781993600BA7D89 /* issues_button_select@2x.png */; };
@@ -304,7 +303,6 @@
 		18BC5C80179407D5003E58B0 /* AboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutVC.h; sourceTree = "<group>"; };
 		18BC5C81179407D5003E58B0 /* AboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutVC.m; sourceTree = "<group>"; };
 		18BC5C8317940AEC003E58B0 /* walkthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walkthrough.png; sourceTree = "<group>"; };
-		18BC5C8417940AEC003E58B0 /* walkthrough@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "walkthrough@2x.png"; sourceTree = "<group>"; };
 		18BC5C8717940D9B003E58B0 /* profile_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_image.png; sourceTree = "<group>"; };
 		18BC5C8917940E6E003E58B0 /* ProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		18BC5C8A17940E6E003E58B0 /* ProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
@@ -525,7 +523,6 @@
 			isa = PBXGroup;
 			children = (
 				FC5CEDDE17A42EE700D43871 /* howItWorksButton.png */,
-				18BC5C8417940AEC003E58B0 /* walkthrough@2x.png */,
 			);
 			name = walkthrough;
 			sourceTree = "<group>";
@@ -1087,7 +1084,6 @@
 				18BC5C7D1793F2B2003E58B0 /* done_small_button.png in Resources */,
 				18BC5C7F17940733003E58B0 /* cross_button.png in Resources */,
 				18BC5C8517940AEC003E58B0 /* walkthrough.png in Resources */,
-				18BC5C8617940AEC003E58B0 /* walkthrough@2x.png in Resources */,
 				18BC5C8817940D9B003E58B0 /* profile_image.png in Resources */,
 				18983AD71796B6BD00DF80F1 /* MyriadPro-BoldIt.otf in Resources */,
 				FC5309AB17A2A07B005466BF /* whiteCircle.png in Resources */,

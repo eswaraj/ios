@@ -57,6 +57,8 @@
 @property (strong, nonatomic) IBOutlet UIView *citySelectorView;
 @property (strong, nonatomic) IBOutlet UIImageView *citySelectorBackgroundImage;
 
+@property (assign, nonatomic) BOOL onlyFetchCity;
+
 @end
 
 @implementation AnalyticsVC
@@ -65,7 +67,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+  self.onlyFetchCity = NO;
   [DSBezelActivityView newActivityViewForView:self.view];
   [self addNotifObserver];
   [self configureUI];
@@ -215,7 +217,6 @@
     self.currentCityID = [NSNumber numberWithInt:999];
     [DSBezelActivityView newActivityViewForView:self.view];
     [self fetchDataWithID:self.currentCityID];
-    [self fetchConstituencyAnalytics];
     [self.currentCityLabel setText:@"New Delhi"];
   }
   
@@ -227,7 +228,6 @@
     self.currentCityID = [NSNumber numberWithInt:998];
     [DSBezelActivityView newActivityViewForView:self.view];
     [self fetchDataWithID:self.currentCityID];
-    [self fetchConstituencyAnalytics];
     [self.currentCityLabel setText:@"Bangalore"];
   }
   
@@ -357,6 +357,8 @@ replacementString:(NSString *)string {
    ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
      
    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+     
+     [DSBezelActivityView removeViewAnimated:YES];
      NSData *jsonData = [error.localizedRecoverySuggestion
                          dataUsingEncoding:NSUTF8StringEncoding];
      NSError *e = nil;
@@ -534,9 +536,14 @@ replacementString:(NSString *)string {
      
      if(success) {
        self.currentConstituencyID = result;
+       
        [self fetchDataWithID:result];
+       
+       [DSBezelActivityView newActivityViewForView:self.view];
        [MLA fetchMLAWithId:result completion:
         ^(BOOL success, NSArray *result, NSError *error) {
+          
+          [DSBezelActivityView removeViewAnimated:YES];
           if(success) {
             MLA *mla = [result objectAtIndex:0];
             [self.locLabel setText:mla.constituency];
@@ -557,8 +564,17 @@ replacementString:(NSString *)string {
   [self.rightSegment setEnabled:NO];
   [self.rightSegment setSelected:NO];
   [self.leftSegment setSelected:YES];
-  [self refreshAnalyticsForConstID:self.currentCityID];  
+  [self refreshAnalyticsForConstID:self.currentCityID];
+  
   [DSBezelActivityView removeViewAnimated:YES];
+  
+  UIAlertView *alertView =
+  [[UIAlertView alloc] initWithTitle:@"Coming Soon"
+                             message:@"Analytics currently available for Delhi and Bangalore. Coming to your area soon!"
+                            delegate:nil cancelButtonTitle:@"OK"
+                   otherButtonTitles: nil];
+  [alertView show];
+
 }
 
 - (void)enableConstAnalytics {
