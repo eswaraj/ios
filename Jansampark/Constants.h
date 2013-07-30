@@ -33,4 +33,3 @@
 
 extern NSString *const LOC_UPDATED_NOTIF;
 extern NSString *const ANALYTICS_ENTRY_NOTIF;
-extern NSString *const PIC_UPDATED_NOTIF;

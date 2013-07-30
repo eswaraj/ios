@@ -36,17 +36,10 @@
 //[self presentViewController:wVC animated:NO completion:nil];
   [self configureFonts];
   [self configureUI];
-  [self updateProfileImage];
-
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(updateMap:)
                                                name:LOC_UPDATED_NOTIF
                                              object:nil];
-  [[NSNotificationCenter defaultCenter] addObserver:self
-                                           selector:@selector(updateProfileImage)
-                                               name:PIC_UPDATED_NOTIF
-                                             object:nil];
-  
 }
 
 
@@ -120,14 +113,4 @@
   }];
 }
 
-- (void)updateProfileImage {
-  NSData* imageData = [[NSUserDefaults standardUserDefaults] objectForKey:kProfileImageKey];
-  UIImage* image = [UIImage imageWithData:imageData];
-  if(image!=nil) {
-    [self.profileButtonOutlet setImage:image forState:UIControlStateNormal];
-  } else {
-    [self.profileButtonOutlet setImage:[UIImage imageNamed:@"profile_image.png"]
-                              forState:UIControlStateNormal];
-  }
-}
 @end

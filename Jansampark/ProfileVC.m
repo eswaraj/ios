@@ -48,9 +48,7 @@
 #pragma mark - IBActions
 
 - (IBAction)crossTapped:(id)sender {
-  [self dismissViewControllerAnimated:YES completion:^{
-    [[NSNotificationCenter defaultCenter] postNotificationName:PIC_UPDATED_NOTIF object:nil];
-  }];
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)removePhoto:(id)sender {

@@ -1608,7 +1608,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="ndN-lQ-3Ga">
-                                <rect key="frame" x="31" y="16" width="129" height="30"/>
+                                <rect key="frame" x="31" y="12" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="leftSegmentOff.png">
@@ -1624,7 +1624,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="C8z-Oe-fTm">
-                                <rect key="frame" x="160" y="16" width="129" height="30"/>
+                                <rect key="frame" x="160" y="12" width="129" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="rightSegmentOff.png">
@@ -1640,14 +1640,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Current City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o3M-Gy-BJy" customClass="OpenSansBold">
-                                <rect key="frame" x="41" y="21" width="98" height="21"/>
+                                <rect key="frame" x="41" y="17" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Constituency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" id="04g-7i-70Q" customClass="OpenSansBold">
-                                <rect key="frame" x="168" y="21" width="102" height="21"/>
+                                <rect key="frame" x="168" y="17" width="102" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.76884694343065696" green="0.77614621350364965" blue="0.76853330291970801" alpha="1" colorSpace="calibratedRGB"/>
@@ -2301,7 +2301,6 @@
         <class className="AnalyticsDetailVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsDetailVC.h"/>
             <relationships>
-                <relationship kind="action" name="goBack:"/>
                 <relationship kind="outlet" name="banner" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="complaintsLabel" candidateClass="OpenSansBold"/>
                 <relationship kind="outlet" name="issuesLabel" candidateClass="OpenSansBold"/>
@@ -2310,6 +2309,11 @@
         <class className="AnalyticsVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AnalyticsVC.h"/>
             <relationships>
+                <relationship kind="action" name="bangaloreTapped:"/>
+                <relationship kind="action" name="categoryButtonTapped:"/>
+                <relationship kind="action" name="delhiTapped:"/>
+                <relationship kind="action" name="leftSegmentTapped:"/>
+                <relationship kind="action" name="rightSegmentTapped:"/>
                 <relationship kind="outlet" name="bigCircleBG" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="citySelectorBackgroundImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="citySelectorView" candidateClass="UIView"/>

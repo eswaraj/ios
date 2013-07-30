@@ -221,7 +221,7 @@ static JSModel *sharedModel = nil;
   NSString *street = [place.addressDictionary valueForKey:@"Street"];
   NSString *city = [place.addressDictionary valueForKey:@"City"];
   NSString *state = [place.addressDictionary valueForKey:@"State"];
-  
+    
   NSString *address = @"";
   if(street) {
     address = [address stringByAppendingString:street];
@@ -229,11 +229,10 @@ static JSModel *sharedModel = nil;
   }
   if(city) {
     address = [address stringByAppendingString:city];
-    address = [address stringByAppendingString:@", "];
-  }
-  if(state) {
+  } else if(state){
     address = [address stringByAppendingString:state];
   }
+  
   return address;
 }
 
