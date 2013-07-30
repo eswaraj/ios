@@ -59,6 +59,9 @@
 
 @property (assign, nonatomic) BOOL onlyFetchCity;
 
+@property (assign, nonatomic) BOOL isFetchingConstituency;
+@property (assign, nonatomic) BOOL isFetchingCity;
+
 @end
 
 @implementation AnalyticsVC
@@ -68,6 +71,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.onlyFetchCity = NO;
+  self.isFetchingConstituency = NO;
+  self.isFetchingCity = NO;
   [DSBezelActivityView newActivityViewForView:self.view];
   [self addNotifObserver];
   [self configureUI];
@@ -216,6 +221,8 @@
   if(!(self.currentCityID.intValue == 999)) {
     self.currentCityID = [NSNumber numberWithInt:999];
     [DSBezelActivityView newActivityViewForView:self.view];
+    self.isFetchingCity = YES;
+    self.isFetchingConstituency = NO;
     [self fetchDataWithID:self.currentCityID];
     [self.currentCityLabel setText:@"New Delhi"];
   }
@@ -227,6 +234,8 @@
   if(!(self.currentCityID.intValue == 998)) {
     self.currentCityID = [NSNumber numberWithInt:998];
     [DSBezelActivityView newActivityViewForView:self.view];
+    self.isFetchingCity = YES;
+    self.isFetchingConstituency = NO;
     [self fetchDataWithID:self.currentCityID];
     [self.currentCityLabel setText:@"Bangalore"];
   }
@@ -328,14 +337,20 @@ replacementString:(NSString *)string {
      
      if(success) {
        self.currentConstituencyID = result;
+       self.isFetchingConstituency = YES;
+       self.isFetchingCity = NO;
        [self fetchDataWithID:result];
        [MLA fetchMLAWithId:result completion:
         ^(BOOL success, NSArray *result, NSError *error) {
           if(success) {
             
-            MLA *mla = [result objectAtIndex:0];
-            if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
+            MLA *mla;
+            if(result.count) {
+              mla = [result objectAtIndex:0];
               [self.locLabel setText:mla.constituency];
+            }
+            if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
+              
               [self enableConstAnalytics];
             } else {
               [self disableConstAnalytics];
@@ -364,7 +379,22 @@ replacementString:(NSString *)string {
      
    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
      
-     [DSBezelActivityView removeViewAnimated:YES];
+     if(constID == self.currentCityID) {
+       self.isFetchingCity = NO;
+     }
+     
+     if(constID == self.currentConstituencyID) {
+       self.isFetchingConstituency = NO;
+     }
+     
+     if(constID == self.currentConstituencyID && !self.isFetchingCity) {
+       [DSBezelActivityView removeViewAnimated:YES];
+     }
+     
+     if(constID == self.currentCityID && !self.isFetchingConstituency) {
+       [DSBezelActivityView removeViewAnimated:YES];
+     }
+     
      NSData *jsonData = [error.localizedRecoverySuggestion
                          dataUsingEncoding:NSUTF8StringEncoding];
      NSError *e = nil;
@@ -511,6 +541,8 @@ replacementString:(NSString *)string {
        if([[geocodedLocation lowercaseString] isEqualToString:@"karnataka"]) {
          geocodedLocation = @"Bangalore";
        }
+       
+       self.isFetchingCity = YES;
        if([[geocodedLocation lowercaseString] isEqualToString:@"delhi"] ||
           [[geocodedLocation lowercaseString] isEqualToString:@"new delhi"] ||
           [[geocodedLocation lowercaseString] isEqualToString:@"newdelhi"]) {
@@ -543,6 +575,7 @@ replacementString:(NSString *)string {
      if(success) {
        self.currentConstituencyID = result;
        
+       self.isFetchingConstituency = YES;
        [self fetchDataWithID:result];
        
        [DSBezelActivityView newActivityViewForView:self.view];
@@ -552,10 +585,13 @@ replacementString:(NSString *)string {
           [DSBezelActivityView removeViewAnimated:YES];
           if(success) {
             
-            MLA *mla = [result objectAtIndex:0];
+            MLA *mla;
+            if(result.count) {
+              mla = [result objectAtIndex:0];
+              [self.locLabel setText:mla.constituency];
+            }
             
             if(![mla.constituency isEqualToString:@"Rest_of_India"]) {
-              [self.locLabel setText:mla.constituency];
               [self enableConstAnalytics];
             } else {
               [self disableConstAnalytics];
@@ -578,6 +614,7 @@ replacementString:(NSString *)string {
   [self.rightSegment setSelected:NO];
   [self.leftSegment setSelected:YES];
   [self refreshAnalyticsForConstID:self.currentCityID];
+  
   
   [DSBezelActivityView removeViewAnimated:YES];
   
