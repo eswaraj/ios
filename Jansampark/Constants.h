@@ -28,6 +28,17 @@
 #define kLastAnalyticsUpdateKey @"kLastAnalyticsUpdateKey"
 #define kProfileImageKey @"kProfileImageKey"
 #define kUUIDKey @"kUUIDKey"
+#define kWalkthroughKey @"kWalkthroughKey"
+
+//Youtube URL Keys
+
+#define kOverallVideoKey @"kOverallVideoKey"
+#define kWaterVideoKey @"kWaterVideoKey"
+#define kRoadVideoKey @"kRoadVideoKey"
+#define kElectricityVideoKey @"kElectricityVideoKey"
+#define kTransportationVideoKey @"kTransportationVideoKey"
+#define kSewageVideoKey @"kSewageVideoKey"
+#define kLawVideoKey @"kLawVideoKey"
 
 // Notifications
 

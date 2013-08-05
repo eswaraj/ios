@@ -12,6 +12,7 @@
 #import <KSReachability.h>
 #import "Constants.h"
 #import "TestFlight.h"
+#import "JSAPIInteracter.h"
 
 @implementation JSAppDelegate
 
@@ -30,6 +31,8 @@
   }
   
   [TestFlight takeOff:@"6436852a-dac3-4796-9772-58f948f3e106"];
+  [[JSAPIInteracter shared] fetchYoutubeVideoURLs];
+  
     return YES;
 }
 

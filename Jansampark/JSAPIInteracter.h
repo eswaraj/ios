@@ -20,4 +20,6 @@ typedef void (^JSAPIBlock)(BOOL success, id result, NSError *error);
 
 - (void)fetchMLAIDWithLat:(NSString *)lat lon:(NSString *)lon completion:(JSAPIBlock)block;
 
+- (void)fetchYoutubeVideoURLs;
+
 @end

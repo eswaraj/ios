@@ -9,8 +9,11 @@
 #import "ProfileVC.h"
 #import "WalkthroughVC.h"
 #import "Constants.h"
+#import <MessageUI/MessageUI.h>
+#import "VideoVC.h"
 
-@interface ProfileVC ()
+@interface ProfileVC () <MFMailComposeViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *addedPhotoView;
 @property (weak, nonatomic) IBOutlet UIView *addPhotoView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -82,6 +85,23 @@
   [self presentViewController:wVC animated:YES completion:nil];
 }
 
+- (IBAction)sendFeedbackTapped:(id)sender {
+  
+  MFMailComposeViewController *mvc = [[MFMailComposeViewController alloc] init];
+  [mvc setMailComposeDelegate:self];
+  NSString *subject = @"Feedback of the Swaraj iPhone App";
+  [mvc setSubject:subject];
+  [mvc setToRecipients:[NSArray arrayWithObject:@"eswaraj.india@gmail.com"]];
+  [self presentViewController:mvc animated:YES completion:nil];
+}
+
+- (IBAction)watchVideoTapped:(id)sender {
+  
+  VideoVC *vvc = [self.storyboard instantiateViewControllerWithIdentifier:@"VideoVC"];
+  [self presentViewController:vvc animated:YES completion:nil];
+  
+  
+}
 #pragma mark - Custom Methods
 
 - (void)configureUI {
@@ -110,6 +130,15 @@
   [[NSUserDefaults standardUserDefaults] setObject:UIImagePNGRepresentation(img)
                                             forKey:kProfileImageKey];
   [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark - Message Compose Delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error {
+  
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -36,7 +36,7 @@ static JSAPIInterface *__instance = nil;
 
 - (void)setupRestkit {
   
-  RKLogConfigureByName("*", RKLogLevelTrace);
+  RKLogConfigureByName("*", RKLogLevelOff);
   // Create a new model using the coredata model file
   NSManagedObjectModel *objectModel = [[NSManagedObjectModel alloc]
                                        initWithContentsOfURL:kModelURL];

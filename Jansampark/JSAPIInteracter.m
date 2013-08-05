@@ -9,6 +9,7 @@
 #import "JSAPIInteracter.h"
 #import "JSModel.h"
 #import "MLA+JSAPIAdditions.h"
+#import "Constants.h"
 
 static JSAPIInteracter *shared = nil;
 
@@ -85,6 +86,37 @@ static JSAPIInteracter *shared = nil;
 //       block(YES, mla_id, nil);
 //     }
    }];
+}
+
+- (void)fetchYoutubeVideoURLs {
+  
+  [[RKObjectManager sharedManager] getObjectsAtPath:@"/html/dev/micronews/get_video_links.php"
+                                         parameters:nil
+                                            success:
+   ^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+  } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+    NSData *jsonData = [error.localizedRecoverySuggestion
+                        dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *e = nil;
+    NSDictionary *videDict =
+    [NSJSONSerialization JSONObjectWithData:jsonData
+                                    options:NSJSONReadingMutableContainers
+                                      error: &e];
+
+    if([videDict objectForKey:@"about"]) {
+      NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+      
+      [defaults setObject:[videDict objectForKey:@"about"] forKey:kOverallVideoKey];
+      [defaults setObject:[videDict objectForKey:@"48"] forKey:kWaterVideoKey];
+      [defaults setObject:[videDict objectForKey:@"49"] forKey:kElectricityVideoKey];
+      [defaults setObject:[videDict objectForKey:@"50"] forKey:kSewageVideoKey];
+      [defaults setObject:[videDict objectForKey:@"51"] forKey:kRoadVideoKey];
+      [defaults setObject:[videDict objectForKey:@"52"] forKey:kTransportationVideoKey];
+      [defaults setObject:[videDict objectForKey:@"53"] forKey:kLawVideoKey];
+      
+      [defaults synchronize];
+    }
+  }];
 }
 
 @end

@@ -12,6 +12,7 @@
 #import "JSModel.h"
 #import <MapKit/MapKit.h>
 #import "Constants.h"
+#import "VideoVC.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -32,8 +33,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-// WalkthroughVC *wVC = (WalkthroughVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"WalkthroughVC"];
-//[self presentViewController:wVC animated:NO completion:nil];
+  
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  
+  if(![defaults objectForKey:kWalkthroughKey]) {
+    WalkthroughVC *wVC = (WalkthroughVC*)[self.storyboard instantiateViewControllerWithIdentifier:@"WalkthroughVC"];
+    [self presentViewController:wVC animated:NO completion:nil];
+    
+    [defaults setObject:@"YES" forKey:kWalkthroughKey];
+    [defaults synchronize];
+  }
+  
   [self configureFonts];
   [self configureUI];
   [[NSNotificationCenter defaultCenter] addObserver:self
@@ -79,7 +89,6 @@
   
   [self.navigationController pushViewController:vc animated:YES];
 }
-
 
 #pragma mark - Custom Methods
 
