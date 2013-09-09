@@ -30,7 +30,7 @@
 				<key>tmpl_id</key>
 				<integer>3</integer>
 				<key>text</key>
-				<string>Insecure area</string>
+				<string>Highly-insecure area. Crime prone. Urgent action required</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -70,7 +70,7 @@
 				<key>tmpl_id</key>
 				<integer>22</integer>
 				<key>text</key>
-				<string>Low quality lawyers in this area</string>
+				<string>Low quality lawyers in this court</string>
 				<key>sys_code</key>
 				<integer>2</integer>
 			</dict>
@@ -110,7 +110,7 @@
 				<key>tmpl_id</key>
 				<integer>43</integer>
 				<key>text</key>
-				<string>Require this area Police system to be reviewed by officials</string>
+				<string>Required Police system awareness day to improve citizens-Police relationship</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -126,7 +126,7 @@
 				<key>tmpl_id</key>
 				<integer>45</integer>
 				<key>text</key>
-				<string>Require this area courts to be reviewed by officials</string>
+				<string>Required Court awareness day to make citizens comfortable with court system</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -208,7 +208,7 @@
 				<key>tmpl_id</key>
 				<integer>21</integer>
 				<key>text</key>
-				<string> Auto-Rickshaw drivers refuse to go to this area</string>
+				<string>Auto-Rickshaw refusal menace in this area</string>
 				<key>sys_code</key>
 				<integer>1</integer>
 			</dict>
@@ -240,7 +240,7 @@
 				<key>tmpl_id</key>
 				<integer>31</integer>
 				<key>text</key>
-				<string>Auto-Rickshaw drivers don't follow meter in this area</string>
+				<string>Auto-Rickshaws don't follow meter in this area</string>
 				<key>sys_code</key>
 				<integer>3</integer>
 			</dict>
@@ -322,7 +322,7 @@
 				<key>tmpl_id</key>
 				<integer>31</integer>
 				<key>text</key>
-				<string>Unaffordable road taxes</string>
+				<string>Unaffordable road taxes. Reduce the taxes</string>
 				<key>sys_code</key>
 				<integer>3</integer>
 			</dict>
@@ -534,7 +534,7 @@
 				<key>tmpl_id</key>
 				<integer>31</integer>
 				<key>text</key>
-				<string>Unaffordable electricity in this area</string>
+				<string>Unaffordable electricity in this area. Reduce the prices</string>
 				<key>sys_code</key>
 				<integer>3</integer>
 			</dict>
