@@ -14,7 +14,7 @@
 				<key>tmpl_id</key>
 				<integer>1</integer>
 				<key>text</key>
-				<string>No close by police station in my area.</string>
+				<string>No police station in this area</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -22,7 +22,7 @@
 				<key>tmpl_id</key>
 				<integer>2</integer>
 				<key>text</key>
-				<string>Rowdiness in on the rise in the neighbourhood.</string>
+				<string>Rowdiness is increasing in this area</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -30,7 +30,7 @@
 				<key>tmpl_id</key>
 				<integer>3</integer>
 				<key>text</key>
-				<string>My area feels very insecure.</string>
+				<string>Insecure area</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -38,7 +38,7 @@
 				<key>tmpl_id</key>
 				<integer>4</integer>
 				<key>text</key>
-				<string>Judgements are dragging for long , improve the judiciary.</string>
+				<string>Judgments pending for long in this court</string>
 				<key>sys_code</key>
 				<integer>0</integer>
 			</dict>
@@ -46,7 +46,7 @@
 				<key>tmpl_id</key>
 				<integer>11</integer>
 				<key>text</key>
-				<string>Police station not well maintained, gives gloomy feeling. </string>
+				<string>Poorly maintained police stations in this area</string>
 				<key>sys_code</key>
 				<integer>1</integer>
 			</dict>
@@ -54,7 +54,7 @@
 				<key>tmpl_id</key>
 				<integer>12</integer>
 				<key>text</key>
-				<string>court compounds not well maintained.</string>
+				<string>Poorly maintained compounds in this court</string>
 				<key>sys_code</key>
 				<integer>1</integer>
 			</dict>
@@ -62,7 +62,7 @@
 				<key>tmpl_id</key>
 				<integer>21</integer>
 				<key>text</key>
-				<string>Police station staff not co-operative.</string>
+				<string>Uncooperative Police staff in this area</string>
 				<key>sys_code</key>
 				<integer>2</integer>
 			</dict>
@@ -70,7 +70,7 @@
 				<key>tmpl_id</key>
 				<integer>22</integer>
 				<key>text</key>
-				<string>Quality of lawyers detriorating</string>
+				<string>Low quality lawyers in this area</string>
 				<key>sys_code</key>
 				<integer>2</integer>
 			</dict>
@@ -78,7 +78,7 @@
 				<key>tmpl_id</key>
 				<integer>31</integer>
 				<key>text</key>
-				<string>Courts are becoming totally unaffordable do something.</string>
+				<string>Unaffordable courts in this area</string>
 				<key>sys_code</key>
 				<integer>3</integer>
 			</dict>
@@ -86,7 +86,7 @@
 				<key>tmpl_id</key>
 				<integer>32</integer>
 				<key>text</key>
-				<string>Increase constable/Inspector salary ,, bribes on rise.</string>
+				<string>Bribes on rise in this area</string>
 				<key>sys_code</key>
 				<integer>3</integer>
 			</dict>
@@ -94,7 +94,7 @@
 				<key>tmpl_id</key>
 				<integer>41</integer>
 				<key>text</key>
-				<string>Police is not working too hard to reach to people.</string>
+				<string>Unsatisfactory police service in this area</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -102,7 +102,7 @@
 				<key>tmpl_id</key>
 				<integer>42</integer>
 				<key>text</key>
-				<string>High level of distrust on police.</string>
+				<string>This area Police is untrustworthy</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -110,7 +110,7 @@
 				<key>tmpl_id</key>
 				<integer>43</integer>
 				<key>text</key>
-				<string>Should not be there a police awareness day , once in 3 months , where citizen should be encouraged to review there police stations, if they are happy with service of staff.</string>
+				<string>Require this area Police system to be reviewed by officials</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -118,7 +118,7 @@
 				<key>tmpl_id</key>
 				<integer>44</integer>
 				<key>text</key>
-				<string>court system sucks, i want to bow out of contract of signing the constitution.</string>
+				<string>Unsatisfactory court system</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
@@ -126,7 +126,7 @@
 				<key>tmpl_id</key>
 				<integer>45</integer>
 				<key>text</key>
-				<string>Should not there be a court awareness day, once in 3 months, where citizens should be encouraged to review there courts, to check that they are  happy with service of the staff.</string>
+				<string>Require this area courts to be reviewed by officials</string>
 				<key>sys_code</key>
 				<integer>4</integer>
 			</dict>
